@@ -1,4 +1,4 @@
-# apr/16/2021 11:52:46 by RouterOS 6.48.1
+# RouterOS 6.48.1
 # software id = 8VX7-3B51
 #
 # model = CRS326-24G-2S+

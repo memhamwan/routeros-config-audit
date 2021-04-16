@@ -1,4 +1,4 @@
-# apr/16/2021 11:53:02 by RouterOS 6.48.1
+# RouterOS 6.48.1
 # software id = ZEFX-QKUQ
 #
 # model = 2011UiAS
@@ -38,7 +38,7 @@ add name=default-dhcp ranges=192.168.88.10-192.168.88.254
 /routing ospf instance
 set [ find default=yes ] distribute-default=if-installed-as-type-1 in-filter=\
     AMPR-default out-filter=AMPR-default redistribute-connected=as-type-1 \
-    redistribute-other-ospf=as-type-1 router-id=44.34.129.74
+    redistribute-other-ospf=as-type-1 router-id=44.34.129.73
 /snmp community
 set [ find default=yes ] addresses=44.0.0.0/8
 /interface bridge port

@@ -1,4 +1,4 @@
-# apr/16/2021 09:53:57 by RouterOS 6.48.1
+# RouterOS 6.48.1
 # software id = LTVD-TT50
 #
 # model = Metal 5SHPn

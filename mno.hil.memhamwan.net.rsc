@@ -1,4 +1,4 @@
-# apr/16/2021 09:52:15 by RouterOS 6.48.1
+# RouterOS 6.48.1
 # software id = R2YK-BVVU
 #
 # model = 921UAGS-5SHPacT

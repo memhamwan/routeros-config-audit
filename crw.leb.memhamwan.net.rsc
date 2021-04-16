@@ -1,4 +1,4 @@
-# apr/16/2021 11:51:43 by RouterOS 6.48.1
+# RouterOS 6.48.1
 # software id = R7ZR-4D7Y
 #
 # model = 921UAGS-5SHPacT

@@ -1,4 +1,4 @@
-# apr/16/2021 11:53:23 by RouterOS 6.48.2
+# RouterOS 6.48.2
 # software id = 4TZY-TMH7
 #
 # model = RouterBOARD 750P r2
@@ -15,6 +15,10 @@ add comment=defconf name=WAN
 add comment=defconf name=LAN
 /interface wireless security-profiles
 set [ find default=yes ] supplicant-identity=MikroTik
+/routing ospf instance
+set [ find default=yes ] distribute-default=if-installed-as-type-1 in-filter=\
+    AMPR-default out-filter=AMPR-default redistribute-connected=as-type-1 \
+    redistribute-other-ospf=as-type-1 router-id=44.34.129.75
 /snmp community
 set [ find default=yes ] addresses=44.0.0.0/8
 /user group
@@ -35,14 +39,10 @@ add comment=defconf interface=bridge list=LAN
 add comment=defconf interface=ether1 list=WAN
 /ip address
 add address=44.34.129.75/28 interface=bridge network=44.34.129.64
-/ip dhcp-client
-add comment=defconf disabled=no interface=bridge
 /ip dns
 set servers=44.34.128.190
 /ip dns static
 add address=192.168.88.1 name=router.lan
-/ip route
-add distance=1 gateway=44.34.129.65
 /ip service
 set telnet disabled=yes
 set ftp disabled=yes
@@ -52,6 +52,14 @@ set winbox disabled=yes
 set api-ssl disabled=yes
 /ip ssh
 set forwarding-enabled=remote strong-crypto=yes
+/routing filter
+add action=accept chain=AMPR-default prefix=44.0.0.0/8 prefix-length=8-32
+add action=accept chain=AMPR-default prefix=0.0.0.0/0
+add action=reject chain=AMPR-default
+/routing ospf interface
+add authentication=md5 interface=bridge network-type=broadcast
+/routing ospf network
+add area=backbone network=44.34.129.64/28
 /snmp
 set enabled=yes
 /system clock

@@ -1,4 +1,4 @@
-# apr/16/2021 11:51:58 by RouterOS 6.48.1
+# RouterOS 6.48.1
 # software id = XTL4-EMUQ
 #
 # model = RouterBOARD DynaDish G-5HacD r3

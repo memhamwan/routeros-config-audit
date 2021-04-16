@@ -1,4 +1,4 @@
-# apr/16/2021 09:53:01 by RouterOS 6.48.1
+# RouterOS 6.48.1
 # software id = YLJX-EZQ9
 #
 # model = RouterBOARD 3011UiAS
@@ -74,8 +74,6 @@ add action=change-mss chain=output new-mss=1378 passthrough=yes protocol=tcp \
     tcp-flags=syn tcp-mss=!0-1378
 add action=change-mss chain=forward new-mss=1378 passthrough=yes protocol=tcp \
     tcp-flags=syn tcp-mss=!0-1378
-/ip route
-add distance=1 gateway=44.34.129.65
 /ip service
 set telnet disabled=yes
 set ftp disabled=yes
@@ -96,8 +94,7 @@ add action=accept chain=AMPR-default prefix=44.0.0.0/8 prefix-length=8-32
 add action=accept chain=AMPR-default prefix=0.0.0.0/0
 add action=reject chain=AMPR-default
 /routing ospf interface
-add authentication=md5 disabled=yes interface=switch-bridge network-type=\
-    broadcast
+add authentication=md5 interface=switch-bridge network-type=broadcast
 /routing ospf network
 add area=backbone network=44.34.129.64/28
 /snmp

@@ -1,4 +1,4 @@
-# apr/16/2021 11:53:22 by RouterOS 6.48.1
+# RouterOS 6.48.1
 # software id = 3SYS-XEK6
 #
 # model = RBLHGG-60ad
@@ -27,8 +27,6 @@ set discover-interface-list=none
 /ip address
 add address=44.34.128.173/27 interface=ether1 network=44.34.128.160
 add address=44.34.131.156 interface=bridge network=44.34.131.157
-/ip dhcp-client
-add disabled=no interface=bridge
 /ip dns
 set servers=44.34.128.190
 /ip service

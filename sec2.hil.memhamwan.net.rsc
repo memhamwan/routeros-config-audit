@@ -1,4 +1,4 @@
-# apr/16/2021 09:53:40 by RouterOS 6.48.1
+# RouterOS 6.48.1
 # software id = 6322-0242
 #
 # model = Metal 5SHPn

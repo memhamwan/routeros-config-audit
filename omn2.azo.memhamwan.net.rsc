@@ -1,4 +1,4 @@
-# apr/16/2021 11:52:30 by RouterOS 6.48.1
+# RouterOS 6.48.1
 # software id = U8QZ-LL36
 #
 # model = Metal 2SHPn

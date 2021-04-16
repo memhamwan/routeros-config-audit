@@ -1,4 +1,4 @@
-# apr/16/2021 11:52:00 by RouterOS 6.48.1
+# RouterOS 6.48.1
 # software id = CIAG-EMEJ
 #
 # model = 921UAGS-5SHPacT

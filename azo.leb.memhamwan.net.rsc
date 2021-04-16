@@ -1,4 +1,4 @@
-# apr/16/2021 09:51:43 by RouterOS 6.48.1
+# RouterOS 6.48.1
 # software id = DKLM-2VLX
 #
 # model = RouterBOARD DynaDish G-5HacD r3
@@ -78,3 +78,5 @@ set allowed-interface-list=none
 set enabled=no
 /tool romon
 set enabled=yes
+11:21:00 echo: system,error,critical login failure for user root from 223.206.240
+.236 via ssh

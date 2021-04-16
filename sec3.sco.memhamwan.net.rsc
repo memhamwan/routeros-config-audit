@@ -1,4 +1,4 @@
-# apr/16/2021 16:53:57 by RouterOS 6.48.1
+# RouterOS 6.48.1
 # software id = 3QHR-LE3I
 #
 # model = Metal 5SHPn

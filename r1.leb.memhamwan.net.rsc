@@ -1,4 +1,4 @@
-# apr/16/2021 11:52:46 by RouterOS 6.48.1
+# RouterOS 6.48.1
 # software id = GXJJ-5ZK0
 #
 # model = CRS125-24G-1S

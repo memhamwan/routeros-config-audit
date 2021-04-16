@@ -1,4 +1,4 @@
-# apr/16/2021 11:53:40 by RouterOS 6.48.1
+# RouterOS 6.48.1
 # software id = QQZ8-G732
 #
 # model = Metal 5SHPn

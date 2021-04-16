@@ -1,4 +1,4 @@
-# apr/16/2021 11:52:31 by RouterOS 6.48.1
+# RouterOS 6.48.1
 # software id = A10G-KLEK
 #
 # model = OmniTIK UPA-5HnD
