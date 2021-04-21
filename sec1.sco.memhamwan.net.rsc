@@ -70,8 +70,6 @@ add action=change-mss chain=forward new-mss=1378 passthrough=yes protocol=tcp \
 set 0 dst-address=0.0.0.0/0 src-address=0.0.0.0/0
 /ip proxy
 set cache-path=web-proxy1
-/ip route
-add distance=1 dst-address=44.34.128.192/28 gateway=44.34.128.62
 /ip service
 set telnet disabled=yes
 set ftp disabled=yes

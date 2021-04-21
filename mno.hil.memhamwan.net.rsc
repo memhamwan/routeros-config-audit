@@ -75,7 +75,7 @@ add area=backbone network=44.34.131.138/32
 set contact="#HamWAN on irc.freenode.org" enabled=yes src-address=\
     44.34.128.110 trap-version=2
 /system clock
-set time-zone-name=America/Los_Angeles
+set time-zone-name=America/Chicago
 /system identity
 set name=mno.hil
 /system leds

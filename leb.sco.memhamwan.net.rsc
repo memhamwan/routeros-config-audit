@@ -41,9 +41,6 @@ add address=44.34.129.129/28 interface=ether1 network=44.34.129.128
 add address=10.10.0.0/24 gateway=10.10.0.1
 /ip dns
 set servers=44.34.128.190
-/ip firewall nat
-add action=dst-nat chain=dstnat disabled=yes dst-port=80 protocol=tcp \
-    to-addresses=44.34.128.38 to-ports=80
 /ip service
 set telnet disabled=yes
 set ftp disabled=yes

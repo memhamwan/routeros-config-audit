@@ -64,6 +64,7 @@ set time-zone-name=America/Los_Angeles
 /system identity
 set name=azo.leb.memhamwan.net
 /system logging
+set 3 disabled=yes
 add action=echo disabled=yes topics=wireless
 add disabled=yes topics=wireless,debug
 /system ntp client
@@ -78,5 +79,3 @@ set allowed-interface-list=none
 set enabled=no
 /tool romon
 set enabled=yes
-11:21:00 echo: system,error,critical login failure for user root from 223.206.240
-.236 via ssh

@@ -85,7 +85,7 @@ add area=backbone network=44.34.128.112/28
 /snmp
 set contact="#HamWAN on irc.freenode.org" enabled=yes
 /system clock
-set time-zone-name=America/Chicago
+set time-zone-name=America/Los_Angeles
 /system identity
 set name=sec1.hil
 /system leds
