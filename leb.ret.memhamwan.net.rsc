@@ -7,10 +7,10 @@
 add name=bridge1
 /interface wireless
 set [ find default-name=wlan1 ] adaptive-noise-immunity=ap-and-client-mode \
-    antenna-gain=0 band=5ghz-onlyac disabled=no frequency=5805 mode=\
-    station-bridge nv2-cell-radius=10 radio-name=leb.ret.memhamwan.net \
-    scan-list=5805 ssid=HamWAN-ret-leb station-roaming=enabled \
-    tdma-period-size=4
+    antenna-gain=0 band=5ghz-onlyac channel-width=20/40mhz-XX disabled=no \
+    frequency=5805 mode=station-bridge nv2-cell-radius=10 radio-name=\
+    leb.ret.memhamwan.net scan-list=5805 ssid=HamWAN-ret-leb station-roaming=\
+    enabled tdma-period-size=4
 /interface ethernet
 set [ find default-name=ether1 ] speed=100Mbps
 /interface wireless security-profiles
