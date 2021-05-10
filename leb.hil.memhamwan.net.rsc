@@ -54,6 +54,7 @@ set 0 dst-address=0.0.0.0/0 src-address=0.0.0.0/0
 set telnet disabled=yes
 set ftp disabled=yes
 set www disabled=yes
+set ssh port=222
 set api disabled=yes
 set winbox disabled=yes
 set api-ssl disabled=yes
@@ -81,7 +82,8 @@ set 1 interface=wlan1
 add action=remote topics=critical,error,info,warning
 add topics=critical,error,info,warning
 /system ntp client
-set enabled=yes primary-ntp=44.34.128.181 secondary-ntp=44.34.133.3
+set enabled=yes primary-ntp=44.34.128.181 secondary-ntp=44.34.133.3 \
+    server-dns-names=ntp.memhamwan.net
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server

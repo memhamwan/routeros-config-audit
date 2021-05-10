@@ -42,11 +42,12 @@ set servers=44.34.128.190
 set telnet disabled=yes
 set ftp disabled=yes
 set www disabled=yes
+set ssh port=222
 set api disabled=yes
 set winbox disabled=yes
 set api-ssl disabled=yes
 /ip ssh
-set forwarding-enabled=remote
+set forwarding-enabled=remote strong-crypto=yes
 /routing filter
 add action=accept chain=AMPR-default prefix=44.0.0.0/8 prefix-length=8-32
 add action=accept chain=AMPR-default prefix=0.0.0.0/0
@@ -60,7 +61,7 @@ add area=backbone network=44.34.131.143/32
 /snmp
 set enabled=yes
 /system clock
-set time-zone-name=America/Los_Angeles
+set time-zone-autodetect=no time-zone-name=America/Chicago
 /system identity
 set name=azo.leb.memhamwan.net
 /system logging
@@ -68,7 +69,7 @@ set 3 disabled=yes
 add action=echo disabled=yes topics=wireless
 add disabled=yes topics=wireless,debug
 /system ntp client
-set enabled=yes primary-ntp=44.34.128.181
+set enabled=yes primary-ntp=44.34.128.181 server-dns-names=ntp.memhamwan.net
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server

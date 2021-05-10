@@ -61,13 +61,14 @@ add action=drop chain=forward dst-address=44.34.129.72 src-address=\
 set telnet disabled=yes
 set ftp disabled=yes
 set www disabled=yes
+set ssh port=222
 set api disabled=yes
 set winbox disabled=yes
 set api-ssl disabled=yes
 /ip smb shares
 set [ find default=yes ] directory=/pub
 /ip ssh
-set forwarding-enabled=remote
+set forwarding-enabled=remote strong-crypto=yes
 /routing filter
 add action=accept chain=AMPR-default prefix=44.0.0.0/8 prefix-length=8-32
 add action=accept chain=AMPR-default prefix=0.0.0.0/0
@@ -81,7 +82,7 @@ add area=backbone network=44.34.131.142/32
 /snmp
 set contact="#HamWAN on irc.freenode.org" enabled=yes
 /system clock
-set time-zone-autodetect=no
+set time-zone-autodetect=no time-zone-name=America/Chicago
 /system identity
 set name=leb.azo.memhamwan.net
 /system leds
@@ -90,7 +91,8 @@ set 0 interface=wlan1
 add action=remote topics=critical,error,info,warning
 add topics=critical,error,info,warning
 /system ntp client
-set enabled=yes primary-ntp=44.34.128.181 secondary-ntp=44.34.133.3
+set enabled=yes primary-ntp=44.34.128.181 secondary-ntp=44.34.133.3 \
+    server-dns-names=ntp.memhamwan.net
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server

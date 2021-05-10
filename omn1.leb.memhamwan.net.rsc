@@ -114,6 +114,7 @@ add action=change-mss chain=forward new-mss=1378 protocol=tcp tcp-flags=syn \
 set telnet disabled=yes
 set ftp disabled=yes
 set www disabled=yes
+set ssh port=222
 set api disabled=yes
 set winbox disabled=yes
 set api-ssl disabled=yes
@@ -132,7 +133,7 @@ add area=backbone network=44.34.128.208/28
 /snmp
 set enabled=yes
 /system clock
-set time-zone-name=America/Los_Angeles
+set time-zone-autodetect=no time-zone-name=America/Chicago
 /system identity
 set name=omn1.leb.memhamwan.net
 /system leds
@@ -144,7 +145,8 @@ set 4 interface=ether5-slave-local
 /system logging
 add action=echo topics=wireless
 /system ntp client
-set enabled=yes primary-ntp=44.34.128.181 secondary-ntp=44.34.133.3
+set enabled=yes primary-ntp=44.34.128.181 secondary-ntp=44.34.133.3 \
+    server-dns-names=ntp.memhamwan.net
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server

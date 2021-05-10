@@ -45,7 +45,7 @@ add bsd-syslog=yes name=centrallogging remote=44.34.128.171 syslog-facility=\
 /interface bridge port
 add bridge=bridge1 interface=wlan1
 /ip neighbor discovery-settings
-set discover-interface-list=all
+set discover-interface-list=none
 /ip address
 add address=44.34.128.110/28 interface=ether1 network=44.34.128.96
 add address=44.34.128.102/28 interface=vrrp1 network=44.34.128.96
@@ -56,6 +56,7 @@ set servers=44.34.128.190
 set telnet disabled=yes
 set ftp disabled=yes
 set www disabled=yes
+set ssh port=222
 set api disabled=yes
 set winbox disabled=yes
 set api-ssl disabled=yes
@@ -75,15 +76,16 @@ add area=backbone network=44.34.131.138/32
 set contact="#HamWAN on irc.freenode.org" enabled=yes src-address=\
     44.34.128.110 trap-version=2
 /system clock
-set time-zone-name=America/Chicago
+set time-zone-autodetect=no time-zone-name=America/Chicago
 /system identity
-set name=mno.hil
+set name=mno.hil.memhamwan.net
 /system leds
 set 1 interface=wlan1
 /system logging
 add action=centrallogging topics=!debug,!packet,!snmp,!ospf
 /system ntp client
-set enabled=yes primary-ntp=44.34.128.181 secondary-ntp=44.34.133.3
+set enabled=yes primary-ntp=44.34.128.181 secondary-ntp=44.34.133.3 \
+    server-dns-names=ntp.memhamwan.net
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server

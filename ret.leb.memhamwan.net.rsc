@@ -10,8 +10,6 @@ set [ find default-name=wlan1 ] antenna-gain=0 band=5ghz-onlyac disabled=no \
     frequency=5805 mode=bridge nv2-cell-radius=10 radio-name=\
     ret.leb.memhamwan.net scan-list=5805 ssid=HamWAN-ret-leb station-roaming=\
     enabled tdma-period-size=4 wireless-protocol=nv2
-/interface ethernet
-set [ find default-name=ether1 ] speed=100Mbps
 /interface vrrp
 add authentication=ah interface=bridge name=vrrp1 version=2
 /interface wireless security-profiles
@@ -39,6 +37,7 @@ set servers=44.34.128.190
 set telnet disabled=yes
 set ftp disabled=yes
 set www disabled=yes
+set ssh port=222
 set api disabled=yes
 set winbox disabled=yes
 set api-ssl disabled=yes
@@ -60,6 +59,8 @@ set enabled=yes
 set time-zone-autodetect=no time-zone-name=America/Chicago
 /system identity
 set name=ret.leb.memhamwan.net
+/system logging
+add action=echo disabled=yes topics=ospf
 /system ntp client
 set enabled=yes server-dns-names=ntp.memhamwan.net
 /tool bandwidth-server

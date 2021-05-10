@@ -97,7 +97,7 @@ set servers=8.8.8.8,8.8.4.4
 set telnet disabled=yes
 set ftp disabled=yes
 set www disabled=yes
-set ssh address=73.2.158.140/32,44.0.0.0/8,192.168.0.0/16,10.0.0.0/8
+set ssh address=73.2.158.140/32,44.0.0.0/8,192.168.0.0/16,10.0.0.0/8 port=222
 set api disabled=yes
 set winbox address=73.2.158.140/32,44.0.0.0/8,192.168.0.0/16,10.0.0.0/8 \
     disabled=yes

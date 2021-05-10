@@ -62,6 +62,7 @@ add action=change-mss chain=output new-mss=1378 passthrough=yes protocol=tcp \
 set telnet disabled=yes
 set ftp disabled=yes
 set www disabled=yes
+set ssh port=222
 set api disabled=yes
 set winbox disabled=yes
 set api-ssl disabled=yes
@@ -80,7 +81,7 @@ add area=backbone network=44.34.131.140/32
 /snmp
 set contact="#HamWAN on irc.freenode.org" enabled=yes
 /system clock
-set time-zone-name=America/Los_Angeles
+set time-zone-autodetect=no time-zone-name=America/Chicago
 /system identity
 set name=mno.leb.memhamwan.net
 /system leds
@@ -89,7 +90,8 @@ set 1 interface=wlan1
 add action=remote topics=critical,error,info,warning
 add topics=critical,error,info,warning
 /system ntp client
-set enabled=yes primary-ntp=44.34.128.181 secondary-ntp=44.34.133.3
+set enabled=yes primary-ntp=44.34.128.181 secondary-ntp=44.34.133.3 \
+    server-dns-names=ntp.memhamwan.net
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server

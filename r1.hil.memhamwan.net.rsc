@@ -42,7 +42,7 @@ set [ find default=yes ] distribute-default=if-installed-as-type-1 in-filter=\
     AMPR-default out-filter=AMPR-default redistribute-connected=as-type-1 \
     redistribute-other-ospf=as-type-1 router-id=44.34.128.103
 /snmp community
-set [ find default=yes ] addresses=44.34.128.0/21
+set [ find default=yes ] addresses=44.0.0.0/8
 /interface bridge port
 add bridge=bridge comment=defconf interface=ether1
 add bridge=bridge comment=defconf interface=ether6-master
@@ -56,7 +56,7 @@ add bridge=bridge interface=ether8
 add bridge=bridge interface=ether9
 add bridge=bridge interface=ether10
 /ip neighbor discovery-settings
-set discover-interface-list=all
+set discover-interface-list=none
 /interface list member
 add interface=sfp1 list=discover
 add interface=ether2-master list=discover
@@ -87,6 +87,7 @@ add action=change-mss chain=forward new-mss=1378 passthrough=yes protocol=tcp \
 set telnet disabled=yes
 set ftp disabled=yes
 set www disabled=yes
+set ssh port=222
 set api disabled=yes
 set winbox disabled=yes
 set api-ssl disabled=yes
@@ -103,11 +104,11 @@ add area=backbone network=44.34.128.96/28
 /snmp
 set enabled=yes
 /system clock
-set time-zone-name=America/Chicago
+set time-zone-autodetect=no time-zone-name=America/Chicago
 /system identity
-set name=r1.hil
+set name=r1.hil.memhamwan.net
 /system ntp client
-set enabled=yes primary-ntp=44.34.128.181
+set enabled=yes primary-ntp=44.34.128.181 server-dns-names=ntp.memhamwan.net
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server

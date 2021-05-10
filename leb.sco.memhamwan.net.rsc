@@ -45,6 +45,7 @@ set servers=44.34.128.190
 set telnet disabled=yes
 set ftp disabled=yes
 set www disabled=yes
+set ssh port=222
 set api disabled=yes
 set winbox disabled=yes
 set api-ssl disabled=yes
@@ -64,11 +65,11 @@ add area=backbone network=44.34.129.128/28
 /snmp
 set enabled=yes
 /system clock
-set time-zone-name=America/Los_Angeles
+set time-zone-autodetect=no time-zone-name=America/Chicago
 /system identity
 set name=leb.sco.memhamwan.net
 /system ntp client
-set enabled=yes primary-ntp=44.34.128.181
+set enabled=yes primary-ntp=44.34.128.181 server-dns-names=ntp.memhamwan.net
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server

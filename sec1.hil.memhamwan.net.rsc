@@ -34,7 +34,7 @@ set [ find default=yes ] distribute-default=if-installed-as-type-1 in-filter=\
     AMPR-default out-filter=AMPR-default redistribute-connected=as-type-1 \
     redistribute-other-ospf=as-type-1 router-id=44.34.128.99
 /snmp community
-set [ find default=yes ] addresses=44.34.128.0/21
+set [ find default=yes ] addresses=44.0.0.0/8
 /system logging action
 set 0 memory-lines=100
 set 1 disk-lines-per-file=100
@@ -42,7 +42,7 @@ set 3 remote=44.34.128.21
 add bsd-syslog=yes name=centrallogging remote=44.34.128.171 syslog-facility=\
     syslog target=remote
 /ip neighbor discovery-settings
-set discover-interface-list=all
+set discover-interface-list=none
 /interface list member
 add interface=ether1-local list=mactel
 add interface=ether1-local list=mac-winbox
@@ -68,6 +68,7 @@ add action=change-mss chain=forward new-mss=1378 passthrough=yes protocol=tcp \
 set telnet disabled=yes
 set ftp disabled=yes
 set www disabled=yes
+set ssh port=222
 set api disabled=yes
 set winbox disabled=yes
 set api-ssl disabled=yes
@@ -85,9 +86,9 @@ add area=backbone network=44.34.128.112/28
 /snmp
 set contact="#HamWAN on irc.freenode.org" enabled=yes
 /system clock
-set time-zone-name=America/Los_Angeles
+set time-zone-autodetect=no time-zone-name=America/Chicago
 /system identity
-set name=sec1.hil
+set name=sec1.hil.memhamwan.net
 /system leds
 set 0 interface=wlan1-gateway leds=led1,led2,led3,led4,led5 type=\
     wireless-signal-strength
@@ -97,7 +98,8 @@ set 3 action=remote topics=!debug,!packet,!snmp
 add action=remote topics=critical,error,info,warning
 add topics=critical,error,info,warning
 /system ntp client
-set enabled=yes primary-ntp=44.34.128.181 secondary-ntp=44.34.133.3
+set enabled=yes primary-ntp=44.34.128.181 secondary-ntp=44.34.133.3 \
+    server-dns-names=ntp.memhamwan.net
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server

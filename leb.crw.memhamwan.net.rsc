@@ -26,14 +26,14 @@ set [ find default=yes ] distribute-default=if-installed-as-type-1 in-filter=\
     redistribute-connected=as-type-1 redistribute-other-ospf=as-type-1 \
     router-id=44.34.131.144
 /snmp community
-set [ find default=yes ] addresses=44.34.128.0/21
+set [ find default=yes ] addresses=44.0.0.0/8
 /user group
 set full policy="local,telnet,ssh,ftp,reboot,read,write,policy,test,winbox,pas\
     sword,web,sniff,sensitive,api,romon,dude,tikapp"
 /interface bridge port
 add bridge=bridge1 interface=wlan1
 /ip neighbor discovery-settings
-set discover-interface-list=all
+set discover-interface-list=none
 /ip address
 add address=44.34.129.115/28 interface=ether1 network=44.34.129.112
 add address=44.34.131.144 interface=bridge1 network=44.34.131.145
@@ -50,6 +50,7 @@ add action=change-mss chain=output new-mss=1378 passthrough=yes protocol=tcp \
 set telnet disabled=yes
 set ftp disabled=yes
 set www disabled=yes
+set ssh port=222
 set api disabled=yes
 set winbox disabled=yes
 set api-ssl disabled=yes
@@ -68,9 +69,11 @@ add area=backbone network=44.34.131.145/32
 /snmp
 set enabled=yes
 /system clock
-set time-zone-name=America/Los_Angeles
+set time-zone-autodetect=no time-zone-name=America/Chicago
 /system identity
-set name=leb.crw
+set name=leb.crw.memhamwan.net
+/system ntp client
+set enabled=yes server-dns-names=ntp.memhamwan.net
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server

@@ -34,7 +34,7 @@ set [ find default=yes ] distribute-default=if-installed-as-type-1 in-filter=\
     AMPR-default out-filter=AMPR-default redistribute-connected=as-type-1 \
     redistribute-other-ospf=as-type-1 router-id=44.34.129.117
 /snmp community
-set [ find default=yes ] addresses=44.34.128.0/21
+set [ find default=yes ] addresses=44.0.0.0/8
 /system logging action
 set 3 remote=44.34.128.171
 add bsd-syslog=yes name=centrallogging remote=44.34.128.171 syslog-facility=\
@@ -42,7 +42,7 @@ add bsd-syslog=yes name=centrallogging remote=44.34.128.171 syslog-facility=\
 /interface bridge port
 add bridge=switch-bridge interface=all
 /ip neighbor discovery-settings
-set discover-interface-list=all
+set discover-interface-list=none
 /interface ethernet poe settings
 set ether1-poe-in-long-cable=yes
 /interface list member
@@ -76,6 +76,7 @@ add action=change-mss chain=forward new-mss=1378 passthrough=yes protocol=tcp \
 set telnet disabled=yes
 set ftp disabled=yes
 set www disabled=yes
+set ssh port=222
 set api disabled=yes
 set winbox disabled=yes
 set api-ssl disabled=yes
@@ -95,14 +96,15 @@ add area=backbone network=44.34.129.144/28
 /snmp
 set contact="#HamWAN on irc.freenode.org" enabled=yes
 /system clock
-set time-zone-name=America/Los_Angeles
+set time-zone-autodetect=no time-zone-name=America/Chicago
 /system identity
-set name=r2.crw
+set name=r2.crw.memhamwan.net
 /system logging
 add action=remote topics=critical,error,info,warning
 add topics=critical,error,info,warning
 /system ntp client
-set enabled=yes primary-ntp=44.34.132.3 secondary-ntp=44.34.133.3
+set enabled=yes primary-ntp=44.34.132.3 secondary-ntp=44.34.133.3 \
+    server-dns-names=ntp.memhamwan.net
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server

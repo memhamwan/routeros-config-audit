@@ -66,6 +66,7 @@ add action=change-mss chain=output new-mss=1378 passthrough=yes protocol=tcp \
 set telnet disabled=yes
 set ftp disabled=yes
 set www address=10.0.0.0/8,172.16.0.0/12,192.168.0.0/16 disabled=yes
+set ssh port=222
 set api disabled=yes
 set winbox disabled=yes
 set api-ssl disabled=yes
@@ -80,7 +81,7 @@ add area=backbone network=44.34.131.131/32
 /snmp
 set enabled=yes
 /system clock
-set time-zone-name=America/Chicago
+set time-zone-autodetect=no time-zone-name=America/Chicago
 /system identity
 set name=hil.leb.memhamwan.net
 /system leds
@@ -92,7 +93,7 @@ set 2 disabled=yes
 set 3 disabled=yes
 add action=echo topics=ospf,wireless,error,warning,critical
 /system ntp client
-set enabled=yes primary-ntp=44.34.128.181
+set enabled=yes primary-ntp=44.34.128.181 server-dns-names=ntp.memhamwan.net
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server

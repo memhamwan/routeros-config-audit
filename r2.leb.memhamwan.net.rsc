@@ -7,8 +7,9 @@
 add admin-mac=B8:69:F4:86:60:9B auto-mac=no comment=defconf name=bridge
 /interface ethernet
 set [ find default-name=ether1 ] speed=100Mbps
-set [ find default-name=ether2 ] name=ether2-master speed=100Mbps
-set [ find default-name=ether3 ] speed=100Mbps
+set [ find default-name=ether2 ] name=ether2-master poe-out=forced-on speed=\
+    100Mbps
+set [ find default-name=ether3 ] poe-out=forced-on speed=100Mbps
 set [ find default-name=ether4 ] speed=100Mbps
 set [ find default-name=ether5 ] speed=100Mbps
 set [ find default-name=sfp1 ] advertise=\
@@ -67,6 +68,7 @@ add address=192.168.88.1 name=router.lan
 set telnet disabled=yes
 set ftp disabled=yes
 set www disabled=yes
+set ssh port=222
 set api disabled=yes
 set winbox disabled=yes
 set api-ssl disabled=yes
@@ -83,11 +85,11 @@ add area=backbone network=44.34.128.160/27
 /snmp
 set enabled=yes
 /system clock
-set time-zone-name=America/Los_Angeles
+set time-zone-autodetect=no time-zone-name=America/Chicago
 /system identity
 set name=r2.leb.memhamwan.net
 /system ntp client
-set enabled=yes primary-ntp=44.34.128.181
+set enabled=yes primary-ntp=44.34.128.181 server-dns-names=ntp.memhamwan.net
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server

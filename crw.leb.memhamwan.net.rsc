@@ -19,9 +19,9 @@ add authentication-types=wpa-psk,wpa2-psk eap-methods="" \
 set [ find default-name=wlan1 ] adaptive-noise-immunity=ap-and-client-mode \
     band=5ghz-onlyac country="united states3" disabled=no frequency=5785 \
     hw-retries=15 installation=outdoor mode=bridge mtu=1600 nv2-cell-radius=\
-    100 radio-name=crw.leb.memhamwan.net rx-chains=0,1 security-profile=\
-    hamwan ssid=HamWAN-crw-leb station-roaming=enabled tdma-period-size=4 \
-    tx-chains=0,1 wireless-protocol=nv2-nstreme-802.11
+    100 radio-name=crw.leb.memhamwan.net rx-chains=0,1 scan-list=5785 \
+    security-profile=hamwan ssid=HamWAN-crw-leb station-roaming=enabled \
+    tdma-period-size=4 tx-chains=0,1 wireless-protocol=nv2-nstreme-802.11
 /ip ipsec proposal
 set [ find default=yes ] enc-algorithms=aes-128-cbc
 /routing ospf instance
@@ -58,6 +58,7 @@ set 0 dst-address=0.0.0.0/0 src-address=0.0.0.0/0
 set telnet disabled=yes
 set ftp disabled=yes
 set www disabled=yes
+set ssh port=222
 set api disabled=yes
 set winbox disabled=yes
 set api-ssl disabled=yes
