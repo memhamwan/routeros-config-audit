@@ -7,9 +7,6 @@
 add admin-mac=64:D1:54:34:75:6E auto-mac=no comment=defconf name=bridge
 /interface ethernet
 set [ find default-name=ether2 ] poe-out=forced-on
-set [ find default-name=ether3 ] poe-out=forced-on
-set [ find default-name=ether4 ] poe-out=forced-on
-set [ find default-name=ether5 ] poe-out=forced-on
 /interface list
 add comment=defconf name=WAN
 add comment=defconf name=LAN
