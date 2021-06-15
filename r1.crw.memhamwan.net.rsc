@@ -4,6 +4,7 @@
 # model = RouterBOARD 3011UiAS
 # serial number = 780F06E975FF
 /interface bridge
+add name=OBARC
 add admin-mac=6C:3B:6B:FF:8A:41 auto-mac=no fast-forward=no name=\
     switch-bridge
 /interface ethernet
@@ -50,10 +51,10 @@ add bridge=switch-bridge interface=ether2-master
 add bridge=switch-bridge interface=ether3
 add bridge=switch-bridge interface=ether4
 add bridge=switch-bridge interface=ether5
-add bridge=switch-bridge interface=ether7
-add bridge=switch-bridge interface=ether8
 add bridge=switch-bridge interface=ether9
 add bridge=switch-bridge interface=ether10
+add bridge=OBARC interface=ether7
+add bridge=OBARC interface=ether8
 /ip neighbor discovery-settings
 set discover-interface-list=none
 /interface list member
@@ -74,6 +75,7 @@ add interface=switch-bridge list=mac-winbox
 /ip address
 add address=44.34.129.116/28 interface=switch-bridge network=44.34.129.112
 add address=44.34.129.113 interface=vrrp1 network=44.34.129.113
+add address=44.34.129.177/28 interface=OBARC network=44.34.129.176
 /ip dns
 set servers=44.34.128.190
 /ip firewall mangle
@@ -99,6 +101,7 @@ add action=reject chain=AMPR-default
 add authentication=md5 interface=switch-bridge network-type=broadcast
 /routing ospf network
 add area=backbone network=44.34.129.112/28
+add area=backbone network=44.34.129.176/28
 /snmp
 set contact="#HamWAN on irc.freenode.org" enabled=yes
 /system clock
