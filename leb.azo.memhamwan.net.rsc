@@ -1,4 +1,4 @@
-# RouterOS 6.48.1
+# RouterOS 6.48.3
 # software id = 2WD1-QZIG
 #
 # model = RouterBOARD DynaDish G-5HacD r3

@@ -1,4 +1,4 @@
-# RouterOS 6.48.1
+# RouterOS 6.48.3
 # software id = 25F3-SJT0
 #
 # model = RouterBOARD DynaDish G-5HacD r3

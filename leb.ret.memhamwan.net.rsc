@@ -1,4 +1,4 @@
-# RouterOS 6.48.2
+# RouterOS 6.48.3
 # software id = SCJG-GLK5
 #
 # model = RBLHGG-5HPacD2HPnD

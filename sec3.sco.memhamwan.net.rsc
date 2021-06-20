@@ -1,4 +1,4 @@
-# RouterOS 6.48.1
+# RouterOS 6.48.3
 # software id = 3QHR-LE3I
 #
 # model = Metal 5SHPn
@@ -80,6 +80,9 @@ add interface=ether1-local list=mac-winbox
 add address=44.34.128.36/28 interface=ether1-local network=44.34.128.32
 add address=44.34.128.81/28 interface=wlan1-gateway network=44.34.128.80
 add address=44.34.128.39 interface=vrrp1 network=44.34.128.39
+/ip dhcp-server lease
+add address=44.34.128.93 client-id=1:4c:5e:c:84:d:df mac-address=\
+    4C:5E:0C:84:0D:DF server=dhcp1
 /ip dhcp-server network
 add address=44.34.128.80/28 dns-server=44.34.132.1,44.34.133.1 domain=\
     memhamwan.net gateway=44.34.128.81 netmask=28 ntp-server=\

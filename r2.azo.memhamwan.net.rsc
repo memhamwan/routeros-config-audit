@@ -1,4 +1,4 @@
-# RouterOS 6.48.1
+# RouterOS 6.48.3
 # software id = ZEFX-QKUQ
 #
 # model = 2011UiAS
@@ -92,7 +92,7 @@ add interface=bridge-local list=mac-winbox
 /ip address
 add address=44.34.129.73/28 interface=bridge-local network=44.34.129.64
 /ip dns
-set servers=8.8.8.8,8.8.4.4
+set servers=44.34.128.190
 /ip service
 set telnet disabled=yes
 set ftp disabled=yes

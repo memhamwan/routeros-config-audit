@@ -1,4 +1,4 @@
-# RouterOS 6.48.1
+# RouterOS 6.48.3
 # software id = PVD9-NLPF
 #
 # model = Metal 5SHPn
@@ -52,9 +52,6 @@ add interface=ether1-local list=mac-winbox
 add address=44.34.128.34/28 interface=ether1-local network=44.34.128.32
 add address=44.34.128.49/28 interface=wlan1-gateway network=44.34.128.48
 add address=44.34.128.39 interface=vrrp1 network=44.34.128.39
-/ip dhcp-server lease
-add address=44.34.128.61 client-id=1:4c:5e:c:85:3b:f6 mac-address=\
-    4C:5E:0C:85:3B:F6 server=dhcp1
 /ip dhcp-server network
 add address=44.34.128.48/28 dns-server=44.34.132.1,44.34.133.1 domain=\
     memhamwan.net gateway=44.34.128.49 netmask=28 ntp-server=\

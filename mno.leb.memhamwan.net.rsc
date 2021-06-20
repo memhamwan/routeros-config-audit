@@ -1,4 +1,4 @@
-# RouterOS 6.48.1
+# RouterOS 6.48.3
 # software id = Z4E3-BL2G
 #
 # model = 921UAGS-5SHPacT

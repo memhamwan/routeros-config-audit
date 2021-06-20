@@ -1,4 +1,4 @@
-# RouterOS 6.48.2
+# RouterOS 6.48.3
 # software id = 5UCR-RL1W
 #
 # model = RouterBOARD cAP 2n
@@ -67,7 +67,7 @@ add area=backbone network=44.34.129.112/28
 /snmp
 set enabled=yes
 /system clock
-set time-zone-name=America/Chicago
+set time-zone-name=America/Los_Angeles
 /system identity
 set name=omn2.crw
 /tool bandwidth-server

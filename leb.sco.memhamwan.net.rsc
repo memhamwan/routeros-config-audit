@@ -1,4 +1,4 @@
-# RouterOS 6.48.1
+# RouterOS 6.48.3
 # software id = AU1W-6DXD
 #
 # model = RBLHGG-60ad

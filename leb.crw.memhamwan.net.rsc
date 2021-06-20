@@ -1,4 +1,4 @@
-# RouterOS 6.48.2
+# RouterOS 6.48.3
 # software id = C1K3-9QMD
 #
 # model = 921UAGS-5SHPacD

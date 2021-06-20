@@ -1,4 +1,4 @@
-# RouterOS 6.48.1
+# RouterOS 6.48.3
 # software id = BX80-PIQ0
 #
 # model = 2011UiAS

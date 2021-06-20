@@ -1,4 +1,4 @@
-# RouterOS 6.48.1
+# RouterOS 6.48.3
 # software id = 28VE-05E2
 #
 # model = 960PGS

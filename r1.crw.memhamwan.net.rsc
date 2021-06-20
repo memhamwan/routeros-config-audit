@@ -1,4 +1,4 @@
-# RouterOS 6.48.2
+# RouterOS 6.48.3
 # software id = A94E-7R75
 #
 # model = RouterBOARD 3011UiAS

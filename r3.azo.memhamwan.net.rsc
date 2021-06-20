@@ -1,4 +1,4 @@
-# RouterOS 6.48.1
+# RouterOS 6.48.3
 # software id = YLJX-EZQ9
 #
 # model = RouterBOARD 3011UiAS

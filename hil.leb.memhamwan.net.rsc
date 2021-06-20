@@ -1,4 +1,4 @@
-# RouterOS 6.48.1
+# RouterOS 6.48.3
 # software id = QQ3B-SRRJ
 #
 # model = 921UAGS-5SHPacD

@@ -1,10 +1,10 @@
-# RouterOS 6.48.1
+# RouterOS 6.48.3
 # software id = Q2AC-305B
 #
 # model = RB912R-2nD
 # serial number = AFFB0A2BECC3
 /interface lte
-set [ find ] name=lte1
+set [ find ] allow-roaming=no name=lte1
 /interface bridge
 add admin-mac=74:4D:28:58:7F:CD auto-mac=no comment=defconf name=bridge
 /interface wireless
@@ -47,7 +47,7 @@ add address=44.34.128.43/28 interface=bridge network=44.34.128.32
 /ip dhcp-server network
 add address=192.168.87.0/24 comment=defconf gateway=192.168.87.1
 /ip dns
-set allow-remote-requests=yes servers=8.8.8.8,8.8.4.4
+set servers=44.34.128.190
 /ip dns static
 add address=192.168.88.1 name=router.lan
 /ip firewall nat

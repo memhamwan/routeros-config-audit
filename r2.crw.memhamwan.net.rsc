@@ -1,4 +1,4 @@
-# RouterOS 6.48.2
+# RouterOS 6.48.3
 # software id = 98ZK-FWVX
 #
 # model = RouterBOARD 750P r2
