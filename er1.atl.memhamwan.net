@@ -1,0 +1,189 @@
+#                   version: 7.23.3 (stable)
+#          factory-software: 7.1
+#              total-memory: 1024.0MiB
+#                       cpu: Intel
+#                 cpu-count: 1
+#           total-hdd-space: 24.8GiB
+#         architecture-name: x86_64
+#                board-name: CHR Vultr VC2
+#                  platform: MikroTik
+#   installed-version: 7.23.3
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION                               BY       POLICY  TIME
+# U user oxidized-full added             turnrye  write   2026-08-28 18:23:53
+#                                                 policy
+# U user group netops-backup-full added  turnrye  write   2026-08-28 18:23:53
+#                                                 policy
+# U user group netops-backup-ro added    turnrye  write   2026-08-28 18:23:53
+#                                                 policy
+# U filter rule added                    turnrye  write   2026-08-28 12:50:43
+# U  added                               turnrye  write   2026-08-28 12:50:02
+# U address added                        turnrye  write   2026-08-28 12:49:30
+# U wireguard peer entry added           turnrye  write   2026-08-28 12:49:30
+# U device added                         turnrye  write   2026-08-28 12:48:58
+# 
+# system id = 2OEkUNG/n0L
+#
+/interface bridge
+add name=bridge1 port-cost-mode=short
+/interface ethernet
+set [ find default-name=ether1 ] disable-running-check=no
+/interface wireguard
+add comment="lte.sco uplink" listen-port=13232 mtu=1420 name=wg-sco-lte
+add listen-port=13231 mtu=1420 name=wireguard1
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+/ip pool
+add name=ovpn-pool ranges=44.34.134.2-44.34.134.64
+/ip smb users
+set [ find default=yes ] disabled=yes
+/ppp profile
+add local-address=44.34.134.1 name=ovpn remote-address=ovpn-pool
+/routing bgp instance
+add as=4288000305 name=bgp-instance-1 router-id=155.138.216.153
+/routing bgp template
+set default as=65530
+add as=4288000305 input.filter=BGP-in multihop=yes name=vultr output.filter-chain=BGP-out .redistribute=static
+/routing ospf instance
+add in-filter-chain=AMPR-default name=default-v2 originate-default=if-installed out-filter-chain=AMPR-default redistribute=connected,static,ospf,bgp,vpn,dhcp,modem router-id=44.34.129.209
+/routing ospf area
+add instance=default-v2 name=backbone-v2
+/snmp community
+set [ find default=yes ] addresses=153.66.103.187/32
+/system logging action
+set 3 remote=44.34.132.6 remote-log-format=syslog remote-port=5514
+/user group
+add name=oxidized policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
+add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
+add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
+/ip firewall connection tracking
+set udp-timeout=10s
+/ip neighbor discovery-settings
+set discover-interface-list=none
+/ipv6 settings
+set max-neighbor-entries=15360
+/interface ovpn-server server
+add auth=sha1,md5 certificate=ovpnServer cipher=aes256-cbc mac-address=FE:E8:A6:97:78:80 name=ovpn-server1
+/interface sstp-server server
+set authentication=mschap2 default-profile=default-encryption enabled=yes
+/interface wireguard peers
+add allowed-address=44.34.135.2/32,44.34.130.48/28,224.0.0.0/24 comment=marion-allstar interface=wireguard1 name=peer3 persistent-keepalive=15s public-key="I9QpXs2eoWgWMYozK27tyqXpErVRj4PWiZqJGrwWqT4="
+add allowed-address=44.34.135.3/32 comment=k0ret-allstar interface=wireguard1 name=peer4 persistent-keepalive=15s public-key="s0JhCpecwtyD7H8M7uDlrDoT3yNwp5ohDrXfOgFOhgM="
+add allowed-address=44.34.135.4/32 comment=W4BS-642800 interface=wireguard1 name=peer5 persistent-keepalive=15s public-key="fuv1YENQ89MEI1bYc+ua1dnkzq93k39lNqgc/PSAClo="
+add allowed-address=44.34.135.5/32 comment=r1.sco interface=wireguard1 name=peer6 persistent-keepalive=15s public-key="oJw2oe5H+9zjY0lVcFPyh6JWOqexiGyEa80RJnATHUM="
+add allowed-address=44.34.135.6/32 comment=wireguard1.63870-allstar-n5aln.memhamwan.net interface=wireguard1 name=peer7 persistent-keepalive=15s public-key="nAsp+uKgdb9YZKU68+Po8y3EamIYwkqsoc7F6kcAaw8="
+add allowed-address=44.34.135.7/32 comment=N5MSC-46060-hughes-444.950 interface=wireguard1 name=peer8 persistent-keepalive=15s public-key="QAnB+dhoJqdsA1gWuLVwFlXkEsVoHw4kFBLG5id5bG4="
+add allowed-address=0.0.0.0/0 comment="lte.sco SCO LTE uplink" interface=wg-sco-lte name=lte.sco public-key="n6XNEmVcdA3clmY8yYqYzAEBYuhSwJ/RLqw+0UvAY2k="
+/ip address
+add address=44.34.129.209/28 comment=test2 interface=bridge1 network=44.34.129.208
+add address=44.34.135.1/24 interface=wireguard1 network=44.34.135.0
+add address=44.34.129.210/28 comment="TEMP diag" interface=bridge1 network=44.34.129.208
+add address=44.34.131.176 interface=wg-sco-lte network=44.34.131.177
+/ip dhcp-client
+add interface=ether1 name=client1
+/ip dns
+set servers=44.34.132.1
+/ip firewall address-list
+add address=216.93.248.80 list=denylist
+add address=43.175.238.207 list=denylist
+add address=103.77.246.204 list=denylist
+/ip firewall filter
+add action=drop chain=forward dst-address=44.34.129.130
+add action=accept chain=forward dst-address=44.34.128.42
+add action=drop chain=forward dst-address=44.34.128.161 port=53 protocol=udp
+add action=accept chain=forward dst-address=44.34.128.178
+add action=drop chain=forward dst-address=44.34.128.190 port=53 protocol=udp
+add action=drop chain=forward dst-address=44.34.132.1 port=53 protocol=udp
+add action=drop chain=forward dst-address=44.34.132.1 port=53 protocol=tcp
+add action=drop chain=forward comment=esxi dst-address=44.34.128.164 in-interface=ether1
+add action=drop chain=forward comment=ip-cam dst-address=44.34.129.72 in-interface=ether1
+add action=drop chain=forward comment=weather-station dst-address=44.34.129.71 in-interface=ether1
+add action=drop chain=forward dst-address=44.34.128.160/27
+add action=drop chain=forward dst-address=44.34.128.80/28
+add action=drop chain=forward dst-address=44.34.128.48/28
+add action=drop chain=forward dst-address=44.34.128.64/28
+add action=drop chain=forward dst-address=44.34.128.112/28
+add action=drop chain=forward dst-address=44.34.128.128/28
+add action=drop chain=forward dst-address=44.34.128.144/28
+add action=drop chain=forward disabled=yes dst-address=44.34.129.32/27
+add action=drop chain=forward dst-address=44.34.129.64/28
+add action=drop chain=forward dst-address=44.34.129.128/28
+add action=accept chain=input disabled=yes dst-port=13231 log=yes protocol=udp
+add action=drop chain=forward src-address-list=denylist
+add action=accept chain=input comment="wg lte.sco uplink" dst-port=13232 protocol=udp
+/ip ipsec profile
+set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
+/ip route
+add blackhole comment=bgp-adv distance=1 dst-address=44.34.128.0/21
+/ip service
+set ftp disabled=yes
+set telnet disabled=yes
+set www disabled=yes
+set ssh port=222
+set winbox disabled=yes
+set api disabled=yes
+set api-ssl disabled=yes
+/ip ssh
+set strong-crypto=yes
+/ipv6 nd
+# automatic dns option advertising is not started, re-apply dns config
+set [ find default=yes ] advertise-dns=yes
+/ppp secret
+add local-address=44.34.131.164 name=ret-er remote-address=44.34.131.165 service=sstp
+add local-address=44.34.131.166 name=apleb-er remote-address=44.34.131.167 service=sstp
+add name=client1 profile=ovpn
+add name=client2 profile=ovpn
+add name=myuser5 profile=ovpn
+add local-address=44.34.131.168 name=oob-ftn remote-address=44.34.131.169 service=sstp
+add local-address=44.34.131.170 name=oob-azo remote-address=44.34.131.171 service=sstp
+add local-address=44.34.131.172 name=oob-sco remote-address=44.34.131.173 service=sstp
+add local-address=44.34.131.174 name=sstp-mch remote-address=44.34.131.175 service=sstp
+/routing bgp connection
+add instance=bgp-instance-1 local.address=155.138.216.153 .role=ebgp name=vultr remote.address=169.254.169.254 .as=64515 .ttl=2 templates=vultr
+/routing filter rule
+add chain=hamwan-out disabled=no rule="if (dst in 44.0.0.0/8 && dst-len in 8-32) { accept; }"
+add chain=hamwan-out disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
+add chain=hamwan-out disabled=no rule="reject;"
+add chain=BGP-in disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
+add chain=BGP-out disabled=no rule="if (dst == 44.34.128.0/21) { accept; }"
+add chain=AMPR-default disabled=no rule="if (dst in 44.0.0.0/8 && dst-len in 8-32) { accept; }"
+add chain=AMPR-default disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
+/routing ospf interface-template
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 disabled=no interfaces=bridge1 networks=44.34.129.208/28 priority=1
+add area=backbone-v2 auth=md5 auth-id=1 cost=100 disabled=no interfaces=dynamic networks=44.34.131.165 priority=1 type=ptp
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 disabled=no interfaces=dynamic networks=44.34.131.167 priority=1 type=ptp
+add area=backbone-v2 auth=md5 auth-id=1 cost=20 disabled=no interfaces=dynamic networks=44.34.131.169 priority=1 type=ptp
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 disabled=no interfaces=dynamic networks=44.34.131.171 priority=1 type=ptp
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 disabled=no interfaces=dynamic networks=44.34.131.173 priority=1 type=ptp
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 disabled=no interfaces=wireguard1 networks=44.34.135.0/24 priority=1 type=ptp
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 disabled=no interfaces=dynamic networks=44.34.131.175 priority=1 type=ptp
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 interfaces=wg-sco-lte networks=44.34.131.177 type=ptp
+/snmp
+set contact=ryan@turnrye.com enabled=yes location=ftn.sco
+/system clock
+set time-zone-autodetect=no time-zone-name=America/Chicago
+/system identity
+set name=er1.atl.memhamwan.net
+/system logging
+set 3 action=memory
+add action=remote disabled=yes topics=!debug,!snmp
+add action=echo disabled=yes topics=sstp
+add action=echo disabled=yes topics=wireguard
+add action=echo disabled=yes topics=ospf
+/system ntp client
+set enabled=yes
+/system ntp client servers
+add address=44.34.128.181
+/tool bandwidth-server
+set authenticate=no enabled=no
+/tool mac-server
+set allowed-interface-list=none
+/tool mac-server mac-winbox
+set allowed-interface-list=none
+/tool mac-server ping
+set enabled=no
+/tool romon
+set enabled=yes
+/tool sniffer
+set file-name=sniff.pcap
