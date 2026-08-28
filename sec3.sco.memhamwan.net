@@ -1,0 +1,153 @@
+#                   version: 7.12.1 (stable)
+#              total-memory: 64.0MiB
+#                       cpu: MIPS 24Kc V7.4
+#                 cpu-count: 1
+#           total-hdd-space: 128.0MiB
+#         architecture-name: mipsbe
+#                board-name: Metal 5SHPn
+#                  platform: MikroTik
+#   installed-version: 7.12.1
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION                               BY       POLICY  TIME
+# U user oxidized-full added             turnrye  write   1971-01-02 16:00:37
+#                                                 policy
+# U user oxidized added                  turnrye  write   1971-01-02 16:00:37
+#                                                 policy
+# U user group netops-backup-full added  turnrye  write   1971-01-02 16:00:37
+#                                                 policy
+# U user group netops-backup-ro added    turnrye  write   1971-01-02 16:00:37
+#                                                 policy
+# 
+# software id = 3QHR-LE3I
+#
+# model = Metal 5SHPn
+# serial number = 4A08016F4ED5
+/interface wireless
+# in scan-list unsupported channel: o3-5
+# MTU > L2MTU
+set [ find default-name=wlan1 ] band=5ghz-onlyn channel-width=10mhz country=no_country_set disabled=no frequency=5880 frequency-mode=superchannel mode=ap-bridge mtu=2290 name=wlan1-gateway nv2-cell-radius=100 radio-name=sec3.sco scan-list=HamWAN ssid=HamWAN station-roaming=enabled tdma-period-size=4 wireless-protocol=nv2
+/interface ethernet
+set [ find default-name=ether1 ] advertise="10M-baseT-half,10M-baseT-full,100M-baseT-half,100M-baseT-full,1G-baseT-half,1G-baseT-full" name=ether1-local
+/interface vrrp
+add authentication=ah disabled=yes interface=ether1-local name=vrrp1 version=2
+/interface list
+add exclude=dynamic name=discover
+add name=mactel
+add name=mac-winbox
+/interface lte apn
+set [ find default=yes ] ip-type=ipv4 use-network-apn=no
+/interface wireless channels
+add band=5ghz-onlyn comment="Cell sites radiate this at 0 degrees (north)" frequency=5920 list=HamWAN name=s1-10 width=10
+add band=5ghz-onlyn comment="Cell sites radiate this at 120 degrees (south-east)" frequency=5900 list=HamWAN name=s2-10 width=10
+add band=5ghz-onlyn comment="Cell sites radiate this at 240 degrees (south-west)" frequency=5880 list=HamWAN name=s3-10 width=10
+add band=5ghz-onlyn comment="Cell sites radiate this at 0 degrees (north)" frequency=5920 list=HamWAN name=s1-5 width=5
+add band=5ghz-onlyn comment="Cell sites radiate this at 120 degrees (south-east)" frequency=5900 list=HamWAN name=s2-5 width=5
+add band=5ghz-onlyn comment="Cell sites radiate this at 240 degrees (south-west)" frequency=5880 list=HamWAN name=s3-5 width=5
+add band=5ghz-onlyn comment="Extra channel" frequency=5865 list=HamWAN name=o1-5 width=5
+add band=5ghz-onlyn comment="Extra channel" frequency=5855 list=HamWAN name=o2-5 width=5
+add band=5ghz-onlyn comment="Extra channel" frequency=8545 list=HamWAN name=o3-5 width=5
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity="HamWAN Memphis Metro, Inc"
+/ip ipsec proposal
+set [ find default=yes ] enc-algorithms=aes-128-cbc
+/ip pool
+add name=hamwan ranges=44.34.128.82-44.34.128.94
+add name=pool1 ranges=44.34.128.82-44.34.128.94
+/ip dhcp-server
+add address-pool=pool1 authoritative=after-2sec-delay interface=wlan1-gateway lease-time=1h name=dhcp1
+/routing bgp template
+set default disabled=no output.network=bgp-networks
+/routing ospf instance
+add disabled=no in-filter-chain=AMPR-default name=default-v2 originate-default=if-installed out-filter-chain=AMPR-default redistribute=connected,ospf,bgp router-id=44.34.128.36
+add disabled=no name=default-v3 version=3
+/routing ospf area
+add disabled=no instance=default-v2 name=backbone-v2
+add disabled=yes instance=default-v3 name=backbone-v3
+/snmp community
+set [ find default=yes ] addresses=44.0.0.0/8
+/system logging action
+set 1 disk-file-name=""
+set 3 bsd-syslog=yes remote=44.34.132.6 remote-port=5514
+add bsd-syslog=yes name=centrallogging remote=44.34.128.171 syslog-facility=syslog target=remote
+/user group
+add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
+add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
+#error exporting "/interface/bridge/calea"
+/ip neighbor discovery-settings
+set discover-interface-list=none
+/ip settings
+set max-neighbor-entries=8192
+/ipv6 settings
+set disable-ipv6=yes max-neighbor-entries=8192
+/interface list member
+add interface=ether1-local list=discover
+add interface=vrrp1 list=discover
+add interface=ether1-local list=mactel
+add interface=ether1-local list=mac-winbox
+/interface ovpn-server server
+set auth=sha1,md5
+/ip address
+add address=44.34.128.36/28 interface=ether1-local network=44.34.128.32
+add address=44.34.128.81/28 interface=wlan1-gateway network=44.34.128.80
+add address=44.34.128.39 interface=vrrp1 network=44.34.128.39
+/ip dhcp-server lease
+add address=44.34.128.93 client-id=1:4c:5e:c:84:d:df mac-address=4C:5E:0C:84:0D:DF server=dhcp1
+/ip dhcp-server network
+add address=44.34.128.80/28 dns-server=44.34.132.1,44.34.133.1 domain=memhamwan.net gateway=44.34.128.81 netmask=28 ntp-server=44.34.132.3,44.34.133.3
+/ip dns
+set servers=8.8.8.8
+#error exporting "/ip/firewall/calea"
+/ip service
+set telnet disabled=yes
+set ftp disabled=yes
+set www disabled=yes
+set ssh port=222
+set api disabled=yes
+set winbox disabled=yes
+set api-ssl disabled=yes
+/ip ssh
+set forwarding-enabled=remote strong-crypto=yes
+/ipv6 nd
+set [ find default=yes ] advertise-dns=no
+/routing bfd configuration
+add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
+/routing filter rule
+add chain=AMPR-default disabled=no rule="if (dst in 44.0.0.0/8 && dst-len in 8-32) { accept; }"
+add chain=AMPR-default disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
+add chain=AMPR-default disabled=no rule="reject;"
+/routing ospf interface-template
+add area=backbone-v2 auth=md5 auth-id=1 auth-key=REDACTED cost=10 disabled=no interfaces=ether1-local networks=44.34.128.32/28 priority=1 use-bfd=no
+add area=backbone-v2 auth=md5 auth-id=1 auth-key=REDACTED cost=30 disabled=no interfaces=wlan1-gateway networks=44.34.128.80/28 priority=1 use-bfd=no
+add area=backbone-v2 disabled=no interfaces=vrrp1 networks=44.34.128.39 priority=1
+/snmp
+set contact="#HamWAN on irc.freenode.org" enabled=yes
+/system clock
+set time-zone-autodetect=no time-zone-name=America/Chicago
+/system identity
+set name=sec3.sco.memhamwan.net
+/system leds
+set 1 interface=wlan1-gateway
+/system logging
+set 3 action=memory
+add action=remote topics=!debug,!snmp
+/system note
+set show-at-login=no
+/system ntp client
+set enabled=yes
+/system ntp client servers
+add address=44.34.128.181
+add address=44.34.133.3
+add address=ntp.memhamwan.net
+/tool bandwidth-server
+set authenticate=no enabled=no
+/tool mac-server
+set allowed-interface-list=none
+/tool mac-server mac-winbox
+set allowed-interface-list=none
+/tool mac-server ping
+set enabled=no
+/tool romon
+set enabled=yes
+/tool romon port
+add cost=1 forbid=yes interface=wlan1-gateway
