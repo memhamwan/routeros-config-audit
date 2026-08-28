@@ -1,0 +1,128 @@
+#                   version: 7.19.6 (stable)
+#              total-memory: 64.0MiB
+#                       cpu: MIPS 74Kc V4.12
+#                 cpu-count: 1
+#           total-hdd-space: 128.0MiB
+#         architecture-name: mipsbe
+#                board-name: RB911G-5HPnD
+#                  platform: MikroTik
+#   installed-version: 7.19.6
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION                               BY       POLICY  TIME
+# U user oxidized-full added             turnrye  write   2026-08-28 19:26:46
+#                                                 policy
+# U user oxidized added                  turnrye  write   2026-08-28 19:26:46
+#                                                 policy
+# U user group netops-backup-full added  turnrye  write   2026-08-28 19:26:46
+#                                                 policy
+# U user group netops-backup-ro added    turnrye  write   2026-08-28 19:26:46
+#                                                 policy
+# 
+# software id = W7AZ-7ES1
+#
+# model = RB911G-5HPnD
+# serial number = 518F047652EA
+/interface list
+add comment=defconf name=WAN
+add comment=defconf name=LAN
+/interface lte apn
+set [ find default=yes ] ip-type=ipv4 use-network-apn=no
+/interface wireless channels
+add band=5ghz-onlyn comment="Cell sites radiate this at 0 degrees (north)" frequency=5920 list=HamWAN name=Sector1-5 width=5
+add band=5ghz-onlyn comment="Cell sites radiate this at 120 degrees (south-east)" frequency=5900 list=HamWAN name=Sector2-5 width=5
+add band=5ghz-onlyn comment="Cell sites radiate this at 240 degrees (south-west)" frequency=5880 list=HamWAN name=Sector3-5 width=5
+add band=5ghz-onlyn comment="Cell sites radiate this at 0 degrees (north)" frequency=5920 list=HamWAN name=Sector1-10 width=10
+add band=5ghz-onlyn comment="Cell sites radiate this at 120 degrees (south-east)" frequency=5900 list=HamWAN name=Sector2-10 width=10
+add band=5ghz-onlyn comment="Cell sites radiate this at 240 degrees (south-west)" frequency=5880 list=HamWAN name=Sector3-10 width=10
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+add authentication-types=wpa-psk,wpa2-psk eap-methods="" management-protection=allowed mode=dynamic-keys name=hamwan supplicant-identity=""
+/interface wireless
+set [ find default-name=wlan1 ] adaptive-noise-immunity=ap-and-client-mode antenna-gain=5 band=5ghz-a/n compression=yes country="united states3" disabled=no distance=10 frequency=5805 frequency-mode=superchannel hide-ssid=yes hw-retries=15 installation=outdoor mode=station-bridge nv2-cell-radius=10 radio-name=sco.ftn.memhamwan.net security-profile=hamwan ssid=HamWAN-ftn-sco tdma-period-size=10 wireless-protocol=nv2-nstreme-802.11
+/ip pool
+add name=default-dhcp ranges=192.168.88.10-192.168.88.254
+add name=dhcp-pool ranges=192.168.88.100-192.168.88.199
+/ip smb users
+set [ find default=yes ] disabled=yes
+/routing bgp template
+set default disabled=no output.network=bgp-networks
+/routing ospf instance
+add disabled=no in-filter-chain=AMPR-default name=default-v2 originate-default=if-installed out-filter-chain=AMPR-default redistribute=connected,ospf,bgp router-id=44.34.129.195
+/routing ospf area
+add disabled=no instance=default-v2 name=backbone-v2
+/snmp community
+set [ find default=yes ] addresses=153.66.103.187/32
+/system logging action
+set 3 remote=44.34.132.6 remote-log-format=syslog remote-port=5514
+/user group
+add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
+add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
+/ip firewall connection tracking
+set udp-timeout=10s
+/ip neighbor discovery-settings
+set discover-interface-list=LAN
+/ip settings
+set max-neighbor-entries=8192
+/ipv6 settings
+set disable-ipv6=yes max-neighbor-entries=8192
+/interface list member
+add comment=defconf interface=ether1 list=LAN
+add comment=defconf interface=wlan1 list=WAN
+/interface ovpn-server server
+add auth=sha1,md5 mac-address=FE:E5:4F:A3:F7:80 name=ovpn-server1
+/ip address
+add address=192.168.88.1/24 comment=defconf interface=ether1 network=192.168.88.0
+add address=44.34.129.195/28 interface=ether1 network=44.34.129.192
+add address=44.34.131.147 interface=wlan1 network=44.34.131.146
+/ip dhcp-client
+add add-default-route=no comment=defconf disabled=yes interface=wlan1
+/ip dns
+set servers=8.8.8.8
+/ip dns static
+add address=192.168.88.1 comment=defconf name=router.lan type=A
+/ip firewall mangle
+add action=change-mss chain=output new-mss=1378 protocol=tcp tcp-flags=syn tcp-mss=!0-1378
+add action=change-mss chain=forward new-mss=1378 protocol=tcp tcp-flags=syn tcp-mss=!0-1378
+/ip ipsec profile
+set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
+/ip service
+set ftp disabled=yes
+set telnet disabled=yes
+set www disabled=yes
+set ssh port=222
+set api disabled=yes
+set api-ssl disabled=yes
+/ip smb shares
+set [ find default=yes ] directory=/pub
+/ip ssh
+set strong-crypto=yes
+/routing bfd configuration
+add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
+/routing filter rule
+add chain=AMPR-default disabled=no rule="if (dst in 44.0.0.0/8 && dst-len in 8-32) { accept; }"
+add chain=AMPR-default disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
+add chain=AMPR-default disabled=no rule="reject;"
+/routing ospf interface-template
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 disabled=no interfaces=ether1 networks=44.34.129.192/28 priority=1 use-bfd=no
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 disabled=no interfaces=wlan1 networks=44.34.131.146 priority=2 type=ptp use-bfd=no
+/snmp
+set contact=ryan@turnrye.com enabled=yes location=sco.ftn
+/system clock
+set time-zone-name=America/New_York
+/system identity
+set name=sco.ftn.memhamwan.net
+/system logging
+set 3 action=memory
+add action=remote topics=!debug,!snmp
+add action=echo disabled=yes topics=!ssh,!ospf
+/system ntp client
+set enabled=yes
+/system ntp client servers
+add address=us.pool.ntp.org
+/tool mac-server
+set allowed-interface-list=LAN
+/tool mac-server mac-winbox
+set allowed-interface-list=LAN
+/tool romon
+set enabled=yes
