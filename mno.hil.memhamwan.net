@@ -1,0 +1,130 @@
+#                   version: 7.17 (stable)
+#              total-memory: 128.0MiB
+#                       cpu: MIPS 74Kc V5.0
+#                 cpu-count: 1
+#           total-hdd-space: 128.0MiB
+#         architecture-name: mipsbe
+#                board-name: NetMetal 5
+#                  platform: HamWAN
+#   installed-version: 7.17
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION                               BY       POLICY  TIME
+# U user oxidized-full added             turnrye  write   1971-08-02 02:38:04
+#                                                 policy
+# U user oxidized added                  turnrye  write   1971-08-02 02:38:04
+#                                                 policy
+# U user group netops-backup-full added  turnrye  write   1971-08-02 02:38:04
+#                                                 policy
+# U user group netops-backup-ro added    turnrye  write   1971-08-02 02:38:04
+#                                                 policy
+# 
+# software id = R2YK-BVVU
+#
+# model = RB921UAGS-5SHPacT
+# serial number = 620804E58A8D
+/interface bridge
+add fast-forward=no mtu=1500 name=bridge1 port-cost-mode=short
+/interface ethernet
+set [ find default-name=sfp1 ] advertise="10M-baseT-half,10M-baseT-full,100M-baseT-half,100M-baseT-full,1G-baseT-half,1G-baseT-full"
+/interface vrrp
+add authentication=ah interface=ether1 name=vrrp1 version=2
+/interface lte apn
+set [ find default=yes ] ip-type=ipv4 use-network-apn=no
+/interface wireless channels
+add band=5ghz-onlyn comment="Cell sites radiate this at 0 degrees (north)" frequency=5915 list=HamWAN name=Sector1-10 width=20
+add band=5ghz-onlyn comment="Cell sites radiate this at 120 degrees (south-east)" frequency=5885 list=HamWAN name=Sector2-10 width=20
+add band=5ghz-onlyn comment="Cell sites radiate this at 240 degrees (south-west)" frequency=5855 list=HamWAN name=Sector3-10 width=20
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+add authentication-types=wpa-psk,wpa2-psk eap-methods="" management-protection=allowed mode=dynamic-keys name=hamwan supplicant-identity=""
+/interface wireless
+set [ find default-name=wlan1 ] adaptive-noise-immunity=ap-and-client-mode antenna-gain=15 band=5ghz-onlyac channel-width=20/40/80mhz-eeeC country="united states" disabled=no frequency=5825 mode=bridge mtu=1600 nv2-cell-radius=18 radio-name=KM4ECM rx-chains=0,1 security-profile=hamwan ssid=HamWAN-hil-mno station-roaming=enabled tx-chains=0,1 wireless-protocol=nv2
+/ip smb users
+set [ find default=yes ] disabled=yes
+/routing bgp template
+set default disabled=no output.network=bgp-networks
+/routing ospf instance
+add disabled=no in-filter-chain=AMPR-default name=default-v2 originate-default=if-installed out-filter-chain=AMPR-default redistribute=connected,ospf,bgp router-id=44.34.131.139
+/routing ospf area
+add disabled=no instance=default-v2 name=backbone-v2
+/snmp community
+set [ find default=yes ] addresses=44.0.0.0/8 name=hamwan
+add addresses=44.0.0.0/8 name=public
+/system logging action
+set 3 bsd-syslog=yes remote=44.34.132.6 remote-port=5514
+add bsd-syslog=yes name=centrallogging remote=44.34.128.171 syslog-facility=syslog target=remote
+/interface bridge port
+add bridge=bridge1 ingress-filtering=no interface=wlan1 internal-path-cost=10 path-cost=10
+/ip firewall connection tracking
+set udp-timeout=10s
+/ip neighbor discovery-settings
+set discover-interface-list=none
+/ip settings
+set max-neighbor-entries=8192
+/ipv6 settings
+set disable-ipv6=yes max-neighbor-entries=8192
+/interface ovpn-server server
+add auth=sha1,md5 mac-address=FE:B5:E2:AD:4E:40 name=ovpn-server1
+/ip address
+add address=44.34.128.110/28 interface=ether1 network=44.34.128.96
+add address=44.34.128.102/28 interface=vrrp1 network=44.34.128.96
+add address=44.34.131.139 interface=bridge1 network=44.34.131.138
+/ip dns
+set servers=8.8.8.8,8.8.4.4
+/ip ipsec profile
+set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
+/ip service
+set telnet disabled=yes
+set ftp disabled=yes
+set www disabled=yes
+set ssh port=222
+set api disabled=yes
+set winbox disabled=yes
+set api-ssl disabled=yes
+/ip smb shares
+set [ find default=yes ] directory=/pub
+/ip ssh
+set forwarding-enabled=remote strong-crypto=yes
+/routing bfd configuration
+add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
+/routing filter rule
+add chain=AMPR-default disabled=no rule="if (dst in 44.0.0.0/8 && dst-len in 8-32) { accept; }"
+add chain=AMPR-default disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
+add chain=AMPR-default disabled=no rule="reject;"
+/routing ospf interface-template
+add area=backbone-v2 auth=md5 auth-id=1 auth-key=REDACTED cost=10 disabled=no interfaces=ether1 networks=44.34.128.96/28 priority=1 use-bfd=no
+add area=backbone-v2 disabled=no interfaces=vrrp1 networks=44.34.128.96/28 priority=1
+add area=backbone-v2 auth=md5 auth-id=1 auth-key=REDACTED cost=10 disabled=no interfaces=bridge1 networks=44.34.131.138 priority=1 type=ptp use-bfd=no
+/snmp
+set contact="#HamWAN on irc.freenode.org" enabled=yes src-address=44.34.128.110 trap-version=2
+/system clock
+set time-zone-autodetect=no time-zone-name=America/Chicago
+/system identity
+set name=mno.hil.memhamwan.net
+/system leds
+set 1 interface=wlan1
+/system logging
+set 3 action=memory
+add action=remote topics=!debug,!snmp
+/system note
+set show-at-login=no
+/system ntp client
+set enabled=yes
+/system ntp client servers
+add address=44.34.128.181
+add address=44.34.133.3
+add address=ntp.memhamwan.net
+/tool bandwidth-server
+set authenticate=no enabled=no
+/tool mac-server
+set allowed-interface-list=none
+/tool mac-server mac-winbox
+set allowed-interface-list=none
+/tool mac-server ping
+set enabled=no
+/tool romon
+set enabled=yes
+/user group
+add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
+add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
