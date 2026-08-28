@@ -1,0 +1,182 @@
+#                   version: 7.19.4 (stable)
+#              total-memory: 128.0MiB
+#                       cpu: MIPS 74Kc V4.12
+#                 cpu-count: 1
+#           total-hdd-space: 128.0MiB
+#         architecture-name: mipsbe
+#                board-name: CRS125-24G-1S
+#                  platform: MikroTik
+#   installed-version: 7.19.4
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION                               BY       POLICY  TIME
+# U user oxidized-full added             turnrye  write   2025-10-02 06:39:03
+#                                                 policy
+# U user oxidized added                  turnrye  write   2025-10-02 06:39:02
+#                                                 policy
+# U user group netops-backup-full added  turnrye  write   2025-10-02 06:39:02
+#                                                 policy
+# U user group netops-backup-ro added    turnrye  write   2025-10-02 06:39:02
+#                                                 policy
+# 
+# software id = JSLF-NLB9
+#
+# model = CRS125-24G-1S
+# serial number = 624D05D798CB
+/interface bridge
+add admin-mac=E4:8D:8C:A5:66:38 auto-mac=no comment="created from master port" name=bridge1 port-cost-mode=short protocol-mode=none
+/interface ethernet
+set [ find default-name=ether1 ] name=ether1-master-local
+set [ find default-name=ether2 ] name=ether2-slave-local
+set [ find default-name=ether3 ] name=ether3-slave-local
+set [ find default-name=ether4 ] name=ether4-slave-local
+set [ find default-name=ether5 ] name=ether5-slave-local
+set [ find default-name=ether6 ] name=ether6-slave-local
+set [ find default-name=ether7 ] name=ether7-slave-local
+set [ find default-name=ether8 ] name=ether8-slave-local
+set [ find default-name=ether9 ] name=ether9-slave-local
+set [ find default-name=ether10 ] name=ether10-slave-local
+set [ find default-name=ether11 ] name=ether11-slave-local
+set [ find default-name=ether12 ] name=ether12-slave-local
+set [ find default-name=ether13 ] name=ether13-slave-local
+set [ find default-name=ether14 ] name=ether14-slave-local
+set [ find default-name=ether15 ] name=ether15-slave-local
+set [ find default-name=ether16 ] name=ether16-slave-local
+set [ find default-name=ether17 ] name=ether17-slave-local
+set [ find default-name=ether18 ] name=ether18-slave-local
+set [ find default-name=ether19 ] name=ether19-slave-local
+set [ find default-name=ether20 ] name=ether20-slave-local
+set [ find default-name=ether21 ] name=ether21-slave-local
+set [ find default-name=ether22 ] name=ether22-slave-local
+set [ find default-name=ether23 ] name=ether23-slave-local
+set [ find default-name=ether24 ] name=ether24-slave-local
+set [ find default-name=sfp1 ] name=sfp1-slave-local
+/interface lte apn
+set [ find default=yes ] ip-type=ipv4 use-network-apn=no
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+/ip ipsec proposal
+set [ find default=yes ] enc-algorithms=aes-128-cbc
+/ip smb users
+set [ find default=yes ] disabled=yes
+/port
+set 0 name=serial0
+set 1 baud-rate=9600 data-bits=8 flow-control=none name=usb2 parity=none stop-bits=1
+/interface ppp-client
+add apn=internet default-route-distance=0 name=ppp-out1 port=usb2
+/routing bgp template
+set default disabled=no output.network=bgp-networks
+/routing ospf instance
+add disabled=no in-filter-chain=AMPR-default name=default-v2 originate-default=if-installed out-filter-chain=AMPR-default redistribute=connected,ospf router-id=44.34.129.34
+/routing ospf area
+add disabled=no instance=default-v2 name=backbone-v2
+/snmp community
+set [ find default=yes ] addresses=44.0.0.0/8
+/system logging action
+set 3 remote=44.34.132.6 remote-log-format=syslog remote-port=5514
+add name=centrallogging remote=44.34.128.171 remote-log-format=syslog syslog-facility=syslog target=remote
+/user group
+add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
+add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
+/interface bridge port
+add bridge=bridge1 ingress-filtering=no interface=ether2-slave-local internal-path-cost=10 path-cost=10
+add bridge=bridge1 ingress-filtering=no interface=ether3-slave-local internal-path-cost=10 path-cost=10
+add bridge=bridge1 ingress-filtering=no interface=ether4-slave-local internal-path-cost=10 path-cost=10
+add bridge=bridge1 ingress-filtering=no interface=ether5-slave-local internal-path-cost=10 path-cost=10
+add bridge=bridge1 ingress-filtering=no interface=ether6-slave-local internal-path-cost=10 path-cost=10
+add bridge=bridge1 ingress-filtering=no interface=ether7-slave-local internal-path-cost=10 path-cost=10
+add bridge=bridge1 ingress-filtering=no interface=ether8-slave-local internal-path-cost=10 path-cost=10
+add bridge=bridge1 ingress-filtering=no interface=ether9-slave-local internal-path-cost=10 path-cost=10
+add bridge=bridge1 ingress-filtering=no interface=ether10-slave-local internal-path-cost=10 path-cost=10
+add bridge=bridge1 ingress-filtering=no interface=ether11-slave-local internal-path-cost=10 path-cost=10
+add bridge=bridge1 ingress-filtering=no interface=ether12-slave-local internal-path-cost=10 path-cost=10
+add bridge=bridge1 ingress-filtering=no interface=ether13-slave-local internal-path-cost=10 path-cost=10
+add bridge=bridge1 ingress-filtering=no interface=ether14-slave-local internal-path-cost=10 path-cost=10
+add bridge=bridge1 ingress-filtering=no interface=ether15-slave-local internal-path-cost=10 path-cost=10
+add bridge=bridge1 ingress-filtering=no interface=ether16-slave-local internal-path-cost=10 path-cost=10
+add bridge=bridge1 ingress-filtering=no interface=ether17-slave-local internal-path-cost=10 path-cost=10
+add bridge=bridge1 ingress-filtering=no interface=ether18-slave-local internal-path-cost=10 path-cost=10
+add bridge=bridge1 ingress-filtering=no interface=ether19-slave-local internal-path-cost=10 path-cost=10
+add bridge=bridge1 ingress-filtering=no interface=ether20-slave-local internal-path-cost=10 path-cost=10
+add bridge=bridge1 ingress-filtering=no interface=ether21-slave-local internal-path-cost=10 path-cost=10
+add bridge=bridge1 ingress-filtering=no interface=ether22-slave-local internal-path-cost=10 path-cost=10
+add bridge=bridge1 ingress-filtering=no interface=ether23-slave-local internal-path-cost=10 path-cost=10
+add bridge=bridge1 ingress-filtering=no interface=ether24-slave-local internal-path-cost=10 path-cost=10
+add bridge=bridge1 ingress-filtering=no interface=sfp1-slave-local internal-path-cost=10 path-cost=10
+add bridge=bridge1 ingress-filtering=no interface=ether1-master-local internal-path-cost=10 path-cost=10
+/ip firewall connection tracking
+set udp-timeout=10s
+/ip neighbor discovery-settings
+set discover-interface-list=all
+/ip settings
+set max-neighbor-entries=8192
+/ipv6 settings
+set disable-ipv6=yes max-neighbor-entries=8192
+/interface ovpn-server server
+add auth=sha1,md5 mac-address=FE:7C:63:26:D2:0B name=ovpn-server1
+/ip address
+add address=44.34.129.34/27 interface=bridge1 network=44.34.129.32
+add address=44.34.129.33 interface=*23 network=44.34.129.33
+/ip arp
+add address=44.34.129.50 comment=ups.mno.memhamwan.net interface=bridge1 mac-address=00:C0:B7:6D:F5:C5
+add address=44.34.129.48 comment=ilo1.esx1.memhamwan.net interface=bridge1 mac-address=00:23:7D:ED:2A:34
+/ip dhcp-client
+add interface=bridge1
+/ip dns
+set servers=8.8.8.8
+/ip firewall mangle
+add action=change-mss chain=output new-mss=1378 protocol=tcp tcp-flags=syn tcp-mss=!0-1378
+add action=change-mss chain=forward new-mss=1378 protocol=tcp tcp-flags=syn tcp-mss=!0-1378
+/ip ipsec profile
+set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
+/ip service
+set ftp disabled=yes
+set telnet disabled=yes
+set www disabled=yes
+set ssh port=222
+set winbox disabled=yes
+set api disabled=yes
+set api-ssl disabled=yes
+/ip smb shares
+set [ find default=yes ] directory=/pub
+/ip ssh
+set forwarding-enabled=remote strong-crypto=yes
+/lcd interface
+add interface=bridge1 max-speed=auto
+/lcd interface pages
+set 1 interfaces=ether13-slave-local,ether14-slave-local
+/routing bfd configuration
+add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
+/routing filter rule
+add chain=AMPR-default disabled=no rule="if (dst in 44.0.0.0/8 && dst-len in 8-32) { accept; }"
+add chain=AMPR-default disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
+add chain=AMPR-default disabled=no rule="reject;"
+/routing ospf interface-template
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 disabled=no interfaces=bridge1 networks=44.34.129.32/27 priority=1 use-bfd=no
+add area=backbone-v2 disabled=no interfaces=*23 networks=44.34.129.33 priority=1
+/snmp
+set contact="#HamWAN on irc.freenode.org" enabled=yes
+/system clock
+set time-zone-autodetect=no time-zone-name=America/Chicago
+/system identity
+set name=r1.mno.memhamwan.net
+/system logging
+set 3 action=memory
+add action=remote topics=!debug,!snmp
+/system ntp client
+set enabled=yes
+/system ntp client servers
+add address=44.34.128.181
+add address=44.34.133.3
+/tool bandwidth-server
+set authenticate=no enabled=no
+/tool mac-server
+set allowed-interface-list=none
+/tool mac-server mac-winbox
+set allowed-interface-list=none
+/tool mac-server ping
+set enabled=no
+/tool romon
+set enabled=yes
+/tool sniffer
+set filter-port=ntp
