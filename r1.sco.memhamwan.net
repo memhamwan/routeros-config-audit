@@ -1,0 +1,148 @@
+#                   version: 7.16.2 (stable)
+#          factory-software: 6.47.4
+#              total-memory: 512.0MiB
+#                       cpu: ARM
+#                 cpu-count: 1
+#           total-hdd-space: 16.0MiB
+#         architecture-name: arm
+#                board-name: CRS328-24P-4S+
+#                  platform: MikroTik
+#   installed-version: 7.16.2
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION                               BY       POLICY  TIME
+# U user oxidized-full added             turnrye  write   2026-08-28 19:21:16
+#                                                 policy
+# U user oxidized added                  turnrye  write   2026-08-28 19:21:16
+#                                                 policy
+# U user group netops-backup-full added  turnrye  write   2026-08-28 19:21:16
+#                                                 policy
+# U user group netops-backup-ro added    turnrye  write   2026-08-28 19:21:16
+#                                                 policy
+# U device changed                       turnrye  write   2026-08-28 18:16:06
+# U device changed                       turnrye  write   2026-08-28 18:15:53
+# U device changed                       turnrye  write   2026-08-28 18:15:48
+# U bridge port changed                  turnrye  write   2026-08-28 18:15:48
+# 
+# software id = IVSQ-GMDD
+#
+# model = CRS328-24P-4S+
+# serial number = HDK08WJ60NT
+/interface bridge
+add admin-mac=48:A9:8A:2D:31:54 auto-mac=no comment=defconf name=bridge port-cost-mode=short
+add name=internal-nat
+add name=public-accessible-dhcp
+add name=wan-uplink
+/interface ethernet
+set [ find default-name=ether22 ] comment=adsb
+set [ find default-name=ether23 ] comment=meshtastic
+set [ find default-name=ether24 ] comment=liveatc.net
+/interface sstp-client
+add authentication=mschap2 connect-to=155.138.216.153 disabled=no http-proxy=0.0.0.0 name=sstp-out1 user=oob-sco
+/interface wireguard
+add listen-port=37260 mtu=1420 name=wireguard1
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+/ip pool
+add name=dhcp_pool1 ranges=10.0.0.2-10.0.0.254
+add name=dhcp_pool2 ranges=44.34.130.34-44.34.130.46
+/ip dhcp-server
+add address-pool=dhcp_pool1 interface=internal-nat name=dhcp1
+add address-pool=dhcp_pool2 interface=public-accessible-dhcp name=dhcp2
+/port
+set 0 name=serial0
+/routing ospf instance
+add disabled=no in-filter-chain=AMPR-default name=default-v2 out-filter-chain=AMPR-default redistribute=connected,ospf,bgp router-id=44.34.131.173
+/routing ospf area
+add disabled=no instance=default-v2 name=backbone-v2
+/interface bridge port
+add bridge=wan-uplink comment=defconf interface=ether1 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf interface=ether2 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf interface=ether3 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf interface=ether4 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf interface=ether5 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf interface=ether6 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf interface=ether7 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf interface=ether8 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf interface=ether9 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf interface=ether10 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf interface=ether11 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf interface=ether12 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf interface=ether13 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf interface=ether14 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf interface=ether15 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf interface=ether16 internal-path-cost=10 path-cost=10
+add bridge=internal-nat comment=defconf interface=ether17 internal-path-cost=10 path-cost=10
+add bridge=internal-nat comment=defconf interface=ether18 internal-path-cost=10 path-cost=10
+add bridge=internal-nat comment=defconf interface=ether19 internal-path-cost=10 path-cost=10
+add bridge=internal-nat comment=defconf interface=ether20 internal-path-cost=10 path-cost=10
+add bridge=internal-nat comment=defconf interface=ether21 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf interface=ether22 internal-path-cost=10 path-cost=10
+add bridge=public-accessible-dhcp comment=defconf interface=ether23 internal-path-cost=10 path-cost=10
+add bridge=internal-nat comment=defconf interface=ether24 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf interface=sfp-sfpplus1 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf interface=sfp-sfpplus2 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf interface=sfp-sfpplus3 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf interface=sfp-sfpplus4 internal-path-cost=10 path-cost=10
+/ip firewall connection tracking
+set udp-timeout=10s
+/interface wireguard peers
+add allowed-address=0.0.0.0/0 endpoint-address=155.138.216.153 endpoint-port=13231 interface=wireguard1 name=peer1 public-key="T6kDWymPqSZzKo9ozAVwnMGc3tc2ryvkYL6XYmrx8U8="
+/ip address
+add address=192.168.88.1/24 comment=defconf interface=bridge network=192.168.88.0
+add address=10.0.0.1/24 interface=internal-nat network=10.0.0.0
+add address=44.34.130.33/28 interface=public-accessible-dhcp network=44.34.130.32
+add address=44.34.128.33/28 interface=bridge network=44.34.128.32
+add address=44.34.135.5 interface=wireguard1 network=44.34.135.1
+/ip dhcp-client
+add default-route-distance=200 interface=wan-uplink
+/ip dhcp-server lease
+add address=10.0.0.252 client-id=1:2c:cf:67:81:2a:85 mac-address=2C:CF:67:81:2A:85 server=dhcp1
+add address=10.0.0.251 client-id=1:b8:27:eb:73:90:40 mac-address=B8:27:EB:73:90:40 server=dhcp1
+add address=10.0.0.250 client-id=1:b8:27:eb:86:a5:c2 mac-address=B8:27:EB:86:A5:C2 server=dhcp1
+add address=44.34.130.46 client-id=1:2c:cf:67:81:2a:85 mac-address=2C:CF:67:81:2A:85 server=dhcp2
+/ip dhcp-server network
+add address=10.0.0.0/24 dns-server=8.8.8.8,8.8.4.4 gateway=10.0.0.1
+add address=44.34.130.32/28 dns-server=8.8.8.8,8.8.4.4 gateway=44.34.130.33
+/ip dns
+set servers=8.8.8.8,8.8.4.4
+/ip firewall nat
+add action=masquerade chain=srcnat out-interface=wan-uplink
+add action=masquerade chain=srcnat src-address=10.0.0.0/24
+/ip hotspot profile
+set [ find default=yes ] html-directory=hotspot
+/ip ipsec profile
+set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
+/ip route
+add disabled=no distance=150 dst-address=155.138.216.153/32 gateway=192.168.1.1
+/ip service
+set telnet disabled=yes
+set ftp disabled=yes
+set www disabled=yes
+set ssh port=222
+set api disabled=yes
+set winbox disabled=yes
+set api-ssl disabled=yes
+/ip ssh
+set forwarding-enabled=both
+/routing filter rule
+add chain=AMPR-default disabled=no rule="if (dst in 44.0.0.0/8 && dst-len in 8-32) { accept; }"
+add chain=AMPR-default disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
+add chain=AMPR-default disabled=no rule="reject;"
+/routing ospf interface-template
+add area=backbone-v2 auth=md5 auth-id=1 auth-key=REDACTED cost=10 disabled=no interfaces=public-accessible-dhcp networks=44.34.130.32/28 priority=1 use-bfd=no
+add area=backbone-v2 auth=md5 auth-id=1 auth-key=REDACTED cost=10 disabled=no interfaces=sstp-out1 networks=44.34.131.172 priority=1 type=ptp
+add area=backbone-v2 auth=md5 auth-id=1 auth-key=REDACTED cost=10 disabled=no interfaces=bridge networks=44.34.128.33/28 priority=1 use-bfd=no
+/system clock
+set time-zone-name=America/New_York
+/system identity
+set name=r1.sco
+/system note
+set show-at-login=no
+/system swos
+set allow-from-ports="p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16,p17,p18,p19,p20,p21,p22,p23,p24,p25,p26,p27,p28,p29,p30,p31,p32" identity=upstairs-switch static-ip-address=192.168.1.99
+/tool romon
+set enabled=yes
+/user group
+add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
+add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
