@@ -55,6 +55,7 @@ add bsd-syslog=yes name=centrallogging remote=44.34.128.171 syslog-facility=sysl
 add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
 add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
 add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
+#error exporting "/certificate/crl" (timeout)
 #error exporting "/interface/bridge/calea"
 /interface bridge port
 add bridge=bridge1 ingress-filtering=no interface=wlan1
@@ -76,6 +77,7 @@ set servers=8.8.8.8
 /ip firewall mangle
 add action=change-mss chain=forward new-mss=1378 passthrough=yes protocol=tcp tcp-flags=syn tcp-mss=!0-1378
 add action=change-mss chain=output new-mss=1378 passthrough=yes protocol=tcp tcp-flags=syn tcp-mss=!0-1378
+#error exporting "/ip/ipsec/identity" (timeout)
 /ip service
 set telnet disabled=yes
 set ftp disabled=yes
