@@ -1,0 +1,130 @@
+#                   version: 7.17 (stable)
+#          factory-software: 6.40
+#              total-memory: 128.0MiB
+#                       cpu: MIPS 74Kc V5.0
+#                 cpu-count: 1
+#           total-hdd-space: 16.0MiB
+#         architecture-name: mipsbe
+#                board-name: PowerBox Pro
+#                  platform: MikroTik
+#   installed-version: 7.17
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION                               BY       POLICY  TIME
+# U log rule added                       turnrye  write   2026-08-29 12:20:04
+# U log rule added                       turnrye  write   2026-08-29 12:20:04
+# U log rule added                       turnrye  write   2026-08-29 12:20:04
+# U log rule added                       turnrye  write   2026-08-29 12:20:04
+# U log rule added                       turnrye  write   2026-08-29 12:20:04
+# U log action changed                   turnrye  write   2026-08-29 12:20:00
+# U ip service changed                   turnrye  write   2026-08-29 12:19:55
+# U user mktxp added                     turnrye  write   2026-08-29 12:19:55
+#                                                 policy
+# U user group mktxp_group added         turnrye  write   2026-08-29 12:19:55
+#                                                 policy
+# U user oxidized-full added             turnrye  write   2026-08-29 12:19:52
+#                                                 policy
+# U user oxidized added                  turnrye  write   2026-08-29 12:19:52
+#                                                 policy
+# U user group netops-backup-full added  turnrye  write   2026-08-29 12:19:52
+#                                                 policy
+# U user group netops-backup-ro added    turnrye  write   2026-08-29 12:19:52
+#                                                 policy
+# 
+# software id = 0F6A-2IRW
+#
+# model = RB960PGS
+# serial number = A513091498B7
+/interface bridge
+add admin-mac=B8:69:F4:86:8B:2F auto-mac=no comment=defconf name=bridge port-cost-mode=short
+/interface ethernet
+set [ find default-name=sfp1 ] auto-negotiation=no speed=1G-baseT-full
+/interface list
+add comment=defconf name=WAN
+add comment=defconf name=LAN
+/interface lte apn
+set [ find default=yes ] ip-type=ipv4 use-network-apn=no
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+/ip smb users
+set [ find default=yes ] disabled=yes
+/routing bgp template
+set default disabled=no output.network=bgp-networks
+/routing ospf instance
+add disabled=no name=default-v2
+add disabled=no name=default-v3 version=3
+/routing ospf area
+add disabled=no instance=default-v2 name=backbone-v2
+/system logging action
+set 3 bsd-syslog=yes remote=44.34.128.45
+/interface bridge port
+add bridge=bridge comment=defconf ingress-filtering=no interface=ether2 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf ingress-filtering=no interface=ether3 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf ingress-filtering=no interface=ether4 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf ingress-filtering=no interface=ether5 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf ingress-filtering=no interface=sfp1 internal-path-cost=10 path-cost=10
+add bridge=bridge ingress-filtering=no interface=ether1 internal-path-cost=10 path-cost=10
+/ip firewall connection tracking
+set udp-timeout=10s
+/ip neighbor discovery-settings
+set discover-interface-list=LAN
+/ip settings
+set max-neighbor-entries=8192
+/ipv6 settings
+set disable-ipv6=yes max-neighbor-entries=8192
+/interface list member
+add comment=defconf interface=bridge list=LAN
+add comment=defconf interface=ether1 list=WAN
+/interface ovpn-server server
+add auth=sha1,md5 mac-address=FE:EC:B7:DC:49:60 name=ovpn-server1
+/ip address
+add address=44.34.128.107/28 interface=bridge network=44.34.128.96
+/ip dhcp-client
+add interface=bridge
+/ip dns
+set servers=8.8.8.8,8.8.4.4
+/ip ipsec profile
+set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
+/ip service
+set telnet disabled=yes
+set ftp disabled=yes
+set www disabled=yes
+set ssh port=222
+set api address=44.34.128.45/32
+set winbox disabled=yes
+set api-ssl disabled=yes
+/ip smb shares
+set [ find default=yes ] directory=/flash/pub
+/ip ssh
+set forwarding-enabled=both
+/routing bfd configuration
+add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
+add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
+/routing filter rule
+add chain=AMPR-default disabled=no rule="if (dst in 44.0.0.0/8 && dst-len in 8-32) { accept; }"
+add chain=AMPR-default disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
+add chain=AMPR-default disabled=no rule="reject;"
+/routing ospf interface-template
+add area=backbone-v2 auth=md5 auth-id=1 auth-key=REDACTED cost=10 disabled=no interfaces=bridge networks=44.34.128.96/28 priority=1 use-bfd=no
+/system clock
+set time-zone-name=America/New_York
+/system identity
+set name=r2.hil
+/system logging
+add action=remote topics=system
+add action=remote topics=error
+add action=remote topics=warning
+add action=remote topics=critical
+add action=remote topics=account
+/system note
+set show-at-login=no
+/tool mac-server
+set allowed-interface-list=LAN
+/tool mac-server mac-winbox
+set allowed-interface-list=LAN
+/tool romon
+set enabled=yes
+/user group
+add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
+add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
+add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
