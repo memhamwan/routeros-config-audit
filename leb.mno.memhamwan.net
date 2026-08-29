@@ -7,22 +7,6 @@
 #                board-name: NetMetal 5
 #                  platform: MikroTik
 #   installed-version: 7.12.1
-# Flags: U - UNDOABLE
-# Columns: ACTION, BY, POLICY, TIME
-#   ACTION                               BY       POLICY  TIME
-# U ip service changed                   turnrye  write   1970-12-13 01:51:12
-# U user mktxp added                     turnrye  write   1970-12-13 01:51:12
-#                                                 policy
-# U user group mktxp_group added         turnrye  write   1970-12-13 01:51:12
-#                                                 policy
-# U user oxidized-full added             turnrye  write   1970-12-12 21:58:48
-#                                                 policy
-# U user oxidized added                  turnrye  write   1970-12-12 21:58:48
-#                                                 policy
-# U user group netops-backup-full added  turnrye  write   1970-12-12 21:58:48
-#                                                 policy
-# U user group netops-backup-ro added    turnrye  write   1970-12-12 21:58:48
-#                                                 policy
 # 
 # software id = XTAG-7W68
 #
@@ -49,7 +33,7 @@ add disabled=no instance=default-v2 name=backbone-v2
 set [ find default=yes ] addresses=44.0.0.0/8
 /system logging action
 set 0 memory-lines=1
-set 3 bsd-syslog=yes remote=44.34.132.6 remote-port=5514
+set 3 bsd-syslog=yes remote=44.34.128.45
 add bsd-syslog=yes name=centrallogging remote=44.34.128.171 syslog-facility=syslog target=remote
 /user group
 add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
@@ -108,7 +92,11 @@ set name=leb.mno.memhamwan.net
 set 1 interface=wlan1
 /system logging
 set 3 action=memory
-add action=remote topics=!debug,!snmp
+add action=remote topics=system
+add action=remote topics=error
+add action=remote topics=warning
+add action=remote topics=critical
+add action=remote topics=account
 /system note
 set show-at-login=no
 /system ntp client
