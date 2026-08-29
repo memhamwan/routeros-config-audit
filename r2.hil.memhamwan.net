@@ -11,6 +11,7 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                               BY       POLICY  TIME
+# U ovpn server added                             read    2026-08-29 12:35:21
 # U log rule added                       turnrye  write   2026-08-29 12:20:04
 # U log rule added                       turnrye  write   2026-08-29 12:20:04
 # U log rule added                       turnrye  write   2026-08-29 12:20:04
