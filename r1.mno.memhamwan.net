@@ -10,6 +10,13 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                               BY       POLICY  TIME
+# U log rule added                       turnrye  write   2025-10-02 21:41:47
+# U log rule added                       turnrye  write   2025-10-02 21:41:47
+# U log rule added                       turnrye  write   2025-10-02 21:41:47
+# U log rule added                       turnrye  write   2025-10-02 21:41:47
+# U log rule added                       turnrye  write   2025-10-02 21:41:47
+# U log rule removed                     turnrye  write   2025-10-02 21:41:47
+# U log action changed                   turnrye  write   2025-10-02 21:41:44
 # U ip service changed                   turnrye  write   2025-10-02 10:31:32
 # U user mktxp added                     turnrye  write   2025-10-02 10:31:32
 #                                                 policy
@@ -78,7 +85,7 @@ add disabled=no instance=default-v2 name=backbone-v2
 /snmp community
 set [ find default=yes ] addresses=44.0.0.0/8
 /system logging action
-set 3 remote=44.34.132.6 remote-log-format=syslog remote-port=5514
+set 3 remote=44.34.128.45 remote-log-format=syslog
 add name=centrallogging remote=44.34.128.171 remote-log-format=syslog syslog-facility=syslog target=remote
 /user group
 add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
@@ -168,7 +175,11 @@ set time-zone-autodetect=no time-zone-name=America/Chicago
 set name=r1.mno.memhamwan.net
 /system logging
 set 3 action=memory
-add action=remote topics=!debug,!snmp
+add action=remote topics=system
+add action=remote topics=error
+add action=remote topics=warning
+add action=remote topics=critical
+add action=remote topics=account
 /system ntp client
 set enabled=yes
 /system ntp client servers
