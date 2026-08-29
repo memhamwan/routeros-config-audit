@@ -10,6 +10,13 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                               BY       POLICY  TIME
+# U log rule added                       turnrye  write   1971-08-02 17:44:18
+# U log rule added                       turnrye  write   1971-08-02 17:44:18
+# U log rule added                       turnrye  write   1971-08-02 17:44:18
+# U log rule added                       turnrye  write   1971-08-02 17:44:18
+# U log rule added                       turnrye  write   1971-08-02 17:44:18
+# U log rule removed                     turnrye  write   1971-08-02 17:44:18
+# U log action changed                   turnrye  write   1971-08-02 17:44:15
 # U ip service changed                   turnrye  write   1971-08-02 06:35:03
 # U user mktxp added                     turnrye  write   1971-08-02 06:35:03
 #                                                 policy
@@ -57,7 +64,7 @@ add disabled=no instance=default-v2 name=backbone-v2
 set [ find default=yes ] addresses=44.0.0.0/8 name=hamwan
 add addresses=44.0.0.0/8 name=public
 /system logging action
-set 3 bsd-syslog=yes remote=44.34.132.6 remote-port=5514
+set 3 bsd-syslog=yes remote=44.34.128.45
 add bsd-syslog=yes name=centrallogging remote=44.34.128.171 syslog-facility=syslog target=remote
 /interface bridge port
 add bridge=bridge1 ingress-filtering=no interface=wlan1 internal-path-cost=10 path-cost=10
@@ -111,7 +118,11 @@ set name=mno.hil.memhamwan.net
 set 1 interface=wlan1
 /system logging
 set 3 action=memory
-add action=remote topics=!debug,!snmp
+add action=remote topics=system
+add action=remote topics=error
+add action=remote topics=warning
+add action=remote topics=critical
+add action=remote topics=account
 /system note
 set show-at-login=no
 /system ntp client
