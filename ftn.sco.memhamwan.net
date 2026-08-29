@@ -1,0 +1,106 @@
+#                   version: 7.19.4 (stable)
+#          factory-software: 6.40
+#              total-memory: 128.0MiB
+#                       cpu: MIPS 74Kc V5.0
+#                 cpu-count: 1
+#           total-hdd-space: 16.0MiB
+#         architecture-name: mipsbe
+#                board-name: DynaDish 5
+#                  platform: MikroTik
+#   installed-version: 7.19.4
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION                               BY       POLICY  TIME
+# U log rule added                       turnrye  write   2026-08-29 11:18:25
+# U log rule added                       turnrye  write   2026-08-29 11:18:25
+# U log rule added                       turnrye  write   2026-08-29 11:18:25
+# U log rule added                       turnrye  write   2026-08-29 11:18:25
+# U log rule added                       turnrye  write   2026-08-29 11:18:25
+# U log action changed                   turnrye  write   2026-08-29 11:18:23
+# U ip service changed                   turnrye  write   2026-08-29 11:18:22
+# U user mktxp added                     turnrye  write   2026-08-29 11:18:22
+#                                                 policy
+# U user oxidized-full added             turnrye  write   2026-08-29 11:18:20
+#                                                 policy
+# U user oxidized added                  turnrye  write   2026-08-29 11:18:20
+#                                                 policy
+# U user group netops-backup-full added  turnrye  write   2026-08-29 11:18:20
+#                                                 policy
+# U user group netops-backup-ro added    turnrye  write   2026-08-29 11:18:20
+#                                                 policy
+# 
+# software id = P5WD-1Z3G
+#
+# model = RBDynaDishG-5HacDr3
+# serial number = C6B3090903D9
+/interface bridge
+add admin-mac=B8:69:F4:54:27:8D auto-mac=no comment=defconf name=bridge port-cost-mode=short
+/interface lte apn
+set [ find default=yes ] ip-type=ipv4 use-network-apn=no
+/interface wireless security-profiles
+set [ find default=yes ] authentication-types=wpa2-psk supplicant-identity=MikroTik
+add authentication-types=wpa2-psk eap-methods="" mode=dynamic-keys name=hamwan supplicant-identity=""
+/interface wireless
+set [ find default-name=wlan1 ] adaptive-noise-immunity=ap-and-client-mode antenna-gain=10 band=5ghz-n/ac compression=yes disabled=no ht-basic-mcs=mcs-0,mcs-1,mcs-2,mcs-3 hw-retries=15 mode=ap-bridge nv2-cell-radius=20 nv2-sync-secret=REDACTED on-fail-retry-time=1s radio-name=ftn.sco.memhamwan.net security-profile=hamwan ssid=HamWAN-ftn-sco station-roaming=enabled tdma-period-size=4 wireless-protocol=802.11
+/routing ospf instance
+add disabled=no in-filter-chain=AMPR-default name=default-v2 originate-default=if-installed out-filter-chain=AMPR-default redistribute=connected,ospf,bgp router-id=44.34.131.140
+/routing ospf area
+add disabled=no instance=default-v2 name=backbone-v2
+/snmp community
+set [ find default=yes ] addresses=0.0.0.0/0
+/system logging action
+set 3 remote=44.34.128.45 remote-log-format=syslog
+/user group
+add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
+add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
+add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
+/interface bridge port
+add bridge=bridge comment=defconf ingress-filtering=no interface=wlan1 internal-path-cost=10 path-cost=10
+/ip firewall connection tracking
+set udp-timeout=10s
+/ip neighbor discovery-settings
+set discover-interface-list=!dynamic
+/ip settings
+set max-neighbor-entries=8192
+/ipv6 settings
+set disable-ipv6=yes max-neighbor-entries=8192
+/interface ovpn-server server
+add auth=sha1,md5 mac-address=FE:94:F3:98:CF:08 name=ovpn-server1
+/ip address
+add address=44.34.131.146 interface=bridge network=44.34.131.147
+add address=44.34.128.43/28 interface=ether1 network=44.34.128.32
+/ip dns
+set servers=8.8.8.8
+/ip ipsec profile
+set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
+/ip service
+set ftp disabled=yes
+set telnet disabled=yes
+set www disabled=yes
+set ssh port=222
+set api address=44.34.128.45/32
+/routing bfd configuration
+add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
+/routing filter rule
+add chain=AMPR-default disabled=no rule="if (dst in 44.0.0.0/8 && dst-len in 8-32) { accept; }"
+add chain=AMPR-default disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
+add chain=AMPR-default disabled=no rule="reject;"
+/routing ospf interface-template
+add area=backbone-v2 auth=md5 auth-id=1 cost=50 disabled=no interfaces=ether1 networks=44.34.128.32/28 priority=1 use-bfd=no
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 disabled=no interfaces=bridge networks=44.34.131.147 priority=1 type=ptp use-bfd=no
+/snmp
+set contact=ryan@turnrye.com enabled=yes location=ftn.sco
+/system clock
+set time-zone-name=America/New_York
+/system identity
+set name=ftn.sco.memhamwan.net
+/system logging
+add action=remote topics=system
+add action=remote topics=error
+add action=remote topics=warning
+add action=remote topics=critical
+add action=remote topics=account
+/tool romon
+set enabled=yes
+/tool traffic-monitor
+add interface=ether1 name=tmon1
