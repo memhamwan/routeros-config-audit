@@ -10,6 +10,11 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                               BY       POLICY  TIME
+# U ip service changed                   turnrye  write   1970-12-13 01:51:12
+# U user mktxp added                     turnrye  write   1970-12-13 01:51:12
+#                                                 policy
+# U user group mktxp_group added         turnrye  write   1970-12-13 01:51:12
+#                                                 policy
 # U user oxidized-full added             turnrye  write   1970-12-12 21:58:48
 #                                                 policy
 # U user oxidized added                  turnrye  write   1970-12-12 21:58:48
@@ -49,6 +54,7 @@ add bsd-syslog=yes name=centrallogging remote=44.34.128.171 syslog-facility=sysl
 /user group
 add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
 add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
+add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
 #error exporting "/interface/bridge/calea"
 /interface bridge port
 add bridge=bridge1 ingress-filtering=no interface=wlan1
@@ -75,7 +81,7 @@ set telnet disabled=yes
 set ftp disabled=yes
 set www disabled=yes
 set ssh port=222
-set api disabled=yes
+set api address=44.34.128.45/32
 set winbox disabled=yes
 set api-ssl disabled=yes
 /ip socks
