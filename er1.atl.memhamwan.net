@@ -11,6 +11,11 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                               BY       POLICY  TIME
+# U ip service changed                   turnrye  write   2026-08-28 22:23:21
+# U user mktxp added                     turnrye  write   2026-08-28 22:23:21
+#                                                 policy
+# U user group mktxp_group added         turnrye  write   2026-08-28 22:23:21
+#                                                 policy
 # U user oxidized-full added             turnrye  write   2026-08-28 18:23:53
 #                                                 policy
 # U user group netops-backup-full added  turnrye  write   2026-08-28 18:23:53
@@ -57,6 +62,7 @@ set 3 remote=44.34.132.6 remote-log-format=syslog remote-port=5514
 add name=oxidized policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
 add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
 add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
+add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
 /ip firewall connection tracking
 set udp-timeout=10s
 /ip neighbor discovery-settings
@@ -122,7 +128,7 @@ set telnet disabled=yes
 set www disabled=yes
 set ssh port=222
 set winbox disabled=yes
-set api disabled=yes
+set api address=44.34.128.45/32
 set api-ssl disabled=yes
 /ip ssh
 set strong-crypto=yes
