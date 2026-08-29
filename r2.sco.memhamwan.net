@@ -1,0 +1,142 @@
+#                   version: 7.19.4 (stable)
+#          factory-software: 6.40_ab3840
+#              total-memory: 128.0MiB
+#                       cpu: MIPS 74Kc V5.0
+#                 cpu-count: 1
+#           total-hdd-space: 16.0MiB
+#         architecture-name: mipsbe
+#                board-name: PowerBox Pro
+#                  platform: MikroTik
+#   installed-version: 7.19.4
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION                               BY       POLICY  TIME
+# U log rule added                       turnrye  write   2026-08-26 17:22:52
+# U log rule added                       turnrye  write   2026-08-26 17:22:52
+# U log rule added                       turnrye  write   2026-08-26 17:22:52
+# U log rule added                       turnrye  write   2026-08-26 17:22:52
+# U log rule added                       turnrye  write   2026-08-26 17:22:52
+# U log action changed                   turnrye  write   2026-08-26 17:22:51
+# U ip service changed                   turnrye  write   2026-08-26 17:22:49
+# U user mktxp added                     turnrye  write   2026-08-26 17:22:49
+#                                                 policy
+# U user group mktxp_group added         turnrye  write   2026-08-26 17:22:49
+#                                                 policy
+# U user oxidized-full added             turnrye  write   2026-08-26 17:22:46
+#                                                 policy
+# U user oxidized added                  turnrye  write   2026-08-26 17:22:46
+#                                                 policy
+# U user group netops-backup-full added  turnrye  write   2026-08-26 17:22:46
+#                                                 policy
+# U user group netops-backup-ro added    turnrye  write   2026-08-26 17:22:46
+#                                                 policy
+# 
+# software id = G8EP-AAVR
+#
+# model = RB960PGS
+# serial number = A51309BAB998
+/interface bridge
+add admin-mac=B8:69:F4:86:91:23 auto-mac=no comment=defconf name=bridge port-cost-mode=short
+add name=internal-nat
+/interface ethernet
+set [ find default-name=sfp1 ] advertise=10M-baseT-half,10M-baseT-full,100M-baseT-half,100M-baseT-full
+/interface list
+add comment=defconf name=WAN
+add comment=defconf name=LAN
+/interface lte apn
+set [ find default=yes ] ip-type=ipv4 use-network-apn=no
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+/ip pool
+add name=default-dhcp ranges=192.168.88.10-192.168.88.254
+add name=dhcp_pool1 ranges=10.0.0.2-10.0.0.254
+/ip dhcp-server
+add address-pool=dhcp_pool1 interface=internal-nat name=dhcp1
+/routing ospf instance
+add disabled=no in-filter-chain=AMPR-default name=default-v2 originate-default=if-installed out-filter-chain=AMPR-default redistribute=connected,ospf,bgp,vpn,dhcp,modem router-id=44.34.128.41
+/routing ospf area
+add disabled=no instance=default-v2 name=backbone-v2
+/system logging action
+set 3 remote=44.34.128.45 remote-log-format=syslog
+/user group
+add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
+add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
+add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
+/interface bridge port
+add bridge=internal-nat comment=defconf ingress-filtering=no interface=ether2 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf ingress-filtering=no interface=ether3 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf ingress-filtering=no interface=ether4 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf ingress-filtering=no interface=ether5 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf ingress-filtering=no interface=sfp1 internal-path-cost=10 path-cost=10
+add bridge=bridge comment=defconf ingress-filtering=no interface=ether1 internal-path-cost=10 path-cost=10
+/ip firewall connection tracking
+set udp-timeout=10s
+/ip neighbor discovery-settings
+set discover-interface-list=LAN
+/ip settings
+set max-neighbor-entries=8192
+/ipv6 settings
+set disable-ipv6=yes max-neighbor-entries=8192
+/interface list member
+add comment=defconf interface=bridge list=LAN
+add comment=defconf interface=ether1 list=WAN
+/interface ovpn-server server
+add auth=sha1,md5 mac-address=FE:C8:13:B5:C9:0C name=ovpn-server1
+/ip address
+add address=44.34.128.41/28 interface=bridge network=44.34.128.32
+add address=10.0.0.1/24 interface=internal-nat network=10.0.0.0
+/ip dhcp-server network
+add address=10.0.0.0/24 dns-server=8.8.8.8,8.8.4.4 gateway=10.0.0.1
+/ip dns
+set allow-remote-requests=yes
+/ip dns static
+add address=192.168.88.1 comment=defconf name=router.lan type=A
+/ip firewall nat
+add action=masquerade chain=srcnat src-address=10.0.0.0/24
+/ip hotspot profile
+set [ find default=yes ] html-directory=hotspot
+/ip ipsec profile
+set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
+/ip service
+set ftp disabled=yes
+set telnet disabled=yes
+set www disabled=yes
+set ssh port=222
+set winbox disabled=yes
+set api address=44.34.128.45/32
+set api-ssl disabled=yes
+/routing bfd configuration
+add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
+/routing filter rule
+add chain=hamwan-out disabled=no rule="if (dst in 44.0.0.0/8 && dst-len in 8-32) { accept; }"
+add chain=hamwan-out disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
+add chain=hamwan-out disabled=no rule="reject;"
+add chain=AMPR-default disabled=no rule="if (dst in 44.0.0.0/8 && dst-len in 8-32) { accept; }"
+add chain=AMPR-default disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
+add chain=AMPR-default disabled=no rule="if (dst in 44.0.0.0/8 && dst-len in 8-32) { accept; }"
+add chain=AMPR-default disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
+add chain=AMPR-default disabled=no rule="reject;"
+add chain=AMPR-default disabled=no rule="if (dst in 44.0.0.0/8 && dst-len in 8-32) { accept; }"
+add chain=AMPR-default disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
+add chain=AMPR-default disabled=no rule="reject;"
+/routing ospf interface-template
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 disabled=no interfaces=bridge networks=44.34.129.41/28 priority=1 use-bfd=no
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 disabled=no interfaces=bridge networks=44.34.128.33/28 priority=1 use-bfd=no
+/system clock
+set time-zone-name=America/Chicago
+/system identity
+set name=r2.sco.memhamwan.net
+/system logging
+add action=remote topics=system
+add action=remote topics=error
+add action=remote topics=warning
+add action=remote topics=critical
+add action=remote topics=account
+/system note
+set show-at-login=no
+/tool mac-server
+set allowed-interface-list=LAN
+/tool mac-server mac-winbox
+set allowed-interface-list=LAN
+/tool romon
+set enabled=yes
