@@ -1,0 +1,167 @@
+#                   version: 7.24.1 (stable)
+#           minimum-version: 6.34.2
+#              total-memory: 128.0MiB
+#                       cpu: MIPS 74Kc V5.0
+#                 cpu-count: 1
+#           total-hdd-space: 16.0MiB
+#         architecture-name: mipsbe
+#                board-name: hAP ac
+#                  platform: MikroTik
+#   installed-version: 7.24.1
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION                               BY       POLICY  TIME
+# U log rule added                       turnrye  write   2026-08-29 10:44:05
+# U log rule added                       turnrye  write   2026-08-29 10:44:05
+# U log rule added                       turnrye  write   2026-08-29 10:44:05
+# U log rule added                       turnrye  write   2026-08-29 10:44:05
+# U log rule added                       turnrye  write   2026-08-29 10:44:04
+# U log rule removed                     turnrye  write   2026-08-29 10:44:04
+# U log action changed                   turnrye  write   2026-08-29 10:44:02
+# U ip service changed                   turnrye  write   2026-08-29 10:44:00
+# U user mktxp added                     turnrye  write   2026-08-29 10:44:00
+#                                                 policy
+# U user group mktxp_group added         turnrye  write   2026-08-29 10:44:00
+#                                                 policy
+# U user oxidized-full added             turnrye  write   2026-08-29 10:43:51
+#                                                 policy
+# U user oxidized added                  turnrye  write   2026-08-29 10:43:51
+#                                                 policy
+# U user group netops-backup-full added  turnrye  write   2026-08-29 10:43:51
+#                                                 policy
+# U user group netops-backup-ro added    turnrye  write   2026-08-29 10:43:51
+#                                                 policy
+# 
+# software id = YWQ0-VSRH
+#
+# model = RB962UiGS-5HacT2HnT
+# serial number = 6763053A63D2
+/interface bridge
+add name=natted-devices port-cost-mode=short
+add name=public-devices-without-dhcp port-cost-mode=short
+/interface ethernet
+set [ find default-name=ether1 ] comment=wb4kog145450
+set [ find default-name=ether3 ] comment=wb4kog444775
+set [ find default-name=ether4 ] comment=broadband-wan disabled=yes
+set [ find default-name=ether5 ] poe-out=forced-on
+set [ find default-name=sfp1 ] advertise=10M-baseT-half,10M-baseT-full,100M-baseT-half,100M-baseT-full
+/interface wireless
+set [ find default-name=wlan1 ] band=2ghz-onlyn disabled=no frequency=auto mode=ap-bridge ssid=HamWAN
+set [ find default-name=wlan2 ] band=5ghz-n/ac disabled=no frequency=auto mode=ap-bridge ssid=HamWAN
+/interface lte apn
+set [ find default=yes ] ip-type=ipv4 use-network-apn=no
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+/ip pool
+add name=dhcp_pool0 ranges=44.34.129.196/30
+/ip dhcp-server
+add address-pool=dhcp_pool0 interface=public-devices-without-dhcp lease-time=10m name=dhcp1
+/ip smb users
+set [ find default=yes ] disabled=yes
+/interface sstp-client
+add authentication=mschap2 connect-to=155.138.216.153 http-proxy=0.0.0.0 name=sstp-out1 profile=default-encryption user=oob-ftn
+/routing ospf instance
+add disabled=no in-filter-chain=AMPR-default name=default-v2 out-filter-chain=AMPR-default router-id=44.34.129.194
+add disabled=no name=default-v3 version=3
+/routing ospf area
+add disabled=no instance=default-v2 name=backbone-v2
+add disabled=yes instance=default-v3 name=backbone-v3
+/snmp community
+set [ find default=yes ] addresses=44.0.0.0/8
+/system logging action
+set 3 remote=44.34.128.45 remote-log-format=syslog
+/user group
+add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
+add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
+add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
+/interface bridge port
+add bridge=public-devices-without-dhcp comment=defconf ingress-filtering=no interface=ether1 internal-path-cost=10 path-cost=10
+add bridge=public-devices-without-dhcp comment=defconf ingress-filtering=no interface=ether2 internal-path-cost=10 path-cost=10
+add bridge=public-devices-without-dhcp comment=defconf ingress-filtering=no interface=ether3 internal-path-cost=10 path-cost=10
+add bridge=natted-devices ingress-filtering=no interface=wlan1 internal-path-cost=10 path-cost=10
+add bridge=natted-devices ingress-filtering=no interface=wlan2 internal-path-cost=10 path-cost=10
+add bridge=public-devices-without-dhcp ingress-filtering=no interface=ether5 internal-path-cost=10 path-cost=10
+add bridge=public-devices-without-dhcp ingress-filtering=no interface=sfp1 internal-path-cost=10 path-cost=10
+/ip firewall connection tracking
+set udp-timeout=10s
+/ip neighbor discovery-settings
+set discover-interface-list=all
+/ip settings
+set max-neighbor-entries=8192
+/ipv6 settings
+set max-neighbor-entries=8192
+/interface ovpn-server server
+add auth=sha1,md5 mac-address=FE:FC:C9:D1:36:ED name=ovpn-server1
+/interface wireless cap
+set bridge=*9 discovery-interfaces=*9 interfaces=wlan1,wlan2
+/ip address
+add address=192.168.50.1/24 interface=natted-devices network=192.168.50.0
+add address=44.34.129.194/28 interface=public-devices-without-dhcp network=44.34.129.192
+/ip dhcp-client
+# Interface not active
+add default-route-distance=200 interface=ether4 name=ether4 use-peer-dns=no
+/ip dhcp-server lease
+add address=44.34.129.197 client-id=ff:72:4a:ff:9d:0:1:0:1:0:0:0:b:1c:ba:8c:a8:7e:8a mac-address=D0:39:72:4A:FF:9D server=dhcp1
+add address=44.34.129.196 client-id=ff:90:15:bf:e9:0:2:0:0:ab:11:2e:19:60:b6:4c:d3:ea:6 mac-address=B8:27:EB:E0:24:83 server=dhcp1
+add address=44.34.129.198 client-id=ff:3a:9c:97:13:0:2:0:0:ab:11:2e:19:60:b6:4c:d3:ea:6 mac-address=DC:A6:32:6B:D8:B7 server=dhcp1
+/ip dhcp-server network
+add address=44.34.129.192/28 dns-server=44.34.132.1 gateway=44.34.129.194
+/ip dns
+set servers=1.1.1.1,8.8.8.8
+/ip firewall nat
+add action=masquerade chain=srcnat comment="nat for the broadband wan" out-interface=ether4
+add action=masquerade chain=srcnat comment="nat for wifi" out-interface=natted-devices
+/ip ipsec profile
+set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
+/ip route
+add disabled=no distance=150 dst-address=155.138.216.153/32 gateway=10.1.10.1
+/ip service
+set ftp disabled=yes
+set telnet disabled=yes
+set www disabled=yes
+set ssh port=222
+set winbox disabled=yes
+set api available-from=44.34.128.45/32
+set api-ssl disabled=yes
+/ip ssh
+set strong-crypto=yes
+/ipv6 nd
+# automatic dns option advertising is not started, re-apply dns config
+set [ find default=yes ] advertise-dns=yes
+/routing bfd configuration
+add disabled=no
+/routing filter rule
+add chain=AMPR-default disabled=no rule="if (dst in 44.0.0.0/8 && dst-len in 8-32) { accept; }"
+add chain=AMPR-default disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
+add chain=AMPR-default disabled=no rule="reject;"
+/routing ospf interface-template
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 disabled=no interfaces=public-devices-without-dhcp networks=44.34.129.192/28 priority=1
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 disabled=no interfaces=sstp-out1 networks=44.34.131.168/32 priority=1 type=ptp
+/snmp
+set enabled=yes
+/system clock
+set time-zone-autodetect=no time-zone-name=America/Chicago
+/system identity
+set name=r1.ftn.memhamwan.net
+/system logging
+set 3 action=memory
+add action=echo topics=dhcp
+add action=remote topics=system
+add action=remote topics=error
+add action=remote topics=warning
+add action=remote topics=critical
+add action=remote topics=account
+/system ntp client
+set enabled=yes
+/system ntp client servers
+add address=44.34.128.181
+/tool bandwidth-server
+set authenticate=no enabled=no
+/tool mac-server
+set allowed-interface-list=none
+/tool mac-server mac-winbox
+set allowed-interface-list=none
+/tool mac-server ping
+set enabled=no
+/tool romon
+set enabled=yes
