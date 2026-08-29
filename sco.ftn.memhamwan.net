@@ -10,6 +10,13 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                               BY       POLICY  TIME
+# U log rule added                       turnrye  write   2026-08-29 10:33:02
+# U log rule added                       turnrye  write   2026-08-29 10:33:02
+# U log rule added                       turnrye  write   2026-08-29 10:33:02
+# U log rule added                       turnrye  write   2026-08-29 10:33:02
+# U log rule added                       turnrye  write   2026-08-29 10:33:02
+# U log rule removed                     turnrye  write   2026-08-29 10:33:02
+# U log action changed                   turnrye  write   2026-08-29 10:32:59
 # U ip service changed                   turnrye  write   2026-08-28 23:23:53
 # U user mktxp added                     turnrye  write   2026-08-28 23:23:52
 #                                                 policy
@@ -59,7 +66,7 @@ add disabled=no instance=default-v2 name=backbone-v2
 /snmp community
 set [ find default=yes ] addresses=153.66.103.187/32
 /system logging action
-set 3 remote=44.34.132.6 remote-log-format=syslog remote-port=5514
+set 3 remote=44.34.128.45 remote-log-format=syslog
 /user group
 add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
 add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
@@ -120,8 +127,12 @@ set time-zone-name=America/New_York
 set name=sco.ftn.memhamwan.net
 /system logging
 set 3 action=memory
-add action=remote topics=!debug,!snmp
 add action=echo disabled=yes topics=!ssh,!ospf
+add action=remote topics=system
+add action=remote topics=error
+add action=remote topics=warning
+add action=remote topics=critical
+add action=remote topics=account
 /system ntp client
 set enabled=yes
 /system ntp client servers
