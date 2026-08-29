@@ -7,29 +7,6 @@
 #                board-name: RB911G-5HPnD
 #                  platform: MikroTik
 #   installed-version: 7.19.6
-# Flags: U - UNDOABLE
-# Columns: ACTION, BY, POLICY, TIME
-#   ACTION                               BY       POLICY  TIME
-# U log rule added                       turnrye  write   2026-08-29 10:33:02
-# U log rule added                       turnrye  write   2026-08-29 10:33:02
-# U log rule added                       turnrye  write   2026-08-29 10:33:02
-# U log rule added                       turnrye  write   2026-08-29 10:33:02
-# U log rule added                       turnrye  write   2026-08-29 10:33:02
-# U log rule removed                     turnrye  write   2026-08-29 10:33:02
-# U log action changed                   turnrye  write   2026-08-29 10:32:59
-# U ip service changed                   turnrye  write   2026-08-28 23:23:53
-# U user mktxp added                     turnrye  write   2026-08-28 23:23:52
-#                                                 policy
-# U user group mktxp_group added         turnrye  write   2026-08-28 23:23:52
-#                                                 policy
-# U user oxidized-full added             turnrye  write   2026-08-28 19:26:46
-#                                                 policy
-# U user oxidized added                  turnrye  write   2026-08-28 19:26:46
-#                                                 policy
-# U user group netops-backup-full added  turnrye  write   2026-08-28 19:26:46
-#                                                 policy
-# U user group netops-backup-ro added    turnrye  write   2026-08-28 19:26:46
-#                                                 policy
 # 
 # software id = W7AZ-7ES1
 #
