@@ -11,6 +11,13 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                               BY       POLICY  TIME
+# U log rule added                       turnrye  write   2026-08-29 10:31:03
+# U log rule added                       turnrye  write   2026-08-29 10:31:03
+# U log rule added                       turnrye  write   2026-08-29 10:31:03
+# U log rule added                       turnrye  write   2026-08-29 10:31:03
+# U log rule added                       turnrye  write   2026-08-29 10:31:03
+# U log action changed                   turnrye  write   2026-08-29 10:31:01
+# U log action changed                   turnrye  write   2026-08-29 10:30:29
 # U ip service changed                   turnrye  write   2026-08-28 23:23:50
 # U user mktxp added                     turnrye  write   2026-08-28 23:23:50
 #                                                 policy
@@ -60,6 +67,8 @@ set 0 name=serial0
 add disabled=no in-filter-chain=AMPR-default name=default-v2 out-filter-chain=AMPR-default redistribute=connected,ospf,bgp router-id=44.34.131.173
 /routing ospf area
 add disabled=no instance=default-v2 name=backbone-v2
+/system logging action
+set 3 bsd-syslog=yes remote=44.34.128.45
 /interface bridge port
 add bridge=wan-uplink comment=defconf interface=ether1 internal-path-cost=10 path-cost=10
 add bridge=bridge comment=defconf interface=ether2 internal-path-cost=10 path-cost=10
@@ -142,6 +151,12 @@ add area=backbone-v2 auth=md5 auth-id=1 auth-key=REDACTED cost=10 disabled=no in
 set time-zone-name=America/New_York
 /system identity
 set name=r1.sco
+/system logging
+add action=remote topics=system
+add action=remote topics=error
+add action=remote topics=warning
+add action=remote topics=critical
+add action=remote topics=account
 /system note
 set show-at-login=no
 /system swos
