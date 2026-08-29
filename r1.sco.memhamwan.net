@@ -11,6 +11,11 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                               BY       POLICY  TIME
+# U ip service changed                   turnrye  write   2026-08-28 23:23:50
+# U user mktxp added                     turnrye  write   2026-08-28 23:23:50
+#                                                 policy
+# U user group mktxp_group added         turnrye  write   2026-08-28 23:23:50
+#                                                 policy
 # U user oxidized-full added             turnrye  write   2026-08-28 19:21:16
 #                                                 policy
 # U user oxidized added                  turnrye  write   2026-08-28 19:21:16
@@ -120,7 +125,7 @@ set telnet disabled=yes
 set ftp disabled=yes
 set www disabled=yes
 set ssh port=222
-set api disabled=yes
+set api address=44.34.128.45/32
 set winbox disabled=yes
 set api-ssl disabled=yes
 /ip ssh
@@ -146,3 +151,4 @@ set enabled=yes
 /user group
 add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
 add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
+add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
