@@ -1,0 +1,172 @@
+#                   version: 7.21.5 (long-term)
+#              total-memory: 64.0MiB
+#                       cpu: MIPS 24Kc V7.4
+#                 cpu-count: 1
+#           total-hdd-space: 128.0MiB
+#         architecture-name: mipsbe
+#                board-name: Metal 5SHPn
+#                  platform: HamWAN
+#   installed-version: 7.21.5
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION                               BY       POLICY  TIME
+# U ntp server record added              turnrye  write   2026-07-02 05:28:31
+# U log rule added                       turnrye  write   2026-07-02 05:27:30
+# U log rule added                       turnrye  write   2026-07-02 05:27:30
+# U log rule added                       turnrye  write   2026-07-02 05:27:30
+# U log rule added                       turnrye  write   2026-07-02 05:27:30
+# U log rule added                       turnrye  write   2026-07-02 05:27:30
+# U log rule removed                     turnrye  write   2026-07-02 05:27:30
+# U log action changed                   turnrye  write   2026-07-02 05:27:27
+# U ip service changed                   turnrye  write   2026-07-02 05:27:25
+# U user mktxp added                     turnrye  write   2026-07-02 05:27:25
+#                                                 policy
+# U user group mktxp_group added         turnrye  write   2026-07-02 05:27:25
+#                                                 policy
+# U user oxidized-full added             turnrye  write   2026-07-02 05:27:23
+#                                                 policy
+# U user oxidized added                  turnrye  write   2026-07-02 05:27:22
+#                                                 policy
+# U user group netops-backup-full added  turnrye  write   2026-07-02 05:27:22
+#                                                 policy
+# U user group netops-backup-ro added    turnrye  write   2026-07-02 05:27:22
+#                                                 policy
+# 
+# software id = PVD9-NLPF
+#
+# model = Metal 5SHPn
+# serial number = 460002E7DF15
+/interface ethernet
+set [ find default-name=ether1 ] advertise="10M-baseT-half,10M-baseT-full,100M-baseT-half,100M-baseT-full,1G-baseT-half,1G-baseT-full" name=ether1-local
+/interface wireless
+# MTU > L2MTU
+set [ find default-name=wlan1 ] band=5ghz-onlyn channel-width=10mhz country=no_country_set default-forwarding=no disabled=no frequency=5920 frequency-mode=superchannel mode=ap-bridge mtu=2290 name=wlan1-gateway nv2-cell-radius=100 radio-name=sec1.sco scan-list=HamWAN ssid=HamWAN station-roaming=enabled tdma-period-size=4 wireless-protocol=nv2
+/interface vrrp
+add authentication=ah disabled=yes interface=ether1-local name=vrrp1 version=2
+/interface list
+add exclude=dynamic name=discover
+add name=mactel
+add name=mac-winbox
+/interface lte apn
+set [ find default=yes ] ip-type=ipv4 use-network-apn=no
+/interface wireless channels
+add band=5ghz-onlyn comment="Cell sites radiate this at 0 degrees (north)" frequency=5920 list=HamWAN name=Sector1-5 width=5
+add band=5ghz-onlyn comment="Cell sites radiate this at 120 degrees (south-east)" frequency=5900 list=HamWAN name=Sector2-5 width=5
+add band=5ghz-onlyn comment="Cell sites radiate this at 240 degrees (south-west)" frequency=5880 list=HamWAN name=Sector3-5 width=5
+add band=5ghz-onlyn comment="Cell sites radiate this at 0 degrees (north)" frequency=5920 list=HamWAN name=Sector1-10 width=10
+add band=5ghz-onlyn comment="Cell sites radiate this at 120 degrees (south-east)" frequency=5900 list=HamWAN name=Sector2-10 width=10
+add band=5ghz-onlyn comment="Cell sites radiate this at 240 degrees (south-west)" frequency=5880 list=HamWAN name=Sector3-10 width=10
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity="HamWAN Memphis Metro, Inc"
+/ip ipsec proposal
+set [ find default=yes ] enc-algorithms=null
+/ip pool
+add name=hamwan ranges=44.34.128.50-44.34.128.62
+add name=pool1 ranges=44.34.128.50-44.34.128.62
+/ip smb users
+set [ find default=yes ] disabled=yes
+/routing bgp template
+set default as=65530 disabled=no name=default output.network=bgp-networks
+/routing ospf instance
+add disabled=no in-filter-chain=AMPR-default name=default-v2 originate-default=if-installed out-filter-chain=AMPR-default redistribute=connected,static,ospf,bgp,vpn,dhcp,modem router-id=44.34.128.34
+add disabled=no name=default-v3 version=3
+/routing ospf area
+add disabled=no instance=default-v2 name=backbone-v2
+add disabled=yes instance=default-v3 name=backbone-v3
+/snmp community
+set [ find default=yes ] addresses=44.0.0.0/8
+/system logging action
+set 3 remote=44.34.128.45 remote-log-format=syslog
+add name=centrallogging remote=44.34.128.171 remote-log-format=syslog syslog-facility=syslog target=remote
+/user group
+add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
+add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
+add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
+/ip firewall connection tracking
+set udp-timeout=10s
+/ip neighbor discovery-settings
+set discover-interface-list=none
+/ip settings
+set max-neighbor-entries=8192
+/ipv6 settings
+set disable-ipv6=yes max-neighbor-entries=8192
+/interface list member
+add interface=ether1-local list=discover
+add interface=vrrp1 list=discover
+add interface=ether1-local list=mactel
+add interface=ether1-local list=mac-winbox
+/interface ovpn-server server
+add auth=sha1,md5 mac-address=FE:11:28:D2:44:69 name=ovpn-server1
+/ip address
+add address=44.34.128.34/28 interface=ether1-local network=44.34.128.32
+add address=44.34.128.49/28 interface=wlan1-gateway network=44.34.128.48
+add address=44.34.128.39 interface=vrrp1 network=44.34.128.39
+/ip dhcp-server
+# Interface not running
+add address-pool=pool1 authoritative=after-2sec-delay interface=wlan1-gateway lease-time=1h name=dhcp1
+/ip dhcp-server network
+add address=44.34.128.48/28 dns-server=44.34.132.1,44.34.133.1 domain=memhamwan.net gateway=44.34.128.49 netmask=28 ntp-server=44.34.132.3,44.34.133.3
+/ip dns
+set servers=8.8.8.8
+/ip firewall mangle
+add action=change-mss chain=output new-mss=1378 protocol=tcp tcp-flags=syn tcp-mss=!0-1378
+add action=change-mss chain=forward new-mss=1378 protocol=tcp tcp-flags=syn tcp-mss=!0-1378
+/ip ipsec policy
+set 0 dst-address=0.0.0.0/0 src-address=0.0.0.0/0
+/ip ipsec profile
+set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
+/ip proxy
+set cache-path=web-proxy1
+/ip service
+set ftp disabled=yes
+set telnet disabled=yes
+set www disabled=yes
+set ssh port=222
+set winbox disabled=yes
+set api address=44.34.128.45/32
+set api-ssl disabled=yes
+/ip ssh
+set forwarding-enabled=remote strong-crypto=yes
+/routing bfd configuration
+add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
+/routing filter rule
+add chain=AMPR-default disabled=no rule="if (dst in 44.0.0.0/8 && dst-len in 8-32) { accept; }"
+add chain=AMPR-default disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
+add chain=AMPR-default disabled=no rule="reject;"
+/routing ospf interface-template
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 interfaces=ether1-local networks=44.34.128.32/28 priority=1 use-bfd=no
+/snmp
+set contact="#HamWAN on irc.freenode.org" enabled=yes trap-community=*FFFFFFFF
+/system clock
+set time-zone-autodetect=no time-zone-name=America/Chicago
+/system identity
+set name=sec1.sco.memhamwan.net
+/system leds
+set 0 interface=wlan1-gateway leds=led1,led2,led3,led4,led5 type=wireless-signal-strength
+set 1 interface=ether1-local leds=user-led type=interface-activity
+/system logging
+set 3 action=memory
+add action=remote topics=system
+add action=remote topics=error
+add action=remote topics=warning
+add action=remote topics=critical
+add action=remote topics=account
+/system ntp client
+set enabled=yes
+/system ntp client servers
+add address=44.34.128.181
+add address=44.34.133.3
+add address=ntp.memhamwan.net
+add address=time.cloudflare.com
+/tool bandwidth-server
+set allocate-udp-ports-from=1000 authenticate=no enabled=no max-sessions=10
+/tool mac-server
+set allowed-interface-list=none
+/tool mac-server mac-winbox
+set allowed-interface-list=none
+/tool mac-server ping
+set enabled=no
+/tool romon
+set enabled=yes
+/tool romon port
+add cost=1 forbid=yes interface=wlan1-gateway
