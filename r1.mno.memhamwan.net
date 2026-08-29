@@ -10,6 +10,11 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                               BY       POLICY  TIME
+# U ip service changed                   turnrye  write   2025-10-02 10:31:32
+# U user mktxp added                     turnrye  write   2025-10-02 10:31:32
+#                                                 policy
+# U user group mktxp_group added         turnrye  write   2025-10-02 10:31:32
+#                                                 policy
 # U user oxidized-full added             turnrye  write   2025-10-02 06:39:03
 #                                                 policy
 # U user oxidized added                  turnrye  write   2025-10-02 06:39:02
@@ -78,6 +83,7 @@ add name=centrallogging remote=44.34.128.171 remote-log-format=syslog syslog-fac
 /user group
 add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
 add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
+add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
 /interface bridge port
 add bridge=bridge1 ingress-filtering=no interface=ether2-slave-local internal-path-cost=10 path-cost=10
 add bridge=bridge1 ingress-filtering=no interface=ether3-slave-local internal-path-cost=10 path-cost=10
@@ -135,7 +141,7 @@ set telnet disabled=yes
 set www disabled=yes
 set ssh port=222
 set winbox disabled=yes
-set api disabled=yes
+set api address=44.34.128.45/32
 set api-ssl disabled=yes
 /ip smb shares
 set [ find default=yes ] directory=/pub
