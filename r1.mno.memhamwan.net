@@ -7,29 +7,6 @@
 #                board-name: CRS125-24G-1S
 #                  platform: MikroTik
 #   installed-version: 7.19.4
-# Flags: U - UNDOABLE
-# Columns: ACTION, BY, POLICY, TIME
-#   ACTION                               BY       POLICY  TIME
-# U log rule added                       turnrye  write   2025-10-02 21:41:47
-# U log rule added                       turnrye  write   2025-10-02 21:41:47
-# U log rule added                       turnrye  write   2025-10-02 21:41:47
-# U log rule added                       turnrye  write   2025-10-02 21:41:47
-# U log rule added                       turnrye  write   2025-10-02 21:41:47
-# U log rule removed                     turnrye  write   2025-10-02 21:41:47
-# U log action changed                   turnrye  write   2025-10-02 21:41:44
-# U ip service changed                   turnrye  write   2025-10-02 10:31:32
-# U user mktxp added                     turnrye  write   2025-10-02 10:31:32
-#                                                 policy
-# U user group mktxp_group added         turnrye  write   2025-10-02 10:31:32
-#                                                 policy
-# U user oxidized-full added             turnrye  write   2025-10-02 06:39:03
-#                                                 policy
-# U user oxidized added                  turnrye  write   2025-10-02 06:39:02
-#                                                 policy
-# U user group netops-backup-full added  turnrye  write   2025-10-02 06:39:02
-#                                                 policy
-# U user group netops-backup-ro added    turnrye  write   2025-10-02 06:39:02
-#                                                 policy
 # 
 # software id = JSLF-NLB9
 #
