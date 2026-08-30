@@ -10,6 +10,14 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                               BY       POLICY  TIME
+# U user ansible changed                 turnrye  write   1971-01-03 19:58:53
+#                                                 policy
+# U user group netops-ansible changed    turnrye  write   1971-01-03 19:58:53
+#                                                 policy
+# U user ansible added                   turnrye  write   1971-01-03 19:58:51
+#                                                 policy
+# U user group netops-ansible added      turnrye  write   1971-01-03 19:58:49
+#                                                 policy
 # U log rule added                       turnrye  write   1971-01-03 07:04:40
 # U log rule added                       turnrye  write   1971-01-03 07:04:40
 # U log rule added                       turnrye  write   1971-01-03 07:04:39
@@ -86,6 +94,7 @@ add bsd-syslog=yes name=centrallogging remote=44.34.128.171 syslog-facility=sysl
 add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
 add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
 add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
+add name=netops-ansible policy="ssh,ftp,read,write,policy,test,api,!local,!telnet,!reboot,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
 #error exporting "/interface/bridge/calea"
 /ip neighbor discovery-settings
 set discover-interface-list=none
