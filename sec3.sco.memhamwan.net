@@ -10,6 +10,28 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                                 BY       POLICY  TIME
+# U user group netops-ansible changed      ansible  write   2026-08-30 07:08:14
+#                                                   policy
+# U user group mktxp_group changed         ansible  write   2026-08-30 07:08:14
+#                                                   policy
+# U user group netops-backup-full changed  ansible  write   2026-08-30 07:08:14
+#                                                   policy
+# U user group netops-backup-ro changed    ansible  write   2026-08-30 07:08:14
+#                                                   policy
+# U ip service changed                     ansible  write   1971-01-04 04:30:01
+# U ip service changed                     ansible  write   1971-01-04 04:29:59
+# U ntp settings changed                   ansible  write   1971-01-04 04:29:54
+# U ntp server record removed                       read    1971-01-04 04:29:54
+# U ntp server record added                         read    1971-01-04 04:29:54
+# U ntp server record added                         read    1971-01-04 04:29:54
+# U user group netops-ansible changed      ansible  write   1971-01-04 04:29:23
+#                                                   policy
+# U user group mktxp_group changed         ansible  write   1971-01-04 04:29:23
+#                                                   policy
+# U user group netops-backup-full changed  ansible  write   1971-01-04 04:29:23
+#                                                   policy
+# U user group netops-backup-ro changed    ansible  write   1971-01-04 04:29:23
+#                                                   policy
 # U user mktxp changed                     turnrye  write   1971-01-04 03:12:53
 #                                                   policy
 # U user oxidized-full changed             turnrye  write   1971-01-04 03:12:53
@@ -168,9 +190,9 @@ set telnet disabled=yes
 set ftp disabled=yes
 set www disabled=yes
 set ssh port=222
-set api address=44.34.128.45/32
+set api address=44.34.128.45/32 disabled=yes
 set winbox disabled=yes
-set api-ssl certificate=api-ssl
+set api-ssl address=44.34.128.45/32 certificate=api-ssl
 /ip ssh
 set forwarding-enabled=remote strong-crypto=yes
 /ipv6 nd
@@ -207,7 +229,8 @@ set enabled=yes
 /system ntp client servers
 add address=44.34.128.181
 add address=44.34.133.3
-add address=ntp.memhamwan.net
+add address=162.159.200.1
+add address=162.159.200.123
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server
