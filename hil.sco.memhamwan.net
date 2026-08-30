@@ -8,69 +8,6 @@
 #                board-name: DynaDish 5
 #                  platform: MikroTik
 #   installed-version: 7.12.1
-# Flags: U - UNDOABLE
-# Columns: ACTION, BY, POLICY, TIME
-#   ACTION                                 BY       POLICY  TIME
-# U ip service changed                     ansible  write   2026-08-29 11:31:32
-# U ip service changed                     ansible  write   2026-08-29 11:31:30
-# U ntp settings changed                   ansible  write   2026-08-29 11:31:26
-# U ntp server record removed                       read    2026-08-29 11:31:26
-# U ntp server record removed                       read    2026-08-29 11:31:26
-# U ntp server record added                         read    2026-08-29 11:31:26
-# U ntp server record added                         read    2026-08-29 11:31:26
-# U ntp server record added                         read    2026-08-29 11:31:26
-# U ntp server record added                         read    2026-08-29 11:31:26
-# U ssh-key removed                        turnrye  write   2026-08-29 11:24:51
-#                                                   policy
-# U user ae5au added                       turnrye  write   2026-08-29 11:24:38
-#                                                   policy
-# U user mktxp changed                     turnrye  write   2026-08-29 11:24:34
-#                                                   policy
-# U user oxidized-full changed             turnrye  write   2026-08-29 11:24:34
-#                                                   policy
-# U user oxidized changed                  turnrye  write   2026-08-29 11:24:34
-#                                                   policy
-# U user group mktxp_group changed         turnrye  write   2026-08-29 11:24:33
-#                                                   policy
-# U user group netops-backup-full changed  turnrye  write   2026-08-29 11:24:33
-#                                                   policy
-# U user group netops-backup-ro changed    turnrye  write   2026-08-29 11:24:33
-#                                                   policy
-# U user mktxp changed                     turnrye  write   2026-08-29 11:24:31
-#                                                   policy
-# U user oxidized-full changed             turnrye  write   2026-08-29 11:24:29
-#                                                   policy
-# U user oxidized changed                  turnrye  write   2026-08-29 11:24:29
-#                                                   policy
-# U ip service changed                     turnrye  write   2026-08-29 11:24:16
-# U user ansible changed                   turnrye  write   2026-08-29 11:21:22
-#                                                   policy
-# U user ansible changed                   turnrye  write   2026-08-29 11:21:12
-#                                                   policy
-# U user group netops-ansible changed      turnrye  write   2026-08-29 11:21:12
-#                                                   policy
-# U user ansible added                     turnrye  write   2026-08-29 11:20:56
-#                                                   policy
-# U user group netops-ansible added        turnrye  write   2026-08-29 11:19:55
-#                                                   policy
-# U log rule added                         turnrye  write   2026-08-28 12:29:11
-# U log rule added                         turnrye  write   2026-08-28 12:29:11
-# U log rule added                         turnrye  write   2026-08-28 12:29:11
-# U log rule added                         turnrye  write   2026-08-28 12:29:11
-# U log rule added                         turnrye  write   2026-08-28 12:29:11
-# U log rule removed                       turnrye  write   2026-08-28 12:29:11
-# U log action changed                     turnrye  write   2026-08-28 12:29:08
-# U ip service changed                     turnrye  write   2026-08-28 12:29:04
-# U user mktxp added                       turnrye  write   2026-08-28 12:29:04
-#                                                   policy
-# U user oxidized-full added               turnrye  write   2026-08-28 12:29:01
-#                                                   policy
-# U user oxidized added                    turnrye  write   2026-08-28 12:29:01
-#                                                   policy
-# U user group netops-backup-full added    turnrye  write   2026-08-28 12:29:01
-#                                                   policy
-# U user group netops-backup-ro added      turnrye  write   2026-08-28 12:29:01
-#                                                   policy
 # 
 # software id = XTL4-EMUQ
 #
