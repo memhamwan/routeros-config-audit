@@ -8,86 +8,6 @@
 #                board-name: CRS328-24P-4S+
 #                  platform: MikroTik
 #   installed-version: 7.16.2
-# Flags: U - UNDOABLE
-# Columns: ACTION, BY, POLICY, TIME
-#   ACTION                                 BY       POLICY  TIME
-# U ip service changed                     ansible  write   2026-08-30 11:04:43
-# U ip service changed                     ansible  write   2026-08-30 11:04:41
-# U system identity changed                ansible  write   2026-08-30 11:04:40
-# U ntp settings changed                   ansible  write   2026-08-30 11:04:38
-# U ntp server record added                         read    2026-08-30 11:04:38
-# U ntp server record added                         read    2026-08-30 11:04:38
-# U ntp server record added                         read    2026-08-30 11:04:38
-# U ntp server record added                         read    2026-08-30 11:04:38
-# U mac winbox setting changed             ansible  write   2026-08-30 11:04:33
-# U mac-server interface changed           ansible  write   2026-08-30 11:04:32
-# U bandwidth-server changed               ansible  write   2026-08-30 11:04:31
-# U ssh settings changed                   ansible  write   2026-08-30 11:04:29
-# U ssh-key removed                        turnrye  write   2026-08-30 11:01:08
-#                                                   policy
-# U user ae5au added                       turnrye  write   2026-08-30 11:00:56
-#                                                   policy
-# U user seichold added                    turnrye  write   2026-08-30 11:00:54
-#                                                   policy
-# U user mktxp changed                     turnrye  write   2026-08-30 11:00:51
-#                                                   policy
-# U user oxidized-full changed             turnrye  write   2026-08-30 11:00:51
-#                                                   policy
-# U user oxidized changed                  turnrye  write   2026-08-30 11:00:50
-#                                                   policy
-# U user group mktxp_group changed         turnrye  write   2026-08-30 11:00:50
-#                                                   policy
-# U user group netops-backup-full changed  turnrye  write   2026-08-30 11:00:50
-#                                                   policy
-# U user group netops-backup-ro changed    turnrye  write   2026-08-30 11:00:50
-#                                                   policy
-# U user mktxp changed                     turnrye  write   2026-08-30 11:00:49
-#                                                   policy
-# U user oxidized-full changed             turnrye  write   2026-08-30 11:00:47
-#                                                   policy
-# U user oxidized changed                  turnrye  write   2026-08-30 11:00:47
-#                                                   policy
-# U ip service changed                     turnrye  write   2026-08-30 11:00:34
-# U user ansible changed                   turnrye  write   2026-08-30 10:59:24
-#                                                   policy
-# U user ansible changed                   turnrye  write   2026-08-30 10:59:18
-#                                                   policy
-# U user group netops-ansible changed      turnrye  write   2026-08-30 10:59:18
-#                                                   policy
-# U user ansible changed                   turnrye  write   2026-08-30 10:48:01
-#                                                   policy
-# U user ansible changed                   turnrye  write   2026-08-30 10:47:50
-#                                                   policy
-# U user group netops-ansible changed      turnrye  write   2026-08-30 10:47:50
-#                                                   policy
-# U user ansible added                     turnrye  write   2026-08-30 10:47:34
-#                                                   policy
-# U user group netops-ansible added        turnrye  write   2026-08-30 10:46:34
-#                                                   policy
-# U log rule added                         turnrye  write   2026-08-29 10:31:03
-# U log rule added                         turnrye  write   2026-08-29 10:31:03
-# U log rule added                         turnrye  write   2026-08-29 10:31:03
-# U log rule added                         turnrye  write   2026-08-29 10:31:03
-# U log rule added                         turnrye  write   2026-08-29 10:31:03
-# U log action changed                     turnrye  write   2026-08-29 10:31:01
-# U log action changed                     turnrye  write   2026-08-29 10:30:29
-# U ip service changed                     turnrye  write   2026-08-28 23:23:50
-# U user mktxp added                       turnrye  write   2026-08-28 23:23:50
-#                                                   policy
-# U user group mktxp_group added           turnrye  write   2026-08-28 23:23:50
-#                                                   policy
-# U user oxidized-full added               turnrye  write   2026-08-28 19:21:16
-#                                                   policy
-# U user oxidized added                    turnrye  write   2026-08-28 19:21:16
-#                                                   policy
-# U user group netops-backup-full added    turnrye  write   2026-08-28 19:21:16
-#                                                   policy
-# U user group netops-backup-ro added      turnrye  write   2026-08-28 19:21:16
-#                                                   policy
-# U device changed                         turnrye  write   2026-08-28 18:16:06
-# U device changed                         turnrye  write   2026-08-28 18:15:53
-# U device changed                         turnrye  write   2026-08-28 18:15:48
-# U bridge port changed                    turnrye  write   2026-08-28 18:15:48
 # 
 # software id = IVSQ-GMDD
 #
@@ -201,7 +121,7 @@ add area=backbone-v2 auth=md5 auth-id=1 auth-key=REDACTED cost=10 disabled=no in
 add area=backbone-v2 auth=md5 auth-id=1 auth-key=REDACTED cost=10 disabled=no interfaces=sstp-out1 networks=44.34.131.172 priority=1 type=ptp
 add area=backbone-v2 auth=md5 auth-id=1 auth-key=REDACTED cost=10 disabled=no interfaces=bridge networks=44.34.128.33/28 priority=1 use-bfd=no
 /system clock
-set time-zone-name=America/New_York
+set time-zone-name=America/Chicago
 /system identity
 set name=r1.sco.memhamwan.net
 /system logging
