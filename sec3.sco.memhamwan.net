@@ -9,41 +9,78 @@
 #   installed-version: 7.12.1
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
-#   ACTION                               BY       POLICY  TIME
-# U user ansible changed                 turnrye  write   1971-01-04 02:31:07
-#                                                 policy
-# U user ansible changed                 turnrye  write   1971-01-04 02:31:03
-#                                                 policy
-# U user group netops-ansible changed    turnrye  write   1971-01-04 02:31:02
-#                                                 policy
-# U user ansible changed                 turnrye  write   1971-01-03 19:58:53
-#                                                 policy
-# U user group netops-ansible changed    turnrye  write   1971-01-03 19:58:53
-#                                                 policy
-# U user ansible added                   turnrye  write   1971-01-03 19:58:51
-#                                                 policy
-# U user group netops-ansible added      turnrye  write   1971-01-03 19:58:49
-#                                                 policy
-# U log rule added                       turnrye  write   1971-01-03 07:04:40
-# U log rule added                       turnrye  write   1971-01-03 07:04:40
-# U log rule added                       turnrye  write   1971-01-03 07:04:39
-# U log rule added                       turnrye  write   1971-01-03 07:04:39
-# U log rule added                       turnrye  write   1971-01-03 07:04:39
-# U log rule removed                     turnrye  write   1971-01-03 07:04:39
-# U log action changed                   turnrye  write   1971-01-03 07:04:37
-# U ip service changed                   turnrye  write   1971-01-02 19:51:55
-# U user mktxp added                     turnrye  write   1971-01-02 19:51:54
-#                                                 policy
-# U user group mktxp_group added         turnrye  write   1971-01-02 19:51:54
-#                                                 policy
-# U user oxidized-full added             turnrye  write   1971-01-02 16:00:37
-#                                                 policy
-# U user oxidized added                  turnrye  write   1971-01-02 16:00:37
-#                                                 policy
-# U user group netops-backup-full added  turnrye  write   1971-01-02 16:00:37
-#                                                 policy
-# U user group netops-backup-ro added    turnrye  write   1971-01-02 16:00:37
-#                                                 policy
+#   ACTION                                 BY       POLICY  TIME
+# U user mktxp changed                     turnrye  write   1971-01-04 03:12:53
+#                                                   policy
+# U user oxidized-full changed             turnrye  write   1971-01-04 03:12:53
+#                                                   policy
+# U user oxidized changed                  turnrye  write   1971-01-04 03:12:53
+#                                                   policy
+# U user group mktxp_group changed         turnrye  write   1971-01-04 03:12:53
+#                                                   policy
+# U user group netops-backup-full changed  turnrye  write   1971-01-04 03:12:52
+#                                                   policy
+# U user group netops-backup-ro changed    turnrye  write   1971-01-04 03:12:52
+#                                                   policy
+# U user mktxp changed                     turnrye  write   1971-01-04 03:12:50
+#                                                   policy
+# U user oxidized-full changed             turnrye  write   1971-01-04 03:12:49
+#                                                   policy
+# U user oxidized changed                  turnrye  write   1971-01-04 03:12:48
+#                                                   policy
+# U ip service changed                     turnrye  write   1971-01-04 03:12:34
+# U user mktxp changed                     turnrye  write   1971-01-04 02:58:03
+#                                                   policy
+# U user oxidized-full changed             turnrye  write   1971-01-04 02:58:02
+#                                                   policy
+# U user oxidized changed                  turnrye  write   1971-01-04 02:58:02
+#                                                   policy
+# U user group mktxp_group changed         turnrye  write   1971-01-04 02:58:02
+#                                                   policy
+# U user group netops-backup-full changed  turnrye  write   1971-01-04 02:58:01
+#                                                   policy
+# U user group netops-backup-ro changed    turnrye  write   1971-01-04 02:58:01
+#                                                   policy
+# U user mktxp changed                     turnrye  write   1971-01-04 02:58:00
+#                                                   policy
+# U user oxidized-full changed             turnrye  write   1971-01-04 02:57:58
+#                                                   policy
+# U user oxidized changed                  turnrye  write   1971-01-04 02:57:58
+#                                                   policy
+# U user ansible changed                   turnrye  write   1971-01-04 02:31:07
+#                                                   policy
+# U user ansible changed                   turnrye  write   1971-01-04 02:31:03
+#                                                   policy
+# U user group netops-ansible changed      turnrye  write   1971-01-04 02:31:02
+#                                                   policy
+# U user ansible changed                   turnrye  write   1971-01-03 19:58:53
+#                                                   policy
+# U user group netops-ansible changed      turnrye  write   1971-01-03 19:58:53
+#                                                   policy
+# U user ansible added                     turnrye  write   1971-01-03 19:58:51
+#                                                   policy
+# U user group netops-ansible added        turnrye  write   1971-01-03 19:58:49
+#                                                   policy
+# U log rule added                         turnrye  write   1971-01-03 07:04:40
+# U log rule added                         turnrye  write   1971-01-03 07:04:40
+# U log rule added                         turnrye  write   1971-01-03 07:04:39
+# U log rule added                         turnrye  write   1971-01-03 07:04:39
+# U log rule added                         turnrye  write   1971-01-03 07:04:39
+# U log rule removed                       turnrye  write   1971-01-03 07:04:39
+# U log action changed                     turnrye  write   1971-01-03 07:04:37
+# U ip service changed                     turnrye  write   1971-01-02 19:51:55
+# U user mktxp added                       turnrye  write   1971-01-02 19:51:54
+#                                                   policy
+# U user group mktxp_group added           turnrye  write   1971-01-02 19:51:54
+#                                                   policy
+# U user oxidized-full added               turnrye  write   1971-01-02 16:00:37
+#                                                   policy
+# U user oxidized added                    turnrye  write   1971-01-02 16:00:37
+#                                                   policy
+# U user group netops-backup-full added    turnrye  write   1971-01-02 16:00:37
+#                                                   policy
+# U user group netops-backup-ro added      turnrye  write   1971-01-02 16:00:37
+#                                                   policy
 # 
 # software id = 3QHR-LE3I
 #
@@ -133,7 +170,7 @@ set www disabled=yes
 set ssh port=222
 set api address=44.34.128.45/32
 set winbox disabled=yes
-set api-ssl disabled=yes
+set api-ssl certificate=api-ssl
 /ip ssh
 set forwarding-enabled=remote strong-crypto=yes
 /ipv6 nd
