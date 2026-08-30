@@ -7,29 +7,6 @@
 #                board-name: NetMetal 5
 #                  platform: MikroTik
 #   installed-version: 7.12.1
-# Flags: U - UNDOABLE
-# Columns: ACTION, BY, POLICY, TIME
-#   ACTION                               BY       POLICY  TIME
-# U log rule added                       turnrye  write   1971-01-01 03:44:53
-# U log rule added                       turnrye  write   1971-01-01 03:44:53
-# U log rule added                       turnrye  write   1971-01-01 03:44:53
-# U log rule added                       turnrye  write   1971-01-01 03:44:53
-# U log rule added                       turnrye  write   1971-01-01 03:44:53
-# U log rule removed                     turnrye  write   1971-01-01 03:44:53
-# U log action changed                   turnrye  write   1971-01-01 03:44:50
-# U ip service changed                   turnrye  write   1970-12-31 16:35:32
-# U user mktxp added                     turnrye  write   1970-12-31 16:35:32
-#                                                 policy
-# U user group mktxp_group added         turnrye  write   1970-12-31 16:35:32
-#                                                 policy
-# U user oxidized-full added             turnrye  write   1970-12-31 12:43:02
-#                                                 policy
-# U user oxidized added                  turnrye  write   1970-12-31 12:43:02
-#                                                 policy
-# U user group netops-backup-full added  turnrye  write   1970-12-31 12:43:02
-#                                                 policy
-# U user group netops-backup-ro added    turnrye  write   1970-12-31 12:43:02
-#                                                 policy
 # 
 # software id = THW7-N0CV
 #
