@@ -1,0 +1,179 @@
+#                   version: 7.12.1 (stable)
+#              total-memory: 64.0MiB
+#                       cpu: MIPS 74Kc V4.12
+#                 cpu-count: 1
+#           total-hdd-space: 128.0MiB
+#         architecture-name: mipsbe
+#                board-name: RB912UAG-5HPnD
+#                  platform: MikroTik
+#   installed-version: 7.12.1
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION                                 BY       POLICY  TIME
+# U ip service changed                     ansible  write   1970-01-01 18:43:08
+# U ntp settings changed                   ansible  write   1970-01-01 18:43:02
+# U ntp server record added                         read    1970-01-01 18:43:02
+# U ntp server record added                         read    1970-01-01 18:43:02
+# U log rule added                         ansible  write   1970-01-01 18:43:00
+# U log rule added                         ansible  write   1970-01-01 18:42:58
+# U log rule added                         ansible  write   1970-01-01 18:42:57
+# U log rule added                         ansible  write   1970-01-01 18:42:55
+# U log rule added                         ansible  write   1970-01-01 18:42:53
+# U log action changed                     ansible  write   1970-01-01 18:40:19
+# U user ae5au added                       turnrye  write   1970-01-01 18:39:29
+#                                                   policy
+# U user mktxp changed                     turnrye  write   1970-01-01 18:39:24
+#                                                   policy
+# U user oxidized-full changed             turnrye  write   1970-01-01 18:39:23
+#                                                   policy
+# U user oxidized changed                  turnrye  write   1970-01-01 18:39:22
+#                                                   policy
+# U user group mktxp_group changed         turnrye  write   1970-01-01 18:39:22
+#                                                   policy
+# U user group netops-backup-full changed  turnrye  write   1970-01-01 18:39:22
+#                                                   policy
+# U user group netops-backup-ro changed    turnrye  write   1970-01-01 18:39:21
+#                                                   policy
+# U user mktxp changed                     turnrye  write   1970-01-01 18:39:19
+#                                                   policy
+# U user mktxp added                       turnrye  write   1970-01-01 18:39:19
+#                                                   policy
+# U user oxidized-full changed             turnrye  write   1970-01-01 18:39:17
+#                                                   policy
+# U user oxidized changed                  turnrye  write   1970-01-01 18:39:17
+#                                                   policy
+# U user oxidized-full added               turnrye  write   1970-01-01 18:39:06
+#                                                   policy
+# U user oxidized added                    turnrye  write   1970-01-01 18:39:05
+#                                                   policy
+# U ip service changed                     turnrye  write   1970-01-01 18:39:01
+# U user group mktxp_group added           turnrye  write   1970-01-01 18:38:48
+#                                                   policy
+# U user group netops-backup-full added    turnrye  write   1970-01-01 18:38:48
+#                                                   policy
+# U user group netops-backup-ro added      turnrye  write   1970-01-01 18:38:48
+#                                                   policy
+# U user ansible changed                   turnrye  write   1970-01-01 18:36:49
+#                                                   policy
+# U user ansible changed                   turnrye  write   1970-01-01 18:36:42
+#                                                   policy
+# U user group netops-ansible changed      turnrye  write   1970-01-01 18:36:41
+#                                                   policy
+# U user ansible added                     turnrye  write   1970-01-01 18:36:39
+#                                                   policy
+# U user group netops-ansible added        turnrye  write   1970-01-01 18:36:19
+#                                                   policy
+# U ntp server record added                         read    1970-01-01 18:00:18
+# U ntp server record added                         read    1970-01-01 18:00:18
+# 
+# software id = 4PHL-98VJ
+#
+# model = RB912UAG-5HPnD
+# serial number = 603D05DB7B9A
+/interface wireless
+# MTU > L2MTU
+set [ find default-name=wlan1 ] band=5ghz-onlyn channel-width=10mhz country=no_country_set disabled=no frequency=5880 frequency-mode=superchannel mode=ap-bridge mtu=2290 nv2-cell-radius=100 radio-name=sec3.mno rx-chains=0,1 scan-list=5880 ssid=HamWAN station-roaming=enabled tdma-period-size=4 tx-chains=0,1 wireless-protocol=nv2
+/interface vrrp
+add authentication=ah interface=ether1 name=vrrp1 version=2
+/interface lte apn
+set [ find default=yes ] ip-type=ipv4 use-network-apn=no
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+/ip ipsec proposal
+set [ find default=yes ] enc-algorithms=aes-128-cbc
+/ip pool
+add name=pool1 ranges=44.34.129.18-44.34.129.30
+/ip dhcp-server
+add address-pool=pool1 authoritative=after-2sec-delay interface=wlan1 lease-time=1h name=dhcp1
+/routing bgp template
+set default disabled=no output.network=bgp-networks
+/routing ospf instance
+add disabled=no in-filter-chain=AMPR-default name=default-v2 originate-default=if-installed out-filter-chain=AMPR-default redistribute=connected,ospf router-id=44.34.129.42
+/routing ospf area
+add disabled=no instance=default-v2 name=backbone-v2
+/snmp community
+set [ find default=yes ] addresses=44.0.0.0/8
+/system logging action
+set 3 bsd-syslog=yes remote=44.34.128.45
+add bsd-syslog=yes name=centrallogging remote=44.34.128.171 syslog-facility=syslog target=remote
+/user group
+add name=netops-ansible policy="ssh,ftp,read,write,policy,test,api,!local,!telnet,!reboot,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
+add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
+add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
+add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
+#error exporting "/interface/bridge/calea"
+/ip neighbor discovery-settings
+set discover-interface-list=none
+/ip settings
+set max-neighbor-entries=8192
+/ipv6 settings
+set disable-ipv6=yes max-neighbor-entries=8192
+/interface ovpn-server server
+set auth=sha1,md5
+/ip address
+add address=44.34.129.42/27 interface=ether1 network=44.34.129.32
+add address=44.34.129.17/28 interface=wlan1 network=44.34.129.16
+add address=44.34.129.33 interface=vrrp1 network=44.34.129.33
+/ip dhcp-server network
+add address=44.34.129.16/28 dns-server=44.34.132.1,44.34.133.1 domain=memhamwan.net gateway=44.34.129.17 netmask=28 ntp-server=44.34.132.3,44.34.133.3
+/ip dns
+set servers=8.8.8.8
+#error exporting "/ip/firewall/calea"
+/ip firewall mangle
+add action=change-mss chain=output new-mss=1378 passthrough=yes protocol=tcp tcp-flags=syn tcp-mss=!0-1378
+add action=change-mss chain=forward new-mss=1378 passthrough=yes protocol=tcp tcp-flags=syn tcp-mss=!0-1378
+/ip service
+set telnet disabled=yes
+set ftp disabled=yes
+set www disabled=yes
+set ssh port=222
+set api disabled=yes
+set winbox disabled=yes
+set api-ssl address=44.34.128.45/32 certificate=api-ssl
+/ip ssh
+set forwarding-enabled=remote strong-crypto=yes
+/routing bfd configuration
+add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
+/routing filter rule
+add chain=AMPR-default disabled=no rule="if (dst in 44.0.0.0/8 && dst-len in 8-32) { accept; }"
+add chain=AMPR-default disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
+add chain=AMPR-default disabled=no rule="reject;"
+/routing ospf interface-template
+add area=backbone-v2 auth=md5 auth-id=1 auth-key=REDACTED cost=10 disabled=no interfaces=ether1 networks=44.34.129.32/27 priority=1 use-bfd=no
+add area=backbone-v2 disabled=no interfaces=wlan1 networks=44.34.129.16/28 priority=1
+add area=backbone-v2 disabled=no interfaces=vrrp1 networks=44.34.129.33 priority=1
+/snmp
+set contact="#HamWAN on irc.freenode.org" enabled=yes
+/system clock
+set time-zone-autodetect=no time-zone-name=America/Chicago
+/system identity
+set name=sec3.mno.memhamwan.net
+/system leds
+set 0 interface=wlan1
+/system logging
+set 3 action=memory
+add action=remote topics=!debug,!snmp
+add action=remote topics=system
+add action=remote topics=error
+add action=remote topics=warning
+add action=remote topics=critical
+add action=remote topics=account
+/system note
+set show-at-login=no
+/system ntp client
+set enabled=yes
+/system ntp client servers
+add address=44.34.128.181
+add address=44.34.133.3
+add address=162.159.200.1
+add address=162.159.200.123
+/tool bandwidth-server
+set authenticate=no enabled=no
+/tool mac-server
+set allowed-interface-list=none
+/tool mac-server mac-winbox
+set allowed-interface-list=none
+/tool mac-server ping
+set enabled=no
+/tool romon
+set enabled=yes
