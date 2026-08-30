@@ -10,6 +10,16 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                                 BY       POLICY  TIME
+# U ip service changed                     ansible  write   2026-08-30 10:39:56
+# U system identity changed                ansible  write   2026-08-30 10:39:51
+# U ip service changed                     ansible  write   1971-08-02 18:41:25
+# U system identity changed                ansible  write   1971-08-02 18:41:23
+# U system identity changed                ansible  write   1971-08-02 18:41:22
+# U ntp settings changed                   ansible  write   1971-08-02 18:41:20
+# U ntp settings changed                   ansible  write   1971-08-02 18:41:20
+# U ntp server record removed                       read    1971-08-02 18:41:20
+# U ntp server record added                         read    1971-08-02 18:41:20
+# U ntp server record added                         read    1971-08-02 18:41:20
 # U user ae5au added                       turnrye  write   1971-08-02 18:36:37
 #                                                   policy
 # U user mktxp changed                     turnrye  write   1971-08-02 18:36:32
@@ -161,9 +171,9 @@ set telnet disabled=yes
 set ftp disabled=yes
 set www disabled=yes
 set ssh port=222
-set api address=44.34.128.45/32
+set api address=44.34.128.45/32 disabled=yes
 set winbox disabled=yes
-set api-ssl certificate=api-ssl
+set api-ssl address=44.34.128.45/32 certificate=api-ssl
 /ip smb shares
 set [ find default=yes ] directory=/pub
 /ip ssh
@@ -183,7 +193,7 @@ set contact="#HamWAN on irc.freenode.org" enabled=yes
 /system clock
 set time-zone-autodetect=no time-zone-name=America/Chicago
 /system identity
-set name=sco.hil.memhamwan.net
+set name=leb.hil.memhamwan.net
 /system leds
 set 1 interface=wlan1
 /system logging
@@ -201,7 +211,8 @@ set enabled=yes
 /system ntp client servers
 add address=44.34.128.181
 add address=44.34.133.3
-add address=ntp.memhamwan.net
+add address=162.159.200.1
+add address=162.159.200.123
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server
