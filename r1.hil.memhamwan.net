@@ -11,6 +11,16 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                               BY       POLICY  TIME
+# U user ansible changed                 turnrye  write   2026-08-30 11:28:01
+#                                                 policy
+# U user ansible changed                 turnrye  write   2026-08-30 11:26:57
+#                                                 policy
+# U user group netops-ansible changed    turnrye  write   2026-08-30 11:26:57
+#                                                 policy
+# U user ansible added                   turnrye  write   2026-08-30 11:26:39
+#                                                 policy
+# U user group netops-ansible added      turnrye  write   2026-08-30 11:25:38
+#                                                 policy
 # U ovpn server added                             read    2026-08-29 11:15:35
 # U log rule added                       turnrye  write   2026-08-29 11:10:43
 # U log rule added                       turnrye  write   2026-08-29 11:10:43
@@ -147,3 +157,4 @@ set enabled=yes
 add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
 add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
 add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
+add name=netops-ansible policy="ssh,ftp,read,write,policy,test,api,!local,!telnet,!reboot,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
