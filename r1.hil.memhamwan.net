@@ -10,37 +10,71 @@
 #   installed-version: 7.17
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
-#   ACTION                               BY       POLICY  TIME
-# U user ansible changed                 turnrye  write   2026-08-30 11:28:01
-#                                                 policy
-# U user ansible changed                 turnrye  write   2026-08-30 11:26:57
-#                                                 policy
-# U user group netops-ansible changed    turnrye  write   2026-08-30 11:26:57
-#                                                 policy
-# U user ansible added                   turnrye  write   2026-08-30 11:26:39
-#                                                 policy
-# U user group netops-ansible added      turnrye  write   2026-08-30 11:25:38
-#                                                 policy
-# U ovpn server added                             read    2026-08-29 11:15:35
-# U log rule added                       turnrye  write   2026-08-29 11:10:43
-# U log rule added                       turnrye  write   2026-08-29 11:10:43
-# U log rule added                       turnrye  write   2026-08-29 11:10:43
-# U log rule added                       turnrye  write   2026-08-29 11:10:43
-# U log rule added                       turnrye  write   2026-08-29 11:10:43
-# U log action changed                   turnrye  write   2026-08-29 11:10:41
-# U ip service changed                   turnrye  write   2026-08-29 11:10:37
-# U user mktxp added                     turnrye  write   2026-08-29 11:10:37
-#                                                 policy
-# U user group mktxp_group added         turnrye  write   2026-08-29 11:10:37
-#                                                 policy
-# U user oxidized-full added             turnrye  write   2026-08-29 11:10:34
-#                                                 policy
-# U user oxidized added                  turnrye  write   2026-08-29 11:10:34
-#                                                 policy
-# U user group netops-backup-full added  turnrye  write   2026-08-29 11:10:34
-#                                                 policy
-# U user group netops-backup-ro added    turnrye  write   2026-08-29 11:10:34
-#                                                 policy
+#   ACTION                                 BY       POLICY  TIME
+# U ip service changed                     ansible  write   2026-08-30 11:34:43
+# U ip service changed                     ansible  write   2026-08-30 11:34:40
+# U ntp settings changed                   ansible  write   2026-08-30 11:34:35
+# U ntp server record added                         read    2026-08-30 11:34:35
+# U ntp server record added                         read    2026-08-30 11:34:35
+# U ntp server record added                         read    2026-08-30 11:34:35
+# U ntp server record added                         read    2026-08-30 11:34:35
+# U mac winbox setting changed             ansible  write   2026-08-30 11:34:24
+# U mac-server interface changed           ansible  write   2026-08-30 11:34:22
+# U bandwidth-server changed               ansible  write   2026-08-30 11:34:20
+# U ssh settings changed                   ansible  write   2026-08-30 11:34:17
+# U user ae5au added                       turnrye  write   2026-08-30 11:29:51
+#                                                   policy
+# U user seichold added                    turnrye  write   2026-08-30 11:29:50
+#                                                   policy
+# U user mktxp changed                     turnrye  write   2026-08-30 11:29:46
+#                                                   policy
+# U user oxidized-full changed             turnrye  write   2026-08-30 11:29:46
+#                                                   policy
+# U user oxidized changed                  turnrye  write   2026-08-30 11:29:45
+#                                                   policy
+# U user group mktxp_group changed         turnrye  write   2026-08-30 11:29:45
+#                                                   policy
+# U user group netops-backup-full changed  turnrye  write   2026-08-30 11:29:45
+#                                                   policy
+# U user group netops-backup-ro changed    turnrye  write   2026-08-30 11:29:44
+#                                                   policy
+# U user mktxp changed                     turnrye  write   2026-08-30 11:29:42
+#                                                   policy
+# U user oxidized-full changed             turnrye  write   2026-08-30 11:29:40
+#                                                   policy
+# U user oxidized changed                  turnrye  write   2026-08-30 11:29:40
+#                                                   policy
+# U ip service changed                     turnrye  write   2026-08-30 11:29:23
+# U user ansible changed                   turnrye  write   2026-08-30 11:28:01
+#                                                   policy
+# U user ansible changed                   turnrye  write   2026-08-30 11:26:57
+#                                                   policy
+# U user group netops-ansible changed      turnrye  write   2026-08-30 11:26:57
+#                                                   policy
+# U user ansible added                     turnrye  write   2026-08-30 11:26:39
+#                                                   policy
+# U user group netops-ansible added        turnrye  write   2026-08-30 11:25:38
+#                                                   policy
+# U ovpn server added                               read    2026-08-29 11:15:35
+# U log rule added                         turnrye  write   2026-08-29 11:10:43
+# U log rule added                         turnrye  write   2026-08-29 11:10:43
+# U log rule added                         turnrye  write   2026-08-29 11:10:43
+# U log rule added                         turnrye  write   2026-08-29 11:10:43
+# U log rule added                         turnrye  write   2026-08-29 11:10:43
+# U log action changed                     turnrye  write   2026-08-29 11:10:41
+# U ip service changed                     turnrye  write   2026-08-29 11:10:37
+# U user mktxp added                       turnrye  write   2026-08-29 11:10:37
+#                                                   policy
+# U user group mktxp_group added           turnrye  write   2026-08-29 11:10:37
+#                                                   policy
+# U user oxidized-full added               turnrye  write   2026-08-29 11:10:34
+#                                                   policy
+# U user oxidized added                    turnrye  write   2026-08-29 11:10:34
+#                                                   policy
+# U user group netops-backup-full added    turnrye  write   2026-08-29 11:10:34
+#                                                   policy
+# U user group netops-backup-ro added      turnrye  write   2026-08-29 11:10:34
+#                                                   policy
 # 
 # software id = 8VX7-3B51
 #
@@ -124,11 +158,11 @@ set telnet disabled=yes
 set ftp disabled=yes
 set www disabled=yes
 set ssh port=222
-set api address=44.34.128.45/32
+set api address=44.34.128.45/32 disabled=yes
 set winbox disabled=yes
-set api-ssl disabled=yes
+set api-ssl address=44.34.128.45/32 certificate=api-ssl
 /ip ssh
-set forwarding-enabled=both
+set forwarding-enabled=both strong-crypto=yes
 /routing bfd configuration
 add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
 /routing filter rule
@@ -151,6 +185,19 @@ add action=remote topics=critical
 add action=remote topics=account
 /system note
 set show-at-login=no
+/system ntp client
+set enabled=yes
+/system ntp client servers
+add address=44.34.128.181
+add address=44.34.133.3
+add address=162.159.200.1
+add address=162.159.200.123
+/tool bandwidth-server
+set authenticate=no enabled=no
+/tool mac-server
+set allowed-interface-list=none
+/tool mac-server mac-winbox
+set allowed-interface-list=none
 /tool romon
 set enabled=yes
 /user group
