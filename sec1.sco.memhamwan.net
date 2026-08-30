@@ -7,64 +7,6 @@
 #                board-name: Metal 5SHPn
 #                  platform: HamWAN
 #   installed-version: 7.21.5
-# Flags: U - UNDOABLE
-# Columns: ACTION, BY, POLICY, TIME
-#   ACTION                                 BY       POLICY  TIME
-# U ip service changed                     ansible  write   2026-08-30 09:58:13
-# U ip service changed                     ansible  write   2026-08-30 09:58:11
-# U ntp settings changed                   ansible  write   2026-08-30 09:58:06
-# U user ae5au added                       turnrye  write   2026-08-30 09:51:19
-#                                                   policy
-# U user mktxp changed                     turnrye  write   2026-08-30 09:51:14
-#                                                   policy
-# U user oxidized-full changed             turnrye  write   2026-08-30 09:51:14
-#                                                   policy
-# U user oxidized changed                  turnrye  write   2026-08-30 09:51:14
-#                                                   policy
-# U user group mktxp_group changed         turnrye  write   2026-08-30 09:51:13
-#                                                   policy
-# U user group netops-backup-full changed  turnrye  write   2026-08-30 09:51:13
-#                                                   policy
-# U user group netops-backup-ro changed    turnrye  write   2026-08-30 09:51:13
-#                                                   policy
-# U user mktxp changed                     turnrye  write   2026-08-30 09:51:11
-#                                                   policy
-# U user oxidized-full changed             turnrye  write   2026-08-30 09:51:09
-#                                                   policy
-# U user oxidized changed                  turnrye  write   2026-08-30 09:51:09
-#                                                   policy
-# U ip service changed                     turnrye  write   2026-08-30 09:50:54
-# U user ansible changed                   turnrye  write   2026-08-30 09:48:03
-#                                                   policy
-# U user ansible changed                   turnrye  write   2026-08-30 09:47:52
-#                                                   policy
-# U user group netops-ansible changed      turnrye  write   2026-08-30 09:47:51
-#                                                   policy
-# U user ansible added                     turnrye  write   2026-08-30 09:47:36
-#                                                   policy
-# U user group netops-ansible added        turnrye  write   2026-08-30 09:46:49
-#                                                   policy
-# U ntp server record added                turnrye  write   2026-07-02 05:28:31
-# U log rule added                         turnrye  write   2026-07-02 05:27:30
-# U log rule added                         turnrye  write   2026-07-02 05:27:30
-# U log rule added                         turnrye  write   2026-07-02 05:27:30
-# U log rule added                         turnrye  write   2026-07-02 05:27:30
-# U log rule added                         turnrye  write   2026-07-02 05:27:30
-# U log rule removed                       turnrye  write   2026-07-02 05:27:30
-# U log action changed                     turnrye  write   2026-07-02 05:27:27
-# U ip service changed                     turnrye  write   2026-07-02 05:27:25
-# U user mktxp added                       turnrye  write   2026-07-02 05:27:25
-#                                                   policy
-# U user group mktxp_group added           turnrye  write   2026-07-02 05:27:25
-#                                                   policy
-# U user oxidized-full added               turnrye  write   2026-07-02 05:27:23
-#                                                   policy
-# U user oxidized added                    turnrye  write   2026-07-02 05:27:22
-#                                                   policy
-# U user group netops-backup-full added    turnrye  write   2026-07-02 05:27:22
-#                                                   policy
-# U user group netops-backup-ro added      turnrye  write   2026-07-02 05:27:22
-#                                                   policy
 # 
 # software id = PVD9-NLPF
 #
