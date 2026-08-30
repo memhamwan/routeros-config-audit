@@ -9,41 +9,95 @@
 #   installed-version: 7.17
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
-#   ACTION                               BY       POLICY  TIME
-# U log rule added                       turnrye  write   1971-08-01 18:59:35
-# U log rule added                       turnrye  write   1971-08-01 18:59:35
-# U log rule added                       turnrye  write   1971-08-01 18:59:35
-# U log rule added                       turnrye  write   1971-08-01 18:59:35
-# U log rule added                       turnrye  write   1971-08-01 18:59:35
-# U log rule removed                     turnrye  write   1971-08-01 18:59:35
-# U log action changed                   turnrye  write   1971-08-01 18:59:30
-# U ip service changed                   turnrye  write   1971-08-01 18:59:25
-# U user mktxp added                     turnrye  write   1971-08-01 18:59:25
-#                                                 policy
-# U user group mktxp_group added         turnrye  write   1971-08-01 18:59:25
-#                                                 policy
-# U user oxidized-full added             turnrye  write   1971-08-01 18:59:23
-#                                                 policy
-# U user oxidized added                  turnrye  write   1971-08-01 18:59:23
-#                                                 policy
-# U user group netops-backup-full added  turnrye  write   1971-08-01 18:59:23
-#                                                 policy
-# U user group netops-backup-ro added    turnrye  write   1971-08-01 18:59:23
-#                                                 policy
-# U device changed                       hamwan   write   1971-07-14 05:35:47
-# U device changed                       hamwan   write   1971-07-14 05:33:46
-# U device changed                       hamwan   write   1971-07-14 04:35:18
-# U device changed                       hamwan   write   1971-07-12 01:21:25
-# U script removed from scheduler        hamwan   write   1971-07-12 00:21:29
-# U device changed                       hamwan   write   1971-07-12 00:07:43
-# U new script scheduled                 hamwan   write   1971-07-12 00:07:29
-# U device changed                       hamwan   write   1971-07-11 23:16:49
-# U script removed from scheduler        hamwan   write   1971-07-11 23:06:07
-# U device changed                       hamwan   write   1971-07-11 23:05:44
-# U new script scheduled                 hamwan   write   1971-07-11 23:05:20
-# U script removed from scheduler        hamwan   write   1971-07-11 22:55:51
-# U device changed                       hamwan   write   1971-07-11 22:54:35
-# U new script scheduled                 hamwan   write   1971-07-11 22:54:27
+#   ACTION                                 BY       POLICY  TIME
+# U user ae5au added                       turnrye  write   1971-08-02 18:36:37
+#                                                   policy
+# U user mktxp changed                     turnrye  write   1971-08-02 18:36:32
+#                                                   policy
+# U user mktxp changed                     turnrye  write   1971-08-02 18:36:32
+#                                                   policy
+# U user oxidized-full changed             turnrye  write   1971-08-02 18:36:31
+#                                                   policy
+# U user oxidized-full changed             turnrye  write   1971-08-02 18:36:31
+#                                                   policy
+# U user oxidized changed                  turnrye  write   1971-08-02 18:36:31
+#                                                   policy
+# U user oxidized changed                  turnrye  write   1971-08-02 18:36:31
+#                                                   policy
+# U user group mktxp_group changed         turnrye  write   1971-08-02 18:36:31
+#                                                   policy
+# U user group mktxp_group changed         turnrye  write   1971-08-02 18:36:31
+#                                                   policy
+# U user group netops-backup-full changed  turnrye  write   1971-08-02 18:36:30
+#                                                   policy
+# U user group netops-backup-full changed  turnrye  write   1971-08-02 18:36:30
+#                                                   policy
+# U user group netops-backup-ro changed    turnrye  write   1971-08-02 18:36:30
+#                                                   policy
+# U user group netops-backup-ro changed    turnrye  write   1971-08-02 18:36:30
+#                                                   policy
+# U user mktxp changed                     turnrye  write   1971-08-02 18:36:28
+#                                                   policy
+# U user mktxp changed                     turnrye  write   1971-08-02 18:36:28
+#                                                   policy
+# U user oxidized-full changed             turnrye  write   1971-08-02 18:36:26
+#                                                   policy
+# U user oxidized-full changed             turnrye  write   1971-08-02 18:36:26
+#                                                   policy
+# U user oxidized changed                  turnrye  write   1971-08-02 18:36:26
+#                                                   policy
+# U user oxidized changed                  turnrye  write   1971-08-02 18:36:26
+#                                                   policy
+# U ip service changed                     turnrye  write   1971-08-02 18:36:11
+# U ip service changed                     turnrye  write   1971-08-02 18:36:10
+# U user ansible changed                   turnrye  write   1971-08-02 18:34:47
+#                                                   policy
+# U user ansible changed                   turnrye  write   1971-08-02 18:33:42
+#                                                   policy
+# U user ansible changed                   turnrye  write   1971-08-02 18:33:42
+#                                                   policy
+# U user group netops-ansible changed      turnrye  write   1971-08-02 18:33:42
+#                                                   policy
+# U user group netops-ansible changed      turnrye  write   1971-08-02 18:33:42
+#                                                   policy
+# U user ansible added                     turnrye  write   1971-08-02 18:33:25
+#                                                   policy
+# U user group netops-ansible added        turnrye  write   1971-08-02 18:32:25
+#                                                   policy
+# U log rule added                         turnrye  write   1971-08-01 18:59:35
+# U log rule added                         turnrye  write   1971-08-01 18:59:35
+# U log rule added                         turnrye  write   1971-08-01 18:59:35
+# U log rule added                         turnrye  write   1971-08-01 18:59:35
+# U log rule added                         turnrye  write   1971-08-01 18:59:35
+# U log rule removed                       turnrye  write   1971-08-01 18:59:35
+# U log action changed                     turnrye  write   1971-08-01 18:59:30
+# U ip service changed                     turnrye  write   1971-08-01 18:59:25
+# U user mktxp added                       turnrye  write   1971-08-01 18:59:25
+#                                                   policy
+# U user group mktxp_group added           turnrye  write   1971-08-01 18:59:25
+#                                                   policy
+# U user oxidized-full added               turnrye  write   1971-08-01 18:59:23
+#                                                   policy
+# U user oxidized added                    turnrye  write   1971-08-01 18:59:23
+#                                                   policy
+# U user group netops-backup-full added    turnrye  write   1971-08-01 18:59:23
+#                                                   policy
+# U user group netops-backup-ro added      turnrye  write   1971-08-01 18:59:23
+#                                                   policy
+# U device changed                         hamwan   write   1971-07-14 05:35:47
+# U device changed                         hamwan   write   1971-07-14 05:33:46
+# U device changed                         hamwan   write   1971-07-14 04:35:18
+# U device changed                         hamwan   write   1971-07-12 01:21:25
+# U script removed from scheduler          hamwan   write   1971-07-12 00:21:29
+# U device changed                         hamwan   write   1971-07-12 00:07:43
+# U new script scheduled                   hamwan   write   1971-07-12 00:07:29
+# U device changed                         hamwan   write   1971-07-11 23:16:49
+# U script removed from scheduler          hamwan   write   1971-07-11 23:06:07
+# U device changed                         hamwan   write   1971-07-11 23:05:44
+# U new script scheduled                   hamwan   write   1971-07-11 23:05:20
+# U script removed from scheduler          hamwan   write   1971-07-11 22:55:51
+# U device changed                         hamwan   write   1971-07-11 22:54:35
+# U new script scheduled                   hamwan   write   1971-07-11 22:54:27
 # 
 # software id = CIAG-EMEJ
 #
@@ -109,7 +163,7 @@ set www disabled=yes
 set ssh port=222
 set api address=44.34.128.45/32
 set winbox disabled=yes
-set api-ssl disabled=yes
+set api-ssl certificate=api-ssl
 /ip smb shares
 set [ find default=yes ] directory=/pub
 /ip ssh
@@ -162,3 +216,4 @@ set enabled=yes
 add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
 add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
 add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
+add name=netops-ansible policy="ssh,ftp,read,write,policy,test,api,!local,!telnet,!reboot,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
