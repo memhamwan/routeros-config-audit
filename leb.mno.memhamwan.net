@@ -7,6 +7,45 @@
 #                board-name: NetMetal 5
 #                  platform: MikroTik
 #   installed-version: 7.12.1
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION                                 BY       POLICY  TIME
+# U ip service changed                     ansible  write   1970-12-12 22:37:33
+# U ip service changed                     ansible  write   1970-12-12 22:37:31
+# U ntp settings changed                   ansible  write   1970-12-12 22:37:27
+# U ntp server record added                         read    1970-12-12 22:37:27
+# U ntp server record added                         read    1970-12-12 22:37:27
+# U user ae5au added                       turnrye  write   1970-12-12 22:35:30
+#                                                   policy
+# U user mktxp changed                     turnrye  write   1970-12-12 22:35:25
+#                                                   policy
+# U user oxidized-full changed             turnrye  write   1970-12-12 22:35:25
+#                                                   policy
+# U user oxidized changed                  turnrye  write   1970-12-12 22:35:24
+#                                                   policy
+# U user group mktxp_group changed         turnrye  write   1970-12-12 22:35:24
+#                                                   policy
+# U user group netops-backup-full changed  turnrye  write   1970-12-12 22:35:24
+#                                                   policy
+# U user group netops-backup-ro changed    turnrye  write   1970-12-12 22:35:23
+#                                                   policy
+# U user mktxp changed                     turnrye  write   1970-12-12 22:35:22
+#                                                   policy
+# U user oxidized-full changed             turnrye  write   1970-12-12 22:35:19
+#                                                   policy
+# U user oxidized changed                  turnrye  write   1970-12-12 22:35:19
+#                                                   policy
+# U ip service changed                     turnrye  write   1970-12-12 22:35:03
+# U user ansible changed                   turnrye  write   1970-12-12 22:33:56
+#                                                   policy
+# U user ansible changed                   turnrye  write   1970-12-12 22:33:49
+#                                                   policy
+# U user group netops-ansible changed      turnrye  write   1970-12-12 22:33:48
+#                                                   policy
+# U user ansible added                     turnrye  write   1970-12-12 22:33:46
+#                                                   policy
+# U user group netops-ansible added        turnrye  write   1970-12-12 22:33:43
+#                                                   policy
 # 
 # software id = XTAG-7W68
 #
@@ -39,6 +78,7 @@ add bsd-syslog=yes name=centrallogging remote=44.34.128.171 syslog-facility=sysl
 add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
 add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
 add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
+add name=netops-ansible policy="ssh,ftp,read,write,policy,test,api,!local,!telnet,!reboot,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
 #error exporting "/interface/bridge/calea"
 /interface bridge port
 add bridge=bridge1 ingress-filtering=no interface=wlan1
@@ -65,9 +105,9 @@ set telnet disabled=yes
 set ftp disabled=yes
 set www disabled=yes
 set ssh port=222
-set api address=44.34.128.45/32
+set api address=44.34.128.45/32 disabled=yes
 set winbox disabled=yes
-set api-ssl disabled=yes
+set api-ssl address=44.34.128.45/32 certificate=api-ssl
 /ip socks
 set connection-idle-timeout=1m max-connections=255 port=48324
 /ip ssh
@@ -104,6 +144,8 @@ set enabled=yes
 /system ntp client servers
 add address=44.34.128.181
 add address=44.34.133.3
+add address=162.159.200.1
+add address=162.159.200.123
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server
