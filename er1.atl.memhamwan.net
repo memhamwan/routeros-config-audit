@@ -11,6 +11,10 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                                 BY       POLICY  TIME
+# U filter rule changed                    turnrye  write   2026-08-30 21:41:34
+# U filter rule changed                    turnrye  write   2026-08-30 21:41:34
+# U filter rule changed                    turnrye  write   2026-08-30 21:41:34
+# U filter rule changed                    turnrye  write   2026-08-30 21:41:34
 # U ip service changed                     ansible  write   2026-08-30 16:00:52
 # U ip service changed                     ansible  write   2026-08-30 16:00:51
 # U ntp settings changed                   ansible  write   2026-08-30 16:00:49
@@ -139,11 +143,11 @@ add address=103.77.246.204 list=denylist
 /ip firewall filter
 add action=drop chain=forward dst-address=44.34.129.130
 add action=accept chain=forward dst-address=44.34.128.42
-add action=drop chain=forward dst-address=44.34.128.161 port=53 protocol=udp
+add action=drop chain=forward disabled=yes dst-address=44.34.128.161 port=53 protocol=udp
 add action=accept chain=forward dst-address=44.34.128.178
-add action=drop chain=forward dst-address=44.34.128.190 port=53 protocol=udp
-add action=drop chain=forward dst-address=44.34.132.1 port=53 protocol=udp
-add action=drop chain=forward dst-address=44.34.132.1 port=53 protocol=tcp
+add action=drop chain=forward disabled=yes dst-address=44.34.128.190 port=53 protocol=udp
+add action=drop chain=forward disabled=yes dst-address=44.34.132.1 port=53 protocol=udp
+add action=drop chain=forward disabled=yes dst-address=44.34.132.1 port=53 protocol=tcp
 add action=drop chain=forward comment=esxi dst-address=44.34.128.164 in-interface=ether1
 add action=drop chain=forward comment=ip-cam dst-address=44.34.129.72 in-interface=ether1
 add action=drop chain=forward comment=weather-station dst-address=44.34.129.71 in-interface=ether1
