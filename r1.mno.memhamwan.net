@@ -7,45 +7,6 @@
 #                board-name: CRS125-24G-1S
 #                  platform: MikroTik
 #   installed-version: 7.19.4
-# Flags: U - UNDOABLE
-# Columns: ACTION, BY, POLICY, TIME
-#   ACTION                                 BY       POLICY  TIME
-# U ip service changed                     ansible  write   2025-10-03 09:31:50
-# U ip service changed                     ansible  write   2025-10-03 09:31:48
-# U ntp settings changed                   ansible  write   2025-10-03 09:31:44
-# U ntp server record added                         read    2025-10-03 09:31:44
-# U ntp server record added                         read    2025-10-03 09:31:44
-# U user ae5au added                       turnrye  write   2025-10-03 09:29:48
-#                                                   policy
-# U user mktxp changed                     turnrye  write   2025-10-03 09:29:43
-#                                                   policy
-# U user oxidized-full changed             turnrye  write   2025-10-03 09:29:42
-#                                                   policy
-# U user oxidized changed                  turnrye  write   2025-10-03 09:29:42
-#                                                   policy
-# U user group mktxp_group changed         turnrye  write   2025-10-03 09:29:42
-#                                                   policy
-# U user group netops-backup-full changed  turnrye  write   2025-10-03 09:29:41
-#                                                   policy
-# U user group netops-backup-ro changed    turnrye  write   2025-10-03 09:29:41
-#                                                   policy
-# U user mktxp changed                     turnrye  write   2025-10-03 09:29:39
-#                                                   policy
-# U user oxidized-full changed             turnrye  write   2025-10-03 09:29:37
-#                                                   policy
-# U user oxidized changed                  turnrye  write   2025-10-03 09:29:37
-#                                                   policy
-# U ip service changed                     turnrye  write   2025-10-03 09:29:17
-# U user ansible changed                   turnrye  write   2025-10-03 09:28:13
-#                                                   policy
-# U user ansible changed                   turnrye  write   2025-10-03 09:28:06
-#                                                   policy
-# U user group netops-ansible changed      turnrye  write   2025-10-03 09:28:06
-#                                                   policy
-# U user ansible added                     turnrye  write   2025-10-03 09:28:04
-#                                                   policy
-# U user group netops-ansible added        turnrye  write   2025-10-03 09:28:01
-#                                                   policy
 # 
 # software id = JSLF-NLB9
 #
