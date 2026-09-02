@@ -7,6 +7,11 @@
 #                board-name: Metal 5SHPn
 #                  platform: MikroTik
 #   installed-version: 7.12.1
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME, TRACE
+#   ACTION          BY  POLICY  TIME                 TRACE
+# U user ops added   0  write   2026-09-02 07:27:38  ssh:-2@82.192.72.4
+#                       policy
 # 
 # software id = 3QHR-LE3I
 #
