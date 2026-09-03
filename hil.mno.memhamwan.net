@@ -54,6 +54,7 @@
 /interface bridge
 add fast-forward=no mtu=1500 name=bridge1
 /interface vrrp
+# received packet from 44.34.129.39 AH authentication failed
 add authentication=ah interface=ether1 name=vrrp1 version=2
 /interface lte apn
 set [ find default=yes ] ip-type=ipv4 use-network-apn=no
