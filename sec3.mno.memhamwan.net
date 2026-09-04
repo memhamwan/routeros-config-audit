@@ -7,64 +7,6 @@
 #                board-name: RB912UAG-5HPnD
 #                  platform: MikroTik
 #   installed-version: 7.12.1
-# Flags: U - UNDOABLE
-# Columns: ACTION, BY, POLICY, TIME
-#   ACTION                                 BY       POLICY  TIME
-# U ip service changed                     ansible  write   1970-01-01 18:43:08
-# U ntp settings changed                   ansible  write   1970-01-01 18:43:02
-# U ntp server record added                         read    1970-01-01 18:43:02
-# U ntp server record added                         read    1970-01-01 18:43:02
-# U log rule added                         ansible  write   1970-01-01 18:43:00
-# U log rule added                         ansible  write   1970-01-01 18:42:58
-# U log rule added                         ansible  write   1970-01-01 18:42:57
-# U log rule added                         ansible  write   1970-01-01 18:42:55
-# U log rule added                         ansible  write   1970-01-01 18:42:53
-# U log action changed                     ansible  write   1970-01-01 18:40:19
-# U user ae5au added                       turnrye  write   1970-01-01 18:39:29
-#                                                   policy
-# U user mktxp changed                     turnrye  write   1970-01-01 18:39:24
-#                                                   policy
-# U user oxidized-full changed             turnrye  write   1970-01-01 18:39:23
-#                                                   policy
-# U user oxidized changed                  turnrye  write   1970-01-01 18:39:22
-#                                                   policy
-# U user group mktxp_group changed         turnrye  write   1970-01-01 18:39:22
-#                                                   policy
-# U user group netops-backup-full changed  turnrye  write   1970-01-01 18:39:22
-#                                                   policy
-# U user group netops-backup-ro changed    turnrye  write   1970-01-01 18:39:21
-#                                                   policy
-# U user mktxp changed                     turnrye  write   1970-01-01 18:39:19
-#                                                   policy
-# U user mktxp added                       turnrye  write   1970-01-01 18:39:19
-#                                                   policy
-# U user oxidized-full changed             turnrye  write   1970-01-01 18:39:17
-#                                                   policy
-# U user oxidized changed                  turnrye  write   1970-01-01 18:39:17
-#                                                   policy
-# U user oxidized-full added               turnrye  write   1970-01-01 18:39:06
-#                                                   policy
-# U user oxidized added                    turnrye  write   1970-01-01 18:39:05
-#                                                   policy
-# U ip service changed                     turnrye  write   1970-01-01 18:39:01
-# U user group mktxp_group added           turnrye  write   1970-01-01 18:38:48
-#                                                   policy
-# U user group netops-backup-full added    turnrye  write   1970-01-01 18:38:48
-#                                                   policy
-# U user group netops-backup-ro added      turnrye  write   1970-01-01 18:38:48
-#                                                   policy
-# U user ansible changed                   turnrye  write   1970-01-01 18:36:49
-#                                                   policy
-# U user ansible changed                   turnrye  write   1970-01-01 18:36:42
-#                                                   policy
-# U user group netops-ansible changed      turnrye  write   1970-01-01 18:36:41
-#                                                   policy
-# U user ansible added                     turnrye  write   1970-01-01 18:36:39
-#                                                   policy
-# U user group netops-ansible added        turnrye  write   1970-01-01 18:36:19
-#                                                   policy
-# U ntp server record added                         read    1970-01-01 18:00:18
-# U ntp server record added                         read    1970-01-01 18:00:18
 # 
 # software id = 4PHL-98VJ
 #
