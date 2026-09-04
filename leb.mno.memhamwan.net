@@ -7,45 +7,44 @@
 #                board-name: NetMetal 5
 #                  platform: MikroTik
 #   installed-version: 7.12.1
-# Flags: U - UNDOABLE
-# Columns: ACTION, BY, POLICY, TIME
-#   ACTION                                 BY       POLICY  TIME
-# U ip service changed                     ansible  write   1970-12-12 22:37:33
-# U ip service changed                     ansible  write   1970-12-12 22:37:31
-# U ntp settings changed                   ansible  write   1970-12-12 22:37:27
-# U ntp server record added                         read    1970-12-12 22:37:27
-# U ntp server record added                         read    1970-12-12 22:37:27
-# U user ae5au added                       turnrye  write   1970-12-12 22:35:30
-#                                                   policy
-# U user mktxp changed                     turnrye  write   1970-12-12 22:35:25
-#                                                   policy
-# U user oxidized-full changed             turnrye  write   1970-12-12 22:35:25
-#                                                   policy
-# U user oxidized changed                  turnrye  write   1970-12-12 22:35:24
-#                                                   policy
-# U user group mktxp_group changed         turnrye  write   1970-12-12 22:35:24
-#                                                   policy
-# U user group netops-backup-full changed  turnrye  write   1970-12-12 22:35:24
-#                                                   policy
-# U user group netops-backup-ro changed    turnrye  write   1970-12-12 22:35:23
-#                                                   policy
-# U user mktxp changed                     turnrye  write   1970-12-12 22:35:22
-#                                                   policy
-# U user oxidized-full changed             turnrye  write   1970-12-12 22:35:19
-#                                                   policy
-# U user oxidized changed                  turnrye  write   1970-12-12 22:35:19
-#                                                   policy
-# U ip service changed                     turnrye  write   1970-12-12 22:35:03
-# U user ansible changed                   turnrye  write   1970-12-12 22:33:56
-#                                                   policy
-# U user ansible changed                   turnrye  write   1970-12-12 22:33:49
-#                                                   policy
-# U user group netops-ansible changed      turnrye  write   1970-12-12 22:33:48
-#                                                   policy
-# U user ansible added                     turnrye  write   1970-12-12 22:33:46
-#                                                   policy
-# U user group netops-ansible added        turnrye  write   1970-12-12 22:33:43
-#                                                   policy
+# Flags: U - undoable, R - redoable, F - floating-undo
+#   ACTION                                   BY    PO.. TIME                 TR..
+# U ip service changed                       ans.. wr.. 1970-12-12 22:37:33  ap..
+# U ip service changed                       ans.. wr.. 1970-12-12 22:37:31  ap..
+# U ntp settings changed                     ans.. wr.. 1970-12-12 22:37:27  ap..
+# U ntp server record added                        read 1970-12-12 22:37:27
+# U ntp server record added                        read 1970-12-12 22:37:27
+# U user ae5au added                         tur.. wr.. 1970-12-12 22:35:30  ss..
+#                                                  po..
+# U user mktxp changed                       tur.. wr.. 1970-12-12 22:35:25  ss..
+#                                                  po..
+# U user oxidized-full changed               tur.. wr.. 1970-12-12 22:35:25  ss..
+#                                                  po..
+# U user oxidized changed                    tur.. wr.. 1970-12-12 22:35:24  ss..
+#                                                  po..
+# U user group mktxp_group changed           tur.. wr.. 1970-12-12 22:35:24  ss..
+#                                                  po..
+# U user group netops-backup-full changed    tur.. wr.. 1970-12-12 22:35:24  ss..
+#                                                  po..
+# U user group netops-backup-ro changed      tur.. wr.. 1970-12-12 22:35:23  ss..
+#                                                  po..
+# U user mktxp changed                       tur.. wr.. 1970-12-12 22:35:22  ss..
+#                                                  po..
+# U user oxidized-full changed               tur.. wr.. 1970-12-12 22:35:19  ss..
+#                                                  po..
+# U user oxidized changed                    tur.. wr.. 1970-12-12 22:35:19  ss..
+#                                                  po..
+# U ip service changed                       tur.. wr.. 1970-12-12 22:35:03  ss..
+# U user ansible changed                     tur.. wr.. 1970-12-12 22:33:56  ss..
+#                                                  po..
+# U user ansible changed                     tur.. wr.. 1970-12-12 22:33:49  ss..
+#                                                  po..
+# U user group netops-ansible changed        tur.. wr.. 1970-12-12 22:33:48  ss..
+#                                                  po..
+# U user ansible added                       tur.. wr.. 1970-12-12 22:33:46  ss..
+#                                                  po..
+# U user group netops-ansible added          tur.. wr.. 1970-12-12 22:33:43  ss..
+#                                                  po..
 # 
 # software id = XTAG-7W68
 #
