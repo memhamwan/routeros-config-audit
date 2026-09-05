@@ -125,7 +125,6 @@ set [ find default=yes ] supplicant-identity=MikroTik
 add authentication-types=wpa-psk,wpa2-psk eap-methods="" management-protection=allowed mode=dynamic-keys name=hamwan supplicant-identity=""
 /interface wireless
 set [ find default-name=wlan1 ] adaptive-noise-immunity=ap-and-client-mode band=5ghz-onlyac compression=yes country="united states3" disabled=no frequency=5825 hw-retries=15 installation=outdoor mode=station-bridge nv2-cell-radius=20 radio-name=sco.hil.memhamwan.net rx-chains=0,1 security-profile=hamwan ssid=HamWAN-hil-leb tdma-period-size=4 tx-chains=0,1 wireless-protocol=nv2-nstreme-802.11
-#error exporting "/ip/hotspot/user/profile" (timeout)
 /ip ipsec proposal
 set [ find default=yes ] enc-algorithms=aes-128-cbc
 /ip smb users
