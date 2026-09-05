@@ -108,7 +108,6 @@ set [ find default=yes ] supplicant-identity=MikroTik
 add authentication-types=wpa-psk,wpa2-psk eap-methods="" management-protection=allowed mode=dynamic-keys name=hamwan supplicant-identity=""
 /interface wireless
 set [ find default-name=wlan1 ] adaptive-noise-immunity=ap-and-client-mode antenna-gain=15 band=5ghz-onlyac channel-width=20/40/80mhz-eeeC country="united states" disabled=no frequency=5825 mode=bridge mtu=1600 nv2-cell-radius=18 radio-name=KM4ECM rx-chains=0,1 security-profile=hamwan ssid=HamWAN-hil-mno station-roaming=enabled tx-chains=0,1 wireless-protocol=nv2
-#error exporting "/ip/ipsec/policy/group" (timeout)
 /ip smb users
 set [ find default=yes ] disabled=yes
 /routing bgp template
