@@ -7,85 +7,84 @@
 #                board-name: NetMetal 5
 #                  platform: HamWAN
 #   installed-version: 7.17
-# Flags: U - UNDOABLE
-# Columns: ACTION, BY, POLICY, TIME
-#   ACTION                                 BY       POLICY  TIME
-# U ip service changed                     ansible  write   1971-08-03 23:21:11
-# U ip service changed                     ansible  write   1971-08-03 23:21:09
-# U ntp settings changed                   ansible  write   1971-08-03 23:21:06
-# U ntp server record removed                       read    1971-08-03 23:21:06
-# U ntp server record added                         read    1971-08-03 23:21:06
-# U ntp server record added                         read    1971-08-03 23:21:06
-# U user mktxp changed                     turnrye  write   1971-08-03 23:20:02
-#                                                   policy
-# U user oxidized-full changed             turnrye  write   1971-08-03 23:20:02
-#                                                   policy
-# U user oxidized changed                  turnrye  write   1971-08-03 23:20:01
-#                                                   policy
-# U user group mktxp_group changed         turnrye  write   1971-08-03 23:20:01
-#                                                   policy
-# U user group netops-backup-full changed  turnrye  write   1971-08-03 23:20:01
-#                                                   policy
-# U user group netops-backup-ro changed    turnrye  write   1971-08-03 23:20:00
-#                                                   policy
-# U user mktxp changed                     turnrye  write   1971-08-03 23:19:59
-#                                                   policy
-# U user oxidized-full changed             turnrye  write   1971-08-03 23:19:57
-#                                                   policy
-# U user oxidized changed                  turnrye  write   1971-08-03 23:19:57
-#                                                   policy
-# U ip service changed                     turnrye  write   1971-08-03 23:19:44
-# U user ansible changed                   turnrye  write   1971-08-03 23:18:11
-#                                                   policy
-# U user ansible changed                   turnrye  write   1971-08-03 23:18:05
-#                                                   policy
-# U user group netops-ansible changed      turnrye  write   1971-08-03 23:18:05
-#                                                   policy
-# U user ansible added                     turnrye  write   1971-08-03 23:18:03
-#                                                   policy
-# U user ae5au added                       turnrye  write   1971-08-03 18:44:21
-#                                                   policy
-# U user mktxp changed                     turnrye  write   1971-08-03 18:44:15
-#                                                   policy
-# U user oxidized-full changed             turnrye  write   1971-08-03 18:44:15
-#                                                   policy
-# U user oxidized changed                  turnrye  write   1971-08-03 18:44:15
-#                                                   policy
-# U user group mktxp_group changed         turnrye  write   1971-08-03 18:44:15
-#                                                   policy
-# U user group netops-backup-full changed  turnrye  write   1971-08-03 18:44:14
-#                                                   policy
-# U user group netops-backup-ro changed    turnrye  write   1971-08-03 18:44:14
-#                                                   policy
-# U user mktxp changed                     turnrye  write   1971-08-03 18:44:12
-#                                                   policy
-# U user oxidized-full changed             turnrye  write   1971-08-03 18:44:10
-#                                                   policy
-# U user oxidized changed                  turnrye  write   1971-08-03 18:44:10
-#                                                   policy
-# U ip service changed                     turnrye  write   1971-08-03 18:43:52
-# U user group netops-ansible added        turnrye  write   1971-08-03 18:40:08
-#                                                   policy
-# U log rule added                         turnrye  write   1971-08-02 17:44:18
-# U log rule added                         turnrye  write   1971-08-02 17:44:18
-# U log rule added                         turnrye  write   1971-08-02 17:44:18
-# U log rule added                         turnrye  write   1971-08-02 17:44:18
-# U log rule added                         turnrye  write   1971-08-02 17:44:18
-# U log rule removed                       turnrye  write   1971-08-02 17:44:18
-# U log action changed                     turnrye  write   1971-08-02 17:44:15
-# U ip service changed                     turnrye  write   1971-08-02 06:35:03
-# U user mktxp added                       turnrye  write   1971-08-02 06:35:03
-#                                                   policy
-# U user group mktxp_group added           turnrye  write   1971-08-02 06:35:03
-#                                                   policy
-# U user oxidized-full added               turnrye  write   1971-08-02 02:38:04
-#                                                   policy
-# U user oxidized added                    turnrye  write   1971-08-02 02:38:04
-#                                                   policy
-# U user group netops-backup-full added    turnrye  write   1971-08-02 02:38:04
-#                                                   policy
-# U user group netops-backup-ro added      turnrye  write   1971-08-02 02:38:04
-#                                                   policy
+# Flags: U - undoable, R - redoable, F - floating-undo
+#   ACTION                                   BY    PO.. TIME                 TR..
+# U ip service changed                       ans.. wr.. 1971-08-03 23:21:11  ap..
+# U ip service changed                       ans.. wr.. 1971-08-03 23:21:09  ap..
+# U ntp settings changed                     ans.. wr.. 1971-08-03 23:21:06  ap..
+# U ntp server record removed                      read 1971-08-03 23:21:06
+# U ntp server record added                        read 1971-08-03 23:21:06
+# U ntp server record added                        read 1971-08-03 23:21:06
+# U user mktxp changed                       tur.. wr.. 1971-08-03 23:20:02  ss..
+#                                                  po..
+# U user oxidized-full changed               tur.. wr.. 1971-08-03 23:20:02  ss..
+#                                                  po..
+# U user oxidized changed                    tur.. wr.. 1971-08-03 23:20:01  ss..
+#                                                  po..
+# U user group mktxp_group changed           tur.. wr.. 1971-08-03 23:20:01  ss..
+#                                                  po..
+# U user group netops-backup-full changed    tur.. wr.. 1971-08-03 23:20:01  ss..
+#                                                  po..
+# U user group netops-backup-ro changed      tur.. wr.. 1971-08-03 23:20:00  ss..
+#                                                  po..
+# U user mktxp changed                       tur.. wr.. 1971-08-03 23:19:59  ss..
+#                                                  po..
+# U user oxidized-full changed               tur.. wr.. 1971-08-03 23:19:57  ss..
+#                                                  po..
+# U user oxidized changed                    tur.. wr.. 1971-08-03 23:19:57  ss..
+#                                                  po..
+# U ip service changed                       tur.. wr.. 1971-08-03 23:19:44  ss..
+# U user ansible changed                     tur.. wr.. 1971-08-03 23:18:11  ss..
+#                                                  po..
+# U user ansible changed                     tur.. wr.. 1971-08-03 23:18:05  ss..
+#                                                  po..
+# U user group netops-ansible changed        tur.. wr.. 1971-08-03 23:18:05  ss..
+#                                                  po..
+# U user ansible added                       tur.. wr.. 1971-08-03 23:18:03  ss..
+#                                                  po..
+# U user ae5au added                         tur.. wr.. 1971-08-03 18:44:21  ss..
+#                                                  po..
+# U user mktxp changed                       tur.. wr.. 1971-08-03 18:44:15  ss..
+#                                                  po..
+# U user oxidized-full changed               tur.. wr.. 1971-08-03 18:44:15  ss..
+#                                                  po..
+# U user oxidized changed                    tur.. wr.. 1971-08-03 18:44:15  ss..
+#                                                  po..
+# U user group mktxp_group changed           tur.. wr.. 1971-08-03 18:44:15  ss..
+#                                                  po..
+# U user group netops-backup-full changed    tur.. wr.. 1971-08-03 18:44:14  ss..
+#                                                  po..
+# U user group netops-backup-ro changed      tur.. wr.. 1971-08-03 18:44:14  ss..
+#                                                  po..
+# U user mktxp changed                       tur.. wr.. 1971-08-03 18:44:12  ss..
+#                                                  po..
+# U user oxidized-full changed               tur.. wr.. 1971-08-03 18:44:10  ss..
+#                                                  po..
+# U user oxidized changed                    tur.. wr.. 1971-08-03 18:44:10  ss..
+#                                                  po..
+# U ip service changed                       tur.. wr.. 1971-08-03 18:43:52  ss..
+# U user group netops-ansible added          tur.. wr.. 1971-08-03 18:40:08  ss..
+#                                                  po..
+# U log rule added                           tur.. wr.. 1971-08-02 17:44:18  ss..
+# U log rule added                           tur.. wr.. 1971-08-02 17:44:18  ss..
+# U log rule added                           tur.. wr.. 1971-08-02 17:44:18  ss..
+# U log rule added                           tur.. wr.. 1971-08-02 17:44:18  ss..
+# U log rule added                           tur.. wr.. 1971-08-02 17:44:18  ss..
+# U log rule removed                         tur.. wr.. 1971-08-02 17:44:18  ss..
+# U log action changed                       tur.. wr.. 1971-08-02 17:44:15  ss..
+# U ip service changed                       tur.. wr.. 1971-08-02 06:35:03  ss..
+# U user mktxp added                         tur.. wr.. 1971-08-02 06:35:03  ss..
+#                                                  po..
+# U user group mktxp_group added             tur.. wr.. 1971-08-02 06:35:03  ss..
+#                                                  po..
+# U user oxidized-full added                 tur.. wr.. 1971-08-02 02:38:04  ss..
+#                                                  po..
+# U user oxidized added                      tur.. wr.. 1971-08-02 02:38:04  ss..
+#                                                  po..
+# U user group netops-backup-full added      tur.. wr.. 1971-08-02 02:38:04  ss..
+#                                                  po..
+# U user group netops-backup-ro added        tur.. wr.. 1971-08-02 02:38:04  ss..
+#                                                  po..
 # 
 # software id = R2YK-BVVU
 #
