@@ -1,5 +1,5 @@
-#                   version: 7.23.3 (stable)
-#          factory-software: 7.1
+#                   version: 7.24.2 (stable)
+#           minimum-version: 7.1
 #              total-memory: 1024.0MiB
 #                       cpu: Intel
 #                 cpu-count: 1
@@ -7,71 +7,7 @@
 #         architecture-name: x86_64
 #                board-name: CHR Vultr VC2
 #                  platform: MikroTik
-#   installed-version: 7.23.3
-# Flags: U - UNDOABLE
-# Columns: ACTION, BY, POLICY, TIME
-#   ACTION                                 BY       POLICY  TIME
-# U filter rule changed                    turnrye  write   2026-08-30 21:41:34
-# U filter rule changed                    turnrye  write   2026-08-30 21:41:34
-# U filter rule changed                    turnrye  write   2026-08-30 21:41:34
-# U filter rule changed                    turnrye  write   2026-08-30 21:41:34
-# U ip service changed                     ansible  write   2026-08-30 16:00:52
-# U ip service changed                     ansible  write   2026-08-30 16:00:51
-# U ntp settings changed                   ansible  write   2026-08-30 16:00:49
-# U user ae5au added                       turnrye  write   2026-08-30 15:58:47
-#                                                   policy
-# U user mktxp changed                     turnrye  write   2026-08-30 15:58:44
-#                                                   policy
-# U user oxidized-full changed             turnrye  write   2026-08-30 15:58:44
-#                                                   policy
-# U user oxidized changed                  turnrye  write   2026-08-30 15:58:44
-#                                                   policy
-# U user group mktxp_group changed         turnrye  write   2026-08-30 15:58:43
-#                                                   policy
-# U user group netops-backup-full changed  turnrye  write   2026-08-30 15:58:43
-#                                                   policy
-# U user group netops-backup-ro changed    turnrye  write   2026-08-30 15:58:43
-#                                                   policy
-# U user mktxp changed                     turnrye  write   2026-08-30 15:58:42
-#                                                   policy
-# U user oxidized-full changed             turnrye  write   2026-08-30 15:58:41
-#                                                   policy
-# U user oxidized changed                  turnrye  write   2026-08-30 15:58:41
-#                                                   policy
-# U ip service changed                     turnrye  write   2026-08-30 15:58:34
-# U user ansible changed                   turnrye  write   2026-08-30 15:55:50
-#                                                   policy
-# U user ansible changed                   turnrye  write   2026-08-30 15:55:48
-#                                                   policy
-# U user group netops-ansible changed      turnrye  write   2026-08-30 15:55:47
-#                                                   policy
-# U user ansible added                     turnrye  write   2026-08-30 15:55:47
-#                                                   policy
-# U user group netops-ansible added        turnrye  write   2026-08-30 15:55:46
-#                                                   policy
-# U log rule added                         turnrye  write   2026-08-29 09:32:24
-# U log rule added                         turnrye  write   2026-08-29 09:32:24
-# U log rule added                         turnrye  write   2026-08-29 09:32:24
-# U log rule added                         turnrye  write   2026-08-29 09:32:24
-# U log rule added                         turnrye  write   2026-08-29 09:32:24
-# U log rule removed                       turnrye  write   2026-08-29 09:32:24
-# U log action changed                     turnrye  write   2026-08-29 09:32:23
-# U ip service changed                     turnrye  write   2026-08-28 22:23:21
-# U user mktxp added                       turnrye  write   2026-08-28 22:23:21
-#                                                   policy
-# U user group mktxp_group added           turnrye  write   2026-08-28 22:23:21
-#                                                   policy
-# U user oxidized-full added               turnrye  write   2026-08-28 18:23:53
-#                                                   policy
-# U user group netops-backup-full added    turnrye  write   2026-08-28 18:23:53
-#                                                   policy
-# U user group netops-backup-ro added      turnrye  write   2026-08-28 18:23:53
-#                                                   policy
-# U filter rule added                      turnrye  write   2026-08-28 12:50:43
-# U  added                                 turnrye  write   2026-08-28 12:50:02
-# U address added                          turnrye  write   2026-08-28 12:49:30
-# U wireguard peer entry added             turnrye  write   2026-08-28 12:49:30
-# U device added                           turnrye  write   2026-08-28 12:48:58
+#   installed-version: 7.24.2
 # 
 # system id = 2OEkUNG/n0L
 #
@@ -135,7 +71,7 @@ add address=44.34.131.176 interface=wg-sco-lte network=44.34.131.177
 /ip dhcp-client
 add interface=ether1 name=client1
 /ip dns
-set servers=44.34.132.1
+set servers=8.8.8.8
 /ip firewall address-list
 add address=216.93.248.80 list=denylist
 add address=43.175.238.207 list=denylist
@@ -174,8 +110,8 @@ set telnet disabled=yes
 set www disabled=yes
 set ssh port=222
 set winbox disabled=yes
-set api address=44.34.128.45/32 disabled=yes
-set api-ssl address=44.34.128.45/32 certificate=api-ssl
+set api available-from=44.34.128.45/32 disabled=yes
+set api-ssl available-from=44.34.128.45/32 certificate=api-ssl
 /ip ssh
 set strong-crypto=yes
 /ipv6 nd
