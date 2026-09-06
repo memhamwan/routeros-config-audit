@@ -7,108 +7,224 @@
 #                board-name: NetMetal 5
 #                  platform: MikroTik
 #   installed-version: 7.17
-# Flags: U - undoable, R - redoable, F - floating-undo
-#   ACTION                                   BY    PO.. TIME                 TR..
-# U ip service changed                       ans.. wr.. 2026-08-30 10:39:56  ap..
-# U system identity changed                  ans.. wr.. 2026-08-30 10:39:51  ap..
-# U ip service changed                       ans.. wr.. 1971-08-02 18:41:25  ap..
-# U system identity changed                  ans.. wr.. 1971-08-02 18:41:23  ap..
-# U system identity changed                  ans.. wr.. 1971-08-02 18:41:22  ap..
-# U ntp settings changed                     ans.. wr.. 1971-08-02 18:41:20  ap..
-# U ntp settings changed                     ans.. wr.. 1971-08-02 18:41:20  ap..
-# U ntp server record removed                      read 1971-08-02 18:41:20
-# U ntp server record added                        read 1971-08-02 18:41:20
-# U ntp server record added                        read 1971-08-02 18:41:20
-# U user ae5au added                         tur.. wr.. 1971-08-02 18:36:37  ss..
-#                                                  po..
-# U user mktxp changed                       tur.. wr.. 1971-08-02 18:36:32  ss..
-#                                                  po..
-# U user mktxp changed                       tur.. wr.. 1971-08-02 18:36:32  ss..
-#                                                  po..
-# U user oxidized-full changed               tur.. wr.. 1971-08-02 18:36:31  ss..
-#                                                  po..
-# U user oxidized-full changed               tur.. wr.. 1971-08-02 18:36:31  ss..
-#                                                  po..
-# U user oxidized changed                    tur.. wr.. 1971-08-02 18:36:31  ss..
-#                                                  po..
-# U user oxidized changed                    tur.. wr.. 1971-08-02 18:36:31  ss..
-#                                                  po..
-# U user group mktxp_group changed           tur.. wr.. 1971-08-02 18:36:31  ss..
-#                                                  po..
-# U user group mktxp_group changed           tur.. wr.. 1971-08-02 18:36:31  ss..
-#                                                  po..
-# U user group netops-backup-full changed    tur.. wr.. 1971-08-02 18:36:30  ss..
-#                                                  po..
-# U user group netops-backup-full changed    tur.. wr.. 1971-08-02 18:36:30  ss..
-#                                                  po..
-# U user group netops-backup-ro changed      tur.. wr.. 1971-08-02 18:36:30  ss..
-#                                                  po..
-# U user group netops-backup-ro changed      tur.. wr.. 1971-08-02 18:36:30  ss..
-#                                                  po..
-# U user mktxp changed                       tur.. wr.. 1971-08-02 18:36:28  ss..
-#                                                  po..
-# U user mktxp changed                       tur.. wr.. 1971-08-02 18:36:28  ss..
-#                                                  po..
-# U user oxidized-full changed               tur.. wr.. 1971-08-02 18:36:26  ss..
-#                                                  po..
-# U user oxidized-full changed               tur.. wr.. 1971-08-02 18:36:26  ss..
-#                                                  po..
-# U user oxidized changed                    tur.. wr.. 1971-08-02 18:36:26  ss..
-#                                                  po..
-# U user oxidized changed                    tur.. wr.. 1971-08-02 18:36:26  ss..
-#                                                  po..
-# U ip service changed                       tur.. wr.. 1971-08-02 18:36:11  ss..
-# U ip service changed                       tur.. wr.. 1971-08-02 18:36:10  ss..
-# U user ansible changed                     tur.. wr.. 1971-08-02 18:34:47  ss..
-#                                                  po..
-# U user ansible changed                     tur.. wr.. 1971-08-02 18:33:42  ss..
-#                                                  po..
-# U user ansible changed                     tur.. wr.. 1971-08-02 18:33:42  ss..
-#                                                  po..
-# U user group netops-ansible changed        tur.. wr.. 1971-08-02 18:33:42  ss..
-#                                                  po..
-# U user group netops-ansible changed        tur.. wr.. 1971-08-02 18:33:42  ss..
-#                                                  po..
-# U user ansible added                       tur.. wr.. 1971-08-02 18:33:25  ss..
-#                                                  po..
-# U user group netops-ansible added          tur.. wr.. 1971-08-02 18:32:25  ss..
-#                                                  po..
-# U log rule added                           tur.. wr.. 1971-08-01 18:59:35  ss..
-# U log rule added                           tur.. wr.. 1971-08-01 18:59:35  ss..
-# U log rule added                           tur.. wr.. 1971-08-01 18:59:35  ss..
-# U log rule added                           tur.. wr.. 1971-08-01 18:59:35  ss..
-# U log rule added                           tur.. wr.. 1971-08-01 18:59:35  ss..
-# U log rule removed                         tur.. wr.. 1971-08-01 18:59:35  ss..
-# U log action changed                       tur.. wr.. 1971-08-01 18:59:30  ss..
-# U ip service changed                       tur.. wr.. 1971-08-01 18:59:25  ss..
-# U user mktxp added                         tur.. wr.. 1971-08-01 18:59:25  ss..
-#                                                  po..
-# U user group mktxp_group added             tur.. wr.. 1971-08-01 18:59:25  ss..
-#                                                  po..
-# U user oxidized-full added                 tur.. wr.. 1971-08-01 18:59:23  ss..
-#                                                  po..
-# U user oxidized added                      tur.. wr.. 1971-08-01 18:59:23  ss..
-#                                                  po..
-# U user group netops-backup-full added      tur.. wr.. 1971-08-01 18:59:23  ss..
-#                                                  po..
-# U user group netops-backup-ro added        tur.. wr.. 1971-08-01 18:59:23  ss..
-#                                                  po..
-# U device changed                           ham.. wr.. 1971-07-14 05:35:47  ss..
-# U device changed                           ham.. wr.. 1971-07-14 05:33:46  ss..
-# U device changed                           ham.. wr.. 1971-07-14 04:35:18  ss..
-# U device changed                           ham.. wr.. 1971-07-12 01:21:25  ss..
-# U script removed from scheduler            ham.. wr.. 1971-07-12 00:21:29  ss..
-# U device changed                           ham.. wr.. 1971-07-12 00:07:43  ss..
-# U new script scheduled                     ham.. wr.. 1971-07-12 00:07:29  ss..
-# U device changed                           ham.. wr.. 1971-07-11 23:16:49  ss..
-# U script removed from scheduler            ham.. wr.. 1971-07-11 23:06:07  ss..
-# U device changed                           ham.. wr.. 1971-07-11 23:05:44  ss..
-# U new script scheduled                     ham.. wr.. 1971-07-11 23:05:20  ss..
-# U script removed from scheduler            ham.. wr.. 1971-07-11 22:55:51  ss..
-# U device changed                           ham.. wr.. 1971-07-11 22:54:35  ss..
-# U new script scheduled                     ham.. wr.. 1971-07-11 22:54:27  ss..
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION                                 BY       POLICY  TIME
+# U ip service changed                     ansible  write   2026-08-30 10:39:56
+# U system identity changed                ansible  write   2026-08-30 10:39:51
+# U ip service changed                     ansible  write   1971-08-02 18:41:25
+# U system identity changed                ansible  write   1971-08-02 18:41:23
+# U system identity changed                ansible  write   1971-08-02 18:41:22
+# U ntp settings changed                   ansible  write   1971-08-02 18:41:20
+# U ntp settings changed                   ansible  write   1971-08-02 18:41:20
+# U ntp server record removed                       read    1971-08-02 18:41:20
+# U ntp server record added                         read    1971-08-02 18:41:20
+# U ntp server record added                         read    1971-08-02 18:41:20
+# U user ae5au added                       turnrye  write   1971-08-02 18:36:37
+#                                                   policy
+# U user mktxp changed                     turnrye  write   1971-08-02 18:36:32
+#                                                   policy
+# U user mktxp changed                     turnrye  write   1971-08-02 18:36:32
+#                                                   policy
+# U user oxidized-full changed             turnrye  write   1971-08-02 18:36:31
+#                                                   policy
+# U user oxidized-full changed             turnrye  write   1971-08-02 18:36:31
+#                                                   policy
+# U user oxidized changed                  turnrye  write   1971-08-02 18:36:31
+#                                                   policy
+# U user oxidized changed                  turnrye  write   1971-08-02 18:36:31
+#                                                   policy
+# U user group mktxp_group changed         turnrye  write   1971-08-02 18:36:31
+#                                                   policy
+# U user group mktxp_group changed         turnrye  write   1971-08-02 18:36:31
+#                                                   policy
+# U user group netops-backup-full changed  turnrye  write   1971-08-02 18:36:30
+#                                                   policy
+# U user group netops-backup-full changed  turnrye  write   1971-08-02 18:36:30
+#                                                   policy
+# U user group netops-backup-ro changed    turnrye  write   1971-08-02 18:36:30
+#                                                   policy
+# U user group netops-backup-ro changed    turnrye  write   1971-08-02 18:36:30
+#                                                   policy
+# U user mktxp changed                     turnrye  write   1971-08-02 18:36:28
+#                                                   policy
+# U user mktxp changed                     turnrye  write   1971-08-02 18:36:28
+#                                                   policy
+# U user oxidized-full changed             turnrye  write   1971-08-02 18:36:26
+#                                                   policy
+# U user oxidized-full changed             turnrye  write   1971-08-02 18:36:26
+#                                                   policy
+# U user oxidized changed                  turnrye  write   1971-08-02 18:36:26
+#                                                   policy
+# U user oxidized changed                  turnrye  write   1971-08-02 18:36:26
+#                                                   policy
+# U ip service changed                     turnrye  write   1971-08-02 18:36:11
+# U ip service changed                     turnrye  write   1971-08-02 18:36:10
+# U user ansible changed                   turnrye  write   1971-08-02 18:34:47
+#                                                   policy
+# U user ansible changed                   turnrye  write   1971-08-02 18:33:42
+#                                                   policy
+# U user ansible changed                   turnrye  write   1971-08-02 18:33:42
+#                                                   policy
+# U user group netops-ansible changed      turnrye  write   1971-08-02 18:33:42
+#                                                   policy
+# U user group netops-ansible changed      turnrye  write   1971-08-02 18:33:42
+#                                                   policy
+# U user ansible added                     turnrye  write   1971-08-02 18:33:25
+#                                                   policy
+# U user group netops-ansible added        turnrye  write   1971-08-02 18:32:25
+#                                                   policy
+# U log rule added                         turnrye  write   1971-08-01 18:59:35
+# U log rule added                         turnrye  write   1971-08-01 18:59:35
+# U log rule added                         turnrye  write   1971-08-01 18:59:35
+# U log rule added                         turnrye  write   1971-08-01 18:59:35
+# U log rule added                         turnrye  write   1971-08-01 18:59:35
+# U log rule removed                       turnrye  write   1971-08-01 18:59:35
+# U log action changed                     turnrye  write   1971-08-01 18:59:30
+# U ip service changed                     turnrye  write   1971-08-01 18:59:25
+# U user mktxp added                       turnrye  write   1971-08-01 18:59:25
+#                                                   policy
+# U user group mktxp_group added           turnrye  write   1971-08-01 18:59:25
+#                                                   policy
+# U user oxidized-full added               turnrye  write   1971-08-01 18:59:23
+#                                                   policy
+# U user oxidized added                    turnrye  write   1971-08-01 18:59:23
+#                                                   policy
+# U user group netops-backup-full added    turnrye  write   1971-08-01 18:59:23
+#                                                   policy
+# U user group netops-backup-ro added      turnrye  write   1971-08-01 18:59:23
+#                                                   policy
+# U device changed                         hamwan   write   1971-07-14 05:35:47
+# U device changed                         hamwan   write   1971-07-14 05:33:46
+# U device changed                         hamwan   write   1971-07-14 04:35:18
+# U device changed                         hamwan   write   1971-07-12 01:21:25
+# U script removed from scheduler          hamwan   write   1971-07-12 00:21:29
+# U device changed                         hamwan   write   1971-07-12 00:07:43
+# U new script scheduled                   hamwan   write   1971-07-12 00:07:29
+# U device changed                         hamwan   write   1971-07-11 23:16:49
+# U script removed from scheduler          hamwan   write   1971-07-11 23:06:07
+# U device changed                         hamwan   write   1971-07-11 23:05:44
+# U new script scheduled                   hamwan   write   1971-07-11 23:05:20
+# U script removed from scheduler          hamwan   write   1971-07-11 22:55:51
+# U device changed                         hamwan   write   1971-07-11 22:54:35
+# U new script scheduled                   hamwan   write   1971-07-11 22:54:27
 # 
 # software id = CIAG-EMEJ
 #
 # model = RB921UAGS-5SHPacT
 # serial number = 5AB80495261A
+/interface bridge
+add fast-forward=no mtu=1500 name=bridge1 port-cost-mode=short
+/interface ethernet
+set [ find default-name=sfp1 ] advertise="10M-baseT-half,10M-baseT-full,100M-baseT-half,100M-baseT-full,1G-baseT-half,1G-baseT-full"
+/interface vrrp
+add authentication=ah interface=ether1 name=vrrp1 version=2
+/interface lte apn
+set [ find default=yes ] ip-type=ipv4 use-network-apn=no
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+add authentication-types=wpa-psk,wpa2-psk eap-methods="" management-protection=allowed mode=dynamic-keys name=hamwan supplicant-identity=""
+/interface wireless
+set [ find default-name=wlan1 ] adaptive-noise-immunity=ap-and-client-mode band=5ghz-onlyac compression=yes country="united states3" disabled=no frequency=5825 hw-retries=15 installation=outdoor mode=station-bridge nv2-cell-radius=20 radio-name=sco.hil.memhamwan.net rx-chains=0,1 security-profile=hamwan ssid=HamWAN-hil-leb tdma-period-size=4 tx-chains=0,1 wireless-protocol=nv2-nstreme-802.11
+/ip ipsec proposal
+set [ find default=yes ] enc-algorithms=aes-128-cbc
+/ip smb users
+set [ find default=yes ] disabled=yes
+/routing bgp template
+set default disabled=no output.network=bgp-networks
+/routing ospf instance
+add disabled=no in-filter-chain=AMPR-default name=default-v2 originate-default=if-installed out-filter-chain=AMPR-default redistribute=connected,ospf,bgp router-id=44.34.131.131
+/routing ospf area
+add disabled=no instance=default-v2 name=backbone-v2
+/snmp community
+set [ find default=yes ] addresses=44.0.0.0/8
+/system logging action
+set 3 bsd-syslog=yes remote=44.34.128.45
+add bsd-syslog=yes name=centrallogging remote=44.34.128.171 syslog-facility=syslog target=remote
+/interface bridge port
+add bridge=bridge1 ingress-filtering=no interface=wlan1 internal-path-cost=10 path-cost=10
+/ip firewall connection tracking
+set udp-timeout=10s
+/ip neighbor discovery-settings
+set discover-interface-list=all
+/ip settings
+set max-neighbor-entries=8192
+/ipv6 settings
+set disable-ipv6=yes max-neighbor-entries=8192
+/interface ovpn-server server
+add auth=sha1,md5 mac-address=FE:05:8F:03:D8:C7 name=ovpn-server1
+/ip address
+add address=44.34.128.97/28 interface=ether1 network=44.34.128.96
+add address=44.34.128.102 interface=vrrp1 network=44.34.128.102
+add address=44.34.131.131 interface=bridge1 network=44.34.131.130
+/ip dns
+set servers=8.8.8.8,8.8.4.4
+/ip firewall mangle
+add action=change-mss chain=forward new-mss=1378 protocol=tcp tcp-flags=syn tcp-mss=!0-1378
+add action=change-mss chain=output new-mss=1378 protocol=tcp tcp-flags=syn tcp-mss=!0-1378
+/ip ipsec policy
+set 0 dst-address=0.0.0.0/0 src-address=0.0.0.0/0
+/ip ipsec profile
+set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
+/ip service
+set telnet disabled=yes
+set ftp disabled=yes
+set www disabled=yes
+set ssh port=222
+set api address=44.34.128.45/32 disabled=yes
+set winbox disabled=yes
+set api-ssl address=44.34.128.45/32 certificate=api-ssl
+/ip smb shares
+set [ find default=yes ] directory=/pub
+/ip ssh
+set forwarding-enabled=remote strong-crypto=yes
+/routing bfd configuration
+add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
+/routing filter rule
+add chain=AMPR-default disabled=no rule="if (dst in 44.0.0.0/8 && dst-len in 8-32) { accept; }"
+add chain=AMPR-default disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
+add chain=AMPR-default disabled=no rule="reject;"
+/routing ospf interface-template
+add area=backbone-v2 auth=md5 auth-id=1 auth-key=REDACTED cost=10 disabled=no interfaces=ether1 networks=44.34.128.96/28 priority=1 use-bfd=no
+add area=backbone-v2 disabled=no interfaces=vrrp1 networks=44.34.128.102 priority=1
+add area=backbone-v2 auth=md5 auth-id=1 auth-key=REDACTED cost=10 disabled=no interfaces=bridge1 networks=44.34.131.130 priority=1 type=ptp use-bfd=no
+/snmp
+set contact="#HamWAN on irc.freenode.org" enabled=yes
+/system clock
+set time-zone-autodetect=no time-zone-name=America/Chicago
+/system identity
+set name=leb.hil.memhamwan.net
+/system leds
+set 1 interface=wlan1
+/system logging
+set 3 action=memory
+add action=echo disabled=yes topics=ospf
+add action=remote topics=system
+add action=remote topics=error
+add action=remote topics=warning
+add action=remote topics=critical
+add action=remote topics=account
+/system note
+set show-at-login=no
+/system ntp client
+set enabled=yes
+/system ntp client servers
+add address=44.34.128.181
+add address=44.34.133.3
+add address=162.159.200.1
+add address=162.159.200.123
+/tool bandwidth-server
+set authenticate=no enabled=no
+/tool mac-server
+set allowed-interface-list=none
+/tool mac-server mac-winbox
+set allowed-interface-list=none
+/tool mac-server ping
+set enabled=no
+/tool romon
+set enabled=yes
+/user group
+add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
+add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
+add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
+add name=netops-ansible policy="ssh,ftp,read,write,policy,test,api,!local,!telnet,!reboot,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
