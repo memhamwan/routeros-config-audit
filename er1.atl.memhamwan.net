@@ -8,6 +8,10 @@
 #                board-name: CHR Vultr VC2
 #                  platform: MikroTik
 #   installed-version: 7.24.2
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION          BY       POLICY  TIME
+# U device changed  turnrye  write   2026-09-06 09:33:45
 # 
 # system id = 2OEkUNG/n0L
 #
@@ -16,7 +20,7 @@ add name=bridge1 port-cost-mode=short
 /interface ethernet
 set [ find default-name=ether1 ] disable-running-check=no
 /interface wireguard
-add comment="lte.sco uplink" listen-port=13232 mtu=1420 name=wg-sco-lte
+add comment="lte.sco uplink" disabled=yes listen-port=13232 mtu=1420 name=wg-sco-lte
 add listen-port=13231 mtu=1420 name=wireguard1
 /interface wireless security-profiles
 set [ find default=yes ] supplicant-identity=MikroTik
