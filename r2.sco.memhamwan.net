@@ -8,11 +8,6 @@
 #                board-name: PowerBox Pro
 #                  platform: MikroTik
 #   installed-version: 7.24.2
-# Flags: U - UNDOABLE
-# Columns: ACTION, BY, POLICY, TIME
-#   ACTION               BY       POLICY  TIME
-# U bridge port changed  turnrye  write   2026-09-05 22:13:54
-# U log rule added       turnrye  write   2026-09-05 22:13:25
 # 
 # software id = G8EP-AAVR
 #
@@ -109,7 +104,7 @@ add chain=AMPR-default disabled=no rule="reject;"
 add area=backbone-v2 auth=md5 auth-id=1 cost=10 disabled=no interfaces=bridge networks=44.34.129.41/28 priority=1 use-bfd=no
 add area=backbone-v2 auth=md5 auth-id=1 cost=10 disabled=no interfaces=bridge networks=44.34.128.33/28 priority=1 use-bfd=no
 /system clock
-set time-zone-name=America/New_York
+set time-zone-name=America/Chicago
 /system identity
 set name=r2.sco.memhamwan.net
 /system logging
