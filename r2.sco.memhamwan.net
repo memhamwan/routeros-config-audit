@@ -1,5 +1,5 @@
-#                   version: 7.19.4 (stable)
-#          factory-software: 6.40_ab3840
+#                   version: 7.24.2 (stable)
+#           minimum-version: 6.40_ab3840
 #              total-memory: 128.0MiB
 #                       cpu: MIPS 74Kc V5.0
 #                 cpu-count: 1
@@ -7,11 +7,12 @@
 #         architecture-name: mipsbe
 #                board-name: PowerBox Pro
 #                  platform: MikroTik
-#   installed-version: 7.19.4
+#   installed-version: 7.24.2
 # Flags: U - UNDOABLE
-# Columns: ACTION, BY, POLICY, TIME, TRACE
-#   ACTION       BY       POLICY  TIME                 TRACE
-# U dns changed  turnrye  write   2026-09-05 20:03:34  ssh:turnrye@99.94.135.115
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION               BY       POLICY  TIME
+# U bridge port changed  turnrye  write   2026-09-05 22:13:54
+# U log rule added       turnrye  write   2026-09-05 22:13:25
 # 
 # software id = G8EP-AAVR
 #
@@ -46,7 +47,7 @@ add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!rebo
 add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
 add name=netops-ansible policy="ssh,ftp,read,write,policy,test,api,!local,!telnet,!reboot,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
 /interface bridge port
-add bridge=internal-nat comment=defconf ingress-filtering=no interface=ether2 internal-path-cost=10 path-cost=10
+add bridge=internal-nat comment=defconf hw=no ingress-filtering=no interface=ether2 internal-path-cost=10 path-cost=10
 add bridge=bridge comment=defconf ingress-filtering=no interface=ether3 internal-path-cost=10 path-cost=10
 add bridge=bridge comment=defconf ingress-filtering=no interface=ether4 internal-path-cost=10 path-cost=10
 add bridge=bridge comment=defconf ingress-filtering=no interface=ether5 internal-path-cost=10 path-cost=10
@@ -86,8 +87,8 @@ set telnet disabled=yes
 set www disabled=yes
 set ssh port=222
 set winbox disabled=yes
-set api address=44.34.128.45/32 disabled=yes
-set api-ssl address=44.34.128.45/32 certificate=api-ssl
+set api available-from=44.34.128.45/32 disabled=yes
+set api-ssl available-from=44.34.128.45/32 certificate=api-ssl
 /ip ssh
 set strong-crypto=yes
 /routing bfd configuration
@@ -117,6 +118,7 @@ add action=remote topics=error
 add action=remote topics=warning
 add action=remote topics=critical
 add action=remote topics=account
+add topics=dhcp,debug
 /system note
 set show-at-login=no
 /system ntp client
