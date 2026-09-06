@@ -8,74 +8,6 @@
 #                board-name: PowerBox Pro
 #                  platform: MikroTik
 #   installed-version: 7.17
-# Flags: U - UNDOABLE
-# Columns: ACTION, BY, POLICY, TIME
-#   ACTION                                 BY       POLICY  TIME
-# U ip service changed                     ansible  write   2026-08-30 12:22:38
-# U ip service changed                     ansible  write   2026-08-30 12:22:36
-# U system identity changed                ansible  write   2026-08-30 12:22:34
-# U ntp settings changed                   ansible  write   2026-08-30 12:22:32
-# U ntp server record added                         read    2026-08-30 12:22:32
-# U ntp server record added                         read    2026-08-30 12:22:32
-# U ntp server record added                         read    2026-08-30 12:22:32
-# U ntp server record added                         read    2026-08-30 12:22:32
-# U mac winbox setting changed             ansible  write   2026-08-30 12:22:26
-# U mac-server interface changed           ansible  write   2026-08-30 12:22:24
-# U bandwidth-server changed               ansible  write   2026-08-30 12:22:22
-# U ssh settings changed                   ansible  write   2026-08-30 12:22:21
-# U user ae5au added                       turnrye  write   2026-08-30 12:21:51
-#                                                   policy
-# U user seichold added                    turnrye  write   2026-08-30 12:21:49
-#                                                   policy
-# U user mktxp changed                     turnrye  write   2026-08-30 12:21:46
-#                                                   policy
-# U user oxidized-full changed             turnrye  write   2026-08-30 12:21:45
-#                                                   policy
-# U user oxidized changed                  turnrye  write   2026-08-30 12:21:45
-#                                                   policy
-# U user group mktxp_group changed         turnrye  write   2026-08-30 12:21:45
-#                                                   policy
-# U user group netops-backup-full changed  turnrye  write   2026-08-30 12:21:44
-#                                                   policy
-# U user group netops-backup-ro changed    turnrye  write   2026-08-30 12:21:44
-#                                                   policy
-# U user mktxp changed                     turnrye  write   2026-08-30 12:21:42
-#                                                   policy
-# U user oxidized-full changed             turnrye  write   2026-08-30 12:21:40
-#                                                   policy
-# U user oxidized changed                  turnrye  write   2026-08-30 12:21:40
-#                                                   policy
-# U ip service changed                     turnrye  write   2026-08-30 12:21:27
-# U user ansible changed                   turnrye  write   2026-08-30 12:20:42
-#                                                   policy
-# U user ansible changed                   turnrye  write   2026-08-30 12:20:36
-#                                                   policy
-# U user group netops-ansible changed      turnrye  write   2026-08-30 12:20:35
-#                                                   policy
-# U user ansible added                     turnrye  write   2026-08-30 12:20:34
-#                                                   policy
-# U user group netops-ansible added        turnrye  write   2026-08-30 12:20:32
-#                                                   policy
-# U ovpn server added                               read    2026-08-29 12:35:21
-# U log rule added                         turnrye  write   2026-08-29 12:20:04
-# U log rule added                         turnrye  write   2026-08-29 12:20:04
-# U log rule added                         turnrye  write   2026-08-29 12:20:04
-# U log rule added                         turnrye  write   2026-08-29 12:20:04
-# U log rule added                         turnrye  write   2026-08-29 12:20:04
-# U log action changed                     turnrye  write   2026-08-29 12:20:00
-# U ip service changed                     turnrye  write   2026-08-29 12:19:55
-# U user mktxp added                       turnrye  write   2026-08-29 12:19:55
-#                                                   policy
-# U user group mktxp_group added           turnrye  write   2026-08-29 12:19:55
-#                                                   policy
-# U user oxidized-full added               turnrye  write   2026-08-29 12:19:52
-#                                                   policy
-# U user oxidized added                    turnrye  write   2026-08-29 12:19:52
-#                                                   policy
-# U user group netops-backup-full added    turnrye  write   2026-08-29 12:19:52
-#                                                   policy
-# U user group netops-backup-ro added      turnrye  write   2026-08-29 12:19:52
-#                                                   policy
 # 
 # software id = 0F6A-2IRW
 #
@@ -101,7 +33,6 @@ add disabled=no name=default-v2
 add disabled=no name=default-v3 version=3
 /routing ospf area
 add disabled=no instance=default-v2 name=backbone-v2
-#error exporting "/snmp/community" (timeout)
 /system logging action
 set 3 bsd-syslog=yes remote=44.34.128.45
 /interface bridge port
