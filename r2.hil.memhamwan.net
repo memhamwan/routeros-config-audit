@@ -100,7 +100,6 @@ add disabled=no name=default-v2
 add disabled=no name=default-v3 version=3
 /routing ospf area
 add disabled=no instance=default-v2 name=backbone-v2
-#error exporting "/snmp/community" (timeout)
 /system logging action
 set 3 bsd-syslog=yes remote=44.34.128.45
 /interface bridge port
