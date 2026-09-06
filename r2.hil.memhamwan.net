@@ -94,7 +94,8 @@ set [ find default=yes ] ip-type=ipv4 use-network-apn=no
 set [ find default=yes ] supplicant-identity=MikroTik
 /ip smb users
 set [ find default=yes ] disabled=yes
-#error exporting "/routing/bgp/template" (timeout)
+/routing bgp template
+set default disabled=no output.network=bgp-networks
 /routing ospf instance
 add disabled=no name=default-v2
 add disabled=no name=default-v3 version=3
