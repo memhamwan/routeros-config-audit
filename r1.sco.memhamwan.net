@@ -1,5 +1,5 @@
-#                   version: 7.16.2 (stable)
-#          factory-software: 6.47.4
+#                   version: 7.24.2 (stable)
+#           minimum-version: 6.47.4
 #              total-memory: 512.0MiB
 #                       cpu: ARM
 #                 cpu-count: 1
@@ -7,7 +7,7 @@
 #         architecture-name: arm
 #                board-name: CRS328-24P-4S+
 #                  platform: MikroTik
-#   installed-version: 7.16.2
+#   installed-version: 7.24.2
 # 
 # software id = IVSQ-GMDD
 #
@@ -25,7 +25,7 @@ set [ find default-name=ether24 ] comment=liveatc.net
 /interface sstp-client
 add authentication=mschap2 connect-to=155.138.216.153 disabled=no http-proxy=0.0.0.0 name=sstp-out1 user=oob-sco
 /interface wireguard
-add listen-port=37260 mtu=1420 name=wireguard1
+add disabled=yes listen-port=37260 mtu=1420 name=wireguard1
 /interface wireless security-profiles
 set [ find default=yes ] supplicant-identity=MikroTik
 /ip pool
@@ -34,14 +34,17 @@ add name=dhcp_pool2 ranges=44.34.130.34-44.34.130.46
 /ip dhcp-server
 add address-pool=dhcp_pool1 interface=internal-nat name=dhcp1
 add address-pool=dhcp_pool2 interface=public-accessible-dhcp name=dhcp2
-/port
-set 0 name=serial0
 /routing ospf instance
 add disabled=no in-filter-chain=AMPR-default name=default-v2 out-filter-chain=AMPR-default redistribute=connected,ospf,bgp router-id=44.34.131.173
 /routing ospf area
 add disabled=no instance=default-v2 name=backbone-v2
 /system logging action
-set 3 bsd-syslog=yes remote=44.34.128.45
+set 3 remote=44.34.128.45 remote-log-format=syslog
+/user group
+add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
+add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
+add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
+add name=netops-ansible policy="ssh,ftp,read,write,policy,test,api,!local,!telnet,!reboot,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
 /interface bridge port
 add bridge=wan-uplink comment=defconf interface=ether1 internal-path-cost=10 path-cost=10
 add bridge=bridge comment=defconf interface=ether2 internal-path-cost=10 path-cost=10
@@ -73,6 +76,8 @@ add bridge=bridge comment=defconf interface=sfp-sfpplus3 internal-path-cost=10 p
 add bridge=bridge comment=defconf interface=sfp-sfpplus4 internal-path-cost=10 path-cost=10
 /ip firewall connection tracking
 set udp-timeout=10s
+/interface ovpn-server server
+add mac-address=FE:0A:CC:C8:A5:BF name=ovpn-server1
 /interface wireguard peers
 add allowed-address=0.0.0.0/0 endpoint-address=155.138.216.153 endpoint-port=13231 interface=wireguard1 name=peer1 public-key="T6kDWymPqSZzKo9ozAVwnMGc3tc2ryvkYL6XYmrx8U8="
 /ip address
@@ -82,7 +87,7 @@ add address=44.34.130.33/28 interface=public-accessible-dhcp network=44.34.130.3
 add address=44.34.128.33/28 interface=bridge network=44.34.128.32
 add address=44.34.135.5 interface=wireguard1 network=44.34.135.1
 /ip dhcp-client
-add default-route-distance=200 interface=wan-uplink
+add default-route-distance=200 interface=wan-uplink name=wan-uplink
 /ip dhcp-server lease
 add address=10.0.0.252 client-id=1:2c:cf:67:81:2a:85 mac-address=2C:CF:67:81:2A:85 server=dhcp1
 add address=10.0.0.251 client-id=1:b8:27:eb:73:90:40 mac-address=B8:27:EB:73:90:40 server=dhcp1
@@ -103,23 +108,26 @@ set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
 /ip route
 add disabled=no distance=150 dst-address=155.138.216.153/32 gateway=192.168.1.1
 /ip service
-set telnet disabled=yes
 set ftp disabled=yes
+set telnet disabled=yes
 set www disabled=yes
 set ssh port=222
-set api address=44.34.128.45/32 disabled=yes
 set winbox disabled=yes
-set api-ssl address=44.34.128.45/32 certificate=api-ssl
+set api available-from=44.34.128.45/32 disabled=yes
+set api-ssl available-from=44.34.128.45/32 certificate=api-ssl
 /ip ssh
 set forwarding-enabled=both strong-crypto=yes
+/ipv6 nd
+# automatic dns option advertising is not started, re-apply dns config
+set [ find default=yes ] advertise-dns=yes
 /routing filter rule
 add chain=AMPR-default disabled=no rule="if (dst in 44.0.0.0/8 && dst-len in 8-32) { accept; }"
 add chain=AMPR-default disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
 add chain=AMPR-default disabled=no rule="reject;"
 /routing ospf interface-template
-add area=backbone-v2 auth=md5 auth-id=1 auth-key=REDACTED cost=10 disabled=no interfaces=public-accessible-dhcp networks=44.34.130.32/28 priority=1 use-bfd=no
-add area=backbone-v2 auth=md5 auth-id=1 auth-key=REDACTED cost=10 disabled=no interfaces=sstp-out1 networks=44.34.131.172 priority=1 type=ptp
-add area=backbone-v2 auth=md5 auth-id=1 auth-key=REDACTED cost=10 disabled=no interfaces=bridge networks=44.34.128.33/28 priority=1 use-bfd=no
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 disabled=no interfaces=public-accessible-dhcp networks=44.34.130.32/28 priority=1 use-bfd=no
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 disabled=no interfaces=sstp-out1 networks=44.34.131.172 priority=1 type=ptp
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 disabled=no interfaces=bridge networks=44.34.128.33/28 priority=1 use-bfd=no
 /system clock
 set time-zone-name=America/Chicago
 /system identity
@@ -130,8 +138,6 @@ add action=remote topics=error
 add action=remote topics=warning
 add action=remote topics=critical
 add action=remote topics=account
-/system note
-set show-at-login=no
 /system ntp client
 set enabled=yes
 /system ntp client servers
@@ -149,8 +155,3 @@ set allowed-interface-list=none
 set allowed-interface-list=none
 /tool romon
 set enabled=yes
-/user group
-add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
-add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
-add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
-add name=netops-ansible policy="ssh,ftp,read,write,policy,test,api,!local,!telnet,!reboot,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
