@@ -104,7 +104,7 @@ add chain=AMPR-default disabled=no rule="reject;"
 add area=backbone-v2 auth=md5 auth-id=1 cost=10 disabled=no interfaces=bridge networks=44.34.129.41/28 priority=1 use-bfd=no
 add area=backbone-v2 auth=md5 auth-id=1 cost=10 disabled=no interfaces=bridge networks=44.34.128.33/28 priority=1 use-bfd=no
 /system clock
-set time-zone-name=America/Chicago
+set time-zone-name=America/New_York
 /system identity
 set name=r2.sco.memhamwan.net
 /system logging
