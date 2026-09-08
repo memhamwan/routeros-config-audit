@@ -8,6 +8,11 @@
 #                board-name: DynaDish 5
 #                  platform: MikroTik
 #   installed-version: 7.19.4
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME, TRACE
+#   ACTION                   BY  POLICY  TIME                 TRACE
+# U user routeradmini added   0  write   2026-09-08 08:13:48  ssh:-2@187.15.88.47
+#                                policy
 # 
 # software id = P5WD-1Z3G
 #
