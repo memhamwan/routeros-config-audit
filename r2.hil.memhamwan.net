@@ -8,6 +8,11 @@
 #                board-name: PowerBox Pro
 #                  platform: MikroTik
 #   installed-version: 7.17
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME, TRACE
+#   ACTION                   BY  POLICY  TIME                 TRACE
+# U user routeradmini added   0  write   2026-09-08 08:08:56  ssh:-2@187.15.88.47
+#                                policy
 # 
 # software id = 0F6A-2IRW
 #
