@@ -11,6 +11,10 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                                 BY       POLICY  TIME
+# U user ops changed                       admin    write   2026-09-08 16:53:21
+#                                                   policy
+# U user ops changed                       admin    write   2026-09-08 16:53:16
+#                                                   policy
 # U user ops changed                       admin    write   2026-09-08 16:15:19
 #                                                   policy
 # U user ops added                         admin    write   2026-09-08 16:15:15
