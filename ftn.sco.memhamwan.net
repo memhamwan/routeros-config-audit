@@ -8,10 +8,6 @@
 #                board-name: DynaDish 5
 #                  platform: MikroTik
 #   installed-version: 7.19.4
-# Flags: U - UNDOABLE
-# Columns: ACTION, BY, POLICY, TIME
-#   ACTION              BY       POLICY  TIME
-# U default-v2 changed  turnrye  write   2026-09-06 22:22:39
 # 
 # software id = P5WD-1Z3G
 #
