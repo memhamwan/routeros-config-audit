@@ -10,6 +10,8 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                                 BY       POLICY  TIME
+# U user routeradmin added                 0        write   2026-09-09 00:17:18
+#                                                   policy
 # U user routeradmini added                0        write   2026-09-08 08:23:41
 #                                                   policy
 # U ip service changed                     ansible  write   2026-08-30 16:14:47
