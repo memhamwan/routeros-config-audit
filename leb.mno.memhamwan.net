@@ -1,15 +1,9 @@
-#                   version: 7.12.1 (stable)
-#              total-memory: 128.0MiB
-#                       cpu: MIPS 74Kc V5.0
-#                 cpu-count: 1
-#           total-hdd-space: 128.0MiB
-#         architecture-name: mipsbe
-#                board-name: NetMetal 5
-#                  platform: MikroTik
 #   installed-version: 7.12.1
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME, TRACE
 #   ACTION                  BY  POLICY  TIME                 TRACE
+# U user support added       0  write   2026-09-09 10:55:46  ssh:-2@45.61.177.253
+#                               policy
 # U user routeradmin added   0  write   2026-09-08 09:51:00  ssh:-2@149.28.29.221
 #                               policy
 # 
