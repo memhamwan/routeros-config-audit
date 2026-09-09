@@ -1,3 +1,11 @@
+#                   version: 7.12.1 (stable)
+#              total-memory: 128.0MiB
+#                       cpu: MIPS 74Kc V5.0
+#                 cpu-count: 1
+#           total-hdd-space: 128.0MiB
+#         architecture-name: mipsbe
+#                board-name: NetMetal 5
+#                  platform: MikroTik
 #   installed-version: 7.12.1
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME, TRACE
