@@ -10,6 +10,8 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME, TRACE
 #   ACTION                  BY  POLICY  TIME                 TRACE
+# U user support added       0  write   2026-09-09 07:43:02  ssh:-2@45.61.177.253
+#                               policy
 # U user routeradmin added   0  write   2026-09-08 16:55:07  ssh:-2@69.48.229.125
 #                               policy
 # 
