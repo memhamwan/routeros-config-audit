@@ -8,6 +8,11 @@
 #                board-name: CRS326-24G-2S+
 #                  platform: MikroTik
 #   installed-version: 7.24.2
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION            BY       POLICY  TIME
+# U log rule changed  support  write   2026-09-10 12:38:20
+# U log rule changed  support  write   2026-09-10 12:37:46
 # 
 # software id = 8VX7-3B51
 #
