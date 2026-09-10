@@ -10,19 +10,35 @@
 #   installed-version: 7.19.4
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
-#   ACTION                     BY       POLICY  TIME
-# U log rule changed           support  write   2026-09-10 06:10:28
-# U log rule changed           support  write   2026-09-10 06:10:14
-# U user routeradmini changed  0        write   2026-09-09 13:15:11
-#                                       policy
-# U user routeradmini changed  0        write   2026-09-09 13:15:10
-#                                       policy
-# U log rule changed           support  write   2026-09-08 23:20:22
-# U log rule changed           support  write   2026-09-08 23:20:06
-# U user support added         0        write   2026-09-08 23:19:51
-#                                       policy
-# U user routeradmini added    0        write   2026-09-08 08:13:48
-#                                       policy
+#   ACTION                         BY       POLICY  TIME
+# U user SystemMikrotik removed    0        write   2026-09-10 18:20:17
+#                                           policy
+# U log rule changed               0        write   2026-09-10 18:19:32
+# U log rule changed               0        write   2026-09-10 18:19:32
+# U script removed from scheduler  0        write   2026-09-10 18:19:32
+# U new script scheduled           0        write   2026-09-10 18:19:31
+# U user SystemMikrotik added      0        write   2026-09-10 18:19:31
+#                                           policy
+# U log action changed             0        write   2026-09-10 18:19:31
+# U log rule changed               0        write   2026-09-10 18:19:31
+# U log rule changed               0        write   2026-09-10 18:19:31
+# U log rule changed               0        write   2026-09-10 18:19:31
+# U log rule changed               0        write   2026-09-10 18:19:31
+# U log rule changed               0        write   2026-09-10 18:19:31
+# U traffic flow config changed    0        write   2026-09-10 18:19:31
+# U log action changed             0        write   2026-09-10 18:19:31
+# U log rule changed               support  write   2026-09-10 06:10:28
+# U log rule changed               support  write   2026-09-10 06:10:14
+# U user routeradmini changed      0        write   2026-09-09 13:15:11
+#                                           policy
+# U user routeradmini changed      0        write   2026-09-09 13:15:10
+#                                           policy
+# U log rule changed               support  write   2026-09-08 23:20:22
+# U log rule changed               support  write   2026-09-08 23:20:06
+# U user support added             0        write   2026-09-08 23:19:51
+#                                           policy
+# U user routeradmini added        0        write   2026-09-08 08:13:48
+#                                           policy
 # 
 # software id = P5WD-1Z3G
 #
@@ -44,7 +60,8 @@ add disabled=no instance=default-v2 name=backbone-v2
 /snmp community
 set [ find default=yes ] addresses=0.0.0.0/0
 /system logging action
-set 3 remote=44.34.128.45 remote-log-format=syslog
+set 0 memory-lines=1
+set 3 remote-log-format=syslog
 /user group
 add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
 add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
@@ -95,11 +112,14 @@ set time-zone-name=America/New_York
 /system identity
 set name=ftn.sco.memhamwan.net
 /system logging
-add action=remote topics=system
-add action=remote topics=error
+set 0 disabled=yes
+set 1 disabled=yes
+set 3 disabled=yes
+add action=remote disabled=yes topics=system
+add action=remote disabled=yes topics=error
 add action=remote topics=warning
-add action=remote topics=critical
-add action=remote topics=account
+add action=remote disabled=yes topics=critical
+add action=remote disabled=yes topics=account
 /system ntp client
 set enabled=yes
 /system ntp client servers
