@@ -11,6 +11,16 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                     BY            POLICY  TIME
+# U log rule changed           support       write   2026-09-10 06:11:30
+# U log rule changed           support       write   2026-09-10 06:11:30
+# U log rule changed           support       write   2026-09-10 06:11:30
+# U log rule changed           support       write   2026-09-10 06:11:30
+# U log rule changed           support       write   2026-09-10 06:11:14
+# U log rule changed           support       write   2026-09-10 06:11:14
+# U log rule changed           support       write   2026-09-10 06:11:14
+# U log rule changed           support       write   2026-09-10 06:11:14
+# U user support added         0             write   2026-09-10 06:11:00
+#                                            policy
 # U log rule changed           routeradmini  write   2026-09-10 03:00:22
 # U log rule changed           routeradmini  write   2026-09-10 03:00:22
 # U log rule changed           routeradmini  write   2026-09-10 03:00:22
