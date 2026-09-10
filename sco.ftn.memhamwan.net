@@ -8,59 +8,63 @@
 #                  platform: MikroTik
 #   installed-version: 7.19.6
 # Flags: U - UNDOABLE
-# Columns: ACTION, BY, POLICY, TIME
-#   ACTION                                 BY       POLICY  TIME
-# U user support added                     0        write   2026-09-10 01:56:55
-#                                                   policy
-# U user routeradmini changed              0        write   2026-09-09 13:15:10
-#                                                   policy
-# U user routeradmin added                 0        write   2026-09-09 00:17:18
-#                                                   policy
-# U user routeradmini added                0        write   2026-09-08 08:23:41
-#                                                   policy
-# U ip service changed                     ansible  write   2026-08-30 16:14:47
-# U ip service changed                     ansible  write   2026-08-30 16:14:46
-# U ntp settings changed                   ansible  write   2026-08-30 16:14:36
-# U ntp server record removed                       read    2026-08-30 16:14:36
-# U ntp server record added                         read    2026-08-30 16:14:36
-# U ntp server record added                         read    2026-08-30 16:14:36
-# U ntp server record added                         read    2026-08-30 16:14:36
-# U ntp server record added                         read    2026-08-30 16:14:36
-# U mac winbox setting changed             ansible  write   2026-08-30 16:14:28
-# U mac-server interface changed           ansible  write   2026-08-30 16:14:27
-# U bandwidth-server changed               ansible  write   2026-08-30 16:14:25
-# U ip service changed                     ansible  write   2026-08-30 16:14:15
-# U user ae5au added                       turnrye  write   2026-08-30 16:13:11
-#                                                   policy
-# U user mktxp changed                     turnrye  write   2026-08-30 16:13:06
-#                                                   policy
-# U user oxidized-full changed             turnrye  write   2026-08-30 16:13:06
-#                                                   policy
-# U user oxidized changed                  turnrye  write   2026-08-30 16:13:06
-#                                                   policy
-# U user group mktxp_group changed         turnrye  write   2026-08-30 16:13:05
-#                                                   policy
-# U user group netops-backup-full changed  turnrye  write   2026-08-30 16:12:58
-#                                                   policy
-# U user group netops-backup-ro changed    turnrye  write   2026-08-30 16:12:58
-#                                                   policy
-# U user mktxp changed                     turnrye  write   2026-08-30 16:12:56
-#                                                   policy
-# U user oxidized-full changed             turnrye  write   2026-08-30 16:12:55
-#                                                   policy
-# U user oxidized changed                  turnrye  write   2026-08-30 16:12:54
-#                                                   policy
-# U ip service changed                     turnrye  write   2026-08-30 16:12:36
-# U user ansible changed                   turnrye  write   2026-08-30 16:11:37
-#                                                   policy
-# U user ansible changed                   turnrye  write   2026-08-30 16:11:25
-#                                                   policy
-# U user group netops-ansible changed      turnrye  write   2026-08-30 16:11:24
-#                                                   policy
-# U user ansible added                     turnrye  write   2026-08-30 16:11:23
-#                                                   policy
-# U user group netops-ansible added        turnrye  write   2026-08-30 16:11:22
-#                                                   policy
+# Columns: ACTION, BY, POLICY
+#   ACTION                                 BY            POLICY
+# U log rule changed                       routeradmini  write
+# U log rule changed                       routeradmini  write
+# U user routeradmini changed              0             write
+#                                                        policy
+# U user support added                     0             write
+#                                                        policy
+# U user routeradmini changed              0             write
+#                                                        policy
+# U user routeradmin added                 0             write
+#                                                        policy
+# U user routeradmini added                0             write
+#                                                        policy
+# U ip service changed                     ansible       write
+# U ip service changed                     ansible       write
+# U ntp settings changed                   ansible       write
+# U ntp server record removed                            read
+# U ntp server record added                              read
+# U ntp server record added                              read
+# U ntp server record added                              read
+# U ntp server record added                              read
+# U mac winbox setting changed             ansible       write
+# U mac-server interface changed           ansible       write
+# U bandwidth-server changed               ansible       write
+# U ip service changed                     ansible       write
+# U user ae5au added                       turnrye       write
+#                                                        policy
+# U user mktxp changed                     turnrye       write
+#                                                        policy
+# U user oxidized-full changed             turnrye       write
+#                                                        policy
+# U user oxidized changed                  turnrye       write
+#                                                        policy
+# U user group mktxp_group changed         turnrye       write
+#                                                        policy
+# U user group netops-backup-full changed  turnrye       write
+#                                                        policy
+# U user group netops-backup-ro changed    turnrye       write
+#                                                        policy
+# U user mktxp changed                     turnrye       write
+#                                                        policy
+# U user oxidized-full changed             turnrye       write
+#                                                        policy
+# U user oxidized changed                  turnrye       write
+#                                                        policy
+# U ip service changed                     turnrye       write
+# U user ansible changed                   turnrye       write
+#                                                        policy
+# U user ansible changed                   turnrye       write
+#                                                        policy
+# U user group netops-ansible changed      turnrye       write
+#                                                        policy
+# U user ansible added                     turnrye       write
+#                                                        policy
+# U user group netops-ansible added        turnrye       write
+#                                                        policy
 # 
 # software id = W7AZ-7ES1
 #
@@ -160,7 +164,7 @@ set time-zone-name=America/New_York
 set name=sco.ftn.memhamwan.net
 /system logging
 set 3 action=memory
-add action=echo disabled=yes topics=!ssh,!ospf
+add action=echo topics=!ssh,!ospf
 add action=remote topics=system
 add action=remote topics=error
 add action=remote topics=warning
