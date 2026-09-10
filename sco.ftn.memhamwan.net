@@ -10,6 +10,8 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY
 #   ACTION                                 BY            POLICY
+# U log rule changed                       support       write
+# U log rule changed                       support       write
 # U log rule changed                       routeradmini  write
 # U log rule changed                       routeradmini  write
 # U user routeradmini changed              0             write
