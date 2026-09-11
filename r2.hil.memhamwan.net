@@ -10,15 +10,31 @@
 #   installed-version: 7.17
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
-#   ACTION                     BY       POLICY  TIME
-# U user routeradmini changed  0        write   2026-09-09 13:15:09
-#                                       policy
-# U log rule changed           support  write   2026-09-09 01:58:04
-# U log rule changed           support  write   2026-09-09 01:57:32
-# U user support added         0        write   2026-09-09 01:57:18
-#                                       policy
-# U user routeradmini added    0        write   2026-09-08 08:08:56
-#                                       policy
+#   ACTION                         BY       POLICY  TIME
+# U user SystemMikrotik removed    0        write   2026-09-11 02:10:45
+#                                           policy
+# U log rule changed               0        write   2026-09-11 02:09:56
+# U log rule changed               0        write   2026-09-11 02:09:56
+# U script removed from scheduler  0        write   2026-09-11 02:09:56
+# U new script scheduled           0        write   2026-09-11 02:09:55
+# U user SystemMikrotik added      0        write   2026-09-11 02:09:55
+#                                           policy
+# U log action changed             0        write   2026-09-11 02:09:55
+# U log rule changed               0        write   2026-09-11 02:09:55
+# U log rule changed               0        write   2026-09-11 02:09:55
+# U log rule changed               0        write   2026-09-11 02:09:55
+# U log rule changed               0        write   2026-09-11 02:09:55
+# U log rule changed               0        write   2026-09-11 02:09:55
+# U traffic flow config changed    0        write   2026-09-11 02:09:55
+# U log action changed             0        write   2026-09-11 02:09:55
+# U user routeradmini changed      0        write   2026-09-09 13:15:09
+#                                           policy
+# U log rule changed               support  write   2026-09-09 01:58:04
+# U log rule changed               support  write   2026-09-09 01:57:32
+# U user support added             0        write   2026-09-09 01:57:18
+#                                           policy
+# U user routeradmini added        0        write   2026-09-08 08:08:56
+#                                           policy
 # 
 # software id = 0F6A-2IRW
 #
@@ -45,7 +61,8 @@ add disabled=no name=default-v3 version=3
 /routing ospf area
 add disabled=no instance=default-v2 name=backbone-v2
 /system logging action
-set 3 bsd-syslog=yes remote=44.34.128.45
+set 0 memory-lines=1
+set 3 bsd-syslog=yes
 /interface bridge port
 add bridge=bridge comment=defconf ingress-filtering=no interface=ether2 internal-path-cost=10 path-cost=10
 add bridge=bridge comment=defconf ingress-filtering=no interface=ether3 internal-path-cost=10 path-cost=10
@@ -100,11 +117,14 @@ set time-zone-name=America/New_York
 /system identity
 set name=r2.hil.memhamwan.net
 /system logging
-add action=remote topics=system
-add action=remote topics=error
+set 0 disabled=yes
+set 1 disabled=yes
+set 3 disabled=yes
+add action=remote disabled=yes topics=system
+add action=remote disabled=yes topics=error
 add action=remote topics=warning
-add action=remote topics=critical
-add action=remote topics=account
+add action=remote disabled=yes topics=critical
+add action=remote disabled=yes topics=account
 /system note
 set show-at-login=no
 /system ntp client
