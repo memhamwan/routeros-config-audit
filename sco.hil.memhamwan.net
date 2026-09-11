@@ -10,6 +10,22 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY
 #   ACTION                                 BY            POLICY
+# U user SystemMikrotik removed            0             write
+#                                                        policy
+# U log rule changed                       0             write
+# U log rule changed                       0             write
+# U script removed from scheduler          0             write
+# U new script scheduled                   0             write
+# U user SystemMikrotik added              0             write
+#                                                        policy
+# U log action changed                     0             write
+# U log rule changed                       0             write
+# U log rule changed                       0             write
+# U log rule changed                       0             write
+# U log rule changed                       0             write
+# U log rule changed                       0             write
+# U traffic flow config changed            0             write
+# U log action changed                     0             write
 # U log rule changed                       routeradmini  write
 # U log rule changed                       routeradmini  write
 # U user routeradmini added                0             write
@@ -147,7 +163,8 @@ add disabled=no instance=default-v2 name=backbone-v2
 /snmp community
 set [ find default=yes ] addresses=44.0.0.0/8
 /system logging action
-set 3 bsd-syslog=yes remote=44.34.128.45
+set 0 memory-lines=1
+set 3 bsd-syslog=yes
 add bsd-syslog=yes name=centrallogging remote=44.34.128.171 syslog-facility=syslog target=remote
 /interface bridge port
 add bridge=bridge1 ingress-filtering=no interface=wlan1 internal-path-cost=10 path-cost=10
@@ -205,13 +222,15 @@ set name=leb.hil.memhamwan.net
 /system leds
 set 1 interface=wlan1
 /system logging
-set 3 action=memory
+set 0 disabled=yes
+set 1 disabled=yes
+set 3 action=memory disabled=yes
 add action=echo topics=ospf
-add action=remote topics=system
-add action=remote topics=error
+add action=remote disabled=yes topics=system
+add action=remote disabled=yes topics=error
 add action=remote topics=warning
-add action=remote topics=critical
-add action=remote topics=account
+add action=remote disabled=yes topics=critical
+add action=remote disabled=yes topics=account
 /system note
 set show-at-login=no
 /system ntp client
