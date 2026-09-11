@@ -10,6 +10,22 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                                 BY       POLICY  TIME
+# U user SystemMikrotik removed            0        write   2026-09-11 04:29:14
+#                                                   policy
+# U log rule changed                       0        write   2026-09-11 04:28:24
+# U log rule changed                       0        write   2026-09-11 04:28:24
+# U script removed from scheduler          0        write   2026-09-11 04:28:24
+# U new script scheduled                   0        write   2026-09-11 04:28:23
+# U user SystemMikrotik added              0        write   2026-09-11 04:28:23
+#                                                   policy
+# U log action changed                     0        write   2026-09-11 04:28:23
+# U log rule changed                       0        write   2026-09-11 04:28:23
+# U log rule changed                       0        write   2026-09-11 04:28:23
+# U log rule changed                       0        write   2026-09-11 04:28:23
+# U log rule changed                       0        write   2026-09-11 04:28:23
+# U log rule changed                       0        write   2026-09-11 04:28:23
+# U traffic flow config changed            0        write   2026-09-11 04:28:23
+# U log action changed                     0        write   2026-09-11 04:28:23
 # U user routeradmini changed              0        write   2026-09-10 02:59:18
 #                                                   policy
 # U user routeradmini added                0        write   2026-09-10 00:28:00
@@ -128,7 +144,8 @@ add disabled=no instance=default-v2 name=backbone-v2
 set [ find default=yes ] addresses=44.0.0.0/8 name=hamwan
 add addresses=44.0.0.0/8 name=public
 /system logging action
-set 3 bsd-syslog=yes remote=44.34.128.45
+set 0 memory-lines=1
+set 3 bsd-syslog=yes
 add bsd-syslog=yes name=centrallogging remote=44.34.128.171 syslog-facility=syslog target=remote
 /interface bridge port
 add bridge=bridge1 ingress-filtering=no interface=wlan1 internal-path-cost=10 path-cost=10
@@ -181,12 +198,14 @@ set name=mno.hil.memhamwan.net
 /system leds
 set 1 interface=wlan1
 /system logging
-set 3 action=memory
-add action=remote topics=system
-add action=remote topics=error
+set 0 disabled=yes
+set 1 disabled=yes
+set 3 action=memory disabled=yes
+add action=remote disabled=yes topics=system
+add action=remote disabled=yes topics=error
 add action=remote topics=warning
-add action=remote topics=critical
-add action=remote topics=account
+add action=remote disabled=yes topics=critical
+add action=remote disabled=yes topics=account
 /system note
 set show-at-login=no
 /system ntp client
