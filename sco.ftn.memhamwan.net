@@ -10,6 +10,16 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY
 #   ACTION                                 BY            POLICY
+# U user SystemMikrotik removed            0             write
+#                                                        policy
+# U log action changed                     0             write
+# U log rule changed                       0             write
+# U log rule changed                       0             write
+# U log rule changed                       0             write
+# U log rule changed                       0             write
+# U log rule changed                       0             write
+# U traffic flow config changed            0             write
+# U log action changed                     0             write
 # U log rule changed                       0             write
 # U log rule changed                       0             write
 # U script removed from scheduler          0             write
