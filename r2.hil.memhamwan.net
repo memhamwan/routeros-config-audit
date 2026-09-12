@@ -11,6 +11,16 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                         BY       POLICY  TIME
+# U user SystemMikrotik removed    0        write   2026-09-12 02:01:59
+#                                           policy
+# U log action changed             0        write   2026-09-12 02:00:58
+# U log rule changed               0        write   2026-09-12 02:00:58
+# U log rule changed               0        write   2026-09-12 02:00:58
+# U log rule changed               0        write   2026-09-12 02:00:58
+# U log rule changed               0        write   2026-09-12 02:00:58
+# U log rule changed               0        write   2026-09-12 02:00:58
+# U traffic flow config changed    0        write   2026-09-12 02:00:58
+# U log action changed             0        write   2026-09-12 02:00:58
 # U log rule changed               0        write   2026-09-11 23:40:45
 # U log rule changed               0        write   2026-09-11 23:40:45
 # U script removed from scheduler  0        write   2026-09-11 23:40:45
