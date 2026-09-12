@@ -10,6 +10,14 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY
 #   ACTION                                 BY            POLICY
+# U log action changed                     0             write
+# U log rule changed                       0             write
+# U log rule changed                       0             write
+# U log rule changed                       0             write
+# U log rule changed                       0             write
+# U log rule changed                       0             write
+# U traffic flow config changed            0             write
+# U log action changed                     0             write
 # U log rule changed                       0             write
 # U log rule changed                       0             write
 # U script removed from scheduler          0             write
@@ -140,12 +148,6 @@
 # U device changed                         hamwan        write
 # U new script scheduled                   hamwan        write
 # U device changed                         hamwan        write
-# U script removed from scheduler          hamwan        write
-# U device changed                         hamwan        write
-# U new script scheduled                   hamwan        write
-# U script removed from scheduler          hamwan        write
-# U device changed                         hamwan        write
-# U new script scheduled                   hamwan        write
 # 
 # software id = CIAG-EMEJ
 #
