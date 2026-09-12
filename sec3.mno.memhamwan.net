@@ -74,6 +74,7 @@ set winbox disabled=yes
 set api-ssl address=44.34.128.45/32 certificate=api-ssl
 /ip ssh
 set forwarding-enabled=remote strong-crypto=yes
+#error exporting "/radius" (timeout)
 /routing bfd configuration
 add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
 /routing filter rule
