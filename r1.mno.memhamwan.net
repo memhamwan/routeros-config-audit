@@ -125,6 +125,7 @@ set servers=8.8.8.8
 /ip firewall mangle
 add action=change-mss chain=output new-mss=1378 protocol=tcp tcp-flags=syn tcp-mss=!0-1378
 add action=change-mss chain=forward new-mss=1378 protocol=tcp tcp-flags=syn tcp-mss=!0-1378
+#error exporting "/ip/ipsec/mode-config" (timeout)
 /ip ipsec profile
 set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
 /ip service
