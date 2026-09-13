@@ -60,6 +60,7 @@ set 0 name=serial0
 set 1 baud-rate=9600 data-bits=8 flow-control=none name=usb2 parity=none stop-bits=1
 /interface ppp-client
 add apn=internet default-route-distance=0 name=ppp-out1 port=usb2
+#error exporting "/ppp/profile" (timeout)
 /routing bgp template
 set default disabled=no output.network=bgp-networks
 /routing ospf instance
@@ -125,6 +126,7 @@ set servers=8.8.8.8
 /ip firewall mangle
 add action=change-mss chain=output new-mss=1378 protocol=tcp tcp-flags=syn tcp-mss=!0-1378
 add action=change-mss chain=forward new-mss=1378 protocol=tcp tcp-flags=syn tcp-mss=!0-1378
+#error exporting "/ip/ipsec/mode-config" (timeout)
 /ip ipsec profile
 set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
 /ip service
