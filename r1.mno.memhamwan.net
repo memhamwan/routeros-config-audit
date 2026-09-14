@@ -10,6 +10,8 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                       BY  POLICY  TIME
+# U user SystemMikrotik removed   0  write   2026-09-14 13:13:21
+#                                    policy
 # U new script scheduled          0  write   2026-09-14 06:11:21
 # U user SystemMikrotik added     0  write   2026-09-14 06:10:49
 #                                    policy
