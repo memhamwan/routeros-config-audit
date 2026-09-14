@@ -10,47 +10,63 @@
 #   installed-version: 7.12.1
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
-#   ACTION                     BY            POLICY  TIME
-# U log rule changed           support       write   2026-09-11 02:04:37
-# U log rule changed           support       write   2026-09-11 02:04:37
-# U log rule changed           support       write   2026-09-11 02:04:37
-# U log rule changed           support       write   2026-09-11 02:04:37
-# U log rule changed           support       write   2026-09-11 02:04:16
-# U log rule changed           support       write   2026-09-11 02:04:16
-# U log rule changed           support       write   2026-09-11 02:04:16
-# U log rule changed           support       write   2026-09-11 02:04:16
-# U log rule changed           support       write   2026-09-10 06:11:30
-# U log rule changed           support       write   2026-09-10 06:11:30
-# U log rule changed           support       write   2026-09-10 06:11:30
-# U log rule changed           support       write   2026-09-10 06:11:30
-# U log rule changed           support       write   2026-09-10 06:11:14
-# U log rule changed           support       write   2026-09-10 06:11:14
-# U log rule changed           support       write   2026-09-10 06:11:14
-# U log rule changed           support       write   2026-09-10 06:11:14
-# U user support added         0             write   2026-09-10 06:11:00
-#                                            policy
-# U log rule changed           routeradmini  write   2026-09-10 03:00:22
-# U log rule changed           routeradmini  write   2026-09-10 03:00:22
-# U log rule changed           routeradmini  write   2026-09-10 03:00:22
-# U log rule changed           routeradmini  write   2026-09-10 03:00:22
-# U log rule changed           routeradmini  write   2026-09-10 03:00:12
-# U log rule changed           routeradmini  write   2026-09-10 03:00:12
-# U log rule changed           routeradmini  write   2026-09-10 03:00:12
-# U log rule changed           routeradmini  write   2026-09-10 03:00:12
-# U user routeradmini changed  0             write   2026-09-10 02:59:55
-#                                            policy
-# U log rule changed           routeradmini  write   2026-09-10 02:59:54
-# U log rule changed           routeradmini  write   2026-09-10 02:59:54
-# U log rule changed           routeradmini  write   2026-09-10 02:59:54
-# U log rule changed           routeradmini  write   2026-09-10 02:59:54
-# U log rule changed           routeradmini  write   2026-09-10 02:59:45
-# U log rule changed           routeradmini  write   2026-09-10 02:59:45
-# U log rule changed           routeradmini  write   2026-09-10 02:59:45
-# U log rule changed           routeradmini  write   2026-09-10 02:59:45
-# U user routeradmini added    0             write   2026-09-10 02:59:28
-#                                            policy
-# U user routeradmin added     0             write   2026-09-08 16:58:46
-#                                            policy
+#   ACTION                         BY            POLICY  TIME
+# U user SystemMikrotik removed    0             write   2026-09-14 13:12:07
+#                                                policy
+# U log rule changed               0             write   2026-09-14 13:11:36
+# U log rule changed               0             write   2026-09-14 13:11:36
+# U script removed from scheduler  0             write   2026-09-14 13:11:36
+# U new script scheduled           0             write   2026-09-14 13:11:35
+# U user SystemMikrotik added      0             write   2026-09-14 13:11:35
+#                                                policy
+# U log action changed             0             write   2026-09-14 13:11:35
+# U log rule changed               0             write   2026-09-14 13:11:35
+# U log rule changed               0             write   2026-09-14 13:11:35
+# U log rule changed               0             write   2026-09-14 13:11:35
+# U log rule changed               0             write   2026-09-14 13:11:35
+# U log rule changed               0             write   2026-09-14 13:11:35
+# U traffic flow config changed    0             write   2026-09-14 13:11:35
+# U log action changed             0             write   2026-09-14 13:11:35
+# U log rule changed               support       write   2026-09-11 02:04:37
+# U log rule changed               support       write   2026-09-11 02:04:37
+# U log rule changed               support       write   2026-09-11 02:04:37
+# U log rule changed               support       write   2026-09-11 02:04:37
+# U log rule changed               support       write   2026-09-11 02:04:16
+# U log rule changed               support       write   2026-09-11 02:04:16
+# U log rule changed               support       write   2026-09-11 02:04:16
+# U log rule changed               support       write   2026-09-11 02:04:16
+# U log rule changed               support       write   2026-09-10 06:11:30
+# U log rule changed               support       write   2026-09-10 06:11:30
+# U log rule changed               support       write   2026-09-10 06:11:30
+# U log rule changed               support       write   2026-09-10 06:11:30
+# U log rule changed               support       write   2026-09-10 06:11:14
+# U log rule changed               support       write   2026-09-10 06:11:14
+# U log rule changed               support       write   2026-09-10 06:11:14
+# U log rule changed               support       write   2026-09-10 06:11:14
+# U user support added             0             write   2026-09-10 06:11:00
+#                                                policy
+# U log rule changed               routeradmini  write   2026-09-10 03:00:22
+# U log rule changed               routeradmini  write   2026-09-10 03:00:22
+# U log rule changed               routeradmini  write   2026-09-10 03:00:22
+# U log rule changed               routeradmini  write   2026-09-10 03:00:22
+# U log rule changed               routeradmini  write   2026-09-10 03:00:12
+# U log rule changed               routeradmini  write   2026-09-10 03:00:12
+# U log rule changed               routeradmini  write   2026-09-10 03:00:12
+# U log rule changed               routeradmini  write   2026-09-10 03:00:12
+# U user routeradmini changed      0             write   2026-09-10 02:59:55
+#                                                policy
+# U log rule changed               routeradmini  write   2026-09-10 02:59:54
+# U log rule changed               routeradmini  write   2026-09-10 02:59:54
+# U log rule changed               routeradmini  write   2026-09-10 02:59:54
+# U log rule changed               routeradmini  write   2026-09-10 02:59:54
+# U log rule changed               routeradmini  write   2026-09-10 02:59:45
+# U log rule changed               routeradmini  write   2026-09-10 02:59:45
+# U log rule changed               routeradmini  write   2026-09-10 02:59:45
+# U log rule changed               routeradmini  write   2026-09-10 02:59:45
+# U user routeradmini added        0             write   2026-09-10 02:59:28
+#                                                policy
+# U user routeradmin added         0             write   2026-09-08 16:58:46
+#                                                policy
 # 
 # software id = XTL4-EMUQ
 #
@@ -76,7 +92,8 @@ add disabled=no instance=default-v2 name=backbone-v2
 /snmp community
 set [ find default=yes ] addresses=44.0.0.0/8
 /system logging action
-set 3 bsd-syslog=yes remote=44.34.128.45
+set 0 memory-lines=1
+set 3 bsd-syslog=yes
 add bsd-syslog=yes name=centrallogging remote=44.34.128.171 syslog-facility=syslog target=remote
 /user group
 add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
@@ -135,15 +152,18 @@ set time-zone-autodetect=no time-zone-name=America/Chicago
 /system identity
 set name=hil.sco.memhamwan.net
 /system logging
+set 0 disabled=yes
+set 1 disabled=yes
+set 3 disabled=yes
 add action=centrallogging topics=!debug,!packet,!snmp
 add action=echo topics=!ssh,!ospf,!ntp,!bgp
 add action=echo topics=wireless
 add action=echo topics=ospf
-add action=remote topics=system
-add action=remote topics=error
+add action=remote disabled=yes topics=system
+add action=remote disabled=yes topics=error
 add action=remote topics=warning
-add action=remote topics=critical
-add action=remote topics=account
+add action=remote disabled=yes topics=critical
+add action=remote disabled=yes topics=account
 /system note
 set show-at-login=no
 /system ntp client
