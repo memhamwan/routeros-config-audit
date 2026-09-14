@@ -7,6 +7,25 @@
 #                board-name: NetMetal 5
 #                  platform: MikroTik
 #   installed-version: 7.12.1
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION                         BY  POLICY  TIME
+# U user SystemMikrotik removed     0  write   2026-09-14 06:10:49
+#                                      policy
+# U log rule changed                0  write   2026-09-14 06:10:19
+# U log rule changed                0  write   2026-09-14 06:10:19
+# U script removed from scheduler   0  write   2026-09-14 06:10:19
+# U new script scheduled            0  write   2026-09-14 06:10:18
+# U user SystemMikrotik added       0  write   2026-09-14 06:10:18
+#                                      policy
+# U log action changed              0  write   2026-09-14 06:10:18
+# U log rule changed                0  write   2026-09-14 06:10:18
+# U log rule changed                0  write   2026-09-14 06:10:18
+# U log rule changed                0  write   2026-09-14 06:10:18
+# U log rule changed                0  write   2026-09-14 06:10:18
+# U log rule changed                0  write   2026-09-14 06:10:18
+# U traffic flow config changed     0  write   2026-09-14 06:10:18
+# U log action changed              0  write   2026-09-14 06:10:18
 # 
 # software id = XTAG-7W68
 #
@@ -33,7 +52,7 @@ add disabled=no instance=default-v2 name=backbone-v2
 set [ find default=yes ] addresses=44.0.0.0/8
 /system logging action
 set 0 memory-lines=1
-set 3 bsd-syslog=yes remote=44.34.128.45
+set 3 bsd-syslog=yes
 add bsd-syslog=yes name=centrallogging remote=44.34.128.171 syslog-facility=syslog target=remote
 /user group
 add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
@@ -92,12 +111,14 @@ set name=leb.mno.memhamwan.net
 /system leds
 set 1 interface=wlan1
 /system logging
-set 3 action=memory
-add action=remote topics=system
-add action=remote topics=error
+set 0 disabled=yes
+set 1 disabled=yes
+set 3 action=memory disabled=yes
+add action=remote disabled=yes topics=system
+add action=remote disabled=yes topics=error
 add action=remote topics=warning
-add action=remote topics=critical
-add action=remote topics=account
+add action=remote disabled=yes topics=critical
+add action=remote disabled=yes topics=account
 /system note
 set show-at-login=no
 /system ntp client
