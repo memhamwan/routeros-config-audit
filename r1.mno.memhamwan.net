@@ -9,24 +9,27 @@
 #   installed-version: 7.19.4
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
-#   ACTION                       BY  POLICY  TIME
-# U user SystemMikrotik removed   0  write   2026-09-14 13:13:21
-#                                    policy
-# U new script scheduled          0  write   2026-09-14 06:11:21
-# U user SystemMikrotik added     0  write   2026-09-14 06:10:49
-#                                    policy
-# U log action changed            0  write   2026-09-14 06:10:49
-# U log rule changed              0  write   2026-09-14 06:10:49
-# U log rule changed              0  write   2026-09-14 06:10:49
-# U log rule changed              0  write   2026-09-14 06:10:49
-# U log rule changed              0  write   2026-09-14 06:10:49
-# U log rule changed              0  write   2026-09-14 06:10:49
-# U traffic flow config changed   0  write   2026-09-14 06:10:48
-# U log action changed            0  write   2026-09-14 06:10:47
-# U user support added            0  write   2026-09-09 20:48:18
-#                                    policy
-# U user routeradmin added        0  write   2026-09-08 09:50:56
-#                                    policy
+#   ACTION                         BY  POLICY  TIME
+# U log rule changed                0  write   2026-09-14 13:56:38
+# U log rule changed                0  write   2026-09-14 13:56:38
+# U script removed from scheduler   0  write   2026-09-14 13:56:36
+# U user SystemMikrotik removed     0  write   2026-09-14 13:13:21
+#                                      policy
+# U new script scheduled            0  write   2026-09-14 06:11:21
+# U user SystemMikrotik added       0  write   2026-09-14 06:10:49
+#                                      policy
+# U log action changed              0  write   2026-09-14 06:10:49
+# U log rule changed                0  write   2026-09-14 06:10:49
+# U log rule changed                0  write   2026-09-14 06:10:49
+# U log rule changed                0  write   2026-09-14 06:10:49
+# U log rule changed                0  write   2026-09-14 06:10:49
+# U log rule changed                0  write   2026-09-14 06:10:49
+# U traffic flow config changed     0  write   2026-09-14 06:10:48
+# U log action changed              0  write   2026-09-14 06:10:47
+# U user support added              0  write   2026-09-09 20:48:18
+#                                      policy
+# U user routeradmin added          0  write   2026-09-08 09:50:56
+#                                      policy
 # 
 # software id = JSLF-NLB9
 #
@@ -173,9 +176,10 @@ set time-zone-autodetect=no time-zone-name=America/Chicago
 /system identity
 set name=r1.mno.memhamwan.net
 /system logging
+set 0 disabled=yes
 set 1 disabled=yes
 set 3 action=memory disabled=yes
-add action=remote topics=system
+add action=remote disabled=yes topics=system
 add action=remote disabled=yes topics=error
 add action=remote topics=warning
 add action=remote disabled=yes topics=critical
@@ -187,8 +191,6 @@ add address=44.34.128.181
 add address=44.34.133.3
 add address=162.159.200.1
 add address=162.159.200.123
-/system scheduler
-add interval=1s name=autosupoutrif on-event="/system scheduler remove autosupoutrif; /system logging disable [find topics~\"info\" || topics~\"system\"]" policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-09-14 start-time=06:11:14
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server
