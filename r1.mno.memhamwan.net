@@ -52,7 +52,8 @@ set [ find default=yes ] ip-type=ipv4 use-network-apn=no
 /interface wireless security-profiles
 set [ find default=yes ] supplicant-identity=MikroTik
 #error exporting "/ip/ipsec/policy/group" (timeout)
-#error exporting "/ip/ipsec/proposal" (timeout)
+/ip ipsec proposal
+set [ find default=yes ] enc-algorithms=aes-128-cbc
 /ip smb users
 set [ find default=yes ] disabled=yes
 /port
