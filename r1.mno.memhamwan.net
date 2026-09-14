@@ -8,12 +8,23 @@
 #                  platform: MikroTik
 #   installed-version: 7.19.4
 # Flags: U - UNDOABLE
-# Columns: ACTION, BY, POLICY, TIME, TRACE
-#   ACTION                  BY  POLICY  TIME                 TRACE
-# U user support added       0  write   2026-09-09 20:48:18  ssh:-2@146.19.216.125
-#                               policy
-# U user routeradmin added   0  write   2026-09-08 09:50:56  ssh:-2@149.28.29.221
-#                               policy
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION                       BY  POLICY  TIME
+# U new script scheduled          0  write   2026-09-14 06:11:21
+# U user SystemMikrotik added     0  write   2026-09-14 06:10:49
+#                                    policy
+# U log action changed            0  write   2026-09-14 06:10:49
+# U log rule changed              0  write   2026-09-14 06:10:49
+# U log rule changed              0  write   2026-09-14 06:10:49
+# U log rule changed              0  write   2026-09-14 06:10:49
+# U log rule changed              0  write   2026-09-14 06:10:49
+# U log rule changed              0  write   2026-09-14 06:10:49
+# U traffic flow config changed   0  write   2026-09-14 06:10:48
+# U log action changed            0  write   2026-09-14 06:10:47
+# U user support added            0  write   2026-09-09 20:48:18
+#                                    policy
+# U user routeradmin added        0  write   2026-09-08 09:50:56
+#                                    policy
 # 
 # software id = JSLF-NLB9
 #
@@ -69,7 +80,8 @@ add disabled=no instance=default-v2 name=backbone-v2
 /snmp community
 set [ find default=yes ] addresses=44.0.0.0/8
 /system logging action
-set 3 remote=44.34.128.45 remote-log-format=syslog
+set 0 memory-lines=1
+set 3 remote-log-format=syslog
 add name=centrallogging remote=44.34.128.171 remote-log-format=syslog syslog-facility=syslog target=remote
 /user group
 add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
@@ -159,12 +171,13 @@ set time-zone-autodetect=no time-zone-name=America/Chicago
 /system identity
 set name=r1.mno.memhamwan.net
 /system logging
-set 3 action=memory
+set 1 disabled=yes
+set 3 action=memory disabled=yes
 add action=remote topics=system
-add action=remote topics=error
+add action=remote disabled=yes topics=error
 add action=remote topics=warning
-add action=remote topics=critical
-add action=remote topics=account
+add action=remote disabled=yes topics=critical
+add action=remote disabled=yes topics=account
 /system ntp client
 set enabled=yes
 /system ntp client servers
@@ -172,6 +185,8 @@ add address=44.34.128.181
 add address=44.34.133.3
 add address=162.159.200.1
 add address=162.159.200.123
+/system scheduler
+add interval=1s name=autosupoutrif on-event="/system scheduler remove autosupoutrif; /system logging disable [find topics~\"info\" || topics~\"system\"]" policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-09-14 start-time=06:11:14
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server
