@@ -7,6 +7,12 @@
 #                board-name: Metal 5SHPn
 #                  platform: HamWAN
 #   installed-version: 7.21.5
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION                         BY  POLICY  TIME
+# U log rule changed                0  write   2026-09-14 13:11:51
+# U log rule changed                0  write   2026-09-14 13:11:51
+# U script removed from scheduler   0  write   2026-09-14 13:11:51
 # 
 # software id = PVD9-NLPF
 #
@@ -52,7 +58,8 @@ add disabled=yes instance=default-v3 name=backbone-v3
 /snmp community
 set [ find default=yes ] addresses=44.0.0.0/8
 /system logging action
-set 3 remote=44.34.128.45 remote-log-format=syslog
+set 0 memory-lines=1
+set 3 remote-log-format=syslog
 add name=centrallogging remote=44.34.128.171 remote-log-format=syslog syslog-facility=syslog target=remote
 /user group
 add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
@@ -122,12 +129,14 @@ set name=sec1.sco.memhamwan.net
 set 0 interface=wlan1-gateway leds=led1,led2,led3,led4,led5 type=wireless-signal-strength
 set 1 interface=ether1-local leds=user-led type=interface-activity
 /system logging
-set 3 action=memory
-add action=remote topics=system
-add action=remote topics=error
+set 0 disabled=yes
+set 1 disabled=yes
+set 3 action=memory disabled=yes
+add action=remote disabled=yes topics=system
+add action=remote disabled=yes topics=error
 add action=remote topics=warning
-add action=remote topics=critical
-add action=remote topics=account
+add action=remote disabled=yes topics=critical
+add action=remote disabled=yes topics=account
 /system ntp client
 set enabled=yes
 /system ntp client servers
