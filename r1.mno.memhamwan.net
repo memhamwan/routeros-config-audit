@@ -76,6 +76,7 @@ set 0 name=serial0
 set 1 baud-rate=9600 data-bits=8 flow-control=none name=usb2 parity=none stop-bits=1
 /interface ppp-client
 add apn=internet default-route-distance=0 name=ppp-out1 port=usb2
+#error exporting "/ppp/profile" (timeout)
 /routing bgp template
 set default disabled=no output.network=bgp-networks
 /routing ospf instance
