@@ -71,6 +71,7 @@ set [ find default=yes ] supplicant-identity=MikroTik
 set [ find default=yes ] enc-algorithms=aes-128-cbc
 /ip smb users
 set [ find default=yes ] disabled=yes
+#error exporting "/mpls/traffic-eng/path" (timeout)
 /port
 set 0 name=serial0
 set 1 baud-rate=9600 data-bits=8 flow-control=none name=usb2 parity=none stop-bits=1
