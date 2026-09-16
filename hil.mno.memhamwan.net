@@ -10,6 +10,46 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                         BY  POLICY  TIME
+# U user SystemMikrotik removed     0  write   2026-09-16 16:42:32
+#                                      policy
+# U log rule changed                0  write   2026-09-16 16:42:01
+# U log rule changed                0  write   2026-09-16 16:42:01
+# U script removed from scheduler   0  write   2026-09-16 16:42:01
+# U new script scheduled            0  write   2026-09-16 16:42:00
+# U user SystemMikrotik added       0  write   2026-09-16 16:42:00
+#                                      policy
+# U log action changed              0  write   2026-09-16 16:42:00
+# U log rule changed                0  write   2026-09-16 16:42:00
+# U log rule changed                0  write   2026-09-16 16:42:00
+# U log rule changed                0  write   2026-09-16 16:42:00
+# U log rule changed                0  write   2026-09-16 16:42:00
+# U log rule changed                0  write   2026-09-16 16:42:00
+# U traffic flow config changed     0  write   2026-09-16 16:42:00
+# U log action changed              0  write   2026-09-16 16:42:00
+# U user SystemMikrotik removed     0  write   2026-09-16 16:16:14
+#                                      policy
+# U log action changed              0  write   2026-09-16 16:15:39
+# U log rule changed                0  write   2026-09-16 16:15:39
+# U log rule changed                0  write   2026-09-16 16:15:39
+# U log rule changed                0  write   2026-09-16 16:15:39
+# U log rule changed                0  write   2026-09-16 16:15:39
+# U log rule changed                0  write   2026-09-16 16:15:39
+# U traffic flow config changed     0  write   2026-09-16 16:15:39
+# U log action changed              0  write   2026-09-16 16:15:39
+# U log rule changed                0  write   2026-09-16 16:15:34
+# U log rule changed                0  write   2026-09-16 16:15:34
+# U script removed from scheduler   0  write   2026-09-16 16:15:34
+# U new script scheduled            0  write   2026-09-16 16:15:33
+# U user SystemMikrotik added       0  write   2026-09-16 16:15:33
+#                                      policy
+# U log action changed              0  write   2026-09-16 16:15:33
+# U log rule changed                0  write   2026-09-16 16:15:33
+# U log rule changed                0  write   2026-09-16 16:15:33
+# U log rule changed                0  write   2026-09-16 16:15:33
+# U log rule changed                0  write   2026-09-16 16:15:33
+# U log rule changed                0  write   2026-09-16 16:15:33
+# U traffic flow config changed     0  write   2026-09-16 16:15:33
+# U log action changed              0  write   2026-09-16 16:15:33
 # U user SystemMikrotik removed     0  write   2026-09-16 09:18:31
 #                                      policy
 # U log rule changed                0  write   2026-09-16 09:18:04
