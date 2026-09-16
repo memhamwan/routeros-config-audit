@@ -8,135 +8,124 @@
 #                  platform: MikroTik
 #   installed-version: 7.19.6
 # Flags: U - UNDOABLE
-# Columns: ACTION, BY, POLICY
-#   ACTION                                 BY            POLICY
-# U user SystemMikrotik removed            0             write
-#                                                        policy
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U script removed from scheduler          0             write
-# U new script scheduled                   0             write
-# U user SystemMikrotik added              0             write
-#                                                        policy
-# U log action changed                     0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U traffic flow config changed            0             write
-# U log action changed                     0             write
-# U user SystemMikrotik removed            0             write
-#                                                        policy
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U script removed from scheduler          0             write
-# U new script scheduled                   0             write
-# U user SystemMikrotik added              0             write
-#                                                        policy
-# U log action changed                     0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U traffic flow config changed            0             write
-# U log action changed                     0             write
-# U user SystemMikrotik removed            0             write
-#                                                        policy
-# U log action changed                     0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U traffic flow config changed            0             write
-# U log action changed                     0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U script removed from scheduler          0             write
-# U new script scheduled                   0             write
-# U user SystemMikrotik added              0             write
-#                                                        policy
-# U log action changed                     0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U traffic flow config changed            0             write
-# U log action changed                     0             write
-# U user SystemMikrotik removed            0             write
-#                                                        policy
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U script removed from scheduler          0             write
-# U new script scheduled                   0             write
-# U user SystemMikrotik added              0             write
-#                                                        policy
-# U log action changed                     0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U traffic flow config changed            0             write
-# U log action changed                     0             write
-# U log rule changed                       support       write
-# U log rule changed                       support       write
-# U log rule changed                       routeradmini  write
-# U log rule changed                       routeradmini  write
-# U user routeradmini changed              0             write
-#                                                        policy
-# U user support added                     0             write
-#                                                        policy
-# U user routeradmini changed              0             write
-#                                                        policy
-# U user routeradmin added                 0             write
-#                                                        policy
-# U user routeradmini added                0             write
-#                                                        policy
-# U ip service changed                     ansible       write
-# U ip service changed                     ansible       write
-# U ntp settings changed                   ansible       write
-# U ntp server record removed                            read
-# U ntp server record added                              read
-# U ntp server record added                              read
-# U ntp server record added                              read
-# U ntp server record added                              read
-# U mac winbox setting changed             ansible       write
-# U mac-server interface changed           ansible       write
-# U bandwidth-server changed               ansible       write
-# U ip service changed                     ansible       write
-# U user ae5au added                       turnrye       write
-#                                                        policy
-# U user mktxp changed                     turnrye       write
-#                                                        policy
-# U user oxidized-full changed             turnrye       write
-#                                                        policy
-# U user oxidized changed                  turnrye       write
-#                                                        policy
-# U user group mktxp_group changed         turnrye       write
-#                                                        policy
-# U user group netops-backup-full changed  turnrye       write
-#                                                        policy
-# U user group netops-backup-ro changed    turnrye       write
-#                                                        policy
-# U user mktxp changed                     turnrye       write
-#                                                        policy
-# U user oxidized-full changed             turnrye       write
-#                                                        policy
-# U user oxidized changed                  turnrye       write
-#                                                        policy
-# U ip service changed                     turnrye       write
-# U user ansible changed                   turnrye       write
-#                                                        policy
-# U user ansible changed                   turnrye       write
-#                                                        policy
-# U user group netops-ansible changed      turnrye       write
-#                                                        policy
-# U user ansible added                     turnrye       write
-#                                                        policy
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION                         BY            POLICY  TIME
+# U user SystemMikrotik removed    0             write   2026-09-16 17:43:00
+#                                                policy
+# U log rule changed               0             write   2026-09-16 17:42:08
+# U log rule changed               0             write   2026-09-16 17:42:08
+# U script removed from scheduler  0             write   2026-09-16 17:42:08
+# U new script scheduled           0             write   2026-09-16 17:42:07
+# U user SystemMikrotik added      0             write   2026-09-16 17:42:07
+#                                                policy
+# U log action changed             0             write   2026-09-16 17:42:07
+# U log rule changed               0             write   2026-09-16 17:42:07
+# U log rule changed               0             write   2026-09-16 17:42:07
+# U log rule changed               0             write   2026-09-16 17:42:07
+# U log rule changed               0             write   2026-09-16 17:42:07
+# U log rule changed               0             write   2026-09-16 17:42:07
+# U traffic flow config changed    0             write   2026-09-16 17:42:07
+# U log action changed             0             write   2026-09-16 17:42:07
+# U user SystemMikrotik removed    0             write   2026-09-16 10:18:58
+#                                                policy
+# U log rule changed               0             write   2026-09-16 10:18:11
+# U log rule changed               0             write   2026-09-16 10:18:11
+# U script removed from scheduler  0             write   2026-09-16 10:18:11
+# U new script scheduled           0             write   2026-09-16 10:18:10
+# U user SystemMikrotik added      0             write   2026-09-16 10:18:10
+#                                                policy
+# U log action changed             0             write   2026-09-16 10:18:10
+# U log rule changed               0             write   2026-09-16 10:18:10
+# U log rule changed               0             write   2026-09-16 10:18:10
+# U log rule changed               0             write   2026-09-16 10:18:10
+# U log rule changed               0             write   2026-09-16 10:18:10
+# U log rule changed               0             write   2026-09-16 10:18:10
+# U traffic flow config changed    0             write   2026-09-16 10:18:10
+# U log action changed             0             write   2026-09-16 10:18:10
+# U user SystemMikrotik removed    0             write   2026-09-14 21:50:37
+#                                                policy
+# U log rule changed               0             write   2026-09-14 21:49:49
+# U log rule changed               0             write   2026-09-14 21:49:49
+# U script removed from scheduler  0             write   2026-09-14 21:49:49
+# U new script scheduled           0             write   2026-09-14 21:49:48
+# U user SystemMikrotik added      0             write   2026-09-14 21:49:48
+#                                                policy
+# U log action changed             0             write   2026-09-14 21:49:48
+# U log rule changed               0             write   2026-09-14 21:49:48
+# U log rule changed               0             write   2026-09-14 21:49:48
+# U log rule changed               0             write   2026-09-14 21:49:48
+# U log rule changed               0             write   2026-09-14 21:49:48
+# U log rule changed               0             write   2026-09-14 21:49:48
+# U traffic flow config changed    0             write   2026-09-14 21:49:48
+# U log action changed             0             write   2026-09-14 21:49:48
+# U user SystemMikrotik removed    0             write   2026-09-12 02:01:51
+#                                                policy
+# U log action changed             0             write   2026-09-12 02:00:51
+# U log rule changed               0             write   2026-09-12 02:00:51
+# U log rule changed               0             write   2026-09-12 02:00:51
+# U log rule changed               0             write   2026-09-12 02:00:51
+# U log rule changed               0             write   2026-09-12 02:00:51
+# U log rule changed               0             write   2026-09-12 02:00:51
+# U traffic flow config changed    0             write   2026-09-12 02:00:51
+# U log action changed             0             write   2026-09-12 02:00:51
+# U log rule changed               0             write   2026-09-11 23:40:46
+# U log rule changed               0             write   2026-09-11 23:40:46
+# U script removed from scheduler  0             write   2026-09-11 23:40:46
+# U new script scheduled           0             write   2026-09-11 23:40:45
+# U user SystemMikrotik added      0             write   2026-09-11 23:40:45
+#                                                policy
+# U log action changed             0             write   2026-09-11 23:40:45
+# U log rule changed               0             write   2026-09-11 23:40:45
+# U log rule changed               0             write   2026-09-11 23:40:45
+# U log rule changed               0             write   2026-09-11 23:40:45
+# U log rule changed               0             write   2026-09-11 23:40:45
+# U log rule changed               0             write   2026-09-11 23:40:45
+# U traffic flow config changed    0             write   2026-09-11 23:40:44
+# U log action changed             0             write   2026-09-11 23:40:44
+# U user SystemMikrotik removed    0             write   2026-09-10 18:20:33
+#                                                policy
+# U log rule changed               0             write   2026-09-10 18:19:33
+# U log rule changed               0             write   2026-09-10 18:19:33
+# U script removed from scheduler  0             write   2026-09-10 18:19:33
+# U new script scheduled           0             write   2026-09-10 18:19:32
+# U user SystemMikrotik added      0             write   2026-09-10 18:19:32
+#                                                policy
+# U log action changed             0             write   2026-09-10 18:19:32
+# U log rule changed               0             write   2026-09-10 18:19:32
+# U log rule changed               0             write   2026-09-10 18:19:32
+# U log rule changed               0             write   2026-09-10 18:19:32
+# U log rule changed               0             write   2026-09-10 18:19:32
+# U log rule changed               0             write   2026-09-10 18:19:32
+# U traffic flow config changed    0             write   2026-09-10 18:19:31
+# U log action changed             0             write   2026-09-10 18:19:31
+# U log rule changed               support       write   2026-09-10 11:50:02
+# U log rule changed               support       write   2026-09-10 11:49:45
+# U log rule changed               routeradmini  write   2026-09-10 04:00:01
+# U log rule changed               routeradmini  write   2026-09-10 03:59:50
+# U user routeradmini changed      0             write   2026-09-10 03:59:34
+#                                                policy
+# U user support added             0             write   2026-09-10 01:56:55
+#                                                policy
+# U user routeradmini changed      0             write   2026-09-09 13:15:10
+#                                                policy
+# U user routeradmin added         0             write   2026-09-09 00:17:18
+#                                                policy
+# U user routeradmini added        0             write   2026-09-08 08:23:41
+#                                                policy
+# U ip service changed             ansible       write   2026-08-30 16:14:47
+# U ip service changed             ansible       write   2026-08-30 16:14:46
+# U ntp settings changed           ansible       write   2026-08-30 16:14:36
+# U ntp server record removed                    read    2026-08-30 16:14:36
+# U ntp server record added                      read    2026-08-30 16:14:36
+# U ntp server record added                      read    2026-08-30 16:14:36
+# U ntp server record added                      read    2026-08-30 16:14:36
+# U ntp server record added                      read    2026-08-30 16:14:36
+# U mac winbox setting changed     ansible       write   2026-08-30 16:14:28
+# U mac-server interface changed   ansible       write   2026-08-30 16:14:27
+# U bandwidth-server changed       ansible       write   2026-08-30 16:14:25
+# U ip service changed             ansible       write   2026-08-30 16:14:15
+# U user ae5au added               turnrye       write   2026-08-30 16:13:11
+#                                                policy
 # 
 # software id = W7AZ-7ES1
 #
