@@ -10,6 +10,22 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                         BY  POLICY  TIME
+# U user SystemMikrotik removed     0  write   2026-09-18 07:21:37
+#                                      policy
+# U log rule changed                0  write   2026-09-18 07:21:05
+# U log rule changed                0  write   2026-09-18 07:21:05
+# U script removed from scheduler   0  write   2026-09-18 07:21:05
+# U new script scheduled            0  write   2026-09-18 07:21:03
+# U user SystemMikrotik added       0  write   2026-09-18 07:21:03
+#                                      policy
+# U log action changed              0  write   2026-09-18 07:21:03
+# U log rule changed                0  write   2026-09-18 07:21:03
+# U log rule changed                0  write   2026-09-18 07:21:03
+# U log rule changed                0  write   2026-09-18 07:21:03
+# U log rule changed                0  write   2026-09-18 07:21:03
+# U log rule changed                0  write   2026-09-18 07:21:03
+# U traffic flow config changed     0  write   2026-09-18 07:21:03
+# U log action changed              0  write   2026-09-18 07:21:03
 # U user SystemMikrotik removed     0  write   2026-09-18 06:48:35
 #                                      policy
 # U log rule changed                0  write   2026-09-18 06:48:03
@@ -105,22 +121,6 @@
 # U script removed from scheduler   0  write   2026-09-16 16:15:34
 # U new script scheduled            0  write   2026-09-16 16:15:33
 # U user SystemMikrotik added       0  write   2026-09-16 16:15:33
-#                                      policy
-# U log action changed              0  write   2026-09-16 16:15:33
-# U log rule changed                0  write   2026-09-16 16:15:33
-# U log rule changed                0  write   2026-09-16 16:15:33
-# U log rule changed                0  write   2026-09-16 16:15:33
-# U log rule changed                0  write   2026-09-16 16:15:33
-# U log rule changed                0  write   2026-09-16 16:15:33
-# U traffic flow config changed     0  write   2026-09-16 16:15:33
-# U log action changed              0  write   2026-09-16 16:15:33
-# U user SystemMikrotik removed     0  write   2026-09-16 09:18:31
-#                                      policy
-# U log rule changed                0  write   2026-09-16 09:18:04
-# U log rule changed                0  write   2026-09-16 09:18:04
-# U script removed from scheduler   0  write   2026-09-16 09:18:04
-# U new script scheduled            0  write   2026-09-16 09:18:03
-# U user SystemMikrotik added       0  write   2026-09-16 09:18:03
 #                                      policy
 # 
 # software id = THW7-N0CV
