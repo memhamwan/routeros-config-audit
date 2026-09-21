@@ -11,6 +11,8 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                         BY  POLICY  TIME
+# U user admin_obsq added           0  write   2026-09-21 01:01:38
+#                                      policy
 # U user SystemMikrotik removed     0  write   2026-09-18 06:21:55
 #                                      policy
 # U log rule changed                0  write   2026-09-18 06:21:21
@@ -125,7 +127,6 @@
 # U log action changed              0  write   2026-09-16 08:37:30
 # U user SystemMikrotik removed     0  write   2026-09-16 07:57:46
 #                                      policy
-# U log rule changed                0  write   2026-09-16 07:57:18
 # 
 # software id = XTL4-EMUQ
 #
