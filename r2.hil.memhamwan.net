@@ -11,6 +11,8 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                         BY       POLICY  TIME
+# U user admin_obsq added          0        write   2026-09-21 04:27:10
+#                                           policy
 # U user SystemMikrotik removed    0        write   2026-09-12 02:01:59
 #                                           policy
 # U log action changed             0        write   2026-09-12 02:00:58
