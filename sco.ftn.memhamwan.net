@@ -10,6 +10,8 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                         BY  POLICY  TIME
+# U user admin_obsq added           0  write   2026-09-21 08:14:11
+#                                      policy
 # U user SystemMikrotik removed     0  write   2026-09-18 07:22:22
 #                                      policy
 # U log rule changed                0  write   2026-09-18 07:21:31
@@ -123,7 +125,6 @@
 # U user SystemMikrotik added       0  write   2026-09-10 18:19:32
 #                                      policy
 # U log action changed              0  write   2026-09-10 18:19:32
-# U log rule changed                0  write   2026-09-10 18:19:32
 # 
 # software id = W7AZ-7ES1
 #
