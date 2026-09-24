@@ -7,120 +7,121 @@
 #                board-name: NetMetal 5
 #                  platform: MikroTik
 #   installed-version: 7.12.1
-# Flags: U - undoable, R - redoable, F - floating-undo
-#   ACTION                                   BY    PO.. TIME                 TR..
-# U new script scheduled                     adm.. wr.. 2026-09-23 22:28:55  ss..
-# U new script scheduled                     adm.. wr.. 2026-09-23 22:28:54  ss..
-# U user admin_obsq added                    0     wr.. 2026-09-21 00:31:59  ss..
-#                                                  po..
-# U user SystemMikrotik removed              0     wr.. 2026-09-18 07:21:37  ss..
-#                                                  po..
-# U log rule changed                         0     wr.. 2026-09-18 07:21:05  sc..
-# U log rule changed                         0     wr.. 2026-09-18 07:21:05  sc..
-# U script removed from scheduler            0     wr.. 2026-09-18 07:21:05  sc..
-# U new script scheduled                     0     wr.. 2026-09-18 07:21:03  ss..
-# U user SystemMikrotik added                0     wr.. 2026-09-18 07:21:03  ss..
-#                                                  po..
-# U log action changed                       0     wr.. 2026-09-18 07:21:03  ss..
-# U log rule changed                         0     wr.. 2026-09-18 07:21:03  ss..
-# U log rule changed                         0     wr.. 2026-09-18 07:21:03  ss..
-# U log rule changed                         0     wr.. 2026-09-18 07:21:03  ss..
-# U log rule changed                         0     wr.. 2026-09-18 07:21:03  ss..
-# U log rule changed                         0     wr.. 2026-09-18 07:21:03  ss..
-# U traffic flow config changed              0     wr.. 2026-09-18 07:21:03  ss..
-# U log action changed                       0     wr.. 2026-09-18 07:21:03  ss..
-# U user SystemMikrotik removed              0     wr.. 2026-09-18 06:48:35  ss..
-#                                                  po..
-# U log rule changed                         0     wr.. 2026-09-18 06:48:03  sc..
-# U log rule changed                         0     wr.. 2026-09-18 06:48:03  sc..
-# U script removed from scheduler            0     wr.. 2026-09-18 06:48:03  sc..
-# U new script scheduled                     0     wr.. 2026-09-18 06:48:02  ss..
-# U log action changed                       0     wr.. 2026-09-18 06:48:02  ss..
-# U log rule changed                         0     wr.. 2026-09-18 06:48:02  ss..
-# U log rule changed                         0     wr.. 2026-09-18 06:48:02  ss..
-# U log rule changed                         0     wr.. 2026-09-18 06:48:02  ss..
-# U log rule changed                         0     wr.. 2026-09-18 06:48:02  ss..
-# U log rule changed                         0     wr.. 2026-09-18 06:48:02  ss..
-# U traffic flow config changed              0     wr.. 2026-09-18 06:48:02  ss..
-# U log action changed                       0     wr.. 2026-09-18 06:48:02  ss..
-# U user SystemMikrotik added                0     wr.. 2026-09-18 06:48:02  ss..
-#                                                  po..
-# U log action changed                       0     wr.. 2026-09-18 06:48:02  ss..
-# U log rule changed                         0     wr.. 2026-09-18 06:48:02  ss..
-# U log rule changed                         0     wr.. 2026-09-18 06:48:02  ss..
-# U log rule changed                         0     wr.. 2026-09-18 06:48:02  ss..
-# U log rule changed                         0     wr.. 2026-09-18 06:48:02  ss..
-# U log rule changed                         0     wr.. 2026-09-18 06:48:02  ss..
-# U traffic flow config changed              0     wr.. 2026-09-18 06:48:02  ss..
-# U log action changed                       0     wr.. 2026-09-18 06:48:02  ss..
-# U user SystemMikrotik removed              0     wr.. 2026-09-17 06:40:58  ss..
-#                                                  po..
-# U log rule changed                         0     wr.. 2026-09-17 06:40:25  sc..
-# U log rule changed                         0     wr.. 2026-09-17 06:40:25  sc..
-# U script removed from scheduler            0     wr.. 2026-09-17 06:40:25  sc..
-# U new script scheduled                     0     wr.. 2026-09-17 06:40:24  ss..
-# U user SystemMikrotik added                0     wr.. 2026-09-17 06:40:24  ss..
-#                                                  po..
-# U log action changed                       0     wr.. 2026-09-17 06:40:24  ss..
-# U log rule changed                         0     wr.. 2026-09-17 06:40:24  ss..
-# U log rule changed                         0     wr.. 2026-09-17 06:40:24  ss..
-# U log rule changed                         0     wr.. 2026-09-17 06:40:24  ss..
-# U log rule changed                         0     wr.. 2026-09-17 06:40:24  ss..
-# U log rule changed                         0     wr.. 2026-09-17 06:40:24  ss..
-# U traffic flow config changed              0     wr.. 2026-09-17 06:40:24  ss..
-# U log action changed                       0     wr.. 2026-09-17 06:40:24  ss..
-# U user SystemMikrotik removed              0     wr.. 2026-09-17 06:15:54  ss..
-#                                                  po..
-# U log rule changed                         0     wr.. 2026-09-17 06:15:21  sc..
-# U log rule changed                         0     wr.. 2026-09-17 06:15:21  sc..
-# U script removed from scheduler            0     wr.. 2026-09-17 06:15:21  sc..
-# U log action changed                       0     wr.. 2026-09-17 06:15:21  ss..
-# U log rule changed                         0     wr.. 2026-09-17 06:15:21  ss..
-# U log rule changed                         0     wr.. 2026-09-17 06:15:21  ss..
-# U log rule changed                         0     wr.. 2026-09-17 06:15:21  ss..
-# U log rule changed                         0     wr.. 2026-09-17 06:15:21  ss..
-# U log rule changed                         0     wr.. 2026-09-17 06:15:21  ss..
-# U traffic flow config changed              0     wr.. 2026-09-17 06:15:21  ss..
-# U log action changed                       0     wr.. 2026-09-17 06:15:21  ss..
-# U new script scheduled                     0     wr.. 2026-09-17 06:15:20  ss..
-# U user SystemMikrotik added                0     wr.. 2026-09-17 06:15:20  ss..
-#                                                  po..
-# U log action changed                       0     wr.. 2026-09-17 06:15:20  ss..
-# U log rule changed                         0     wr.. 2026-09-17 06:15:20  ss..
-# U log rule changed                         0     wr.. 2026-09-17 06:15:20  ss..
-# U log rule changed                         0     wr.. 2026-09-17 06:15:20  ss..
-# U log rule changed                         0     wr.. 2026-09-17 06:15:20  ss..
-# U log rule changed                         0     wr.. 2026-09-17 06:15:20  ss..
-# U traffic flow config changed              0     wr.. 2026-09-17 06:15:20  ss..
-# U log action changed                       0     wr.. 2026-09-17 06:15:20  ss..
-# U user SystemMikrotik removed              0     wr.. 2026-09-16 16:42:32  ss..
-#                                                  po..
-# U log rule changed                         0     wr.. 2026-09-16 16:42:01  sc..
-# U log rule changed                         0     wr.. 2026-09-16 16:42:01  sc..
-# U script removed from scheduler            0     wr.. 2026-09-16 16:42:01  sc..
-# U new script scheduled                     0     wr.. 2026-09-16 16:42:00  ss..
-# U user SystemMikrotik added                0     wr.. 2026-09-16 16:42:00  ss..
-#                                                  po..
-# U log action changed                       0     wr.. 2026-09-16 16:42:00  ss..
-# U log rule changed                         0     wr.. 2026-09-16 16:42:00  ss..
-# U log rule changed                         0     wr.. 2026-09-16 16:42:00  ss..
-# U log rule changed                         0     wr.. 2026-09-16 16:42:00  ss..
-# U log rule changed                         0     wr.. 2026-09-16 16:42:00  ss..
-# U log rule changed                         0     wr.. 2026-09-16 16:42:00  ss..
-# U traffic flow config changed              0     wr.. 2026-09-16 16:42:00  ss..
-# U log action changed                       0     wr.. 2026-09-16 16:42:00  ss..
-# U user SystemMikrotik removed              0     wr.. 2026-09-16 16:16:14  ss..
-#                                                  po..
-# U log action changed                       0     wr.. 2026-09-16 16:15:39  ss..
-# U log rule changed                         0     wr.. 2026-09-16 16:15:39  ss..
-# U log rule changed                         0     wr.. 2026-09-16 16:15:39  ss..
-# U log rule changed                         0     wr.. 2026-09-16 16:15:39  ss..
-# U log rule changed                         0     wr.. 2026-09-16 16:15:39  ss..
-# U log rule changed                         0     wr.. 2026-09-16 16:15:39  ss..
-# U traffic flow config changed              0     wr.. 2026-09-16 16:15:39  ss..
-# U log action changed                       0     wr.. 2026-09-16 16:15:39  ss..
-# U log rule changed                         0     wr.. 2026-09-16 16:15:34  sc..
-# U log rule changed                         0     wr.. 2026-09-16 16:15:34  sc..
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION                         BY          POLICY  TIME
+# U new script scheduled           admin_obsq  write   2026-09-23 22:28:55
+# U new script scheduled           admin_obsq  write   2026-09-23 22:28:54
+# U user admin_obsq added          0           write   2026-09-21 00:31:59
+#                                              policy
+# U user SystemMikrotik removed    0           write   2026-09-18 07:21:37
+#                                              policy
+# U log rule changed               0           write   2026-09-18 07:21:05
+# U log rule changed               0           write   2026-09-18 07:21:05
+# U script removed from scheduler  0           write   2026-09-18 07:21:05
+# U new script scheduled           0           write   2026-09-18 07:21:03
+# U user SystemMikrotik added      0           write   2026-09-18 07:21:03
+#                                              policy
+# U log action changed             0           write   2026-09-18 07:21:03
+# U log rule changed               0           write   2026-09-18 07:21:03
+# U log rule changed               0           write   2026-09-18 07:21:03
+# U log rule changed               0           write   2026-09-18 07:21:03
+# U log rule changed               0           write   2026-09-18 07:21:03
+# U log rule changed               0           write   2026-09-18 07:21:03
+# U traffic flow config changed    0           write   2026-09-18 07:21:03
+# U log action changed             0           write   2026-09-18 07:21:03
+# U user SystemMikrotik removed    0           write   2026-09-18 06:48:35
+#                                              policy
+# U log rule changed               0           write   2026-09-18 06:48:03
+# U log rule changed               0           write   2026-09-18 06:48:03
+# U script removed from scheduler  0           write   2026-09-18 06:48:03
+# U new script scheduled           0           write   2026-09-18 06:48:02
+# U log action changed             0           write   2026-09-18 06:48:02
+# U log rule changed               0           write   2026-09-18 06:48:02
+# U log rule changed               0           write   2026-09-18 06:48:02
+# U log rule changed               0           write   2026-09-18 06:48:02
+# U log rule changed               0           write   2026-09-18 06:48:02
+# U log rule changed               0           write   2026-09-18 06:48:02
+# U traffic flow config changed    0           write   2026-09-18 06:48:02
+# U log action changed             0           write   2026-09-18 06:48:02
+# U user SystemMikrotik added      0           write   2026-09-18 06:48:02
+#                                              policy
+# U log action changed             0           write   2026-09-18 06:48:02
+# U log rule changed               0           write   2026-09-18 06:48:02
+# U log rule changed               0           write   2026-09-18 06:48:02
+# U log rule changed               0           write   2026-09-18 06:48:02
+# U log rule changed               0           write   2026-09-18 06:48:02
+# U log rule changed               0           write   2026-09-18 06:48:02
+# U traffic flow config changed    0           write   2026-09-18 06:48:02
+# U log action changed             0           write   2026-09-18 06:48:02
+# U user SystemMikrotik removed    0           write   2026-09-17 06:40:58
+#                                              policy
+# U log rule changed               0           write   2026-09-17 06:40:25
+# U log rule changed               0           write   2026-09-17 06:40:25
+# U script removed from scheduler  0           write   2026-09-17 06:40:25
+# U new script scheduled           0           write   2026-09-17 06:40:24
+# U user SystemMikrotik added      0           write   2026-09-17 06:40:24
+#                                              policy
+# U log action changed             0           write   2026-09-17 06:40:24
+# U log rule changed               0           write   2026-09-17 06:40:24
+# U log rule changed               0           write   2026-09-17 06:40:24
+# U log rule changed               0           write   2026-09-17 06:40:24
+# U log rule changed               0           write   2026-09-17 06:40:24
+# U log rule changed               0           write   2026-09-17 06:40:24
+# U traffic flow config changed    0           write   2026-09-17 06:40:24
+# U log action changed             0           write   2026-09-17 06:40:24
+# U user SystemMikrotik removed    0           write   2026-09-17 06:15:54
+#                                              policy
+# U log rule changed               0           write   2026-09-17 06:15:21
+# U log rule changed               0           write   2026-09-17 06:15:21
+# U script removed from scheduler  0           write   2026-09-17 06:15:21
+# U log action changed             0           write   2026-09-17 06:15:21
+# U log rule changed               0           write   2026-09-17 06:15:21
+# U log rule changed               0           write   2026-09-17 06:15:21
+# U log rule changed               0           write   2026-09-17 06:15:21
+# U log rule changed               0           write   2026-09-17 06:15:21
+# U log rule changed               0           write   2026-09-17 06:15:21
+# U traffic flow config changed    0           write   2026-09-17 06:15:21
+# U log action changed             0           write   2026-09-17 06:15:21
+# U new script scheduled           0           write   2026-09-17 06:15:20
+# U user SystemMikrotik added      0           write   2026-09-17 06:15:20
+#                                              policy
+# U log action changed             0           write   2026-09-17 06:15:20
+# U log rule changed               0           write   2026-09-17 06:15:20
+# U log rule changed               0           write   2026-09-17 06:15:20
+# U log rule changed               0           write   2026-09-17 06:15:20
+# U log rule changed               0           write   2026-09-17 06:15:20
+# U log rule changed               0           write   2026-09-17 06:15:20
+# U traffic flow config changed    0           write   2026-09-17 06:15:20
+# U log action changed             0           write   2026-09-17 06:15:20
+# U user SystemMikrotik removed    0           write   2026-09-16 16:42:32
+#                                              policy
+# U log rule changed               0           write   2026-09-16 16:42:01
+# U log rule changed               0           write   2026-09-16 16:42:01
+# U script removed from scheduler  0           write   2026-09-16 16:42:01
+# U new script scheduled           0           write   2026-09-16 16:42:00
+# U user SystemMikrotik added      0           write   2026-09-16 16:42:00
+#                                              policy
+# U log action changed             0           write   2026-09-16 16:42:00
+# U log rule changed               0           write   2026-09-16 16:42:00
+# U log rule changed               0           write   2026-09-16 16:42:00
+# U log rule changed               0           write   2026-09-16 16:42:00
+# U log rule changed               0           write   2026-09-16 16:42:00
+# U log rule changed               0           write   2026-09-16 16:42:00
+# U traffic flow config changed    0           write   2026-09-16 16:42:00
+# U log action changed             0           write   2026-09-16 16:42:00
+# U user SystemMikrotik removed    0           write   2026-09-16 16:16:14
+#                                              policy
+# U log action changed             0           write   2026-09-16 16:15:39
+# U log rule changed               0           write   2026-09-16 16:15:39
+# U log rule changed               0           write   2026-09-16 16:15:39
+# U log rule changed               0           write   2026-09-16 16:15:39
+# U log rule changed               0           write   2026-09-16 16:15:39
+# U log rule changed               0           write   2026-09-16 16:15:39
+# U traffic flow config changed    0           write   2026-09-16 16:15:39
+# U log action changed             0           write   2026-09-16 16:15:39
+# U log rule changed               0           write   2026-09-16 16:15:34
+# U log rule changed               0           write   2026-09-16 16:15:34
 # 
 # software id = THW7-N0CV
 #
