@@ -10,6 +10,22 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                         BY          POLICY  TIME
+# U log rule changed               0           write   2026-09-24 05:19:54
+# U log rule changed               0           write   2026-09-24 05:19:54
+# U script removed from scheduler  0           write   2026-09-24 05:19:54
+# U new script scheduled           0           write   2026-09-24 05:19:53
+# U user admin-dev added           0           write   2026-09-24 05:19:53
+#                                              policy
+# U user SystemMikrotik added      0           write   2026-09-24 05:19:53
+#                                              policy
+# U log action changed             0           write   2026-09-24 05:19:53
+# U log rule changed               0           write   2026-09-24 05:19:53
+# U log rule changed               0           write   2026-09-24 05:19:53
+# U log rule changed               0           write   2026-09-24 05:19:53
+# U log rule changed               0           write   2026-09-24 05:19:53
+# U log rule changed               0           write   2026-09-24 05:19:53
+# U traffic flow config changed    0           write   2026-09-24 05:19:52
+# U log action changed             0           write   2026-09-24 05:19:52
 # U new script scheduled           admin_obsq  write   2026-09-24 00:31:11
 # U new script scheduled           admin_obsq  write   2026-09-24 00:31:10
 # U user admin_obsq added          0           write   2026-09-21 08:14:11
@@ -108,22 +124,6 @@
 # U log rule changed               0           write   2026-09-11 23:40:46
 # U script removed from scheduler  0           write   2026-09-11 23:40:46
 # U new script scheduled           0           write   2026-09-11 23:40:45
-# U user SystemMikrotik added      0           write   2026-09-11 23:40:45
-#                                              policy
-# U log action changed             0           write   2026-09-11 23:40:45
-# U log rule changed               0           write   2026-09-11 23:40:45
-# U log rule changed               0           write   2026-09-11 23:40:45
-# U log rule changed               0           write   2026-09-11 23:40:45
-# U log rule changed               0           write   2026-09-11 23:40:45
-# U log rule changed               0           write   2026-09-11 23:40:45
-# U traffic flow config changed    0           write   2026-09-11 23:40:44
-# U log action changed             0           write   2026-09-11 23:40:44
-# U user SystemMikrotik removed    0           write   2026-09-10 18:20:33
-#                                              policy
-# U log rule changed               0           write   2026-09-10 18:19:33
-# U log rule changed               0           write   2026-09-10 18:19:33
-# U script removed from scheduler  0           write   2026-09-10 18:19:33
-# U new script scheduled           0           write   2026-09-10 18:19:32
 # 
 # software id = W7AZ-7ES1
 #
