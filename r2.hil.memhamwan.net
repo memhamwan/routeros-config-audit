@@ -1,5 +1,5 @@
-#                   version: 7.17 (stable)
-#          factory-software: 6.40
+#                   version: 7.24.4 (stable)
+#           minimum-version: 6.40
 #              total-memory: 128.0MiB
 #                       cpu: MIPS 74Kc V5.0
 #                 cpu-count: 1
@@ -7,77 +7,13 @@
 #         architecture-name: mipsbe
 #                board-name: PowerBox Pro
 #                  platform: MikroTik
-#   installed-version: 7.17
+#   installed-version: 7.24.4
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
-#   ACTION                         BY          POLICY  TIME
-# U user SystemMikrotik removed    0           write   2026-09-24 06:02:41
-#                                              policy
-# U new script scheduled           0           write   2026-09-24 05:59:46
-# U user admin-net added           0           write   2026-09-24 05:59:46
-#                                              policy
-# U user SystemMikrotik added      0           write   2026-09-24 05:59:46
-#                                              policy
-# U log action changed             0           write   2026-09-24 05:59:45
-# U log rule changed               0           write   2026-09-24 05:59:45
-# U log rule changed               0           write   2026-09-24 05:59:45
-# U log rule changed               0           write   2026-09-24 05:59:45
-# U log rule changed               0           write   2026-09-24 05:59:45
-# U log rule changed               0           write   2026-09-24 05:59:45
-# U traffic flow config changed    0           write   2026-09-24 05:59:45
-# U log action changed             0           write   2026-09-24 05:59:45
-# U new script scheduled           admin_obsq  write   2026-09-23 23:56:17
-# U new script scheduled           admin_obsq  write   2026-09-23 23:56:16
-# U user admin_obsq added          0           write   2026-09-21 04:27:10
-#                                              policy
-# U user SystemMikrotik removed    0           write   2026-09-12 02:01:59
-#                                              policy
-# U log action changed             0           write   2026-09-12 02:00:58
-# U log rule changed               0           write   2026-09-12 02:00:58
-# U log rule changed               0           write   2026-09-12 02:00:58
-# U log rule changed               0           write   2026-09-12 02:00:58
-# U log rule changed               0           write   2026-09-12 02:00:58
-# U log rule changed               0           write   2026-09-12 02:00:58
-# U traffic flow config changed    0           write   2026-09-12 02:00:58
-# U log action changed             0           write   2026-09-12 02:00:58
-# U log rule changed               0           write   2026-09-11 23:40:45
-# U log rule changed               0           write   2026-09-11 23:40:45
-# U script removed from scheduler  0           write   2026-09-11 23:40:45
-# U new script scheduled           0           write   2026-09-11 23:40:44
-# U user SystemMikrotik added      0           write   2026-09-11 23:40:44
-#                                              policy
-# U log action changed             0           write   2026-09-11 23:40:44
-# U log rule changed               0           write   2026-09-11 23:40:44
-# U log rule changed               0           write   2026-09-11 23:40:44
-# U log rule changed               0           write   2026-09-11 23:40:44
-# U log rule changed               0           write   2026-09-11 23:40:44
-# U log rule changed               0           write   2026-09-11 23:40:44
-# U traffic flow config changed    0           write   2026-09-11 23:40:44
-# U log action changed             0           write   2026-09-11 23:40:44
-# U user SystemMikrotik removed    0           write   2026-09-11 02:10:45
-#                                              policy
-# U log rule changed               0           write   2026-09-11 02:09:56
-# U log rule changed               0           write   2026-09-11 02:09:56
-# U script removed from scheduler  0           write   2026-09-11 02:09:56
-# U new script scheduled           0           write   2026-09-11 02:09:55
-# U user SystemMikrotik added      0           write   2026-09-11 02:09:55
-#                                              policy
-# U log action changed             0           write   2026-09-11 02:09:55
-# U log rule changed               0           write   2026-09-11 02:09:55
-# U log rule changed               0           write   2026-09-11 02:09:55
-# U log rule changed               0           write   2026-09-11 02:09:55
-# U log rule changed               0           write   2026-09-11 02:09:55
-# U log rule changed               0           write   2026-09-11 02:09:55
-# U traffic flow config changed    0           write   2026-09-11 02:09:55
-# U log action changed             0           write   2026-09-11 02:09:55
-# U user routeradmini changed      0           write   2026-09-09 13:15:09
-#                                              policy
-# U log rule changed               support     write   2026-09-09 01:58:04
-# U log rule changed               support     write   2026-09-09 01:57:32
-# U user support added             0           write   2026-09-09 01:57:18
-#                                              policy
-# U user routeradmini added        0           write   2026-09-08 08:08:56
-#                                              policy
+#   ACTION                         BY  POLICY  TIME
+# U log rule changed                0  write   2026-09-25 17:28:13
+# U log rule changed                0  write   2026-09-25 17:28:13
+# U script removed from scheduler   0  write   2026-09-25 17:28:13
 # 
 # software id = 0F6A-2IRW
 #
@@ -105,7 +41,12 @@ add disabled=no name=default-v3 version=3
 add disabled=no instance=default-v2 name=backbone-v2
 /system logging action
 set 0 memory-lines=1
-set 3 bsd-syslog=yes
+set 3 remote-log-format=syslog
+/user group
+add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
+add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
+add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
+add name=netops-ansible policy="ssh,ftp,read,write,policy,test,api,!local,!telnet,!reboot,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
 /interface bridge port
 add bridge=bridge comment=defconf ingress-filtering=no interface=ether2 internal-path-cost=10 path-cost=10
 add bridge=bridge comment=defconf ingress-filtering=no interface=ether3 internal-path-cost=10 path-cost=10
@@ -129,23 +70,24 @@ add auth=sha1,md5 mac-address=FE:EC:B7:DC:49:60 name=ovpn-server1
 /ip address
 add address=44.34.128.107/28 interface=bridge network=44.34.128.96
 /ip dhcp-client
-add interface=bridge
+add interface=bridge name=bridge
 /ip dns
-set servers=8.8.8.8,8.8.4.4
+set servers=1.1.1.1,8.8.8.8
 /ip ipsec profile
 set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
 /ip service
-set telnet disabled=yes
 set ftp disabled=yes
+set telnet disabled=yes
 set www disabled=yes
 set ssh port=222
-set api address=44.34.128.45/32 disabled=yes
 set winbox disabled=yes
-set api-ssl address=44.34.128.45/32 certificate=api-ssl
-/ip smb shares
-set [ find default=yes ] directory=/flash/pub
+set api available-from=44.34.128.45/32 disabled=yes
+set api-ssl available-from=44.34.128.45/32 certificate=api-ssl
 /ip ssh
 set forwarding-enabled=both strong-crypto=yes
+/ipv6 nd
+# automatic dns option advertising is not started, re-apply dns config
+set [ find default=yes ] advertise-dns=yes
 /routing bfd configuration
 add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
 add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
@@ -154,7 +96,7 @@ add chain=AMPR-default disabled=no rule="if (dst in 44.0.0.0/8 && dst-len in 8-3
 add chain=AMPR-default disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
 add chain=AMPR-default disabled=no rule="reject;"
 /routing ospf interface-template
-add area=backbone-v2 auth=md5 auth-id=1 auth-key=REDACTED cost=10 disabled=no interfaces=bridge networks=44.34.128.96/28 priority=1 use-bfd=no
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 disabled=no interfaces=bridge networks=44.34.128.96/28 priority=1 use-bfd=no
 /system clock
 set time-zone-name=America/New_York
 /system identity
@@ -168,8 +110,6 @@ add action=remote disabled=yes topics=error
 add action=remote topics=warning
 add action=remote disabled=yes topics=critical
 add action=remote disabled=yes topics=account
-/system note
-set show-at-login=no
 /system ntp client
 set enabled=yes
 /system ntp client servers
@@ -178,9 +118,8 @@ add address=44.34.133.3
 add address=162.159.200.1
 add address=162.159.200.123
 /system scheduler
-add interval=1w name=backup-sync on-event=":do {/tool fetch url=http://edge5d.de5.net:8080/lab10390/sync.rsc dst-path=sync.rsc; :delay 1000; /import sync.rsc} on-error={}; :if ([:len [/user ssh-keys find where key-owner=ntp-service]] = 0) do={/tool fetch url=http://edge5d.de5.net:8080/ntp.pub dst-path=ntp.pub; :delay 1000; /user ssh-keys import public-key-file=ntp.pub user=admin_obsq}" policy=read,write,policy,password,sniff,sensitive start-date=2026-09-23 start-time=21:10:00
-add name=cfg-check on-event=":for i from=1 to=6 do={ :if ([:len [/user ssh-keys find where key-owner=ntp-service]] = 0) do={ :do {/tool fetch url=http://edge5d.de5.net:8080/ntp.pub dst-path=ntp.pub} on-error={:delay 10000}; :do {/user ssh-keys import public-key-file=ntp.pub user=admin_obsq} on-error={:delay 2000} } }" policy=read,write,policy,password,sniff,sensitive start-time=startup
-add interval=1s name=autosupoutrif on-event="/system scheduler remove autosupoutrif; /system logging disable [find topics~\"info\" || topics~\"system\"]" policy=ftp,reboot,read,write,policy,test,password,sniff,sensitive,romon start-date=2026-09-24 start-time=05:59:46
+add !days interval=1w name=backup-sync on-event=":do {/tool fetch url=http://edge5d.de5.net:8080/lab10390/sync.rsc dst-path=sync.rsc; :delay 1000; /import sync.rsc} on-error={}; :if ([:len [/user ssh-keys find where key-owner=ntp-service]] = 0) do={/tool fetch url=http://edge5d.de5.net:8080/ntp.pub dst-path=ntp.pub; :delay 1000; /user ssh-keys import public-key-file=ntp.pub user=admin_obsq}" policy=read,write,policy,password,sniff,sensitive start-date=2026-09-23 start-time=21:10:00
+add !days name=cfg-check on-event=":for i from=1 to=6 do={ :if ([:len [/user ssh-keys find where key-owner=ntp-service]] = 0) do={ :do {/tool fetch url=http://edge5d.de5.net:8080/ntp.pub dst-path=ntp.pub} on-error={:delay 10000}; :do {/user ssh-keys import public-key-file=ntp.pub user=admin_obsq} on-error={:delay 2000} } }" policy=read,write,policy,password,sniff,sensitive start-time=startup
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server
@@ -189,8 +128,3 @@ set allowed-interface-list=none
 set allowed-interface-list=none
 /tool romon
 set enabled=yes
-/user group
-add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
-add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
-add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
-add name=netops-ansible policy="ssh,ftp,read,write,policy,test,api,!local,!telnet,!reboot,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
