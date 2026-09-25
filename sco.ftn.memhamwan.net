@@ -10,6 +10,17 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                         BY          POLICY  TIME
+# U dns changed                    svcops      write   2026-09-25 13:26:57
+# U user svcops added              0           write   2026-09-25 13:26:18
+#                                              policy
+# U user svcops removed            0           write   2026-09-25 13:26:11
+#                                              policy
+# U user svcops added              0           write   2026-09-25 13:25:53
+#                                              policy
+# U user svcops removed            0           write   2026-09-25 13:25:46
+#                                              policy
+# U user svcops added              0           write   2026-09-25 13:25:40
+#                                              policy
 # U log rule changed               0           write   2026-09-24 05:19:54
 # U log rule changed               0           write   2026-09-24 05:19:54
 # U script removed from scheduler  0           write   2026-09-24 05:19:54
@@ -118,12 +129,6 @@
 # U log rule changed               0           write   2026-09-12 02:00:51
 # U log rule changed               0           write   2026-09-12 02:00:51
 # U log rule changed               0           write   2026-09-12 02:00:51
-# U traffic flow config changed    0           write   2026-09-12 02:00:51
-# U log action changed             0           write   2026-09-12 02:00:51
-# U log rule changed               0           write   2026-09-11 23:40:46
-# U log rule changed               0           write   2026-09-11 23:40:46
-# U script removed from scheduler  0           write   2026-09-11 23:40:46
-# U new script scheduled           0           write   2026-09-11 23:40:45
 # 
 # software id = W7AZ-7ES1
 #
@@ -187,7 +192,7 @@ add address=44.34.131.147 interface=wlan1 network=44.34.131.146
 /ip dhcp-client
 add add-default-route=no comment=defconf disabled=yes interface=wlan1
 /ip dns
-set servers=8.8.8.8
+set servers=1.1.1.1,8.8.8.8
 /ip dns static
 add address=192.168.88.1 comment=defconf name=router.lan type=A
 /ip firewall mangle
