@@ -1,4 +1,4 @@
-#                   version: 7.24.1 (stable)
+#                   version: 7.24.4 (stable)
 #           minimum-version: 6.34.2
 #              total-memory: 128.0MiB
 #                       cpu: MIPS 74Kc V5.0
@@ -7,89 +7,7 @@
 #         architecture-name: mipsbe
 #                board-name: hAP ac
 #                  platform: MikroTik
-#   installed-version: 7.24.1
-# Flags: U - UNDOABLE
-# Columns: ACTION, BY, POLICY
-#   ACTION                                 BY            POLICY
-# U new script scheduled                   admin_obsq    write
-# U new script scheduled                   admin_obsq    write
-# U ssh settings changed                   admin_obsq    write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U script removed from scheduler          0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U script removed from scheduler          0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U script removed from scheduler          0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U script removed from scheduler          0             write
-# U log rule changed                       0             write
-# U log rule changed                       0             write
-# U script removed from scheduler          0             write
-# U log rule changed                       routeradmini  write
-# U log rule changed                       routeradmini  write
-# U log rule changed                       support       write
-# U log rule changed                       support       write
-# U ip service changed                     ansible       write
-# U ip service changed                     ansible       write
-# U ip service changed                     ansible       write
-# U ntp settings changed                   ansible       write
-# U ssh-key removed                        turnrye       write
-#                                                        policy
-# U user ae5au added                       turnrye       write
-#                                                        policy
-# U user mktxp changed                     turnrye       write
-#                                                        policy
-# U user oxidized-full changed             turnrye       write
-#                                                        policy
-# U user oxidized changed                  turnrye       write
-#                                                        policy
-# U user group mktxp_group changed         turnrye       write
-#                                                        policy
-# U user group netops-backup-full changed  turnrye       write
-#                                                        policy
-# U user group netops-backup-ro changed    turnrye       write
-#                                                        policy
-# U user mktxp changed                     turnrye       write
-#                                                        policy
-# U user oxidized-full changed             turnrye       write
-#                                                        policy
-# U user oxidized changed                  turnrye       write
-#                                                        policy
-# U ip service changed                     turnrye       write
-# U user ansible changed                   turnrye       write
-#                                                        policy
-# U user ansible changed                   turnrye       write
-#                                                        policy
-# U user group netops-ansible changed      turnrye       write
-#                                                        policy
-# U user ansible added                     turnrye       write
-#                                                        policy
-# U user group netops-ansible added        turnrye       write
-#                                                        policy
-# U log rule added                         turnrye       write
-# U log rule added                         turnrye       write
-# U log rule added                         turnrye       write
-# U log rule added                         turnrye       write
-# U log rule added                         turnrye       write
-# U log rule removed                       turnrye       write
-# U log action changed                     turnrye       write
-# U ip service changed                     turnrye       write
-# U user mktxp added                       turnrye       write
-#                                                        policy
-# U user group mktxp_group added           turnrye       write
-#                                                        policy
-# U user oxidized-full added               turnrye       write
-#                                                        policy
-# U user oxidized added                    turnrye       write
-#                                                        policy
-# U user group netops-backup-full added    turnrye       write
-#                                                        policy
-# U user group netops-backup-ro added      turnrye       write
-#                                                        policy
+#   installed-version: 7.24.4
 # 
 # software id = YWQ0-VSRH
 #
