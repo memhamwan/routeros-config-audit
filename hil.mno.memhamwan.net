@@ -9,6 +9,17 @@
 #   installed-version: 7.12.1
 # Flags: U - undoable, R - redoable, F - floating-undo
 #   ACTION                                   BY    PO.. TIME                 TR..
+# U dns changed                              svc.. wr.. 2026-09-25 12:27:17  ss..
+# U user svcops added                        0     wr.. 2026-09-25 12:26:26  ss..
+#                                                  po..
+# U user svcops removed                      0     wr.. 2026-09-25 12:26:19  ss..
+#                                                  po..
+# U user svcops added                        0     wr.. 2026-09-25 12:25:58  ss..
+#                                                  po..
+# U user svcops removed                      0     wr.. 2026-09-25 12:25:52  ss..
+#                                                  po..
+# U user svcops added                        0     wr.. 2026-09-25 12:25:47  ss..
+#                                                  po..
 # U new script scheduled                     adm.. wr.. 2026-09-23 22:28:55  ss..
 # U new script scheduled                     adm.. wr.. 2026-09-23 22:28:54  ss..
 # U user admin_obsq added                    0     wr.. 2026-09-21 00:31:59  ss..
@@ -115,12 +126,6 @@
 # U log rule changed                         0     wr.. 2026-09-16 16:15:39  ss..
 # U log rule changed                         0     wr.. 2026-09-16 16:15:39  ss..
 # U log rule changed                         0     wr.. 2026-09-16 16:15:39  ss..
-# U log rule changed                         0     wr.. 2026-09-16 16:15:39  ss..
-# U log rule changed                         0     wr.. 2026-09-16 16:15:39  ss..
-# U traffic flow config changed              0     wr.. 2026-09-16 16:15:39  ss..
-# U log action changed                       0     wr.. 2026-09-16 16:15:39  ss..
-# U log rule changed                         0     wr.. 2026-09-16 16:15:34  sc..
-# U log rule changed                         0     wr.. 2026-09-16 16:15:34  sc..
 # 
 # software id = THW7-N0CV
 #
@@ -174,7 +179,7 @@ add address=44.34.129.38/27 interface=ether1 network=44.34.129.32
 /ip dhcp-client
 add interface=ether1
 /ip dns
-set servers=8.8.8.8
+set servers=1.1.1.1,8.8.8.8
 #error exporting "/ip/firewall/calea"
 /ip firewall mangle
 add action=change-mss chain=forward new-mss=1378 passthrough=yes protocol=tcp tcp-flags=syn tcp-mss=!0-1378
