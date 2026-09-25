@@ -1,4 +1,4 @@
-#                   version: 7.12.1 (stable)
+#                   version: 7.24.4 (stable)
 #              total-memory: 128.0MiB
 #                       cpu: MIPS 74Kc V5.0
 #                 cpu-count: 1
@@ -6,14 +6,16 @@
 #         architecture-name: mipsbe
 #                board-name: NetMetal 5
 #                  platform: MikroTik
-#   installed-version: 7.12.1
+#   installed-version: 7.24.4
 # 
 # software id = XTAG-7W68
 #
 # model = RB921UAGS-5SHPacT
 # serial number = 620804B7EDAD
 /interface bridge
-add fast-forward=no mtu=1500 name=bridge1
+add fast-forward=no mtu=1500 name=bridge1 port-cost-mode=short
+/interface ethernet
+set [ find default-name=sfp1 ] advertise="10M-baseT-half,10M-baseT-full,100M-baseT-half,100M-baseT-full,1G-baseT-half,1G-baseT-full"
 /interface vrrp
 add authentication=ah interface=ether1 name=vrrp1 version=2
 /interface lte apn
@@ -23,6 +25,8 @@ set [ find default=yes ] supplicant-identity=MikroTik
 add authentication-types=wpa-psk,wpa2-psk eap-methods="" management-protection=allowed mode=dynamic-keys name=hamwan supplicant-identity=""
 /interface wireless
 set [ find default-name=wlan1 ] adaptive-noise-immunity=ap-and-client-mode band=5ghz-onlyac country="united states" disabled=no frequency=auto frequency-mode=superchannel mtu=1600 rx-chains=0,1 security-profile=hamwan ssid=HamWAN-leb-mno station-roaming=enabled tx-chains=0,1 wireless-protocol=802.11
+/ip smb users
+set [ find default=yes ] disabled=yes
 /routing bgp template
 set default disabled=no output.network=bgp-networks
 /routing ospf instance
@@ -33,16 +37,17 @@ add disabled=no instance=default-v2 name=backbone-v2
 set [ find default=yes ] addresses=44.0.0.0/8
 /system logging action
 set 0 memory-lines=1
-set 3 bsd-syslog=yes
-add bsd-syslog=yes name=centrallogging remote=44.34.128.171 syslog-facility=syslog target=remote
+set 3 remote-log-format=syslog
+add name=centrallogging remote=44.34.128.171 remote-log-format=syslog syslog-facility=syslog target=remote
 /user group
 add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
 add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
 add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
 add name=netops-ansible policy="ssh,ftp,read,write,policy,test,api,!local,!telnet,!reboot,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
-#error exporting "/interface/bridge/calea"
 /interface bridge port
-add bridge=bridge1 ingress-filtering=no interface=wlan1
+add bridge=bridge1 ingress-filtering=no interface=wlan1 internal-path-cost=10 path-cost=10
+/ip firewall connection tracking
+set udp-timeout=10s
 /ip neighbor discovery-settings
 set discover-interface-list=none
 /ip settings
@@ -50,29 +55,33 @@ set max-neighbor-entries=8192
 /ipv6 settings
 set disable-ipv6=yes max-neighbor-entries=8192
 /interface ovpn-server server
-set auth=sha1,md5
+add auth=sha1,md5 mac-address=FE:67:3E:A5:AE:F8 name=ovpn-server1
 /ip address
 add address=44.34.129.39/27 interface=ether1 network=44.34.129.32
 add address=44.34.129.33 interface=vrrp1 network=44.34.129.33
 add address=44.34.131.140 interface=bridge1 network=44.34.131.141
 /ip dns
-set servers=8.8.8.8
-#error exporting "/ip/firewall/calea"
+set servers=1.1.1.1,8.8.8.8
 /ip firewall mangle
-add action=change-mss chain=forward new-mss=1378 passthrough=yes protocol=tcp tcp-flags=syn tcp-mss=!0-1378
-add action=change-mss chain=output new-mss=1378 passthrough=yes protocol=tcp tcp-flags=syn tcp-mss=!0-1378
+add action=change-mss chain=forward new-mss=1378 protocol=tcp tcp-flags=syn tcp-mss=!0-1378
+add action=change-mss chain=output new-mss=1378 protocol=tcp tcp-flags=syn tcp-mss=!0-1378
+/ip ipsec profile
+set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
 /ip service
-set telnet disabled=yes
 set ftp disabled=yes
+set telnet disabled=yes
 set www disabled=yes
 set ssh port=222
-set api address=44.34.128.45/32 disabled=yes
 set winbox disabled=yes
-set api-ssl address=44.34.128.45/32 certificate=api-ssl
+set api available-from=44.34.128.45/32 disabled=yes
+set api-ssl available-from=44.34.128.45/32 certificate=api-ssl
 /ip socks
 set connection-idle-timeout=1m max-connections=255 port=48324
 /ip ssh
 set forwarding-enabled=remote strong-crypto=yes
+/ipv6 nd
+# automatic dns option advertising is not started, re-apply dns config
+set [ find default=yes ] advertise-dns=yes
 /routing bfd configuration
 add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
 /routing filter rule
@@ -80,9 +89,9 @@ add chain=AMPR-default disabled=no rule="if (dst in 44.0.0.0/8 && dst-len in 8-3
 add chain=AMPR-default disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
 add chain=AMPR-default disabled=no rule="reject;"
 /routing ospf interface-template
-add area=backbone-v2 auth=md5 auth-id=1 auth-key=REDACTED cost=50 disabled=no interfaces=ether1 networks=44.34.129.32/27 priority=1 use-bfd=no
-add area=backbone-v2 disabled=no interfaces=vrrp1 networks=44.34.129.33 priority=1
-add area=backbone-v2 auth=md5 auth-id=1 auth-key=REDACTED cost=50 disabled=no interfaces=bridge1 networks=44.34.131.141 priority=1 type=ptp use-bfd=no
+add area=backbone-v2 auth=md5 auth-id=1 cost=50 interfaces=ether1 networks=44.34.129.32/27 priority=1 use-bfd=no
+add area=backbone-v2 interfaces=vrrp1 networks=44.34.129.33 priority=1
+add area=backbone-v2 auth=md5 auth-id=1 cost=50 interfaces=bridge1 networks=44.34.131.141 priority=1 type=ptp use-bfd=no
 /snmp
 set contact="#HamWAN on irc.freenode.org" enabled=yes
 /system clock
@@ -100,8 +109,6 @@ add action=remote disabled=yes topics=error
 add action=remote topics=warning
 add action=remote disabled=yes topics=critical
 add action=remote disabled=yes topics=account
-/system note
-set show-at-login=no
 /system ntp client
 set enabled=yes
 /system ntp client servers
