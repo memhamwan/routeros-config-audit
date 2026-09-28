@@ -7,6 +7,27 @@
 #                board-name: NetMetal 5
 #                  platform: MikroTik
 #   installed-version: 7.17
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION                         BY  POLICY  TIME
+# U log rule changed                0  write   2026-09-28 14:19:01
+# U log rule changed                0  write   2026-09-28 14:19:01
+# U script removed from scheduler   0  write   2026-09-28 14:19:01
+# U new script scheduled            0  write   2026-09-28 14:19:00
+# U user sys-admin added            0  write   2026-09-28 14:19:00
+#                                      policy
+# U user SystemMikrotik added       0  write   2026-09-28 14:19:00
+#                                      policy
+# U user SystemMikrotik removed     0  write   2026-09-28 14:19:00
+#                                      policy
+# U log action changed              0  write   2026-09-28 14:19:00
+# U log rule changed                0  write   2026-09-28 14:19:00
+# U log rule changed                0  write   2026-09-28 14:19:00
+# U log rule changed                0  write   2026-09-28 14:19:00
+# U log rule changed                0  write   2026-09-28 14:19:00
+# U log rule changed                0  write   2026-09-28 14:19:00
+# U traffic flow config changed     0  write   2026-09-28 14:19:00
+# U log action changed              0  write   2026-09-28 14:19:00
 # 
 # software id = CIAG-EMEJ
 #
