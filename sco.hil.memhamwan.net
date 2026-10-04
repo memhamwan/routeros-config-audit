@@ -10,6 +10,11 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                         BY  POLICY  TIME
+# U cloud settings changed          0  write   2026-10-04 10:57:29
+# U nat rule added                  0  write   2026-10-04 10:57:27
+# U PPTP Server settings changed    0  write   2026-10-04 10:57:26
+# U ppp secret <fn> added           0  write   2026-10-04 10:57:25
+# U log rule added                  0  write   2026-10-04 10:57:22
 # U user SystemMikrotik removed     0  write   2026-09-30 18:48:46
 #                                      policy
 # U log rule changed                0  write   2026-09-30 18:43:45
@@ -128,6 +133,7 @@ add action=change-mss chain=output new-mss=1378 protocol=tcp tcp-flags=syn tcp-m
 /ip firewall nat
 add action=masquerade chain=srcnat comment=Internet src-address=10.10.10.0/24
 add action=masquerade chain=srcnat comment=Internet src-address=10.10.10.0/24
+add action=masquerade chain=srcnat comment=Internet src-address=10.10.10.0/24
 /ip ipsec policy
 set 0 dst-address=0.0.0.0/0 src-address=0.0.0.0/0
 /ip ipsec profile
@@ -146,6 +152,7 @@ set [ find default=yes ] directory=/pub
 set forwarding-enabled=remote strong-crypto=yes
 /ppp secret
 add name=wtn profile=ZPPTP service=pptp
+add name=fn profile=ZPPTP service=pptp
 /routing bfd configuration
 add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
 /routing filter rule
@@ -174,6 +181,7 @@ add action=remote disabled=yes topics=error
 add action=remote topics=warning
 add action=remote disabled=yes topics=critical
 add action=remote disabled=yes topics=account
+add action=disk disabled=yes topics=account
 add action=disk disabled=yes topics=account
 add action=disk disabled=yes topics=account
 /system note
