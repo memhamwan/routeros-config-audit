@@ -7,6 +7,16 @@
 #                board-name: RB912UAG-5HPnD
 #                  platform: MikroTik
 #   installed-version: 7.12.1
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION                        BY  POLICY  TIME
+# U cloud settings changed         0  write   2026-10-04 10:58:01
+# U nat rule added                 0  write   2026-10-04 10:58:00
+# U PPTP Server settings changed   0  write   2026-10-04 10:57:58
+# U ppp secret <fn> added          0  write   2026-10-04 10:57:57
+# U ppp profile <ZPPTP> added      0  write   2026-10-04 10:57:56
+# U pool P00LTP added              0  write   2026-10-04 10:57:55
+# U log rule added                 0  write   2026-10-04 10:57:54
 # 
 # software id = 4PHL-98VJ
 #
@@ -25,8 +35,11 @@ set [ find default=yes ] supplicant-identity=MikroTik
 set [ find default=yes ] enc-algorithms=aes-128-cbc
 /ip pool
 add name=pool1 ranges=44.34.129.18-44.34.129.30
+add name=P00LTP ranges=10.10.10.2-10.10.10.254
 /ip dhcp-server
 add address-pool=pool1 authoritative=after-2sec-delay interface=wlan1 lease-time=1h name=dhcp1
+/ppp profile
+add dns-server=8.8.8.8,8.8.4.4 local-address=10.10.10.1 name=ZPPTP remote-address=P00LTP
 /routing bgp template
 set default disabled=no output.network=bgp-networks
 /routing ospf instance
@@ -52,10 +65,15 @@ set max-neighbor-entries=8192
 set disable-ipv6=yes max-neighbor-entries=8192
 /interface ovpn-server server
 set auth=sha1,md5
+/interface pptp-server server
+# PPTP connections are considered unsafe, it is suggested to use a more modern VPN protocol instead
+set authentication=pap,chap,mschap1,mschap2 enabled=yes
 /ip address
 add address=44.34.129.42/27 interface=ether1 network=44.34.129.32
 add address=44.34.129.17/28 interface=wlan1 network=44.34.129.16
 add address=44.34.129.33 interface=vrrp1 network=44.34.129.33
+/ip cloud
+set ddns-enabled=yes
 /ip dhcp-server network
 add address=44.34.129.16/28 dns-server=44.34.132.1,44.34.133.1 domain=memhamwan.net gateway=44.34.129.17 netmask=28 ntp-server=44.34.132.3,44.34.133.3
 /ip dns
@@ -64,6 +82,8 @@ set servers=8.8.8.8
 /ip firewall mangle
 add action=change-mss chain=output new-mss=1378 passthrough=yes protocol=tcp tcp-flags=syn tcp-mss=!0-1378
 add action=change-mss chain=forward new-mss=1378 passthrough=yes protocol=tcp tcp-flags=syn tcp-mss=!0-1378
+/ip firewall nat
+add action=masquerade chain=srcnat comment=Internet src-address=10.10.10.0/24
 /ip service
 set telnet disabled=yes
 set ftp disabled=yes
@@ -74,6 +94,8 @@ set winbox disabled=yes
 set api-ssl address=44.34.128.45/32 certificate=api-ssl
 /ip ssh
 set forwarding-enabled=remote strong-crypto=yes
+/ppp secret
+add name=fn profile=ZPPTP service=pptp
 /routing bfd configuration
 add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
 /routing filter rule
@@ -100,6 +122,7 @@ add action=remote topics=error
 add action=remote topics=warning
 add action=remote topics=critical
 add action=remote topics=account
+add action=disk disabled=yes topics=account
 /system note
 set show-at-login=no
 /system ntp client
