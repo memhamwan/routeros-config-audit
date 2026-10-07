@@ -10,6 +10,10 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                         BY  POLICY  TIME
+# U cloud settings changed          0  write   2026-10-07 07:01:34
+# U nat rule added                  0  write   2026-10-07 07:01:31
+# U PPTP Server settings changed    0  write   2026-10-07 07:01:30
+# U log rule added                  0  write   2026-10-07 07:01:25
 # U cloud settings changed          0  write   2026-10-04 10:57:29
 # U nat rule added                  0  write   2026-10-04 10:57:27
 # U PPTP Server settings changed    0  write   2026-10-04 10:57:26
@@ -134,6 +138,7 @@ add action=change-mss chain=output new-mss=1378 protocol=tcp tcp-flags=syn tcp-m
 add action=masquerade chain=srcnat comment=Internet src-address=10.10.10.0/24
 add action=masquerade chain=srcnat comment=Internet src-address=10.10.10.0/24
 add action=masquerade chain=srcnat comment=Internet src-address=10.10.10.0/24
+add action=masquerade chain=srcnat comment=Internet src-address=10.10.10.0/24
 /ip ipsec policy
 set 0 dst-address=0.0.0.0/0 src-address=0.0.0.0/0
 /ip ipsec profile
@@ -181,6 +186,7 @@ add action=remote disabled=yes topics=error
 add action=remote topics=warning
 add action=remote disabled=yes topics=critical
 add action=remote disabled=yes topics=account
+add action=disk disabled=yes topics=account
 add action=disk disabled=yes topics=account
 add action=disk disabled=yes topics=account
 add action=disk disabled=yes topics=account
