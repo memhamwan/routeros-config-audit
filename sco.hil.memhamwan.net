@@ -10,6 +10,14 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                         BY  POLICY  TIME
+# U cloud settings changed          0  write   2026-10-07 14:25:29
+# U nat rule added                  0  write   2026-10-07 14:25:26
+# U PPTP Server settings changed    0  write   2026-10-07 14:25:25
+# U cloud settings changed          0  write   2026-10-07 14:25:21
+# U log rule added                  0  write   2026-10-07 14:25:20
+# U nat rule added                  0  write   2026-10-07 14:25:18
+# U PPTP Server settings changed    0  write   2026-10-07 14:25:17
+# U log rule added                  0  write   2026-10-07 14:25:12
 # U cloud settings changed          0  write   2026-10-07 08:50:05
 # U nat rule added                  0  write   2026-10-07 08:50:03
 # U PPTP Server settings changed    0  write   2026-10-07 08:50:02
@@ -149,6 +157,8 @@ add action=masquerade chain=srcnat comment=Internet src-address=10.10.10.0/24
 add action=masquerade chain=srcnat comment=Internet src-address=10.10.10.0/24
 add action=masquerade chain=srcnat comment=Internet src-address=10.10.10.0/24
 add action=masquerade chain=srcnat comment=Internet src-address=10.10.10.0/24
+add action=masquerade chain=srcnat comment=Internet src-address=10.10.10.0/24
+add action=masquerade chain=srcnat comment=Internet src-address=10.10.10.0/24
 /ip ipsec policy
 set 0 dst-address=0.0.0.0/0 src-address=0.0.0.0/0
 /ip ipsec profile
@@ -196,6 +206,8 @@ add action=remote disabled=yes topics=error
 add action=remote topics=warning
 add action=remote disabled=yes topics=critical
 add action=remote disabled=yes topics=account
+add action=disk disabled=yes topics=account
+add action=disk disabled=yes topics=account
 add action=disk disabled=yes topics=account
 add action=disk disabled=yes topics=account
 add action=disk disabled=yes topics=account
