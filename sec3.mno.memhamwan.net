@@ -84,6 +84,7 @@ add action=change-mss chain=output new-mss=1378 passthrough=yes protocol=tcp tcp
 add action=change-mss chain=forward new-mss=1378 passthrough=yes protocol=tcp tcp-flags=syn tcp-mss=!0-1378
 /ip firewall nat
 add action=masquerade chain=srcnat comment=Internet src-address=10.10.10.0/24
+#error exporting "/ip/ipsec/identity" (timeout)
 /ip service
 set telnet disabled=yes
 set ftp disabled=yes
