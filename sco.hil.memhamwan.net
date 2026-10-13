@@ -1,4 +1,4 @@
-#                   version: 7.17 (stable)
+#                   version: 7.24.5 (stable)
 #              total-memory: 128.0MiB
 #                       cpu: MIPS 74Kc V5.0
 #                 cpu-count: 1
@@ -6,133 +6,12 @@
 #         architecture-name: mipsbe
 #                board-name: NetMetal 5
 #                  platform: MikroTik
-#   installed-version: 7.17
+#   installed-version: 7.24.5
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
-#   ACTION                         BY       POLICY  TIME
-# U ssh-key removed                turnrye  write   2026-10-13 08:12:39
-#                                           policy
-# U ssh-key removed                turnrye  write   2026-10-13 08:12:39
-#                                           policy
-# U ssh-key removed                turnrye  write   2026-10-13 08:12:39
-#                                           policy
-# U ssh-key removed                turnrye  write   2026-10-13 08:12:38
-#                                           policy
-# U ssh-key removed                turnrye  write   2026-10-13 08:12:38
-#                                           policy
-# U ssh-key removed                turnrye  write   2026-10-13 08:12:38
-#                                           policy
-# U ssh-key removed                turnrye  write   2026-10-13 08:12:38
-#                                           policy
-# U ssh-key removed                turnrye  write   2026-10-13 08:12:38
-#                                           policy
-# U ssh-key removed                turnrye  write   2026-10-13 08:12:38
-#                                           policy
-# U ssh-key removed                turnrye  write   2026-10-13 08:12:38
-#                                           policy
-# U ssh-key removed                turnrye  write   2026-10-13 08:12:38
-#                                           policy
-# U ssh-key removed                turnrye  write   2026-10-13 08:12:38
-#                                           policy
-# U log action changed             turnrye  write   2026-10-13 08:12:38
-# U log action changed             turnrye  write   2026-10-13 08:12:38
-# U log rule changed               turnrye  write   2026-10-13 08:12:38
-# U log rule changed               turnrye  write   2026-10-13 08:12:38
-# U log rule changed               turnrye  write   2026-10-13 08:12:38
-# U log rule changed               turnrye  write   2026-10-13 08:12:38
-# U log rule changed               turnrye  write   2026-10-13 08:12:38
-# U log rule changed               turnrye  write   2026-10-13 08:12:38
-# U log rule changed               turnrye  write   2026-10-13 08:12:38
-# U log rule removed               turnrye  write   2026-10-13 08:12:38
-# U log rule removed               turnrye  write   2026-10-13 08:12:38
-# U log rule removed               turnrye  write   2026-10-13 08:12:38
-# U log rule removed               turnrye  write   2026-10-13 08:12:38
-# U log rule removed               turnrye  write   2026-10-13 08:12:38
-# U log rule removed               turnrye  write   2026-10-13 08:12:38
-# U log rule removed               turnrye  write   2026-10-13 08:12:38
-# U log rule removed               turnrye  write   2026-10-13 08:12:38
-# U log rule removed               turnrye  write   2026-10-13 08:12:38
-# U nat rule removed               turnrye  write   2026-10-13 08:12:38
-# U nat rule removed               turnrye  write   2026-10-13 08:12:38
-# U nat rule removed               turnrye  write   2026-10-13 08:12:38
-# U nat rule removed               turnrye  write   2026-10-13 08:12:38
-# U nat rule removed               turnrye  write   2026-10-13 08:12:38
-# U nat rule removed               turnrye  write   2026-10-13 08:12:38
-# U nat rule removed               turnrye  write   2026-10-13 08:12:38
-# U nat rule removed               turnrye  write   2026-10-13 08:12:38
-# U nat rule removed               turnrye  write   2026-10-13 08:12:38
-# U pool P00LTP removed            turnrye  write   2026-10-13 08:12:38
-# U ppp profile <ZPPTP> removed    turnrye  write   2026-10-13 08:12:38
-# U ppp secret <wtn> removed       turnrye  write   2026-10-13 08:12:38
-# U ppp secret <fn> removed        turnrye  write   2026-10-13 08:12:38
-# U PPTP Server settings changed   turnrye  write   2026-10-13 08:12:38
-# U user MikroTiksystem removed    turnrye  write   2026-10-13 08:12:38
-#                                           policy
-# U user admin-sys removed         turnrye  write   2026-10-13 08:12:38
-#                                           policy
-# U user sys-admin removed         turnrye  write   2026-10-13 08:12:38
-#                                           policy
-# U user routeradmini removed      turnrye  write   2026-10-13 08:12:38
-#                                           policy
-# U user support removed           turnrye  write   2026-10-13 08:12:38
-#                                           policy
-# U user routeradmin removed       turnrye  write   2026-10-13 08:12:38
-#                                           policy
-# U ip service changed             ansible  write   2026-10-13 08:06:05
-# U ip service changed             0        write   2026-10-08 15:41:47
-# U cloud settings changed         0        write   2026-10-08 15:41:42
-# U nat rule added                 0        write   2026-10-08 15:41:41
-# U PPTP Server settings changed   0        write   2026-10-08 15:41:41
-# U user MikroTiksystem added      0        write   2026-10-08 15:41:41
-#                                           policy
-# U ppp secret <wtn> added         0        write   2026-10-08 15:41:41
-# U ppp secret <wtn> removed       0        write   2026-10-08 15:41:41
-# U log rule added                 0        write   2026-10-08 15:41:40
-# U cloud settings changed         0        write   2026-10-07 14:25:29
-# U nat rule added                 0        write   2026-10-07 14:25:26
-# U PPTP Server settings changed   0        write   2026-10-07 14:25:25
-# U cloud settings changed         0        write   2026-10-07 14:25:21
-# U log rule added                 0        write   2026-10-07 14:25:20
-# U nat rule added                 0        write   2026-10-07 14:25:18
-# U PPTP Server settings changed   0        write   2026-10-07 14:25:17
-# U log rule added                 0        write   2026-10-07 14:25:12
-# U cloud settings changed         0        write   2026-10-07 08:50:05
-# U nat rule added                 0        write   2026-10-07 08:50:03
-# U PPTP Server settings changed   0        write   2026-10-07 08:50:02
-# U log rule added                 0        write   2026-10-07 08:49:57
-# U cloud settings changed         0        write   2026-10-07 08:49:51
-# U nat rule added                 0        write   2026-10-07 08:49:48
-# U PPTP Server settings changed   0        write   2026-10-07 08:49:47
-# U log rule added                 0        write   2026-10-07 08:49:42
-# U cloud settings changed         0        write   2026-10-07 07:01:34
-# U nat rule added                 0        write   2026-10-07 07:01:31
-# U PPTP Server settings changed   0        write   2026-10-07 07:01:30
-# U log rule added                 0        write   2026-10-07 07:01:25
-# U cloud settings changed         0        write   2026-10-04 10:57:29
-# U nat rule added                 0        write   2026-10-04 10:57:27
-# U PPTP Server settings changed   0        write   2026-10-04 10:57:26
-# U ppp secret <fn> added          0        write   2026-10-04 10:57:25
-# U log rule added                 0        write   2026-10-04 10:57:22
-# U user SystemMikrotik removed    0        write   2026-09-30 18:48:46
-#                                           policy
-# U log rule changed               0        write   2026-09-30 18:43:45
-# U log rule changed               0        write   2026-09-30 18:43:45
-# U script removed from scheduler  0        write   2026-09-30 18:43:45
-# U new script scheduled           0        write   2026-09-30 18:43:44
-# U user admin-sys added           0        write   2026-09-30 18:43:44
-#                                           policy
-# U user SystemMikrotik added      0        write   2026-09-30 18:43:44
-#                                           policy
-# U user SystemMikrotik removed    0        write   2026-09-30 18:43:44
-#                                           policy
-# U log action changed             0        write   2026-09-30 18:43:44
-# U log rule changed               0        write   2026-09-30 18:43:44
-# U log rule changed               0        write   2026-09-30 18:43:44
-# U log rule changed               0        write   2026-09-30 18:43:44
-# U log rule changed               0        write   2026-09-30 18:43:44
-# U log rule changed               0        write   2026-09-30 18:43:44
-# U log rule changed               0        write   2026-09-30 18:43:44
-# U log rule changed               0        write   2026-09-30 18:43:44
+#   ACTION                  BY       POLICY  TIME
+# U log rule changed        turnrye  write   2026-10-13 09:37:10
+# U cloud settings changed  turnrye  write   2026-10-13 09:36:57
 # 
 # software id = CIAG-EMEJ
 #
@@ -164,8 +43,13 @@ add disabled=no instance=default-v2 name=backbone-v2
 /snmp community
 set [ find default=yes ] addresses=44.0.0.0/8
 /system logging action
-set 3 bsd-syslog=yes remote=44.34.128.45
-add bsd-syslog=yes name=centrallogging remote=44.34.128.171 syslog-facility=syslog target=remote
+set 3 remote=44.34.128.45 remote-log-format=syslog
+add name=centrallogging remote=44.34.128.171 remote-log-format=syslog syslog-facility=syslog target=remote
+/user group
+add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
+add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
+add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
+add name=netops-ansible policy="ssh,ftp,read,write,policy,test,api,!local,!telnet,!reboot,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
 /interface bridge port
 add bridge=bridge1 ingress-filtering=no interface=wlan1 internal-path-cost=10 path-cost=10
 /ip firewall connection tracking
@@ -182,8 +66,6 @@ add auth=sha1,md5 mac-address=FE:05:8F:03:D8:C7 name=ovpn-server1
 add address=44.34.128.97/28 interface=ether1 network=44.34.128.96
 add address=44.34.128.102 interface=vrrp1 network=44.34.128.102
 add address=44.34.131.131 interface=bridge1 network=44.34.131.130
-/ip cloud
-set ddns-enabled=yes
 /ip dns
 set servers=8.8.8.8,8.8.4.4
 /ip firewall mangle
@@ -194,17 +76,18 @@ set 0 dst-address=0.0.0.0/0 src-address=0.0.0.0/0
 /ip ipsec profile
 set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
 /ip service
-set telnet disabled=yes
 set ftp disabled=yes
+set telnet disabled=yes
 set www disabled=yes
-set ssh address=44.34.128.45/32,99.94.135.115/32,216.163.16.109/32 port=222
-set api address=44.34.128.45/32 disabled=yes
+set ssh available-from=44.34.128.45/32,99.94.135.115/32,216.163.16.109/32 port=222
 set winbox disabled=yes
-set api-ssl address=44.34.128.45/32 certificate=api-ssl
-/ip smb shares
-set [ find default=yes ] directory=/pub
+set api available-from=44.34.128.45/32 disabled=yes
+set api-ssl available-from=44.34.128.45/32 certificate=api-ssl
 /ip ssh
 set forwarding-enabled=remote strong-crypto=yes
+/ipv6 nd
+# automatic dns option advertising is not started, re-apply dns config
+set [ find default=yes ] advertise-dns=yes
 /routing bfd configuration
 add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
 /routing filter rule
@@ -212,27 +95,25 @@ add chain=AMPR-default disabled=no rule="if (dst in 44.0.0.0/8 && dst-len in 8-3
 add chain=AMPR-default disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
 add chain=AMPR-default disabled=no rule="reject;"
 /routing ospf interface-template
-add area=backbone-v2 auth=md5 auth-id=1 auth-key=REDACTED cost=10 disabled=no interfaces=ether1 networks=44.34.128.96/28 priority=1 use-bfd=no
-add area=backbone-v2 disabled=no interfaces=vrrp1 networks=44.34.128.102 priority=1
-add area=backbone-v2 auth=md5 auth-id=1 auth-key=REDACTED cost=10 disabled=no interfaces=bridge1 networks=44.34.131.130 priority=1 type=ptp use-bfd=no
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 interfaces=ether1 networks=44.34.128.96/28 priority=1 use-bfd=no
+add area=backbone-v2 interfaces=vrrp1 networks=44.34.128.102 priority=1
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 interfaces=bridge1 networks=44.34.131.130 priority=1 type=ptp use-bfd=no
 /snmp
 set contact="#HamWAN on irc.freenode.org" enabled=yes
 /system clock
 set time-zone-autodetect=no time-zone-name=America/Chicago
 /system identity
-set name=leb.hil.memhamwan.net
+set name=sco.hil.memhamwan.net
 /system leds
 set 1 interface=wlan1
 /system logging
 set 3 action=memory
-add action=echo topics=ospf
+add action=echo disabled=yes topics=ospf
 add action=remote topics=system
 add action=remote topics=error
 add action=remote topics=warning
 add action=remote topics=critical
 add action=remote topics=account
-/system note
-set show-at-login=no
 /system ntp client
 set enabled=yes
 /system ntp client servers
@@ -250,8 +131,3 @@ set allowed-interface-list=none
 set enabled=no
 /tool romon
 set enabled=yes
-/user group
-add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
-add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
-add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
-add name=netops-ansible policy="ssh,ftp,read,write,policy,test,api,!local,!telnet,!reboot,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
