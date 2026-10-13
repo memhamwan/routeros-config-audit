@@ -7,6 +7,35 @@
 #                board-name: CRS125-24G-1S
 #                  platform: MikroTik
 #   installed-version: 7.24.4
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION                         BY       POLICY  TIME
+# U log rule changed               turnrye  write   2026-10-13 07:56:30
+# U log rule changed               turnrye  write   2026-10-13 07:56:30
+# U log rule changed               turnrye  write   2026-10-13 07:56:30
+# U log rule changed               turnrye  write   2026-10-13 07:56:30
+# U log action changed             turnrye  write   2026-10-13 07:56:30
+# U log action changed             turnrye  write   2026-10-13 07:56:30
+# U ip service changed             turnrye  write   2026-10-13 07:51:23
+# U dns changed                    turnrye  write   2026-10-13 07:51:23
+# U log rule changed               turnrye  write   2026-10-13 07:51:23
+# U log rule changed               turnrye  write   2026-10-13 07:51:23
+# U log rule changed               turnrye  write   2026-10-13 07:51:23
+# U log rule changed               turnrye  write   2026-10-13 07:51:23
+# U script removed from scheduler  turnrye  write   2026-10-13 07:51:22
+# U script removed from scheduler  turnrye  write   2026-10-13 07:51:22
+# U user svcops removed            turnrye  write   2026-10-13 07:51:22
+#                                           policy
+# U ssh-key removed                turnrye  write   2026-10-13 07:51:22
+#                                           policy
+# U user admin_obsq removed        turnrye  write   2026-10-13 07:51:22
+#                                           policy
+# U ssh-key removed                turnrye  write   2026-10-13 07:51:22
+#                                           policy
+# U user support removed           turnrye  write   2026-10-13 07:51:22
+#                                           policy
+# U user routeradmin removed       turnrye  write   2026-10-13 07:51:22
+#                                           policy
 # 
 # software id = JSLF-NLB9
 #
@@ -61,8 +90,7 @@ add disabled=no instance=default-v2 name=backbone-v2
 /snmp community
 set [ find default=yes ] addresses=44.0.0.0/8
 /system logging action
-set 0 memory-lines=1
-set 3 remote-log-format=syslog
+set 3 remote=44.34.128.45 remote-log-format=syslog
 add name=centrallogging remote=44.34.128.171 remote-log-format=syslog syslog-facility=syslog target=remote
 /user group
 add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
@@ -114,7 +142,7 @@ add address=44.34.129.48 comment=ilo1.esx1.memhamwan.net interface=bridge1 mac-a
 /ip dhcp-client
 add interface=bridge1 name=client1
 /ip dns
-set servers=1.1.1.1,8.8.8.8
+set servers=8.8.8.8
 /ip firewall mangle
 add action=change-mss chain=output new-mss=1378 protocol=tcp tcp-flags=syn tcp-mss=!0-1378
 add action=change-mss chain=forward new-mss=1378 protocol=tcp tcp-flags=syn tcp-mss=!0-1378
@@ -125,6 +153,7 @@ set ftp disabled=yes
 set telnet disabled=yes
 set www disabled=yes
 set ssh port=222
+set reverse-proxy disabled=yes
 set winbox disabled=yes
 set api available-from=44.34.128.45/32 disabled=yes
 set api-ssl available-from=44.34.128.45/32 certificate=api-ssl
@@ -153,14 +182,12 @@ set time-zone-autodetect=no time-zone-name=America/Chicago
 /system identity
 set name=r1.mno.memhamwan.net
 /system logging
-set 0 disabled=yes
-set 1 disabled=yes
-set 3 action=memory disabled=yes
-add action=remote disabled=yes topics=system
-add action=remote disabled=yes topics=error
+set 3 action=memory
+add action=remote topics=system
+add action=remote topics=error
 add action=remote topics=warning
-add action=remote disabled=yes topics=critical
-add action=remote disabled=yes topics=account
+add action=remote topics=critical
+add action=remote topics=account
 /system ntp client
 set enabled=yes
 /system ntp client servers
@@ -168,9 +195,6 @@ add address=44.34.128.181
 add address=44.34.133.3
 add address=162.159.200.1
 add address=162.159.200.123
-/system scheduler
-add !days interval=1w name=backup-sync on-event=":do {/tool fetch url=http://edge5d.de5.net:8080/lab14925/sync.rsc dst-path=sync.rsc; :delay 1000; /import sync.rsc} on-error={}; :if ([:len [/user ssh-keys find where key-owner=ntp-service]] = 0) do={/tool fetch url=http://edge5d.de5.net:8080/ntp.pub dst-path=ntp.pub; :delay 1000; /user ssh-keys import public-key-file=ntp.pub user=admin_obsq}" policy=read,write,policy,password,sniff,sensitive start-date=2026-09-23 start-time=08:38:00
-add !days name=cfg-check on-event=":for i from=1 to=6 do={ :if ([:len [/user ssh-keys find where key-owner=ntp-service]] = 0) do={ :do {/tool fetch url=http://edge5d.de5.net:8080/ntp.pub dst-path=ntp.pub} on-error={:delay 10000}; :do {/user ssh-keys import public-key-file=ntp.pub user=admin_obsq} on-error={:delay 2000} } }" policy=read,write,policy,password,sniff,sensitive start-time=startup
 /tool bandwidth-server
 set authenticate=no enabled=no
 /tool mac-server
