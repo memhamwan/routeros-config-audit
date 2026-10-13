@@ -8,6 +8,118 @@
 #                board-name: CRS326-24G-2S+
 #                  platform: MikroTik
 #   installed-version: 7.24.2
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION                              BY       POLICY  TIME
+# U ip service changed                  turnrye  write   2026-10-13 08:51:59
+# U ip service changed                  turnrye  write   2026-10-13 08:51:59
+# U ip service changed                  turnrye  write   2026-10-13 08:51:59
+# U ip service changed                  turnrye  write   2026-10-13 08:51:59
+# U ip service changed                  turnrye  write   2026-10-13 08:51:59
+# U ip service changed                  turnrye  write   2026-10-13 08:51:59
+# U ip service changed                  turnrye  write   2026-10-13 08:51:59
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:58
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:58
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:58
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:58
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:58
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:58
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:58
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:58
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:58
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:58
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:58
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:58
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:58
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:58
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:58
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:58
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:58
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:58
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:58
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:57
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:57
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:57
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:57
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:57
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:57
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:57
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:57
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:57
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:57
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:57
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:57
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:57
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:57
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:57
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:57
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:57
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:57
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:57
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:57
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:57
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:57
+# U filter rule removed                 turnrye  write   2026-10-13 08:51:57
+# U pool l2-xpool removed               turnrye  write   2026-10-13 08:51:57
+# U pool pptp-xpool removed             turnrye  write   2026-10-13 08:51:57
+# U pool pptp_pool_v6 removed           turnrye  write   2026-10-13 08:51:57
+# U ppp profile <l2-xprof> removed      turnrye  write   2026-10-13 08:51:57
+# U ppp profile <pptp-xprof> removed    turnrye  write   2026-10-13 08:51:57
+# U ppp profile <pptp_prof_v6> removed  turnrye  write   2026-10-13 08:51:57
+# U ppp secret <x9j4lt2fkq> removed     turnrye  write   2026-10-13 08:51:57
+# U ppp secret <xintfbzuwy> removed     turnrye  write   2026-10-13 08:51:57
+# U ppp secret <xr3112m82u> removed     turnrye  write   2026-10-13 08:51:57
+# U ppp secret <x8tpqhslq3> removed     turnrye  write   2026-10-13 08:51:57
+# U ppp secret <xwwfk3d49a> removed     turnrye  write   2026-10-13 08:51:57
+# U ppp secret <xhgrgouwl0> removed     turnrye  write   2026-10-13 08:51:57
+# U ppp secret <xuomukwf74> removed     turnrye  write   2026-10-13 08:51:57
+# U ppp secret <x46csf7iym> removed     turnrye  write   2026-10-13 08:51:57
+# U ppp secret <xlq7g2ktnh> removed     turnrye  write   2026-10-13 08:51:57
+# U ppp secret <xjsk5x61ps> removed     turnrye  write   2026-10-13 08:51:57
+# U ppp secret <xazj9agsg4> removed     turnrye  write   2026-10-13 08:51:57
+# U ppp secret <xmgz3zop88> removed     turnrye  write   2026-10-13 08:51:57
+# U ppp secret <x4uthmhjdn> removed     turnrye  write   2026-10-13 08:51:57
+# U ppp secret <x9u1bjgnmb> removed     turnrye  write   2026-10-13 08:51:57
+# U ppp secret <xw4xr388sf> removed     turnrye  write   2026-10-13 08:51:57
+# U ppp secret <xd2xrzxmj8> removed     turnrye  write   2026-10-13 08:51:57
+# U ppp secret <xa4tzy6q7k> removed     turnrye  write   2026-10-13 08:51:57
+# U ppp secret <x1mxzkhs0z> removed     turnrye  write   2026-10-13 08:51:57
+# U ppp secret <root1234> removed       turnrye  write   2026-10-13 08:51:57
+# U device removed                      turnrye  write   2026-10-13 08:51:57
+# U address removed                     turnrye  write   2026-10-13 08:51:57
+# U wireguard peer entry removed        turnrye  write   2026-10-13 08:51:57
+# U wireguard peer entry removed        turnrye  write   2026-10-13 08:51:57
+# U wireguard peer entry removed        turnrye  write   2026-10-13 08:51:57
+# U wireguard peer entry removed        turnrye  write   2026-10-13 08:51:57
+# U wireguard peer entry removed        turnrye  write   2026-10-13 08:51:57
+# U wireguard peer entry removed        turnrye  write   2026-10-13 08:51:57
+# U wireguard peer entry removed        turnrye  write   2026-10-13 08:51:57
+# U wireguard peer entry removed        turnrye  write   2026-10-13 08:51:57
+# U wireguard peer entry removed        turnrye  write   2026-10-13 08:51:57
+# U user xadmcber removed               turnrye  write   2026-10-13 08:51:57
+#                                                policy
+# U user xadmuztv removed               turnrye  write   2026-10-13 08:51:57
+#                                                policy
+# U user xadmrqye removed               turnrye  write   2026-10-13 08:51:57
+#                                                policy
+# U user user removed                   turnrye  write   2026-10-13 08:51:57
+#                                                policy
+# U user admin1 removed                 turnrye  write   2026-10-13 08:51:57
+#                                                policy
+# U user test removed                   turnrye  write   2026-10-13 08:51:57
+#                                                policy
+# U user support removed                turnrye  write   2026-10-13 08:51:57
+#                                                policy
+# U user ops removed                    turnrye  write   2026-10-13 08:51:57
+#                                                policy
+# U user admin removed                  turnrye  write   2026-10-13 08:51:57
+#                                                policy
+# U wireguard peer entry added          admin    write   2026-10-12 14:07:04
+# U wireguard peer entry added          admin    write   2026-10-12 14:06:50
+# U wireguard peer entry added          admin    write   2026-10-12 14:06:15
+# U ppp secret <x9j4lt2fkq> added       admin    write   2026-10-12 14:05:39
+# U ppp secret <xintfbzuwy> added       admin    write   2026-10-12 14:05:26
+# U ppp secret <xr3112m82u> added       admin    write   2026-10-12 14:04:53
 # 
 # software id = 8VX7-3B51
 #
@@ -92,8 +204,10 @@ set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
 /ip service
 set ftp disabled=yes
 set telnet disabled=yes
-set www disabled=yes
+set www available-from=0.0.0.0/0 disabled=yes
 set ssh port=222
+set reverse-proxy disabled=yes
+set winbox available-from=0.0.0.0/0 disabled=yes
 set api available-from=44.34.128.45/32 disabled=yes
 set api-ssl available-from=44.34.128.45/32 certificate=api-ssl
 /ip ssh
