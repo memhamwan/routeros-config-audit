@@ -11,6 +11,8 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                BY       POLICY  TIME
+# U ip service changed    ansible  write   2026-10-13 16:41:11
+# U dns changed           ansible  write   2026-10-13 16:41:03
 # U ssh settings changed  ansible  write   2026-10-13 16:24:01
 # U ip service changed    ansible  write   2026-10-13 16:23:59
 # U user hamwan removed   ansible  write   2026-10-13 16:23:54
@@ -109,7 +111,7 @@ add address=44.34.130.46 client-id=1:2c:cf:67:81:2a:85 mac-address=2C:CF:67:81:2
 add address=10.0.0.0/24 dns-server=8.8.8.8,8.8.4.4 gateway=10.0.0.1
 add address=44.34.130.32/28 dns-server=8.8.8.8,8.8.4.4 gateway=44.34.130.33
 /ip dns
-set servers=8.8.8.8,8.8.4.4
+set servers=44.34.132.1,44.34.133.1,1.1.1.1,1.0.0.1
 /ip firewall nat
 add action=masquerade chain=srcnat out-interface=wan-uplink
 add action=masquerade chain=srcnat src-address=10.0.0.0/24
@@ -127,7 +129,7 @@ set ssh available-from=44.34.128.45/32,99.94.135.115/32,216.163.16.109/32 port=2
 set reverse-proxy disabled=yes
 set winbox disabled=yes
 set api available-from=44.34.128.45/32 disabled=yes
-set api-ssl available-from=44.34.128.45/32 certificate=api-ssl
+set api-ssl available-from=44.34.128.45/32,99.94.135.115/32,216.163.16.109/32 certificate=api-ssl
 /ip ssh
 set password-authentication=no strong-crypto=yes
 /ipv6 nd
