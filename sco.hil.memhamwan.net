@@ -9,9 +9,16 @@
 #   installed-version: 7.24.5
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
-#   ACTION                  BY       POLICY  TIME
-# U log rule changed        turnrye  write   2026-10-13 09:37:10
-# U cloud settings changed  turnrye  write   2026-10-13 09:36:57
+#   ACTION                   BY       POLICY  TIME
+# U dns changed              turnrye  write   2026-10-13 11:10:39
+# U ip service changed       turnrye  write   2026-10-13 11:10:39
+# U ssh settings changed     turnrye  write   2026-10-13 11:10:39
+# U user packetbard changed  turnrye  write   2026-10-13 11:10:39
+#                                     policy
+# U user hamwan changed      turnrye  write   2026-10-13 11:10:39
+#                                     policy
+# U log rule changed         turnrye  write   2026-10-13 09:37:10
+# U cloud settings changed   turnrye  write   2026-10-13 09:36:57
 # 
 # software id = CIAG-EMEJ
 #
@@ -80,11 +87,12 @@ set ftp disabled=yes
 set telnet disabled=yes
 set www disabled=yes
 set ssh available-from=44.34.128.45/32,99.94.135.115/32,216.163.16.109/32 port=222
+set reverse-proxy disabled=yes
 set winbox disabled=yes
 set api available-from=44.34.128.45/32 disabled=yes
 set api-ssl available-from=44.34.128.45/32 certificate=api-ssl
 /ip ssh
-set forwarding-enabled=remote strong-crypto=yes
+set forwarding-enabled=remote password-authentication=no strong-crypto=yes
 /ipv6 nd
 # automatic dns option advertising is not started, re-apply dns config
 set [ find default=yes ] advertise-dns=yes
