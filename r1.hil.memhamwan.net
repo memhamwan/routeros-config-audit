@@ -11,6 +11,11 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                              BY       POLICY  TIME
+# U dns changed                         turnrye  write   2026-10-13 12:05:20
+# U ip service changed                  turnrye  write   2026-10-13 12:05:20
+# U ssh settings changed                turnrye  write   2026-10-13 12:05:19
+# U user hamwan changed                 turnrye  write   2026-10-13 12:05:19
+#                                                policy
 # U ip service changed                  turnrye  write   2026-10-13 08:51:59
 # U ip service changed                  turnrye  write   2026-10-13 08:51:59
 # U ip service changed                  turnrye  write   2026-10-13 08:51:59
@@ -116,10 +121,6 @@
 #                                                policy
 # U wireguard peer entry added          admin    write   2026-10-12 14:07:04
 # U wireguard peer entry added          admin    write   2026-10-12 14:06:50
-# U wireguard peer entry added          admin    write   2026-10-12 14:06:15
-# U ppp secret <x9j4lt2fkq> added       admin    write   2026-10-12 14:05:39
-# U ppp secret <xintfbzuwy> added       admin    write   2026-10-12 14:05:26
-# U ppp secret <xr3112m82u> added       admin    write   2026-10-12 14:04:53
 # 
 # software id = 8VX7-3B51
 #
@@ -211,7 +212,7 @@ set winbox available-from=0.0.0.0/0 disabled=yes
 set api available-from=44.34.128.45/32 disabled=yes
 set api-ssl available-from=44.34.128.45/32 certificate=api-ssl
 /ip ssh
-set forwarding-enabled=both strong-crypto=yes
+set forwarding-enabled=both password-authentication=no strong-crypto=yes
 /ipv6 nd
 # automatic dns option advertising is not started, re-apply dns config
 set [ find default=yes ] advertise-dns=yes
