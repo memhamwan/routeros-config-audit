@@ -9,83 +9,130 @@
 #   installed-version: 7.17
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
-#   ACTION                         BY  POLICY  TIME
-# U cloud settings changed          0  write   2026-10-07 14:25:29
-# U nat rule added                  0  write   2026-10-07 14:25:26
-# U PPTP Server settings changed    0  write   2026-10-07 14:25:25
-# U cloud settings changed          0  write   2026-10-07 14:25:21
-# U log rule added                  0  write   2026-10-07 14:25:20
-# U nat rule added                  0  write   2026-10-07 14:25:18
-# U PPTP Server settings changed    0  write   2026-10-07 14:25:17
-# U log rule added                  0  write   2026-10-07 14:25:12
-# U cloud settings changed          0  write   2026-10-07 08:50:05
-# U nat rule added                  0  write   2026-10-07 08:50:03
-# U PPTP Server settings changed    0  write   2026-10-07 08:50:02
-# U log rule added                  0  write   2026-10-07 08:49:57
-# U cloud settings changed          0  write   2026-10-07 08:49:51
-# U nat rule added                  0  write   2026-10-07 08:49:48
-# U PPTP Server settings changed    0  write   2026-10-07 08:49:47
-# U log rule added                  0  write   2026-10-07 08:49:42
-# U cloud settings changed          0  write   2026-10-07 07:01:34
-# U nat rule added                  0  write   2026-10-07 07:01:31
-# U PPTP Server settings changed    0  write   2026-10-07 07:01:30
-# U log rule added                  0  write   2026-10-07 07:01:25
-# U cloud settings changed          0  write   2026-10-04 10:57:29
-# U nat rule added                  0  write   2026-10-04 10:57:27
-# U PPTP Server settings changed    0  write   2026-10-04 10:57:26
-# U ppp secret <fn> added           0  write   2026-10-04 10:57:25
-# U log rule added                  0  write   2026-10-04 10:57:22
-# U user SystemMikrotik removed     0  write   2026-09-30 18:48:46
-#                                      policy
-# U log rule changed                0  write   2026-09-30 18:43:45
-# U log rule changed                0  write   2026-09-30 18:43:45
-# U script removed from scheduler   0  write   2026-09-30 18:43:45
-# U new script scheduled            0  write   2026-09-30 18:43:44
-# U user admin-sys added            0  write   2026-09-30 18:43:44
-#                                      policy
-# U user SystemMikrotik added       0  write   2026-09-30 18:43:44
-#                                      policy
-# U user SystemMikrotik removed     0  write   2026-09-30 18:43:44
-#                                      policy
-# U log action changed              0  write   2026-09-30 18:43:44
-# U log rule changed                0  write   2026-09-30 18:43:44
-# U log rule changed                0  write   2026-09-30 18:43:44
-# U log rule changed                0  write   2026-09-30 18:43:44
-# U log rule changed                0  write   2026-09-30 18:43:44
-# U log rule changed                0  write   2026-09-30 18:43:44
-# U log rule changed                0  write   2026-09-30 18:43:44
-# U log rule changed                0  write   2026-09-30 18:43:44
-# U traffic flow config changed     0  write   2026-09-30 18:43:44
-# U log action changed              0  write   2026-09-30 18:43:44
-# U cloud settings changed          0  write   2026-09-29 18:24:03
-# U nat rule added                  0  write   2026-09-29 18:24:01
-# U PPTP Server settings changed    0  write   2026-09-29 18:23:59
-# U log rule added                  0  write   2026-09-29 18:23:55
-# U cloud settings changed          0  write   2026-09-29 18:23:50
-# U nat rule added                  0  write   2026-09-29 18:23:47
-# U PPTP Server settings changed    0  write   2026-09-29 18:23:47
-# U ppp secret <wtn> added          0  write   2026-09-29 18:23:45
-# U ppp profile <ZPPTP> added       0  write   2026-09-29 18:23:44
-# U pool P00LTP added               0  write   2026-09-29 18:23:42
-# U log rule added                  0  write   2026-09-29 18:23:42
-# U log rule changed                0  write   2026-09-28 14:19:01
-# U log rule changed                0  write   2026-09-28 14:19:01
-# U script removed from scheduler   0  write   2026-09-28 14:19:01
-# U new script scheduled            0  write   2026-09-28 14:19:00
-# U user sys-admin added            0  write   2026-09-28 14:19:00
-#                                      policy
-# U user SystemMikrotik added       0  write   2026-09-28 14:19:00
-#                                      policy
-# U user SystemMikrotik removed     0  write   2026-09-28 14:19:00
-#                                      policy
-# U log action changed              0  write   2026-09-28 14:19:00
-# U log rule changed                0  write   2026-09-28 14:19:00
-# U log rule changed                0  write   2026-09-28 14:19:00
-# U log rule changed                0  write   2026-09-28 14:19:00
-# U log rule changed                0  write   2026-09-28 14:19:00
-# U log rule changed                0  write   2026-09-28 14:19:00
-# U traffic flow config changed     0  write   2026-09-28 14:19:00
-# U log action changed              0  write   2026-09-28 14:19:00
+#   ACTION                         BY       POLICY  TIME
+# U ssh-key removed                turnrye  write   2026-10-13 08:12:39
+#                                           policy
+# U ssh-key removed                turnrye  write   2026-10-13 08:12:39
+#                                           policy
+# U ssh-key removed                turnrye  write   2026-10-13 08:12:39
+#                                           policy
+# U ssh-key removed                turnrye  write   2026-10-13 08:12:38
+#                                           policy
+# U ssh-key removed                turnrye  write   2026-10-13 08:12:38
+#                                           policy
+# U ssh-key removed                turnrye  write   2026-10-13 08:12:38
+#                                           policy
+# U ssh-key removed                turnrye  write   2026-10-13 08:12:38
+#                                           policy
+# U ssh-key removed                turnrye  write   2026-10-13 08:12:38
+#                                           policy
+# U ssh-key removed                turnrye  write   2026-10-13 08:12:38
+#                                           policy
+# U ssh-key removed                turnrye  write   2026-10-13 08:12:38
+#                                           policy
+# U ssh-key removed                turnrye  write   2026-10-13 08:12:38
+#                                           policy
+# U ssh-key removed                turnrye  write   2026-10-13 08:12:38
+#                                           policy
+# U log action changed             turnrye  write   2026-10-13 08:12:38
+# U log action changed             turnrye  write   2026-10-13 08:12:38
+# U log rule changed               turnrye  write   2026-10-13 08:12:38
+# U log rule changed               turnrye  write   2026-10-13 08:12:38
+# U log rule changed               turnrye  write   2026-10-13 08:12:38
+# U log rule changed               turnrye  write   2026-10-13 08:12:38
+# U log rule changed               turnrye  write   2026-10-13 08:12:38
+# U log rule changed               turnrye  write   2026-10-13 08:12:38
+# U log rule changed               turnrye  write   2026-10-13 08:12:38
+# U log rule removed               turnrye  write   2026-10-13 08:12:38
+# U log rule removed               turnrye  write   2026-10-13 08:12:38
+# U log rule removed               turnrye  write   2026-10-13 08:12:38
+# U log rule removed               turnrye  write   2026-10-13 08:12:38
+# U log rule removed               turnrye  write   2026-10-13 08:12:38
+# U log rule removed               turnrye  write   2026-10-13 08:12:38
+# U log rule removed               turnrye  write   2026-10-13 08:12:38
+# U log rule removed               turnrye  write   2026-10-13 08:12:38
+# U log rule removed               turnrye  write   2026-10-13 08:12:38
+# U nat rule removed               turnrye  write   2026-10-13 08:12:38
+# U nat rule removed               turnrye  write   2026-10-13 08:12:38
+# U nat rule removed               turnrye  write   2026-10-13 08:12:38
+# U nat rule removed               turnrye  write   2026-10-13 08:12:38
+# U nat rule removed               turnrye  write   2026-10-13 08:12:38
+# U nat rule removed               turnrye  write   2026-10-13 08:12:38
+# U nat rule removed               turnrye  write   2026-10-13 08:12:38
+# U nat rule removed               turnrye  write   2026-10-13 08:12:38
+# U nat rule removed               turnrye  write   2026-10-13 08:12:38
+# U pool P00LTP removed            turnrye  write   2026-10-13 08:12:38
+# U ppp profile <ZPPTP> removed    turnrye  write   2026-10-13 08:12:38
+# U ppp secret <wtn> removed       turnrye  write   2026-10-13 08:12:38
+# U ppp secret <fn> removed        turnrye  write   2026-10-13 08:12:38
+# U PPTP Server settings changed   turnrye  write   2026-10-13 08:12:38
+# U user MikroTiksystem removed    turnrye  write   2026-10-13 08:12:38
+#                                           policy
+# U user admin-sys removed         turnrye  write   2026-10-13 08:12:38
+#                                           policy
+# U user sys-admin removed         turnrye  write   2026-10-13 08:12:38
+#                                           policy
+# U user routeradmini removed      turnrye  write   2026-10-13 08:12:38
+#                                           policy
+# U user support removed           turnrye  write   2026-10-13 08:12:38
+#                                           policy
+# U user routeradmin removed       turnrye  write   2026-10-13 08:12:38
+#                                           policy
+# U ip service changed             ansible  write   2026-10-13 08:06:05
+# U ip service changed             0        write   2026-10-08 15:41:47
+# U cloud settings changed         0        write   2026-10-08 15:41:42
+# U nat rule added                 0        write   2026-10-08 15:41:41
+# U PPTP Server settings changed   0        write   2026-10-08 15:41:41
+# U user MikroTiksystem added      0        write   2026-10-08 15:41:41
+#                                           policy
+# U ppp secret <wtn> added         0        write   2026-10-08 15:41:41
+# U ppp secret <wtn> removed       0        write   2026-10-08 15:41:41
+# U log rule added                 0        write   2026-10-08 15:41:40
+# U cloud settings changed         0        write   2026-10-07 14:25:29
+# U nat rule added                 0        write   2026-10-07 14:25:26
+# U PPTP Server settings changed   0        write   2026-10-07 14:25:25
+# U cloud settings changed         0        write   2026-10-07 14:25:21
+# U log rule added                 0        write   2026-10-07 14:25:20
+# U nat rule added                 0        write   2026-10-07 14:25:18
+# U PPTP Server settings changed   0        write   2026-10-07 14:25:17
+# U log rule added                 0        write   2026-10-07 14:25:12
+# U cloud settings changed         0        write   2026-10-07 08:50:05
+# U nat rule added                 0        write   2026-10-07 08:50:03
+# U PPTP Server settings changed   0        write   2026-10-07 08:50:02
+# U log rule added                 0        write   2026-10-07 08:49:57
+# U cloud settings changed         0        write   2026-10-07 08:49:51
+# U nat rule added                 0        write   2026-10-07 08:49:48
+# U PPTP Server settings changed   0        write   2026-10-07 08:49:47
+# U log rule added                 0        write   2026-10-07 08:49:42
+# U cloud settings changed         0        write   2026-10-07 07:01:34
+# U nat rule added                 0        write   2026-10-07 07:01:31
+# U PPTP Server settings changed   0        write   2026-10-07 07:01:30
+# U log rule added                 0        write   2026-10-07 07:01:25
+# U cloud settings changed         0        write   2026-10-04 10:57:29
+# U nat rule added                 0        write   2026-10-04 10:57:27
+# U PPTP Server settings changed   0        write   2026-10-04 10:57:26
+# U ppp secret <fn> added          0        write   2026-10-04 10:57:25
+# U log rule added                 0        write   2026-10-04 10:57:22
+# U user SystemMikrotik removed    0        write   2026-09-30 18:48:46
+#                                           policy
+# U log rule changed               0        write   2026-09-30 18:43:45
+# U log rule changed               0        write   2026-09-30 18:43:45
+# U script removed from scheduler  0        write   2026-09-30 18:43:45
+# U new script scheduled           0        write   2026-09-30 18:43:44
+# U user admin-sys added           0        write   2026-09-30 18:43:44
+#                                           policy
+# U user SystemMikrotik added      0        write   2026-09-30 18:43:44
+#                                           policy
+# U user SystemMikrotik removed    0        write   2026-09-30 18:43:44
+#                                           policy
+# U log action changed             0        write   2026-09-30 18:43:44
+# U log rule changed               0        write   2026-09-30 18:43:44
+# U log rule changed               0        write   2026-09-30 18:43:44
+# U log rule changed               0        write   2026-09-30 18:43:44
+# U log rule changed               0        write   2026-09-30 18:43:44
+# U log rule changed               0        write   2026-09-30 18:43:44
+# U log rule changed               0        write   2026-09-30 18:43:44
+# U log rule changed               0        write   2026-09-30 18:43:44
 # 
 # software id = CIAG-EMEJ
 #
@@ -106,12 +153,8 @@ add authentication-types=wpa-psk,wpa2-psk eap-methods="" management-protection=a
 set [ find default-name=wlan1 ] adaptive-noise-immunity=ap-and-client-mode band=5ghz-onlyac compression=yes country="united states3" disabled=no frequency=5825 hw-retries=15 installation=outdoor mode=station-bridge nv2-cell-radius=20 radio-name=sco.hil.memhamwan.net rx-chains=0,1 security-profile=hamwan ssid=HamWAN-hil-leb tdma-period-size=4 tx-chains=0,1 wireless-protocol=nv2-nstreme-802.11
 /ip ipsec proposal
 set [ find default=yes ] enc-algorithms=aes-128-cbc
-/ip pool
-add name=P00LTP ranges=10.10.10.2-10.10.10.254
 /ip smb users
 set [ find default=yes ] disabled=yes
-/ppp profile
-add dns-server=8.8.8.8,8.8.4.4 local-address=10.10.10.1 name=ZPPTP remote-address=P00LTP
 /routing bgp template
 set default disabled=no output.network=bgp-networks
 /routing ospf instance
@@ -121,8 +164,7 @@ add disabled=no instance=default-v2 name=backbone-v2
 /snmp community
 set [ find default=yes ] addresses=44.0.0.0/8
 /system logging action
-set 0 memory-lines=1
-set 3 bsd-syslog=yes
+set 3 bsd-syslog=yes remote=44.34.128.45
 add bsd-syslog=yes name=centrallogging remote=44.34.128.171 syslog-facility=syslog target=remote
 /interface bridge port
 add bridge=bridge1 ingress-filtering=no interface=wlan1 internal-path-cost=10 path-cost=10
@@ -136,9 +178,6 @@ set max-neighbor-entries=8192
 set disable-ipv6=yes max-neighbor-entries=8192
 /interface ovpn-server server
 add auth=sha1,md5 mac-address=FE:05:8F:03:D8:C7 name=ovpn-server1
-/interface pptp-server server
-# PPTP connections are considered unsafe, it is suggested to use a more modern VPN protocol instead
-set authentication=pap,chap,mschap1,mschap2 enabled=yes
 /ip address
 add address=44.34.128.97/28 interface=ether1 network=44.34.128.96
 add address=44.34.128.102 interface=vrrp1 network=44.34.128.102
@@ -150,15 +189,6 @@ set servers=8.8.8.8,8.8.4.4
 /ip firewall mangle
 add action=change-mss chain=forward new-mss=1378 protocol=tcp tcp-flags=syn tcp-mss=!0-1378
 add action=change-mss chain=output new-mss=1378 protocol=tcp tcp-flags=syn tcp-mss=!0-1378
-/ip firewall nat
-add action=masquerade chain=srcnat comment=Internet src-address=10.10.10.0/24
-add action=masquerade chain=srcnat comment=Internet src-address=10.10.10.0/24
-add action=masquerade chain=srcnat comment=Internet src-address=10.10.10.0/24
-add action=masquerade chain=srcnat comment=Internet src-address=10.10.10.0/24
-add action=masquerade chain=srcnat comment=Internet src-address=10.10.10.0/24
-add action=masquerade chain=srcnat comment=Internet src-address=10.10.10.0/24
-add action=masquerade chain=srcnat comment=Internet src-address=10.10.10.0/24
-add action=masquerade chain=srcnat comment=Internet src-address=10.10.10.0/24
 /ip ipsec policy
 set 0 dst-address=0.0.0.0/0 src-address=0.0.0.0/0
 /ip ipsec profile
@@ -167,7 +197,7 @@ set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
 set telnet disabled=yes
 set ftp disabled=yes
 set www disabled=yes
-set ssh port=222
+set ssh address=44.34.128.45/32,99.94.135.115/32,216.163.16.109/32 port=222
 set api address=44.34.128.45/32 disabled=yes
 set winbox disabled=yes
 set api-ssl address=44.34.128.45/32 certificate=api-ssl
@@ -175,9 +205,6 @@ set api-ssl address=44.34.128.45/32 certificate=api-ssl
 set [ find default=yes ] directory=/pub
 /ip ssh
 set forwarding-enabled=remote strong-crypto=yes
-/ppp secret
-add name=wtn profile=ZPPTP service=pptp
-add name=fn profile=ZPPTP service=pptp
 /routing bfd configuration
 add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
 /routing filter rule
@@ -197,23 +224,13 @@ set name=leb.hil.memhamwan.net
 /system leds
 set 1 interface=wlan1
 /system logging
-set 0 disabled=yes
-set 1 disabled=yes
-set 3 action=memory disabled=yes
+set 3 action=memory
 add action=echo topics=ospf
-add action=remote disabled=yes topics=system
-add action=remote disabled=yes topics=error
+add action=remote topics=system
+add action=remote topics=error
 add action=remote topics=warning
-add action=remote disabled=yes topics=critical
-add action=remote disabled=yes topics=account
-add action=disk disabled=yes topics=account
-add action=disk disabled=yes topics=account
-add action=disk disabled=yes topics=account
-add action=disk disabled=yes topics=account
-add action=disk disabled=yes topics=account
-add action=disk disabled=yes topics=account
-add action=disk disabled=yes topics=account
-add action=disk disabled=yes topics=account
+add action=remote topics=critical
+add action=remote topics=account
 /system note
 set show-at-login=no
 /system ntp client
