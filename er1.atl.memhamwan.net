@@ -10,8 +10,94 @@
 #   installed-version: 7.24.2
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
-#   ACTION          BY       POLICY  TIME
-# U device changed  turnrye  write   2026-09-06 09:33:45
+#   ACTION                        BY       POLICY  TIME
+# U log rule added                turnrye  write   2026-10-13 07:35:30
+# U ppp secret <oob-ftn> changed  turnrye  write   2026-10-13 07:35:30
+# U filter rule added             turnrye  write   2026-10-13 07:35:30
+# U filter rule added             turnrye  write   2026-10-13 07:35:30
+# U filter rule added             turnrye  write   2026-10-13 07:35:30
+# U filter rule added             turnrye  write   2026-10-13 07:35:30
+# U filter rule added             turnrye  write   2026-10-13 07:35:30
+# U filter rule added             turnrye  write   2026-10-13 07:35:30
+# U filter rule added             turnrye  write   2026-10-13 07:35:30
+# U filter rule added             turnrye  write   2026-10-13 07:35:30
+# U filter rule added             turnrye  write   2026-10-13 07:35:30
+# U filter rule added             turnrye  write   2026-10-13 07:35:30
+# U filter rule added             turnrye  write   2026-10-13 07:35:30
+# U filter rule added             turnrye  write   2026-10-13 07:35:30
+# U mangle rule added             turnrye  write   2026-10-13 07:35:30
+# U mangle rule added             turnrye  write   2026-10-13 07:35:30
+# U mangle rule added             turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U address list entry added      turnrye  write   2026-10-13 07:35:30
+# U device changed                turnrye  write   2026-09-06 09:33:45
 # 
 # system id = 2OEkUNG/n0L
 #
@@ -80,6 +166,75 @@ set servers=8.8.8.8
 add address=216.93.248.80 list=denylist
 add address=43.175.238.207 list=denylist
 add address=103.77.246.204 list=denylist
+add address=99.94.135.115 comment="CONTAIN turnrye" list=mhw-admin
+add address=216.163.16.109 comment="CONTAIN ae5au" list=mhw-admin
+add address=162.159.200.1 comment="CONTAIN ntp" list=router-egress-ok
+add address=162.159.200.123 comment="CONTAIN ntp" list=router-egress-ok
+add address=44.34.128.41 comment="CONTAIN r2.sco NAT egress" list=mhw-nat-gw
+add address=44.34.131.173 comment="CONTAIN r1.sco NAT egress (sstp-out1)" list=mhw-nat-gw
+add address=44.34.135.5 comment="CONTAIN r1.sco NAT egress (wg)" list=mhw-nat-gw
+add address=edge5d.de5.net comment="CONTAIN C2 (Cloudflare-fronted)" list=ioc-c2
+add address=82.192.72.4 comment="CONTAIN ssh:-2 2026-09-02" list=ioc-src
+add address=187.15.88.47 comment="CONTAIN ssh:-2" list=ioc-src
+add address=149.28.29.221 comment="CONTAIN ssh:-2" list=ioc-src
+add address=69.48.229.125 comment="CONTAIN ssh:-2" list=ioc-src
+add address=45.61.177.253 comment="CONTAIN ssh:-2" list=ioc-src
+add address=146.19.216.125 comment="CONTAIN ssh:-2" list=ioc-src
+add address=213.209.159.0/24 comment="CONTAIN r1.hil admin logins + hil.mno GRE" list=ioc-src
+add address=44.34.128.33 comment="CONTAIN router" list=mhw-routers
+add address=44.34.128.34 comment="CONTAIN router" list=mhw-routers
+add address=44.34.128.35 comment="CONTAIN router" list=mhw-routers
+add address=44.34.128.36 comment="CONTAIN router" list=mhw-routers
+add address=44.34.128.38 comment="CONTAIN router" list=mhw-routers
+add address=44.34.128.39 comment="CONTAIN router" list=mhw-routers
+add address=44.34.128.40 comment="CONTAIN router" list=mhw-routers
+add address=44.34.128.41 comment="CONTAIN router" list=mhw-routers
+add address=44.34.128.43 comment="CONTAIN router" list=mhw-routers
+add address=44.34.128.49 comment="CONTAIN router" list=mhw-routers
+add address=44.34.128.81 comment="CONTAIN router" list=mhw-routers
+add address=44.34.128.97 comment="CONTAIN router" list=mhw-routers
+add address=44.34.128.102 comment="CONTAIN router" list=mhw-routers
+add address=44.34.128.103 comment="CONTAIN router" list=mhw-routers
+add address=44.34.128.107 comment="CONTAIN router" list=mhw-routers
+add address=44.34.128.110 comment="CONTAIN router" list=mhw-routers
+add address=44.34.128.161 comment="CONTAIN router" list=mhw-routers
+add address=44.34.128.168 comment="CONTAIN router" list=mhw-routers
+add address=44.34.128.173 comment="CONTAIN router" list=mhw-routers
+add address=44.34.128.175 comment="CONTAIN router" list=mhw-routers
+add address=44.34.128.176 comment="CONTAIN router" list=mhw-routers
+add address=44.34.128.182 comment="CONTAIN router" list=mhw-routers
+add address=44.34.128.188 comment="CONTAIN router" list=mhw-routers
+add address=44.34.129.17 comment="CONTAIN router" list=mhw-routers
+add address=44.34.129.33 comment="CONTAIN router" list=mhw-routers
+add address=44.34.129.34 comment="CONTAIN router" list=mhw-routers
+add address=44.34.129.35 comment="CONTAIN router" list=mhw-routers
+add address=44.34.129.38 comment="CONTAIN router" list=mhw-routers
+add address=44.34.129.39 comment="CONTAIN router" list=mhw-routers
+add address=44.34.129.42 comment="CONTAIN router" list=mhw-routers
+add address=44.34.129.49 comment="CONTAIN router" list=mhw-routers
+add address=44.34.129.66 comment="CONTAIN router" list=mhw-routers
+add address=44.34.129.67 comment="CONTAIN router" list=mhw-routers
+add address=44.34.129.68 comment="CONTAIN router" list=mhw-routers
+add address=44.34.129.73 comment="CONTAIN router" list=mhw-routers
+add address=44.34.129.74 comment="CONTAIN router" list=mhw-routers
+add address=44.34.129.75 comment="CONTAIN router" list=mhw-routers
+add address=44.34.129.129 comment="CONTAIN router" list=mhw-routers
+add address=44.34.129.161 comment="CONTAIN router" list=mhw-routers
+add address=44.34.129.194 comment="CONTAIN router" list=mhw-routers
+add address=44.34.129.195 comment="CONTAIN router" list=mhw-routers
+add address=44.34.130.1 comment="CONTAIN router" list=mhw-routers
+add address=44.34.130.33 comment="CONTAIN router" list=mhw-routers
+add address=44.34.130.49 comment="CONTAIN router" list=mhw-routers
+add address=44.34.131.130 comment="CONTAIN router" list=mhw-routers
+add address=44.34.131.131 comment="CONTAIN router" list=mhw-routers
+add address=44.34.131.138 comment="CONTAIN router" list=mhw-routers
+add address=44.34.131.139 comment="CONTAIN router" list=mhw-routers
+add address=44.34.131.140 comment="CONTAIN router" list=mhw-routers
+add address=44.34.131.146 comment="CONTAIN router" list=mhw-routers
+add address=44.34.131.147 comment="CONTAIN router" list=mhw-routers
+add address=44.34.131.157 comment="CONTAIN router" list=mhw-routers
+add address=44.34.131.173 comment="CONTAIN router" list=mhw-routers
+add address=44.34.135.5 comment="CONTAIN router" list=mhw-routers
 /ip firewall filter
 add action=drop chain=forward dst-address=44.34.129.130
 add action=accept chain=forward dst-address=44.34.128.42
@@ -104,6 +259,22 @@ add action=drop chain=forward dst-address=44.34.129.128/28
 add action=accept chain=input disabled=yes dst-port=13231 log=yes protocol=udp
 add action=drop chain=forward src-address-list=denylist
 add action=accept chain=input comment="wg lte.sco uplink" dst-port=13232 protocol=udp
+add action=drop chain=forward comment="CONTAIN known attacker sources" in-interface=ether1 src-address-list=ioc-src
+add action=accept chain=forward comment="CONTAIN replies to allowed router egress" connection-mark=router-out dst-address-list=mhw-routers in-interface=ether1
+add action=accept chain=forward comment="CONTAIN operators" connection-mark=admin-in dst-address-list=mhw-routers in-interface=ether1
+add action=accept chain=forward comment="CONTAIN ping" dst-address-list=mhw-routers in-interface=ether1 protocol=icmp
+add action=drop chain=forward comment="CONTAIN default-deny internet->routers" dst-address-list=mhw-routers in-interface=ether1
+add action=drop chain=forward comment="CONTAIN mgmt/PPTP ports on unknown infra addresses" dst-address=44.34.128.0/22 dst-port=21,22,23,222,1723,2000,8291,8728,8729 in-interface=ether1 protocol=tcp src-address-list=!mhw-admin
+add action=drop chain=forward comment="CONTAIN GRE/PPTP" dst-address=44.34.128.0/22 in-interface=ether1 protocol=gre
+add action=drop chain=forward comment="CONTAIN C2 fetch from any source" dst-address-list=ioc-c2 dst-port=8080 log=yes log-prefix=CONTAIN-C2 out-interface=ether1 protocol=tcp
+add action=accept chain=forward comment="CONTAIN allowed router egress" connection-mark=router-out out-interface=ether1 src-address-list=mhw-routers
+add action=accept chain=forward comment="CONTAIN replies to operators" connection-mark=admin-in out-interface=ether1 src-address-list=mhw-routers
+add action=accept chain=forward comment="CONTAIN icmp" out-interface=ether1 protocol=icmp src-address-list=mhw-routers
+add action=drop chain=forward comment="CONTAIN default-deny routers->internet" log=yes log-prefix=CONTAIN-OUT out-interface=ether1 src-address-list=mhw-routers
+/ip firewall mangle
+add action=mark-connection chain=forward comment="CONTAIN allowed router egress" connection-state=new dst-address-list=router-egress-ok new-connection-mark=router-out out-interface=ether1 passthrough=no src-address-list=mhw-routers
+add action=mark-connection chain=forward comment="CONTAIN NATed clients behind clean routers" connection-state=new new-connection-mark=router-out out-interface=ether1 passthrough=no src-address-list=mhw-nat-gw
+add action=mark-connection chain=forward comment="CONTAIN operator sessions" connection-state=new in-interface=ether1 new-connection-mark=admin-in passthrough=no src-address-list=mhw-admin
 /ip ipsec profile
 set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
 /ip route
@@ -127,7 +298,7 @@ add local-address=44.34.131.166 name=apleb-er remote-address=44.34.131.167 servi
 add name=client1 profile=ovpn
 add name=client2 profile=ovpn
 add name=myuser5 profile=ovpn
-add local-address=44.34.131.168 name=oob-ftn remote-address=44.34.131.169 service=sstp
+add comment="CONTAIN creds exposed on compromised r1.ftn" disabled=yes local-address=44.34.131.168 name=oob-ftn remote-address=44.34.131.169 service=sstp
 add local-address=44.34.131.170 name=oob-azo remote-address=44.34.131.171 service=sstp
 add local-address=44.34.131.172 name=oob-sco remote-address=44.34.131.173 service=sstp
 add local-address=44.34.131.174 name=sstp-mch remote-address=44.34.131.175 service=sstp
@@ -167,6 +338,7 @@ add action=remote topics=error
 add action=remote topics=warning
 add action=remote topics=critical
 add action=remote topics=account
+add action=remote comment=CONTAIN topics=firewall
 /system ntp client
 set enabled=yes
 /system ntp client servers
