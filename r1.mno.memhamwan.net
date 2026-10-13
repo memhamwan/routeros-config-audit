@@ -10,6 +10,13 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                         BY       POLICY  TIME
+# U dns changed                    turnrye  write   2026-10-13 11:06:16
+# U ip service changed             turnrye  write   2026-10-13 11:06:16
+# U ssh settings changed           turnrye  write   2026-10-13 11:06:15
+# U user packetbard changed        turnrye  write   2026-10-13 11:06:15
+#                                           policy
+# U user hamwan changed            turnrye  write   2026-10-13 11:06:15
+#                                           policy
 # U log rule changed               turnrye  write   2026-10-13 07:56:30
 # U log rule changed               turnrye  write   2026-10-13 07:56:30
 # U log rule changed               turnrye  write   2026-10-13 07:56:30
@@ -158,7 +165,7 @@ set winbox disabled=yes
 set api available-from=44.34.128.45/32 disabled=yes
 set api-ssl available-from=44.34.128.45/32 certificate=api-ssl
 /ip ssh
-set forwarding-enabled=remote strong-crypto=yes
+set forwarding-enabled=remote password-authentication=no strong-crypto=yes
 /ipv6 nd
 # automatic dns option advertising is not started, re-apply dns config
 set [ find default=yes ] advertise-dns=yes
