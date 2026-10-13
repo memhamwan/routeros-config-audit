@@ -11,6 +11,10 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                BY       POLICY  TIME
+# U ssh settings changed  ansible  write   2026-10-13 16:24:01
+# U ip service changed    ansible  write   2026-10-13 16:23:59
+# U user hamwan removed   ansible  write   2026-10-13 16:23:54
+#                                  policy
 # U dns changed           turnrye  write   2026-10-13 11:04:35
 # U ip service changed    turnrye  write   2026-10-13 11:04:35
 # U ssh settings changed  turnrye  write   2026-10-13 11:04:35
@@ -119,13 +123,13 @@ add disabled=no distance=150 dst-address=155.138.216.153/32 gateway=192.168.1.1
 set ftp disabled=yes
 set telnet disabled=yes
 set www disabled=yes
-set ssh port=222
+set ssh available-from=44.34.128.45/32,99.94.135.115/32,216.163.16.109/32 port=222
 set reverse-proxy disabled=yes
 set winbox disabled=yes
 set api available-from=44.34.128.45/32 disabled=yes
 set api-ssl available-from=44.34.128.45/32 certificate=api-ssl
 /ip ssh
-set forwarding-enabled=both password-authentication=no strong-crypto=yes
+set password-authentication=no strong-crypto=yes
 /ipv6 nd
 # automatic dns option advertising is not started, re-apply dns config
 set [ find default=yes ] advertise-dns=yes
