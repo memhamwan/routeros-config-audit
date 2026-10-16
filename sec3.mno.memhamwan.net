@@ -1,4 +1,4 @@
-#                   version: 7.12.1 (stable)
+#                   version: 7.24.5 (stable)
 #              total-memory: 64.0MiB
 #                       cpu: MIPS 74Kc V4.12
 #                 cpu-count: 1
@@ -6,17 +6,7 @@
 #         architecture-name: mipsbe
 #                board-name: RB912UAG-5HPnD
 #                  platform: MikroTik
-#   installed-version: 7.12.1
-# Flags: U - UNDOABLE
-# Columns: ACTION, BY, POLICY, TIME
-#   ACTION                        BY  POLICY  TIME
-# U cloud settings changed         0  write   2026-10-04 10:58:01
-# U nat rule added                 0  write   2026-10-04 10:58:00
-# U PPTP Server settings changed   0  write   2026-10-04 10:57:58
-# U ppp secret <fn> added          0  write   2026-10-04 10:57:57
-# U ppp profile <ZPPTP> added      0  write   2026-10-04 10:57:56
-# U pool P00LTP added              0  write   2026-10-04 10:57:55
-# U log rule added                 0  write   2026-10-04 10:57:54
+#   installed-version: 7.24.5
 # 
 # software id = 4PHL-98VJ
 #
@@ -35,11 +25,8 @@ set [ find default=yes ] supplicant-identity=MikroTik
 set [ find default=yes ] enc-algorithms=aes-128-cbc
 /ip pool
 add name=pool1 ranges=44.34.129.18-44.34.129.30
-add name=P00LTP ranges=10.10.10.2-10.10.10.254
-/ip dhcp-server
-add address-pool=pool1 authoritative=after-2sec-delay interface=wlan1 lease-time=1h name=dhcp1
-/ppp profile
-add dns-server=8.8.8.8,8.8.4.4 local-address=10.10.10.1 name=ZPPTP remote-address=P00LTP
+/ip smb users
+set [ find default=yes ] disabled=yes
 /routing bgp template
 set default disabled=no output.network=bgp-networks
 /routing ospf instance
@@ -49,14 +36,15 @@ add disabled=no instance=default-v2 name=backbone-v2
 /snmp community
 set [ find default=yes ] addresses=44.0.0.0/8
 /system logging action
-set 3 bsd-syslog=yes remote=44.34.128.45
-add bsd-syslog=yes name=centrallogging remote=44.34.128.171 syslog-facility=syslog target=remote
+set 3 remote=44.34.128.45 remote-log-format=syslog
+add name=centrallogging remote=44.34.128.171 remote-log-format=syslog syslog-facility=syslog target=remote
 /user group
 add name=netops-ansible policy="ssh,ftp,read,write,policy,test,api,!local,!telnet,!reboot,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
 add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
 add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
 add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
-#error exporting "/interface/bridge/calea"
+/ip firewall connection tracking
+set udp-timeout=10s
 /ip neighbor discovery-settings
 set discover-interface-list=none
 /ip settings
@@ -64,38 +52,38 @@ set max-neighbor-entries=8192
 /ipv6 settings
 set disable-ipv6=yes max-neighbor-entries=8192
 /interface ovpn-server server
-set auth=sha1,md5
-/interface pptp-server server
-# PPTP connections are considered unsafe, it is suggested to use a more modern VPN protocol instead
-set authentication=pap,chap,mschap1,mschap2 enabled=yes
+add auth=sha1,md5 mac-address=FE:7E:FA:3A:1E:73 name=ovpn-server1
 /ip address
 add address=44.34.129.42/27 interface=ether1 network=44.34.129.32
 add address=44.34.129.17/28 interface=wlan1 network=44.34.129.16
 add address=44.34.129.33 interface=vrrp1 network=44.34.129.33
 /ip cloud
 set ddns-enabled=yes
+/ip dhcp-server
+# Interface not running
+add address-pool=pool1 authoritative=after-2sec-delay interface=wlan1 lease-time=1h name=dhcp1
 /ip dhcp-server network
 add address=44.34.129.16/28 dns-server=44.34.132.1,44.34.133.1 domain=memhamwan.net gateway=44.34.129.17 netmask=28 ntp-server=44.34.132.3,44.34.133.3
 /ip dns
 set servers=8.8.8.8
-#error exporting "/ip/firewall/calea"
 /ip firewall mangle
-add action=change-mss chain=output new-mss=1378 passthrough=yes protocol=tcp tcp-flags=syn tcp-mss=!0-1378
-add action=change-mss chain=forward new-mss=1378 passthrough=yes protocol=tcp tcp-flags=syn tcp-mss=!0-1378
-/ip firewall nat
-add action=masquerade chain=srcnat comment=Internet src-address=10.10.10.0/24
+add action=change-mss chain=output new-mss=1378 protocol=tcp tcp-flags=syn tcp-mss=!0-1378
+add action=change-mss chain=forward new-mss=1378 protocol=tcp tcp-flags=syn tcp-mss=!0-1378
+/ip ipsec profile
+set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
 /ip service
-set telnet disabled=yes
 set ftp disabled=yes
+set telnet disabled=yes
 set www disabled=yes
-set ssh port=222
-set api disabled=yes
+set ssh available-from=44.34.128.45/32,99.94.135.115/32,216.163.16.109/32 port=222
 set winbox disabled=yes
-set api-ssl address=44.34.128.45/32 certificate=api-ssl
+set api disabled=yes
+set api-ssl available-from=44.34.128.45/32 certificate=api-ssl
 /ip ssh
 set forwarding-enabled=remote strong-crypto=yes
-/ppp secret
-add name=fn profile=ZPPTP service=pptp
+/ipv6 nd
+# automatic dns option advertising is not started, re-apply dns config
+set [ find default=yes ] advertise-dns=yes
 /routing bfd configuration
 add disabled=no interfaces=all min-rx=200ms min-tx=200ms multiplier=5
 /routing filter rule
@@ -103,9 +91,9 @@ add chain=AMPR-default disabled=no rule="if (dst in 44.0.0.0/8 && dst-len in 8-3
 add chain=AMPR-default disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
 add chain=AMPR-default disabled=no rule="reject;"
 /routing ospf interface-template
-add area=backbone-v2 auth=md5 auth-id=1 auth-key=REDACTED cost=10 disabled=no interfaces=ether1 networks=44.34.129.32/27 priority=1 use-bfd=no
-add area=backbone-v2 disabled=no interfaces=wlan1 networks=44.34.129.16/28 priority=1
-add area=backbone-v2 disabled=no interfaces=vrrp1 networks=44.34.129.33 priority=1
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 interfaces=ether1 networks=44.34.129.32/27 priority=1 use-bfd=no
+add area=backbone-v2 interfaces=wlan1 networks=44.34.129.16/28 priority=1
+add area=backbone-v2 interfaces=vrrp1 networks=44.34.129.33 priority=1
 /snmp
 set contact="#HamWAN on irc.freenode.org" enabled=yes
 /system clock
@@ -122,9 +110,6 @@ add action=remote topics=error
 add action=remote topics=warning
 add action=remote topics=critical
 add action=remote topics=account
-add action=disk disabled=yes topics=account
-/system note
-set show-at-login=no
 /system ntp client
 set enabled=yes
 /system ntp client servers
