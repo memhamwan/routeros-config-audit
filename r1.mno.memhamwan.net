@@ -10,6 +10,7 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                         BY       POLICY  TIME
+# U device changed                 turnrye  write   2026-10-17 17:56:14
 # U dns changed                    turnrye  write   2026-10-13 11:06:16
 # U ip service changed             turnrye  write   2026-10-13 11:06:16
 # U ssh settings changed           turnrye  write   2026-10-13 11:06:15
@@ -59,7 +60,7 @@ set [ find default-name=ether5 ] name=ether5-slave-local
 set [ find default-name=ether6 ] name=ether6-slave-local
 set [ find default-name=ether7 ] name=ether7-slave-local
 set [ find default-name=ether8 ] name=ether8-slave-local
-set [ find default-name=ether9 ] name=ether9-slave-local
+set [ find default-name=ether9 ] advertise=10M-baseT-full name=ether9-slave-local
 set [ find default-name=ether10 ] name=ether10-slave-local
 set [ find default-name=ether11 ] name=ether11-slave-local
 set [ find default-name=ether12 ] name=ether12-slave-local
