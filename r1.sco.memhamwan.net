@@ -11,6 +11,8 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                BY       POLICY  TIME
+# U device changed        turnrye  write   2026-10-17 17:25:45
+# U bridge port changed   turnrye  write   2026-10-17 17:25:23
 # U ip service changed    ansible  write   2026-10-13 16:41:11
 # U dns changed           ansible  write   2026-10-13 16:41:03
 # U ssh settings changed  ansible  write   2026-10-13 16:24:01
@@ -33,6 +35,7 @@ add name=internal-nat
 add name=public-accessible-dhcp
 add name=wan-uplink
 /interface ethernet
+set [ find default-name=ether16 ] comment="146.88 allstar sb4kog"
 set [ find default-name=ether22 ] comment=adsb
 set [ find default-name=ether23 ] comment=meshtastic
 set [ find default-name=ether24 ] comment=liveatc.net
@@ -75,7 +78,7 @@ add bridge=bridge comment=defconf interface=ether12 internal-path-cost=10 path-c
 add bridge=bridge comment=defconf interface=ether13 internal-path-cost=10 path-cost=10
 add bridge=bridge comment=defconf interface=ether14 internal-path-cost=10 path-cost=10
 add bridge=bridge comment=defconf interface=ether15 internal-path-cost=10 path-cost=10
-add bridge=bridge comment=defconf interface=ether16 internal-path-cost=10 path-cost=10
+add bridge=public-accessible-dhcp comment=defconf interface=ether16 internal-path-cost=10 path-cost=10
 add bridge=internal-nat comment=defconf interface=ether17 internal-path-cost=10 path-cost=10
 add bridge=internal-nat comment=defconf interface=ether18 internal-path-cost=10 path-cost=10
 add bridge=internal-nat comment=defconf interface=ether19 internal-path-cost=10 path-cost=10
