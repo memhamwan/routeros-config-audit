@@ -110,6 +110,7 @@ add address=10.0.0.252 client-id=1:2c:cf:67:81:2a:85 mac-address=2C:CF:67:81:2A:
 add address=10.0.0.251 client-id=1:b8:27:eb:73:90:40 mac-address=B8:27:EB:73:90:40 server=dhcp1
 add address=10.0.0.250 client-id=1:b8:27:eb:86:a5:c2 mac-address=B8:27:EB:86:A5:C2 server=dhcp1
 add address=44.34.130.46 client-id=1:2c:cf:67:81:2a:85 mac-address=2C:CF:67:81:2A:85 server=dhcp2
+add address=44.34.130.45 client-id=ff:bb:42:72:a5:0:2:0:0:ab:11:2e:19:60:b6:4c:d3:ea:6 mac-address=98:FE:54:3A:0E:C6 server=dhcp2
 /ip dhcp-server network
 add address=10.0.0.0/24 dns-server=8.8.8.8,8.8.4.4 gateway=10.0.0.1
 add address=44.34.130.32/28 dns-server=8.8.8.8,8.8.4.4 gateway=44.34.130.33
