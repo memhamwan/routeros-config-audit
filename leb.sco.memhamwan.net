@@ -1,0 +1,157 @@
+#                   version: 7.24.2 (stable)
+#           minimum-version: 6.44
+#              total-memory: 256.0MiB
+#                       cpu: ARM
+#                 cpu-count: 4
+#           total-hdd-space: 16.0MiB
+#         architecture-name: arm
+#                board-name: LHG 60G
+#                  platform: MikroTik
+#   installed-version: 7.24.2
+# Flags: U - UNDOABLE
+# Columns: ACTION, BY, POLICY, TIME
+#   ACTION                                 BY       POLICY  TIME
+# U user ae5au added                       turnrye  write   2026-10-17 19:05:26
+#                                                   policy
+# U user mktxp changed                     turnrye  write   2026-10-17 19:05:22
+#                                                   policy
+# U user oxidized-full changed             turnrye  write   2026-10-17 19:05:21
+#                                                   policy
+# U user oxidized changed                  turnrye  write   2026-10-17 19:05:21
+#                                                   policy
+# U user group mktxp_group changed         turnrye  write   2026-10-17 19:05:21
+#                                                   policy
+# U user group netops-backup-full changed  turnrye  write   2026-10-17 19:05:21
+#                                                   policy
+# U user group netops-backup-ro changed    turnrye  write   2026-10-17 19:05:20
+#                                                   policy
+# U user mktxp changed                     turnrye  write   2026-10-17 19:05:19
+#                                                   policy
+# U user mktxp added                       turnrye  write   2026-10-17 19:05:19
+#                                                   policy
+# U user oxidized-full changed             turnrye  write   2026-10-17 19:05:17
+#                                                   policy
+# U user oxidized changed                  turnrye  write   2026-10-17 19:05:17
+#                                                   policy
+# U user oxidized-full added               turnrye  write   2026-10-17 19:05:09
+#                                                   policy
+# U user oxidized added                    turnrye  write   2026-10-17 19:05:09
+#                                                   policy
+# U ip service changed                     turnrye  write   2026-10-17 19:05:06
+# U user group mktxp_group added           turnrye  write   2026-10-17 19:05:02
+#                                                   policy
+# U user group netops-backup-full added    turnrye  write   2026-10-17 19:05:02
+#                                                   policy
+# U user group netops-backup-ro added      turnrye  write   2026-10-17 19:05:02
+#                                                   policy
+# U dns changed                            turnrye  write   2026-10-13 11:05:05
+# U ip service changed                     turnrye  write   2026-10-13 11:05:05
+# U ssh settings changed                   turnrye  write   2026-10-13 11:05:05
+# U user packetbard changed                turnrye  write   2026-10-13 11:05:05
+#                                                   policy
+# U user hamwan changed                    turnrye  write   2026-10-13 11:05:05
+#                                                   policy
+# 
+# software id = AU1W-6DXD
+#
+# model = RBLHGG-60ad
+# serial number = CF340C0F13FC
+/interface bridge
+add admin-mac=48:8F:5A:26:87:E4 auto-mac=no comment=defconf name=bridge port-cost-mode=short
+/interface vrrp
+add authentication=ah interface=ether1 name=vrrp1 version=2
+/interface w60g
+set *1 disabled=no mode=station-bridge name=wlan60-1 region=no-region-set ssid=MikroTik-26bcda
+/interface lte apn
+set [ find default=yes ] ip-type=ipv4 use-network-apn=no
+/interface wireless security-profiles
+set [ find default=yes ] supplicant-identity=MikroTik
+/ip pool
+add name=dhcp_pool0 ranges=10.10.0.2-10.10.0.254
+/ip smb users
+set [ find default=yes ] disabled=yes
+/routing bgp template
+set default disabled=no output.network=bgp-networks
+/routing ospf instance
+add disabled=no in-filter-chain=AMPR-default name=default-v2 out-filter-chain=AMPR-default redistribute=connected,static,ospf,bgp,vpn,dhcp,modem router-id=44.34.131.157
+/routing ospf area
+add disabled=no instance=default-v2 name=backbone-v2
+/snmp community
+set [ find default=yes ] addresses=44.0.0.0/8
+/system logging action
+set 3 remote=44.34.132.6 remote-log-format=syslog remote-port=5514
+/user group
+add name=netops-backup-ro policy="ssh,read,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!api,!romon,!rest-api"
+add name=netops-backup-full policy="ssh,read,sensitive,!local,!telnet,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!api,!romon,!rest-api"
+add name=mktxp_group policy="read,api,!local,!telnet,!ssh,!ftp,!reboot,!write,!policy,!test,!winbox,!password,!web,!sniff,!sensitive,!romon,!rest-api"
+/interface bridge port
+add bridge=bridge comment=defconf ingress-filtering=no interface=wlan60-1 internal-path-cost=10 path-cost=10
+/ip firewall connection tracking
+set udp-timeout=10s
+/ip neighbor discovery-settings
+set discover-interface-list=none
+/ipv6 settings
+set disable-ipv6=yes max-neighbor-entries=8192
+/interface ovpn-server server
+add auth=sha1,md5 mac-address=FE:B6:BD:82:F7:0C name=ovpn-server1
+/ip address
+add address=44.34.128.40/28 comment=defconf interface=ether1 network=44.34.128.32
+add address=44.34.131.157 interface=bridge network=44.34.131.156
+add address=44.34.128.39/28 interface=vrrp1 network=44.34.128.32
+add address=10.10.0.1/24 disabled=yes interface=ether1 network=10.10.0.0
+add address=44.34.129.129/28 interface=ether1 network=44.34.129.128
+/ip dhcp-server
+add address-pool=dhcp_pool0 disabled=yes interface=ether1 lease-time=10m name=dhcp1
+/ip dhcp-server network
+add address=10.10.0.0/24 gateway=10.10.0.1
+/ip dns
+set servers=8.8.8.8
+/ip ipsec profile
+set [ find default=yes ] dpd-interval=2m dpd-maximum-failures=5
+/ip service
+set ftp disabled=yes
+set telnet disabled=yes
+set www disabled=yes
+set ssh port=222
+set reverse-proxy disabled=yes
+set winbox disabled=yes
+set api disabled=yes
+set api-ssl certificate=api-ssl
+/ip ssh
+set password-authentication=no strong-crypto=yes
+/ipv6 nd
+# automatic dns option advertising is not started, re-apply dns config
+set [ find default=yes ] advertise-dns=yes
+/routing bfd configuration
+add disabled=no
+/routing filter rule
+add chain=AMPR-default disabled=no rule="if (dst in 44.0.0.0/8 && dst-len in 8-32) { accept; }"
+add chain=AMPR-default disabled=no rule="if (dst == 0.0.0.0/0) { accept; }"
+add chain=AMPR-default disabled=no rule="reject;"
+/routing ospf interface-template
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 interfaces=ether1 networks=44.34.128.32/28 priority=1 use-bfd=no
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 interfaces=bridge networks=44.34.131.156 priority=1 type=ptp use-bfd=no
+add area=backbone-v2 auth=md5 auth-id=1 cost=10 interfaces=ether1 networks=44.34.129.128/28 priority=1 use-bfd=no
+/snmp
+set enabled=yes
+/system clock
+set time-zone-autodetect=no time-zone-name=America/Chicago
+/system identity
+set name=leb.sco.memhamwan.net
+/system logging
+set 3 action=memory
+add action=remote topics=!debug,!snmp
+/system ntp client
+set enabled=yes
+/system ntp client servers
+add address=44.34.128.181
+/tool bandwidth-server
+set authenticate=no enabled=no
+/tool mac-server
+set allowed-interface-list=none
+/tool mac-server mac-winbox
+set allowed-interface-list=none
+/tool mac-server ping
+set enabled=no
+/tool romon
+set enabled=yes
