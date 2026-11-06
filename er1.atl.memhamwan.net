@@ -11,6 +11,8 @@
 # Flags: U - UNDOABLE
 # Columns: ACTION, BY, POLICY, TIME
 #   ACTION                        BY       POLICY  TIME
+# U address list entry added      ae5au    write   2026-11-05 22:43:58
+# U address list entry added      ae5au    write   2026-11-05 22:42:18
 # U ssh settings changed          turnrye  write   2026-10-13 08:05:45
 # U user packetbard changed       turnrye  write   2026-10-13 08:05:45
 #                                          policy
@@ -240,6 +242,8 @@ add address=44.34.131.147 comment="CONTAIN router" list=mhw-routers
 add address=44.34.131.157 comment="CONTAIN router" list=mhw-routers
 add address=44.34.131.173 comment="CONTAIN router" list=mhw-routers
 add address=44.34.135.5 comment="CONTAIN router" list=mhw-routers
+add address=64.127.139.71 comment="CONTAIN ae5au" list=mhw-admin
+add address=199.38.127.196 comment="CONTAIN n5aln" list=mhw-admin
 /ip firewall filter
 add action=drop chain=forward dst-address=44.34.129.130
 add action=accept chain=forward dst-address=44.34.128.42
